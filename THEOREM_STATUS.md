@@ -78,6 +78,22 @@ One line per load-bearing result, phase of origin, and status. Full statements a
 
 > For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients**, `Φ(v)∉ℚ` — **proved** (Phase 6, `theorems/phase6/BOUNDED_TYPE_THEOREM.md`). This supersedes Phase 4's quadratic-irrational-only result (a countable special case) without weakening any quantifier, and was reached only after Phase 5's independent hostile audit confirmed the underlying chain and Phase 6's adversarial non-periodic reconstruction confirmed no hidden periodicity dependence.
 
+## Cross-program scope limit — EOC divergence sector (audit, 2026-09-29)
+
+No result above is changed. This records where the machinery above does **not** apply.
+
+| Finding | Status | Where |
+|---|---|---|
+| On an integer-realizable zero-confined orbit the surplus is `S = log₂ h_eff − log₂ oddpart(m_n − m₀) ≤ log₂ m₀` — an identity, verified at 1 862 certified checkpoints | **PROVED** (exact form of an already-recorded qualitative fact) | `docs/EOC_HANDOFF_CLOSED.md` §3 |
+| Therefore `limsup S = +∞` is unsatisfiable on that sector, and the periodic-approximation route cannot exclude EOC survivors | **PROVED** | `docs/EOC_HANDOFF_CLOSED.md` §4 |
+| "EOC constraints ⟹ arbitrarily long initial squares" is **equivalent to** EOC's open problem (DE); the intermediate step is the conclusion restated | **CIRCULAR** | `docs/EOC_HANDOFF_CLOSED.md` §5 |
+| `K ∩ {CS Rote} = ∅`: CS Rote one-density is exactly `1/2`, the sector needs `≥ β = 0.63093`; robust over shifts, seeds and corridor width | **PROVED**; rungs 3/3′ are **vacuous** on that sector | `docs/EOC_HANDOFF_CLOSED.md` §6 |
+| The transported Dubickas rung has **zero margin** against an integer seed (Cor. 9.3's hypothesis is the exact negation of Prop. 9.2's conclusion) | **observed**, both are the source paper's own results | `docs/EOC_HANDOFF_CLOSED.md` §5 |
+
+Novelty note: the qualitative route closure was already recorded (`LADDER.md` closing section;
+EOC Revision 7 Observation 5.9). The audit supplies the exact identity, the quantified
+obstruction and certified verification, not the original qualitative observation.
+
 ## Open, precisely stated
 
 1. CS Rote sequences at **other intercepts** of the same slope (not a shift of the intercept-0 representative) — unchanged since Phase 4, re-confirmed still open in Phase 6.

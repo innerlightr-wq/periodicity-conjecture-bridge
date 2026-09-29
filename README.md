@@ -28,6 +28,20 @@ This is a **milestone map of an exclusion program**, not a chain of nested sets 
 
 For **every** complementary symmetric Rote sequence `v` (factor complexity exactly `2n`, strictly beyond the Dubickas counting threshold) whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients** (any seed, any shift of `v`), `Φ(v) ∉ ℚ` — **proved** (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`). The proof rests on one clean structural fact discovered in Phase 4: the odd-weight transfer route's doubled root always has density exactly `1/2`, which drops the required Sturmian repetition exponent from an earlier, over-conservative `2\log_23\approx3.17` down to the true requirement, `2` — comfortably supplied, with an explicit margin, by a classical initial-critical-exponent bound (Berthé–Holton–Zamboni 2006). Phase 5 audited this chain end to end and found it survives (with one justification repaired); Phase 6 then reconstructed the same chain against genuinely non-periodic bounded-type slopes and found it needs only boundedness of partial quotients, not eventual periodicity — upgrading the theorem from a countable class (quadratic irrationals) to an uncountable one (bounded-type irrationals). One precise gap remains throughout (CS Rote sequences at *other* intercepts of the same slope) — see `THEOREM_STATUS.md` for the complete, honest status map. Nothing here is overclaimed past what is actually proved.
 
+## Cross-program scope limit
+
+**EOC handoff audit (2026-09-29): the periodic-approximation surplus route is bounded on
+integer-realizable zero-confined orbits, so this mechanism does not currently yield divergence
+exclusion.** On such an orbit the surplus equals `log₂ h_eff − log₂ oddpart(m_n − m₀)` and is
+capped by `log₂ m₀`, making the criterion's `limsup S = +∞` hypothesis unsatisfiable; and the
+headline bounded-type CS Rote class is vacuous there, since its load-bearing one-density `1/2`
+is incompatible with the sector's critical density `β ≈ 0.63093`. No theorem in this repository
+is affected. The qualitative closure was already on record in both programmes; the audit adds
+the exact identity, the quantified obstruction and certified verification. See
+[`docs/EOC_HANDOFF_CLOSED.md`](docs/EOC_HANDOFF_CLOSED.md), and the companion note
+[`notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md`](https://github.com/innerlightr-wq/eoc-divergence/blob/main/notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md)
+in [`innerlightr-wq/eoc-divergence`](https://github.com/innerlightr-wq/eoc-divergence).
+
 ## Repository structure
 
 ```
@@ -37,6 +51,7 @@ README.md              this file
 LADDER.md              the exclusion-program milestone diagram, with per-rung status
 THEOREM_STATUS.md       consolidated status map, every result across all phases
 PRIOR_ART.md            index into the two adversarial prior-art searches
+docs/                   cross-program scope limits (EOC handoff audit)
 CITATION.cff            citation metadata
 
 theorems/phase1/        Phase 1: abstraction of the source paper's bridge technique,

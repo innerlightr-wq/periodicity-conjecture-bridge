@@ -26,6 +26,18 @@ general CS Rote / next frontier
 
 Rung 3′ is now closed for every bounded-partial-quotient irrational slope (Phase 6), but two threads remain open before advancing further: (a) the "other intercepts of the same slope" gap, unchanged since Phase 4 and re-confirmed still open in Phase 6 (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`); (b) unbounded-partial-quotient slopes, genuinely out of reach of the discrepancy mechanism this bridge uses. Per the research program's own working discipline, rung 4 (a genuinely new complexity class, or Rote sequences beyond bounded-type slopes, or general two-interval rotation codings, or general morphic words) is not pursued while these threads are open — candidates are recorded in `theorems/phase2/THEOREM_CONVERSION_VERDICT.md` and `theorems/phase1/FULL_PERIODICITY_GAP.md`.
 
+## Relationship to the EOC divergence programme (cross-program, 2026-09-29)
+
+A falsification-first audit tested whether this ladder's mechanism hands off to the surviving
+divergence sector of [`innerlightr-wq/eoc-divergence`](https://github.com/innerlightr-wq/eoc-divergence).
+**It does not.** On an integer-realizable zero-confined orbit the periodic-approximation surplus
+is bounded by `log₂ m₀` as an identity, so the criterion's hypothesis `limsup S = +∞` is
+unsatisfiable there; and rungs 3/3′ are *vacuous* on that sector, because CS Rote's load-bearing
+one-density `1/2` is incompatible with the sector's critical density `β ≈ 0.63093`. No rung above
+is changed. The qualitative closure was already on record (this file's closing section, and EOC
+Revision 7 Observation 5.9); the audit adds the exact identity, the quantified obstruction and
+certified verification. Details: [`docs/EOC_HANDOFF_CLOSED.md`](docs/EOC_HANDOFF_CLOSED.md).
+
 ## Relationship to the full Lagarias Periodicity Conjecture
 
 **Not claimed to be resolved, in whole or in part, by any rung above.** Every rung is a statement about a specific, structurally-defined *class* of aperiodic binary words reachable by a *repetition-based or counting-based* method. `theorems/phase1/FULL_PERIODICITY_GAP.md` (Q4) proves there exist aperiodic words (Thue–Morse) that **no repetition-based method can ever reach**, by construction — a structural ceiling on this entire program, independent of how many further rungs are added. Progress recorded here is progress on an increasingly broad *sub-class* of the Periodicity Conjecture's scope, not on the conjecture itself.
