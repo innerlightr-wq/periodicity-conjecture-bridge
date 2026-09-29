@@ -1,0 +1,91 @@
+=== Thue-Morse-coded {1,2} (A=2) ===
+  eventual periodicity check (period<=300): False  (should be False)
+  term2(k) > 2+1/(A+1)=2.33333 for every tested k (38 values of k checked): True
+       ell  wt%2  r_u(direct lcp)  exceeds bound      |R|    dens(R)     D(R)  D(R)/log|R|  exact S
+         3     0           3.0000           True        3     0.3333     0.67        0.607  S=3
+         7     0           1.0000          False        7     0.2857     0.57        0.294  S=-4
+        10     1           3.6000           True       20     0.5000     2.00        0.668  S=9
+        27     0           1.0000          False       27     0.4444     1.56        0.472  S=-7
+        37     0           2.7027           True       37     0.4865     1.89        0.524  S=55
+        64     0           1.0000          False       64     0.4688     1.75        0.421  S=-9
+       165     0           3.3818           True      165     0.4970     2.75        0.539  S=381
+       394     0           1.0000          False      394     0.4924     2.38        0.398  S=-13
+       559     1           2.7030           True     1118     0.5000     4.00        0.570  S=377
+       953     1           1.0000          False     1906     0.5000     4.00        0.530  S=-970
+      2465     1           2.3862           True     4930     0.5000     4.00        0.470  S=934
+      3418     0           1.0000          False     3418     0.4994     3.76        0.462  S=-18
+  Certifying (S>0) witnesses found: 6
+  Deepest certifying: ell=2465 S=934
+  Certifying S values monotonically increasing with ell: False
+
+=== Fibonacci-word-coded {1,2} (A=2) ===
+  eventual periodicity check (period<=300): False  (should be False)
+  term2(k) > 2+1/(A+1)=2.33333 for every tested k (38 values of k checked): False
+       ell  wt%2  r_u(direct lcp)  exceeds bound      |R|    dens(R)     D(R)  D(R)/log|R|  exact S
+         3     0           2.0000          False        3     0.3333     0.67        0.607  S=0
+         4     0           1.0000          False        4     0.2500     0.50        0.361  S=-3
+         7     1           3.4286           True       14     0.5000     1.50        0.568  S=4
+        18     0           1.0000          False       18     0.4444     1.22        0.423  S=-7
+        25     0           3.6800           True       25     0.4800     1.40        0.435  S=60
+        68     0           1.0000          False       68     0.4706     1.35        0.321  S=-9
+        93     1           2.7204           True      186     0.5000     3.00        0.574  S=55
+       161     1           1.0000          False      322     0.5000     3.00        0.520  S=-174
+       415     1           2.3855           True      830     0.5000     3.00        0.446  S=146
+       576     0           1.0000          False      576     0.4983     2.86        0.450  S=-13
+       991     0           3.5802           True      991     0.4995     2.96        0.429  S=2543
+      2558     0           1.0000          False     2558     0.4992     2.94        0.374  S=-16
+      3549     1           3.7205           True     7098     0.5000     4.50        0.507  S=6086
+  Certifying (S>0) witnesses found: 6
+  Deepest certifying: ell=3549 S=6086
+  Certifying S values monotonically increasing with ell: False
+
+=== Random bounded {1,2} (seed=7) (A=2) ===
+  eventual periodicity check (period<=300): False  (should be False)
+  term2(k) > 2+1/(A+1)=2.33333 for every tested k (38 values of k checked): True
+       ell  wt%2  r_u(direct lcp)  exceeds bound      |R|    dens(R)     D(R)  D(R)/log|R|  exact S
+         2     0           1.0000          False        2     0.0000     0.00          nan  S=-1
+         3     1           3.3333           True        6     0.5000     1.50        0.837  S=-1
+         8     0           1.0000          False        8     0.3750     1.12        0.541  S=-6
+        11     0           2.6364           True       11     0.4545     1.36        0.569  S=12
+        19     0           1.0000          False       19     0.4211     1.26        0.429  S=-7
+        30     1           3.6000           True       60     0.5000     2.50        0.611  S=38
+        79     0           1.0000          False       79     0.4810     2.03        0.464  S=-11
+       109     0           2.7156           True      109     0.4954     2.39        0.508  S=176
+       188     0           1.0000          False      188     0.4894     2.23        0.427  S=-12
+       297     1           2.6296           True      594     0.5000     3.50        0.548  S=172
+       485     1           1.0000          False      970     0.5000     3.50        0.509  S=-501
+      1267     1           3.3820           True     2534     0.5000     3.50        0.447  S=1734
+      3019     1           1.0000          False     6038     0.5000     3.50        0.402  S=-3037
+  Certifying (S>0) witnesses found: 5
+  Deepest certifying: ell=1267 S=1734
+  Certifying S values monotonically increasing with ell: False
+
+=== Random bounded {1,2} (seed=99) (A=2) ===
+  eventual periodicity check (period<=300): False  (should be False)
+  term2(k) > 2+1/(A+1)=2.33333 for every tested k (38 values of k checked): True
+       ell  wt%2  r_u(direct lcp)  exceeds bound      |R|    dens(R)     D(R)  D(R)/log|R|  exact S
+         2     0           1.0000          False        2     0.0000     0.00          nan  S=-1
+         5     0           2.2000          False        5     0.4000     1.20        0.746  S=1
+         7     0           1.0000          False        7     0.2857     0.86        0.440  S=-4
+        12     1           2.5000           True       24     0.5000     2.00        0.629  S=-1
+        19     1           1.0000          False       38     0.5000     2.00        0.550  S=-27
+        31     1           2.5806           True       62     0.5000     2.00        0.485  S=9
+        50     0           1.0000          False       50     0.4800     1.84        0.470  S=-8
+        81     0           3.6049           True       81     0.4938     1.95        0.444  S=202
+       212     0           1.0000          False      212     0.4906     1.92        0.359  S=-10
+       505     0           2.4178           True      505     0.4990     3.25        0.522  S=701
+       717     0           1.0000          False      717     0.4965     2.62        0.399  S=-14
+      1939     0           2.3693           True     1939     0.4997     3.81        0.503  S=2638
+      2656     0           1.0000          False     2656     0.4989     3.22        0.408  S=-17
+  Certifying (S>0) witnesses found: 5
+  Deepest certifying: ell=1939 S=2638
+  Certifying S values monotonically increasing with ell: True
+
+======================================================================
+SUMMARY
+  Thue-Morse-coded {1,2}: term2 bound held every k = True, certifying witnesses = 6
+  Fibonacci-word-coded {1,2}: term2 bound held every k = False, certifying witnesses = 6
+  Random bounded {1,2} (seed=7): term2 bound held every k = True, certifying witnesses = 5
+  Random bounded {1,2} (seed=99): term2 bound held every k = True, certifying witnesses = 5
+
+All four non-periodic adversarial slopes: term2 bound holds AND multiple certifying witnesses found: False

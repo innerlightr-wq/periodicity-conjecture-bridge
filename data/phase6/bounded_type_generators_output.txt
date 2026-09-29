@@ -1,0 +1,12 @@
+Thue-Morse: first 40 terms = [1, 2, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1]
+  max value = 2  (A = 2)
+  eventually periodic (checked up to period 200, min 4 repeats)? False
+
+Fibonacci: first 40 terms = [1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1]
+  max value = 2  (A = 2)
+  eventually periodic (checked up to period 200, min 4 repeats)? False
+
+random(seed=7): first 40 terms = [2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2]
+  max value = 2  (A = 2)
+  eventually periodic (checked up to period 200, min 4 repeats)? False
+

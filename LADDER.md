@@ -5,7 +5,7 @@ Sturmian  p(n) = n+1
     ↓
 counting classes  p(n) < 1.709511... n         (Dubickas 2009, transported)
     ↓
-quadratic CS Rote  p(n) = 2n                    (PROVED, Phase 4 — precise subclass, see below)
+bounded-type CS Rote  p(n) = 2n                 (PROVED, Phase 6 — precise subclass, see below)
     ↓
 general CS Rote / next frontier
 ```
@@ -18,12 +18,13 @@ general CS Rote / next frontier
 |---|---|---|---|---|
 | 1 | Sturmian, `p(n)=n+1` | initial squares + balance (Theorem 10.1/10.2, source paper) | **PROVED** (source paper) | `reference/` |
 | 2 | `p(n) < 1.70951...\,n`, not eventually periodic | counting (Dubickas 2009, transported) | **PROVED** (source paper, `Corollary 9.3`) | `reference/` |
-| 3 | Quadratic CS Rote, `p(n)=2n`, **every** quadratic-irrational slope (intercept-`0` representatives, both seeds, every shift) | repetition/height bridge + initial-critical-exponent bound (BHZ 2006) | **PROVED — precise subclass** (every quadratic irrational; other intercepts of the same slope not covered, see `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`) | `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md` |
-| 4 | general CS Rote (non-quadratic-irrational slopes) / next frontier | — | **OPEN, deliberately not pursued yet** | — |
+| 3 | Quadratic CS Rote, `p(n)=2n`, every quadratic-irrational slope | repetition/height bridge + initial-critical-exponent bound (BHZ 2006) | **PROVED — precise subclass**, now superseded by rung 3′ | `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md` |
+| 3′ | Bounded-type CS Rote, `p(n)=2n`, **every** bounded-partial-quotient irrational slope (intercept-`0` representatives, both seeds, every shift) — an uncountable class, strictly containing rung 3's countable quadratic-irrational class | same bridge, chain reconstructed and re-verified without any periodicity hypothesis | **PROVED — precise subclass** (every bounded-type slope; other intercepts of the same slope still not covered, see `theorems/phase6/BOUNDED_TYPE_THEOREM.md`) | `theorems/phase6/BOUNDED_TYPE_THEOREM.md` |
+| 4 | general CS Rote (unbounded-partial-quotient slopes) / next frontier | — | **OPEN, deliberately not pursued yet** | — |
 
 ## Why rung 4 is intentionally left open
 
-Rung 3 is now closed for every quadratic-irrational slope (Phase 4), but two threads remain open before advancing further: (a) the "other intercepts of the same slope" gap noted in `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`, and (b) extending beyond quadratic irrationals to general bounded-partial-quotient slopes (Target B, `theorems/phase2/THEOREM_TARGET.md`). Per the research program's own working discipline, rung 4 (a genuinely new complexity class, or Rote sequences beyond quadratic-irrational slopes, or general two-interval rotation codings, or general morphic words) is not pursued while these threads are open — candidates are recorded in `theorems/phase2/THEOREM_CONVERSION_VERDICT.md` and `theorems/phase1/FULL_PERIODICITY_GAP.md`.
+Rung 3′ is now closed for every bounded-partial-quotient irrational slope (Phase 6), but two threads remain open before advancing further: (a) the "other intercepts of the same slope" gap, unchanged since Phase 4 and re-confirmed still open in Phase 6 (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`); (b) unbounded-partial-quotient slopes, genuinely out of reach of the discrepancy mechanism this bridge uses. Per the research program's own working discipline, rung 4 (a genuinely new complexity class, or Rote sequences beyond bounded-type slopes, or general two-interval rotation codings, or general morphic words) is not pursued while these threads are open — candidates are recorded in `theorems/phase2/THEOREM_CONVERSION_VERDICT.md` and `theorems/phase1/FULL_PERIODICITY_GAP.md`.
 
 ## Relationship to the full Lagarias Periodicity Conjecture
 

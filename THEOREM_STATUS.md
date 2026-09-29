@@ -55,13 +55,32 @@ One line per load-bearing result, phase of origin, and status. Full statements a
 | **`Φ(v)∉ℚ` for every complementary symmetric Rote sequence associated with every quadratic-irrational slope** (intercept-0 representative, both seeds, every shift) | **PROVED — precise subclass** (other intercepts of the same slope not covered) | `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md` |
 | Exhaustive stress test, 11 configurations (all-even + mixed lock-sustaining tails) | PASS, 11/11, exact surplus positive in every case | `theorems/phase4/COMPUTATIONAL_STRESS_TEST.md` |
 
+## Phase 5 — fresh adversarial audit of Phase 4 (no theorem change; one justification repaired)
+
+| Result | Status | File |
+|---|---|---|
+| BHZ identification `u=\omega(-\gamma)` | re-verified from BHZ's own `\S2.1` definitions, not secondary quotation; 2000 terms × 3 slopes, exact | `theorems/phase5/BHZ_PRIMARY_SOURCE_AUDIT.md` |
+| Exact transfer theorem (`L_v=L+1`) | re-derived from scratch; 114,680-case independent exhaustive re-check, 0 failures | `theorems/phase5/TRANSFER_REDERIVATION.md` |
+| Margin `1/(A+1)`, fixed, `k`-independent | re-derived independently | `theorems/phase5/UNIFORM_MARGIN_AUDIT.md` |
+| Seed-independence justification | **repaired** — `c_W` is NOT complement-invariant (8/8 counterexamples found); true reason is `D(V\bar V)=D(\bar VV)` exactly (15/15 checked), since every script's `F_bound` depends on `R` only through `(\ell,k,D(R))` | `theorems/phase5/HOSTILE_REFEREE_REPORT.md` |
+| Quadraticity vs. boundedness | recorded (not acted on): every ingredient checked needs only bounded partial quotients | `theorems/phase5/QUADRATICITY_DEPENDENCY.md` |
+| Overall verdict | **THEOREM SURVIVES ADVERSARIAL AUDIT AFTER REPAIR** | `theorems/phase5/PHASE5_VERDICT.md` |
+
+## Phase 6 — upgrades quadratic to bounded-type (theorem change)
+
+| Result | Status | File |
+|---|---|---|
+| Chain reconstructed from BHZ's primary theorem against 4 genuinely non-eventually-periodic bounded-type slopes (Thue–Morse-coded, Fibonacci-word-coded, 2 random) | PASS — every arrow periodicity-free | `theorems/phase6/ARROW_BY_ARROW_RECONSTRUCTION.md` |
+| Small-`k` boundary correction: `\text{term2}(k)>2+1/(A+1)` can be equality (never violation) at a rare small-`k` artifact | CORRECTED (found via adversarial non-periodic test; does not weaken the theorem) | `theorems/phase6/ARROW_BY_ARROW_RECONSTRUCTION.md` |
+| **`Φ(v)∉ℚ` for every CS Rote sequence associated with every bounded-partial-quotient (not merely quadratic) irrational slope** (intercept-0, both seeds, every shift) | **PROVED — precise subclass** | `theorems/phase6/BOUNDED_TYPE_THEOREM.md` |
+
 ## Headline result of the repository
 
-> For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is the intercept-`0` mechanical word of **any** quadratic-irrational slope, `Φ(v)∉ℚ` — **proved** (Phase 4, `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`). This supersedes Phase 2's five-slope result and Phase 3's odd-tail-only result.
+> For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients**, `Φ(v)∉ℚ` — **proved** (Phase 6, `theorems/phase6/BOUNDED_TYPE_THEOREM.md`). This supersedes Phase 4's quadratic-irrational-only result (a countable special case) without weakening any quantifier, and was reached only after Phase 5's independent hostile audit confirmed the underlying chain and Phase 6's adversarial non-periodic reconstruction confirmed no hidden periodicity dependence.
 
 ## Open, precisely stated
 
-1. CS Rote sequences at **other intercepts** of the same quadratic-irrational slope (not a shift of the intercept-0 representative) — `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`'s own stated gap.
-2. Extend beyond quadratic irrationals to general bounded-partial-quotient slopes (Target B, `theorems/phase2/THEOREM_TARGET.md`).
+1. CS Rote sequences at **other intercepts** of the same slope (not a shift of the intercept-0 representative) — unchanged since Phase 4, re-confirmed still open in Phase 6.
+2. Unbounded-partial-quotient slopes — genuinely out of reach of the discrepancy mechanism used.
 3. The rotation-coding repetition-existence gap (`theorems/phase2/ROTATION_EXAMPLE_THEOREM.md`) — no analogue of Theorem 10.2 for mismatched two-interval codings is proved or cited anywhere.
 4. The "next frontier" beyond `p(n)=2n` (`LADDER.md`) — deliberately not started.

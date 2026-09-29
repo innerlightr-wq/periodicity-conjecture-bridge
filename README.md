@@ -9,7 +9,7 @@ Sturmian  p(n) = n+1
     ↓
 counting classes  p(n) < 1.709511... n
     ↓
-quadratic CS Rote  p(n) = 2n        (PROVED, Phase 4)
+bounded-type CS Rote  p(n) = 2n     (PROVED, Phase 6)
     ↓
 general CS Rote / next frontier
 ```
@@ -18,7 +18,7 @@ This is a **milestone map of an exclusion program**, not a chain of nested sets 
 
 ## Headline result
 
-For **every** complementary symmetric Rote sequence `v` (factor complexity exactly `2n`, strictly beyond the Dubickas counting threshold) whose associated Sturmian sequence is the intercept-`0` mechanical word of **any** quadratic-irrational slope (any seed, any shift of `v`), `Φ(v) ∉ ℚ` — **proved** (`theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`). The proof rests on one clean structural fact discovered in Phase 4: the odd-weight transfer route's doubled root always has density exactly `1/2`, which drops the required Sturmian repetition exponent from an earlier, over-conservative `2\log_23\approx3.17` down to the true requirement, `2` — comfortably supplied, with an explicit margin, by a classical initial-critical-exponent bound (Berthé–Holton–Zamboni 2006). One precise gap remains (CS Rote sequences at *other* intercepts of the same slope) — see `THEOREM_STATUS.md` for the complete, honest status map. Nothing here is overclaimed past what is actually proved.
+For **every** complementary symmetric Rote sequence `v` (factor complexity exactly `2n`, strictly beyond the Dubickas counting threshold) whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients** (any seed, any shift of `v`), `Φ(v) ∉ ℚ` — **proved** (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`). The proof rests on one clean structural fact discovered in Phase 4: the odd-weight transfer route's doubled root always has density exactly `1/2`, which drops the required Sturmian repetition exponent from an earlier, over-conservative `2\log_23\approx3.17` down to the true requirement, `2` — comfortably supplied, with an explicit margin, by a classical initial-critical-exponent bound (Berthé–Holton–Zamboni 2006). Phase 5 audited this chain end to end and found it survives (with one justification repaired); Phase 6 then reconstructed the same chain against genuinely non-periodic bounded-type slopes and found it needs only boundedness of partial quotients, not eventual periodicity — upgrading the theorem from a countable class (quadratic irrationals) to an uncountable one (bounded-type irrationals). One precise gap remains throughout (CS Rote sequences at *other* intercepts of the same slope) — see `THEOREM_STATUS.md` for the complete, honest status map. Nothing here is overclaimed past what is actually proved.
 
 ## Repository structure
 
@@ -39,11 +39,15 @@ theorems/phase3/         Phase 3: closes Phase 2's precise open lemma (weight-pa
                          finds and resolves a genuine counterexample
 theorems/phase4/         Phase 4: corrects Phase 3's threshold, proves the quadratic
                          CS Rote theorem in full generality via a structural density fact
+theorems/phase5/         Phase 5: fresh adversarial audit of Phase 4, independently
+                         re-derived end to end; theorem survives, one justification repaired
+theorems/phase6/         Phase 6: reconstructs the audited chain against non-periodic
+                         bounded-type slopes, upgrading quadratic -> bounded-partial-quotient
 
-scripts/phase{1,2,3,4}/  exact-arithmetic verification scripts, one directory per phase,
+scripts/phase{1..6}/     exact-arithmetic verification scripts, one directory per phase,
                          each runnable standalone (`python3 <script>.py` from its own
                          directory — no cross-phase import dependencies)
-data/phase{1,2,3,4}/     saved script outputs, for the record
+data/phase{1..6}/        saved script outputs, for the record
 
 reference/               the foundation paper this program audits and builds on
                          (separately copyrighted — see NOTICE)
@@ -59,11 +63,13 @@ cd scripts/phase2 && python3 verify_rote_transfer.py   # exact transfer theorem,
 cd scripts/phase3 && python3 automaton_search.py        # exhaustive weight-parity automaton
 cd scripts/phase3 && python3 counterexample_and_recovery.py  # the found counterexample + its resolution
 cd scripts/phase4 && python3 verify_phase4.py            # consolidated Phase 4 verification (13 checks)
+cd scripts/phase5 && python3 independent_transfer_check.py   # 114,680-case independent transfer re-check
+cd scripts/phase6 && python3 full_pipeline_nonperiodic.py    # full chain on 4 non-periodic bounded-type slopes
 ```
 
 ## Discipline notes
 
-- Falsification-first throughout: every phase actively attacks its own prior claims before extending them. Real bugs and wrong working hypotheses were found and fixed in-session — a reciprocal continued-fraction bug (Phase 1), a false-positive cycle detector (Phase 2/3), and an over-conservative threshold promoted from too few examples that Phase 4 actively stress-tested, broke, and replaced with the correct general bound — all disclosed in `THEOREM_STATUS.md` and the relevant phase files, not silently corrected.
+- Falsification-first throughout: every phase actively attacks its own prior claims before extending them. Real bugs and wrong working hypotheses were found and fixed in-session — a reciprocal continued-fraction bug (Phase 1), a false-positive cycle detector (Phase 2/3), an over-conservative threshold promoted from too few examples that Phase 4 actively stress-tested, broke, and replaced with the correct general bound, a false justification for seed-independence caught and repaired by Phase 5's hostile referee pass, and a small-`k` boundary equality caught by Phase 6's non-periodic adversarial controls — all disclosed in `THEOREM_STATUS.md` and the relevant phase files, not silently corrected.
 - No claim in this repository asserts progress on the full Lagarias Periodicity Conjecture. See `LADDER.md`'s closing section for the precise, structural reason no repetition-based method — however far this ladder is extended — can ever close the conjecture alone.
 - This repository is an audit and proof record, not a manuscript. No paper is drafted here.
 
