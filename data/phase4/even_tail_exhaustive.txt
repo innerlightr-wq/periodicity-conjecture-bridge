@@ -1,0 +1,19 @@
+=== All-even tails, period 1-2 ===
+tail=(2,) A=2: r_u=3.4142 bound=2.3333 exceeds=True S=80755 S>0=True
+tail=(4,) A=4: r_u=5.0000 bound=2.2000 exceeds=True S=1203 S>0=True
+tail=(6,) A=6: r_u=5.0000 bound=2.1429 exceeds=True S=5598 S>0=True
+tail=(2, 4) A=4: r_u=3.2247 bound=2.2000 exceeds=True S=192034 S>0=True
+tail=(2, 6) A=6: r_u=3.1547 bound=2.1429 exceeds=True S=75634 S>0=True
+tail=(4, 6) A=6: r_u=5.0000 bound=2.1429 exceeds=True S=2578 S>0=True
+tail=(2, 2, 4) A=4: r_u=5.0000 bound=2.2000 exceeds=True S=11518 S>0=True
+
+=== Mixed lock-sustaining tails (period 2), various preperiods ===
+tail=(2, 1) preperiod=(1, 1, 1, 1) A=2: r_u=3.7310 bound=2.3333 exceeds=True S=1600 S>0=True
+tail=(6, 2) preperiod=(1, 1, 1) A=6: r_u=3.1547 bound=2.1429 exceeds=True S=62237 S>0=True
+tail=(4, 3) preperiod=(1, 1, 1, 1) A=4: r_u=5.0000 bound=2.2000 exceeds=True S=13 S>0=True
+tail=(2, 3) preperiod=(1, 1, 1, 1) A=2: r_u=3.4000 bound=2.3333 exceeds=True S=3 S>0=True
+
+=== Summary: 11 configurations tested ===
+All r_u > 2+1/(A+1) bound: True
+Smallest (r_u - 2) margin observed: 1.15467
+All exact surpluses positive at tested witnesses: True

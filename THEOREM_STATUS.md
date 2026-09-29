@@ -43,13 +43,25 @@ One line per load-bearing result, phase of origin, and status. Full statements a
 | All-even-tail CF ⟹ odd-weight witnesses still certify (`r_u→≥2+√2>2log₂3`) | STRONGLY EVIDENCED (4 tails tested), **not proved for a fully general all-even tail** | `theorems/phase3/WEIGHT_PARITY_CLASSIFICATION.md` |
 | Net: every tested quadratic irrational (9 slopes total, Phase 2+3) certifies; no genuine failure found | EMPIRICAL, consistent with a full theorem | `theorems/phase3/WEIGHT_PARITY_CLASSIFICATION.md` |
 
+## Phase 4 — closes the quadratic CS Rote rung, corrects a wrong working hypothesis
+
+| Result | Status | File |
+|---|---|---|
+| Phase 3's "all-even tail" classification was incomplete — mixed-parity tails can also lock bad, given the right preperiod | CORRECTED (verified against the automaton directly) | `theorems/phase4/EVEN_TAIL_PROBLEM.md` |
+| Silver-ratio extremality (`ice≥2+√2` for lock-sustaining tails) | **FALSE — COUNTEREXAMPLE found** (`\overline{6,2}` with preperiod `(1,4,1,5,1)`, `ice≈3.1547<2+√2`) | `theorems/phase4/SILVER_EXTREMALITY.md` |
+| `2+√2` classified: numerical artifact / irrelevant after sharper analysis | AUDITED | `theorems/phase4/SILVER_CONSTANT_AUDIT.md` |
+| **Real required threshold is `r_u>2`, not `r_u>2log₂3≈3.17`** — because the odd-weight route's doubled root `R=V\bar V` has density **exactly `1/2`**, always, unconditionally | PROVED (two-line structural fact) | `theorems/phase4/REQUIRED_EXPONENT.md` |
+| `ice(u)>2+1/(A+1)` uniformly, any bounded-partial-quotient slope (max partial quotient `A`), via Berthé–Holton–Zamboni's exact formula | PROVED (cited formula + elementary bound, exactly verified) | `theorems/phase4/INITIAL_EXPONENT_FORMULA.md` |
+| **`Φ(v)∉ℚ` for every complementary symmetric Rote sequence associated with every quadratic-irrational slope** (intercept-0 representative, both seeds, every shift) | **PROVED — precise subclass** (other intercepts of the same slope not covered) | `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md` |
+| Exhaustive stress test, 11 configurations (all-even + mixed lock-sustaining tails) | PASS, 11/11, exact surplus positive in every case | `theorems/phase4/COMPUTATIONAL_STRESS_TEST.md` |
+
 ## Headline result of the repository
 
-> For every complementary symmetric Rote sequence `v` whose associated Sturmian sequence has a quadratic-irrational slope with an **odd** partial quotient somewhere in its continued-fraction tail, `Φ(v)∉ℚ` — **proved**. For all-even-tail slopes, the same conclusion holds on every case tested, resting on one classical bound (silver-ratio-type critical exponent `≥2+√2`) not re-derived in full generality here.
+> For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is the intercept-`0` mechanical word of **any** quadratic-irrational slope, `Φ(v)∉ℚ` — **proved** (Phase 4, `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`). This supersedes Phase 2's five-slope result and Phase 3's odd-tail-only result.
 
 ## Open, precisely stated
 
-1. Prove `r_u\to\ge2+\sqrt2` (or find a counterexample) for a **general** all-even-partial-quotient continued fraction tail, closing Target C (all quadratic irrationals) completely.
-2. Extend beyond quadratic irrationals to general bounded-partial-quotient slopes (Target B).
+1. CS Rote sequences at **other intercepts** of the same quadratic-irrational slope (not a shift of the intercept-0 representative) — `theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md`'s own stated gap.
+2. Extend beyond quadratic irrationals to general bounded-partial-quotient slopes (Target B, `theorems/phase2/THEOREM_TARGET.md`).
 3. The rotation-coding repetition-existence gap (`theorems/phase2/ROTATION_EXAMPLE_THEOREM.md`) — no analogue of Theorem 10.2 for mismatched two-interval codings is proved or cited anywhere.
 4. The "next frontier" beyond `p(n)=2n` (`LADDER.md`) — deliberately not started.

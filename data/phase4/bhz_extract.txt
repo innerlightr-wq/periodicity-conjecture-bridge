@@ -1,0 +1,47 @@
+,
+qk
+Pk
+j=1 (aj − cj )qj−1
+y(k) = 1 +
+.
+qk − ck qk−1
+
+One has
+ice(ω) = lim sup max(x(k), y(k)) = lim sup max(x0 (k), y(k)).
+k→∞
+
+k→∞
+
+4.2. Characteristic sequence. Recall that the characteristic sequence ω of slope α is the
+sequence obtained by setting all of the cj equal to 0. We prove now Theorem 1.2 that we
+
+lim supk→∞ max(x0 (2k), y(2k)) = = lim supk→∞ max( j=1,odd
+,1 +
+q2k
+q2k−1
+q2k+1
+= lim supk→∞ max( q2k , 1 + q2k−2 ),
+hence
+ice(ω(−α)) = lim sup max(a2k+1 +
+k→∞
+
+P2k
+
+j=1,odd aj qj−1
+
+q2k−2
+
+)=
+
+q2k−1
+q2k−3
+, 1 + a2k−1 +
+),
+q2k
+q2k−2
+
+and similarly
+ice(ω(1 − α)) = lim sup max(a2k+2 +
+k→∞
+
+q2k

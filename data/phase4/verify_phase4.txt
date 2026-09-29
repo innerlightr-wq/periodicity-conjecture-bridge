@@ -1,0 +1,31 @@
+
+=== 1. Silver constant: x=2+1/x has exact root x=1+sqrt(2) ===
+  [PASS] x=1+sqrt(2) satisfies x^2-2x-1=0 (to float precision)
+  [PASS] 2+sqrt(2) = 1 + (1+sqrt(2)), i.e. ice(silver) = 1+x
+
+=== 2. term2(k) > 2+1/(A+1) exact bound, several tails ===
+  [PASS] term2(k) > 2+1/(A+1) for every tested k -- silver [0;2,2,...]
+  [PASS] term2(k) > 2+1/(A+1) for every tested k -- counterexample [0;1,1,1,2,2,...]
+  [PASS] term2(k) > 2+1/(A+1) for every tested k -- mixed [0;2,1,2,1,...]
+  [PASS] term2(k) > 2+1/(A+1) for every tested k -- near-boundary [0;1,4,1,5,1,6,2,...]
+
+=== 3. Density of R=V-Vbar is EXACTLY 1/2 (structural, any V) ===
+  [PASS] density(V concat Vbar) == 1/2 exactly, 20 random V's
+
+=== 4. Threshold collapse: max(1, (1/2)*log2(3)) == 1 ===
+  [PASS] (1/2)*log2(3) < 1  (so max(1, .) == 1)
+  [PASS] log2(3) < 2  (even-weight route: r_u>=2 clears log2(3) trivially)
+
+=== 5. Known bad parity-cycle counterexample still recorded correctly ===
+  [PASS] gamma=[0;1,1,1,2,2,...] has all-odd weight parity from index 2 on
+
+=== 6. Odd-tail control: mixed [0;2,1,2,1,...] with NO preperiod does NOT lock bad ===
+  [PASS] weight parity contains a 0 within first 20 terms (does not lock)
+
+=== 7. All-even control: exact surplus positive & growing at silver-ratio-tailed slope ===
+  [PASS] at least 2 positive surplus values found
+  [PASS] surpluses strictly increasing (growing, not just positive)
+
+============================================================
+Total checks: 13, all passing: True
+ALL PHASE 4 CHECKS PASS

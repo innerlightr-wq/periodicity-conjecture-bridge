@@ -1,0 +1,10 @@
+=== Searching for a preperiod that locks tail [2,1,2,1,...] (mixed parity) bad ===
+Found 64 locking preperiods (showing first 5):
+  preperiod: (1, 1, 1, 1)
+  preperiod: (1, 1, 1, 2)
+  preperiod: (1, 1, 1, 3)
+  preperiod: (1, 1, 1, 4)
+  preperiod: (1, 1, 3, 1)
+
+CONFIRMED: a mixed-parity tail CAN sustain the bad weight-parity lock,
+given the right preperiod -- Phase 3's 'all-even tail' framing was incomplete.
