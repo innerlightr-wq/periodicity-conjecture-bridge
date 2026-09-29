@@ -1,0 +1,4 @@
+
+Total cases tested: 114680
+Failures: 0
+ALL CASES: L_v = L + 1 EXACTLY (independent exhaustive check, W length 2-10, every mismatch position L in [ell,4ell], both seeds).

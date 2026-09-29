@@ -1,0 +1,22 @@
+=== golden [0;1,1,1,...] ===
+  u_ours[:20]              = [0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1]
+  omega(-alpha)[:20]       = [0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1]
+  omega(1-alpha)[:20]      = [1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1]
+  u_ours == omega(-alpha)   over 2000 terms: True
+  u_ours == omega(1-alpha)  over 2000 terms: False
+
+=== silver [0;2,2,2,...] ===
+  u_ours[:20]              = [0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1]
+  omega(-alpha)[:20]       = [0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1]
+  omega(1-alpha)[:20]      = [1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1]
+  u_ours == omega(-alpha)   over 2000 terms: True
+  u_ours == omega(1-alpha)  over 2000 terms: False
+
+=== mixed [0;1,4,1,5,1,6,2,...] ===
+  u_ours[:20]              = [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1]
+  omega(-alpha)[:20]       = [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1]
+  omega(1-alpha)[:20]      = [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1]
+  u_ours == omega(-alpha)   over 2000 terms: True
+  u_ours == omega(1-alpha)  over 2000 terms: False
+
+Conclusion printed per-slope above; see BHZ_PRIMARY_SOURCE_AUDIT.md for the reading.

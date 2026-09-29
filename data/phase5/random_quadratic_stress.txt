@@ -1,0 +1,29 @@
+Testing 25 random quadratic irrationals (preperiod<=4, period<=3, digits 1-8)...
+
+[ 0] pre=[] period=[5] gamma=0.192582 witnesses=5 best_S(seed0)=2923 best_S(seed1)=2923
+[ 1] pre=[3] period=[2] gamma=0.292893 witnesses=9 best_S(seed0)=3344 best_S(seed1)=3344
+[ 2] pre=[7, 1, 1, 2] period=[4] gamma=0.131728 witnesses=7 best_S(seed0)=2268 best_S(seed1)=2268
+[ 3] pre=[1] period=[4, 7, 4] gamma=0.805379 witnesses=5 best_S(seed0)=14326 best_S(seed1)=14326
+[ 4] pre=[5, 1, 3] period=[7, 6, 5] gamma=0.173658 witnesses=6 best_S(seed0)=21145 best_S(seed1)=21145
+[ 5] pre=[6] period=[2] gamma=0.155904 witnesses=9 best_S(seed0)=6295 best_S(seed1)=6295
+[ 6] pre=[] period=[2, 6] gamma=0.464102 witnesses=7 best_S(seed0)=5414 best_S(seed1)=5414
+[ 7] pre=[5, 1] period=[8, 2, 7] gamma=0.169653 witnesses=6 best_S(seed0)=7623 best_S(seed1)=7623
+[ 8] pre=[] period=[5, 6, 4] gamma=0.193787 witnesses=5 best_S(seed0)=3490 best_S(seed1)=3490
+[ 9] pre=[] period=[4] gamma=0.236068 witnesses=6 best_S(seed0)=23160 best_S(seed1)=23160
+[10] pre=[4, 2] period=[7] gamma=0.223850 witnesses=5 best_S(seed0)=2915 best_S(seed1)=2915
+[11] pre=[6, 3] period=[6, 6] gamma=0.158322 witnesses=5 best_S(seed0)=3798 best_S(seed1)=3798
+[12] pre=[5] period=[2, 3, 4] gamma=0.184064 witnesses=7 best_S(seed0)=4108 best_S(seed1)=4108
+[13] pre=[7] period=[5, 4] gamma=0.139065 witnesses=5 best_S(seed0)=3297 best_S(seed1)=3297
+[14] pre=[4, 1] period=[6] gamma=0.205745 witnesses=6 best_S(seed0)=31727 best_S(seed1)=31727
+[15] pre=[2, 4, 6] period=[4, 8] gamma=0.446354 witnesses=6 best_S(seed0)=39537 best_S(seed1)=39537
+[16] pre=[8, 3, 5] period=[3, 4, 5] gamma=0.120284 witnesses=5 best_S(seed0)=1387 best_S(seed1)=1387
+[17] pre=[7, 6, 4, 3] period=[8, 2] gamma=0.139656 witnesses=5 best_S(seed0)=4219 best_S(seed1)=4219
+[18] pre=[] period=[3] gamma=0.302776 witnesses=7 best_S(seed0)=3912 best_S(seed1)=3912
+[19] pre=[7] period=[2, 7, 7] gamma=0.133918 witnesses=5 best_S(seed0)=887 best_S(seed1)=887
+[20] pre=[5, 1, 2, 5] period=[6, 2] gamma=0.175842 witnesses=7 best_S(seed0)=6063 best_S(seed1)=6063
+[21] pre=[3, 8] period=[1, 5] gamma=0.321240 witnesses=8 best_S(seed0)=9050 best_S(seed1)=9050
+[22] pre=[2, 5, 4, 3] period=[6] gamma=0.456383 witnesses=6 best_S(seed0)=28924 best_S(seed1)=28924
+[23] pre=[1] period=[6, 8, 1] gamma=0.859410 witnesses=6 best_S(seed0)=418 best_S(seed1)=418
+[24] pre=[] period=[5, 4] gamma=0.190890 witnesses=5 best_S(seed0)=2286 best_S(seed1)=2286
+
+25 slopes tested, 0 with flagged anomalies.

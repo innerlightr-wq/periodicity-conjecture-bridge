@@ -1,0 +1,25 @@
+=== Control 1: eventually periodic u (rational-Phi stand-in) ===
+  u preperiod=[1, 1, 0] period=[0, 1, 1, 0, 1] (period weight=3, odd -> R route)
+    m=  2 ell=  10 rootlen=   10 Lv=     1 S=-14
+    m=  4 ell=  20 rootlen=   20 Lv=     1 S=-25
+    m=  8 ell=  40 rootlen=   40 Lv=     1 S=-46
+    m= 16 ell=  80 rootlen=   80 Lv=     1 S=-87
+    m= 32 ell= 160 rootlen=  160 Lv=     1 S=-168
+    m= 64 ell= 320 rootlen=  320 Lv=     1 S=-329
+  Surplus monotonically growing without bound across m: False
+  EXPECTED: should NOT grow without bound in a way indicating genuine irrationality --
+  since u is eventually periodic, Phi(u)-derived v is also eventually periodic/rational,
+  and lcp(v, W^inf) for a FIXED true period W is bounded by preperiod-scale constants once
+  the witness root exceeds the recurrence structure -- verified qualitatively above.
+
+=== Control 2: periodic Rote-like target with density exactly 1/2 ===
+  R=[0, 1, 1, 0, 1, 1, 0, 0, 1, 0] (density=5/10=1/2 exactly), v = R^infinity (purely periodic, rational)
+    m=   5 ell=   50 L=   150 S=92  (L should just track ell*m trivially, since v truly IS W^inf here up to root choice)
+    m=  20 ell=  200 L=   600 S=390  (L should just track ell*m trivially, since v truly IS W^inf here up to root choice)
+    m=  80 ell=  800 L=  2400 S=1588  (L should just track ell*m trivially, since v truly IS W^inf here up to root choice)
+    m= 300 ell= 3000 L=  9000 S=5986  (L should just track ell*m trivially, since v truly IS W^inf here up to root choice)
+    m=1000 ell=10000 L= 30000 S=19985  (L should just track ell*m trivially, since v truly IS W^inf here up to root choice)
+  EXPECTED: since v literally EQUALS R^infinity, this is the M_n=0 degenerate case
+  (s = W^infinity), which the abstract criterion explicitly EXCLUDES by hypothesis --
+  confirming density 1/2 alone proves nothing without a genuine aperiodic s != W^infinity.
+

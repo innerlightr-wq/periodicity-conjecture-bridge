@@ -1,0 +1,10 @@
+  ell   D(V) own-density   ell*|gammaV-1/2|    D(R) at 1/2
+   10              1.000              0.000          1.000
+   50              2.000              0.000          2.000
+  100              2.000              0.000          2.000
+  300              1.907              1.000          2.500
+  700              2.294              1.000          3.000
+ 1400              2.789              1.000          3.000
+ 2900              3.431              1.000          4.000
+
+Bound D(R) <= 2*D(V) + ell*|gammaV-1/2| holds at every tested ell (assertion passed).

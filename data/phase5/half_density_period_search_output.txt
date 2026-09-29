@@ -1,0 +1,22 @@
+=== Exhaustive small-length search for non-primitive R=V.Vbar ===
+Found 5 non-primitive cases, V length <= 8:
+  V=[0, 1, 0] -> R period=2 (full=6)
+  V=[1, 0, 1, 0, 1] -> R period=2 (full=10)
+  V=[0, 1, 1, 0, 0, 1] -> R period=4 (full=12)
+  V=[1, 0, 0, 1, 1, 0] -> R period=4 (full=12)
+  V=[0, 1, 0, 1, 0, 1, 0] -> R period=2 (full=14)
+
+=== Primitivity check on ACTUAL R's from Phase 4 tested slopes ===
+  golden: ell=    5 R_period=    10 R_full_length=    10 primitive=True
+  golden: ell=   34 R_period=    68 R_full_length=    68 primitive=True
+  golden: ell=   89 R_period=   178 R_full_length=   178 primitive=True
+  golden: ell=  610 R_period=  1220 R_full_length=  1220 primitive=True
+  silver: ell=   13 R_period=    26 R_full_length=    26 primitive=True
+  silver: ell= 5000 R_period= 10000 R_full_length= 10000 primitive=True
+  near-boundary: ell=   89 R_period=   178 R_full_length=   178 primitive=True
+  near-boundary: ell=  233 R_period=   466 R_full_length=   466 primitive=True
+  near-boundary: ell=  610 R_period=  1220 R_full_length=  1220 primitive=True
+  near-boundary: ell= 1000 R_period=  2000 R_full_length=  2000 primitive=True
+  near-boundary: ell= 5000 R_period= 10000 R_full_length= 10000 primitive=True
+
+All actual Phase-4-slope R's checked are primitive: True
