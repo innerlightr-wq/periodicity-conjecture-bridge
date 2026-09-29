@@ -1,0 +1,46 @@
+W=[0, 1, 1, 0] weight=0 periods=1: L=4 Lv=5 diff=1 OK
+W=[0, 1, 1, 0] weight=0 periods=2: L=8 Lv=9 diff=1 OK
+W=[0, 1, 1, 0] weight=0 periods=3: L=12 Lv=13 diff=1 OK
+W=[0, 1, 1, 0] weight=0 periods=5: L=20 Lv=21 diff=1 OK
+W=[0, 1, 1] weight=0 periods=1: L=3 Lv=4 diff=1 OK
+W=[0, 1, 1] weight=0 periods=2: L=6 Lv=7 diff=1 OK
+W=[0, 1, 1] weight=0 periods=3: L=9 Lv=10 diff=1 OK
+W=[0, 1, 1] weight=0 periods=5: L=15 Lv=16 diff=1 OK
+W=[0, 1, 0, 1, 1] weight=1 periods=1: L=5 Lv=6 diff=1 OK
+W=[0, 1, 0, 1, 1] weight=1 periods=2: L=10 Lv=11 diff=1 OK
+W=[0, 1, 0, 1, 1] weight=1 periods=3: L=15 Lv=16 diff=1 OK
+W=[0, 1, 0, 1, 1] weight=1 periods=5: L=25 Lv=26 diff=1 OK
+W=[1, 1, 1] weight=1 periods=1: L=3 Lv=4 diff=1 OK
+W=[1, 1, 1] weight=1 periods=2: L=6 Lv=7 diff=1 OK
+W=[1, 1, 1] weight=1 periods=3: L=9 Lv=10 diff=1 OK
+W=[1, 1, 1] weight=1 periods=5: L=15 Lv=16 diff=1 OK
+W=[0, 0, 1, 1, 1, 0, 1] weight=0 periods=1: L=7 Lv=8 diff=1 OK
+W=[0, 0, 1, 1, 1, 0, 1] weight=0 periods=2: L=14 Lv=15 diff=1 OK
+W=[0, 0, 1, 1, 1, 0, 1] weight=0 periods=3: L=21 Lv=22 diff=1 OK
+W=[0, 0, 1, 1, 1, 0, 1] weight=0 periods=5: L=35 Lv=36 diff=1 OK
+W=[1, 0, 1, 1, 0, 0, 1, 1, 0] weight=1 periods=1: L=9 Lv=10 diff=1 OK
+W=[1, 0, 1, 1, 0, 0, 1, 1, 0] weight=1 periods=2: L=18 Lv=19 diff=1 OK
+W=[1, 0, 1, 1, 0, 0, 1, 1, 0] weight=1 periods=3: L=27 Lv=28 diff=1 OK
+W=[1, 0, 1, 1, 0, 0, 1, 1, 0] weight=1 periods=5: L=45 Lv=46 diff=1 OK
+W=[0, 1] weight=1 periods=1: L=2 Lv=3 diff=1 OK
+W=[0, 1] weight=1 periods=2: L=4 Lv=5 diff=1 OK
+W=[0, 1] weight=1 periods=3: L=6 Lv=7 diff=1 OK
+W=[0, 1] weight=1 periods=5: L=10 Lv=11 diff=1 OK
+W=[1, 0] weight=1 periods=1: L=2 Lv=3 diff=1 OK
+W=[1, 0] weight=1 periods=2: L=4 Lv=5 diff=1 OK
+W=[1, 0] weight=1 periods=3: L=6 Lv=7 diff=1 OK
+W=[1, 0] weight=1 periods=5: L=10 Lv=11 diff=1 OK
+W=[0, 0, 0, 0, 0, 0, 1, 1, 1] weight=1 periods=1: L=9 Lv=10 diff=1 OK
+W=[0, 0, 0, 0, 0, 0, 1, 1, 1] weight=1 periods=2: L=18 Lv=19 diff=1 OK
+W=[0, 0, 0, 0, 0, 0, 1, 1, 1] weight=1 periods=3: L=27 Lv=28 diff=1 OK
+W=[0, 0, 0, 0, 0, 0, 1, 1, 1] weight=1 periods=5: L=45 Lv=46 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1, 1] weight=0 periods=1: L=8 Lv=9 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1, 1] weight=0 periods=2: L=16 Lv=17 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1, 1] weight=0 periods=3: L=24 Lv=25 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1, 1] weight=0 periods=5: L=40 Lv=41 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1] weight=1 periods=1: L=7 Lv=8 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1] weight=1 periods=2: L=14 Lv=15 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1] weight=1 periods=3: L=21 Lv=22 diff=1 OK
+W=[1, 1, 1, 1, 1, 1, 1] weight=1 periods=5: L=35 Lv=36 diff=1 OK
+
+ALL PASS (diff == 1 in every case)

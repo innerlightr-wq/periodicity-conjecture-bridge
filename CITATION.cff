@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this research program's proofs, scripts, or data, please cite it as below."
+title: "periodicity-conjecture-bridge: A Research Program on the 3x+1 Periodicity Conjecture via Periodic Approximation, 2-Adic Rigidity, Symbolic Repetition, and Arithmetic Height"
+authors:
+  - family-names: "De Jesús"
+    given-names: "Elias"
+    orcid: "https://orcid.org/0009-0007-0190-9143"
+date-released: 2026-09-29
+license: Apache-2.0
+repository-code: "https://github.com/innerlightr-wq/periodicity-conjecture-bridge"
+type: software
+keywords:
+  - 3x+1 problem
+  - Collatz conjecture
+  - periodicity conjecture
+  - Sturmian words
+  - Rote sequences
+  - 2-adic integers
+  - combinatorics on words
+  - irrationality
+references:
+  - type: unpublished
+    title: "The 3x + 1 Conjugacy Map Sends Every Sturmian Word to an Irrational 2-Adic Integer"
+    authors:
+      - family-names: "De Jesús"
+        given-names: "Elias"
+    date-released: 2026-09
+    notes: "Foundation paper for this research program; separately copyrighted, see NOTICE. Included for reference at reference/sturmian-conjugacy-map-irrational-2adic-integer.pdf"

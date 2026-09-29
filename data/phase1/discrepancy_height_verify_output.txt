@@ -1,0 +1,20 @@
+Total words checked: 497
+Failures of c_W <= ell * 3^ceil(D) * max(2^ell,3^k): 0
+
+--- Sample of extreme-discrepancy control (0^a1^a) ---
+  0^11^1: ell=2 D=0.500 c_W ratio to bound = 8.333e-02 ok=True
+  0^21^2: ell=4 D=1.000 c_W ratio to bound = 1.042e-01 ok=True
+  0^31^3: ell=6 D=1.500 c_W ratio to bound = 4.398e-02 ok=True
+  0^51^5: ell=10 D=2.500 c_W ratio to bound = 2.442e-02 ok=True
+  0^81^8: ell=16 D=4.000 c_W ratio to bound = 1.900e-02 ok=True
+  0^101^10: ell=20 D=5.000 c_W ratio to bound = 1.166e-02 ok=True
+  0^151^15: ell=30 D=7.500 c_W ratio to bound = 2.220e-03 ok=True
+  0^181^18: ell=36 D=9.000 c_W ratio to bound = 2.084e-03 ok=True
+  0^251^25: ell=50 D=12.500 c_W ratio to bound = 3.168e-04 ok=True
+
+--- Sample of balanced (Sturmian-root) words ---
+  max D observed = 0.9524 (expect < 1, matching Lemma 10.4's hypothesis)
+  max ratio to ell*3^ceil(D)*max(2^ell,3^k) bound = 0.1277
+
+--- Random words: distribution of D and bound tightness ---
+  n=464, D range [0.33,6.10], ratio range [1.32e-12,1.25e-01]

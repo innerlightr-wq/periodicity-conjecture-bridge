@@ -1,0 +1,22 @@
+periodicity-conjecture-bridge
+Copyright 2026 Elias De Jesús
+
+This product includes software and written analysis developed as part of
+the periodicity-conjecture-bridge research program.
+
+LICENSE SCOPE — READ CAREFULLY
+-------------------------------
+The Apache License 2.0 (see LICENSE) covers the CODE and WRITTEN ANALYSIS
+authored for this repository: everything under theorems/, scripts/, data/,
+and this README/NOTICE/CITATION metadata.
+
+It does NOT cover the file under reference/:
+  reference/sturmian-conjugacy-map-irrational-2adic-integer.pdf
+  "The 3x + 1 Conjugacy Map Sends Every Sturmian Word to an Irrational
+  2-Adic Integer," Elias De Jesús, September 2026.
+
+That paper is included for reference only, as the foundation this research
+program builds on and audits. It retains its own, separate copyright, held
+by its author, and is not relicensed, sublicensed, or dedicated to the
+public by its presence in this repository. Any reuse of that specific file
+should be directed to its author under its own terms, not under Apache-2.0.

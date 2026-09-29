@@ -1,0 +1,22 @@
+=== Test 1: v_2(M_n) = lcp(s,W^inf) exactly ===
+  ell=2: L(computed via lcp)=2  v_2(M)=2  MATCH=True
+  ell=3: L(computed via lcp)=8  v_2(M)=8  MATCH=True
+  ell=4: L(computed via lcp)=4  v_2(M)=4  MATCH=True
+  ell=5: L(computed via lcp)=5  v_2(M)=5  MATCH=True
+  ALL PASS
+
+=== Test 2: c_W <= ell * 3^ceil(D) * max(2^ell,3^k), exhaustive up to ell=14 ===
+  Tested 32752 words (ell<=14, k>=1). Failures: 0
+  ALL PASS
+
+=== Test 4: rational control -- eventually periodic s, S_s(W) stays bounded above ===
+  m=  1 ell=   3 L=   0 (bounded, not growing with m) log2F=    3.46 S=   -3.46
+  m=  2 ell=   6 L=   0 (bounded, not growing with m) log2F=    7.55 S=   -7.55
+  m=  3 ell=   9 L=   0 (bounded, not growing with m) log2F=   11.22 S=  -11.22
+  m=  5 ell=  15 L=   0 (bounded, not growing with m) log2F=   18.14 S=  -18.14
+  m= 10 ell=  30 L=   0 (bounded, not growing with m) log2F=   34.63 S=  -34.63
+  L stays bounded (<= preperiod-driven small constant) while log2F grows with m:
+  S -> -inf as m grows, consistent with 'powers only hurt' and with the word being
+  effectively non-matching beyond the fixed preperiod mismatch. Qualitative check PASS.
+
+ALL CORE IDENTITY CHECKS PASSED.

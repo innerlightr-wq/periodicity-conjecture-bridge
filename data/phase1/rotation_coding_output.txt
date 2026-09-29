@@ -1,0 +1,22 @@
+gamma (golden ratio conjugate, rational approx to 40 CF terms) = 0.6180339887
+delta (partition length, mismatched) = 0.333333
+gamma == delta? False  gamma == 1-delta? False
+(neither match -> genuinely non-Sturmian two-interval coding)
+
+=== Factor complexity check (is it really > L+1, i.e. non-Sturmian?) ===
+  p_s(1) = 2   (Sturmian would give 2; 2L would give 2)
+  p_s(2) = 3   (Sturmian would give 3; 2L would give 4)
+  p_s(3) = 5   (Sturmian would give 4; 2L would give 6)
+  p_s(5) = 10   (Sturmian would give 6; 2L would give 10)
+  p_s(10) = 20   (Sturmian would give 11; 2L would give 20)
+  p_s(15) = 30   (Sturmian would give 16; 2L would give 30)
+  p_s(20) = 40   (Sturmian would give 21; 2L would give 40)
+  p_s(25) = 50   (Sturmian would give 26; 2L would give 50)
+  p_s(30) = 60   (Sturmian would give 31; 2L would give 60)
+
+=== Initial power search (bridge_toolkit) ===
+Squares/powers found (ell>=2, r>=2): 4
+  ell= 233 k=  78 r=2.412 discrepancy=1.850 density=0.3348
+  ell=  89 k=  30 r=2.079 discrepancy=1.607 density=0.3371
+  ell=   5 k=   2 r=2.400 discrepancy=0.800 density=0.4000
+  ell=   2 k=   1 r=2.000 discrepancy=0.500 density=0.5000

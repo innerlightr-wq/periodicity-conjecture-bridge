@@ -1,0 +1,8 @@
+=== Closed-form margin check: threshold(gamma) - theta_max(gamma) ===
+Minimum margin over gamma in (0,1): 0.261860 at gamma=0.9999
+threshold(0.5)=0.630930  theta_max(0.5)=0.250000
+threshold(1-)=0.261960  theta_max(1-)~0.000100
+(margin stays strictly positive everywhere checked)
+
+=== Exhaustive check: two-block word achieves the TRUE max discrepancy ===
+Total (ell,k) pairs checked: 120 (every arrangement per pair), mismatches: 0

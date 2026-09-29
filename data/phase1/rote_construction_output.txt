@@ -1,0 +1,26 @@
+=== Verifying the even/odd-weight initial-power transfer lemma ===
+  W=[0, 1, 1, 0] (weight 2 (even)): predicted v period 4, exponent 5 -> match=True
+  W=[0, 1, 1] (weight 2 (even), len3): predicted v period 3, exponent 5 -> match=True
+  W=[0, 1, 0, 1, 1] (weight 3 (odd)): predicted v period 10, exponent 2.5 (root V,Vbar) -> match=True
+
+=== Slope golden ratio conjugate [0;1,1,1,...]: gamma = 0.61803399 ===
+  u (Sturmian): 1194 initial powers total (r>=1); 66 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=1199 r=1.0167 S=8 (integer lower bound on log2-margin)
+  v (CS Rote): 1197 initial powers total (r>=1); 32 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=1178 r=1.0178 S=6 (integer lower bound on log2-margin)
+  -> BRIDGE FIRES on v at this slope, up to root 1200.
+
+=== Slope silver ratio [0;2,2,2,...]: gamma = 0.41421356 ===
+  u (Sturmian): 1193 initial powers total (r>=1); 55 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=1183 r=1.0583 S=57 (integer lower bound on log2-margin)
+  v (CS Rote): 1192 initial powers total (r>=1); 20 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=1183 r=1.0592 S=53 (integer lower bound on log2-margin)
+  -> BRIDGE FIRES on v at this slope, up to root 1200.
+
+=== Slope mixed bounded-but-larger CF [0;1,2,1,3,1,4,...]: gamma = 0.73635105 ===
+  u (Sturmian): 1197 initial powers total (r>=1); 9 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=641 r=2.1700 S=631 (integer lower bound on log2-margin)
+  v (CS Rote): 1198 initial powers total (r>=1); 31 have POSITIVE exact surplus (S>0, genuine unconditional certification).
+    deepest certifying root: ell=1187 r=1.0160 S=2 (integer lower bound on log2-margin)
+  -> BRIDGE FIRES on v at this slope, up to root 1200.
+

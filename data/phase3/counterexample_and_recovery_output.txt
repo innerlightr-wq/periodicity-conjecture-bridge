@@ -1,0 +1,28 @@
+=== Part 1: counterexample weight-parity sequence ===
+gamma = [0;1,1,1,2,2,2,...] = 0.6306019374818708
+weight parity sequence: [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+CONFIRMED: all-odd (bad) from index 2 onward -- genuine counterexample.
+
+=== Part 2: does the bridge still fire via odd-weight halving? ===
+  k      q_k  wt%2      r_u      r_v  v-surplus S
+  2        2     1   2.0000   1.2500  S=-3
+  3        3     1   1.0000   0.6667  S=-7
+  4        8     1   3.2500   1.6875  S=5
+  5       19     1   1.0000   0.5263  S=-27
+  6       46     1   3.3913   1.7065  S=55
+  7      111     1   1.0000   0.5045  S=-123
+  8      268     1   3.4104   1.7071  S=365
+  9      647     1   1.0000   0.5008  S=-663
+ 10     1562     1   3.4136   1.7071  S=2191
+ 11     3771     1   1.0000   0.5001  S=-3791
+ 12     9104     1   3.4141   1.7071  S=12852
+ 13    21979     1   1.0000   0.5000  S=-22003
+ 14    53062     1   3.4142   1.7071  S=75014
+ 15   128103     1   1.0000   0.5000  S=-128132
+ 16   309268     1   3.4142   1.7071  S=437340
+ 17   746639     1   1.0000   0.5000  S=-746672
+
+log2(3) = 1.58496
+Certifying (S>0) instances found: 7
+S values: [5, 55, 365, 2191, 12852, 75014, 437340]
+CONFIRMED: bridge fires on v via odd-weight halved route, S growing without bound.
