@@ -188,6 +188,30 @@ Its hypothesis is "the orbit does not diverge": a divergent orbit has `R_n → �
 fixed band. Measured unit-band windows on certified survivors are **4–9 accelerated letters**
 long. Proved, and empty on the target sector.
 
+## 7b. Cross-program limits, stated plainly
+
+Consolidated 2026-09-29, after two further EOC-side audits (drift/amortization, and the
+least-realizer deficit) reached the same kind of closure. For citation purposes:
+
+1. **The Periodicity Bridge remains valid for its proved structured sectors.** Sturmian words,
+   the transported counting classes, and bounded-type complementary symmetric Rote sequences are
+   unaffected by anything here; `THEOREM_STATUS.md` and `LADDER.md` stand exactly as written.
+2. **It does not currently exclude general EOC survivors.** The surplus criterion's hypothesis
+   is unsatisfiable on the integer-realizable zero-confined sector (§3–§4), and the headline
+   CS Rote class is disjoint from that sector by density (§6).
+3. **Integer realizability caps the relevant surplus.** `S_s(W) ≤ log₂ m₀`, an identity, not an
+   estimate — verified at 1 862 confined checkpoints with 0 failures.
+4. **Zero-confinement words can retain high symbolic complexity.** The confined sector carries
+   topological entropy `H₂(1/α) = 0.949956` bits per standard letter; an explicit
+   Champernowne-driven confined word has `p(18) = 3 543` and longest initial-square half-length
+   `3`. Confinement forces no repetition and no low complexity.
+5. **This repository should not be cited as a path to the Collatz conjecture under the presently
+   proved EOC constraints.** It is a programme on the Periodicity Conjecture for structured
+   symbolic classes; the handoff to divergence exclusion is closed, as recorded here.
+
+None of this is a claim that no conceivable variant of a repetition- or approximation-based idea
+could ever work. It is a statement about **this** mechanism under **these** hypotheses.
+
 ## 8. Status
 
 ```
@@ -206,7 +230,9 @@ The audit workspace (22 deliverables, 8 exact-arithmetic verification scripts, s
 only) is not committed to any repository. Its verdict file is `HANDOFF_VERDICT.md`; the
 companion route-closure note on the EOC side is
 [`notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md`](https://github.com/innerlightr-wq/eoc-divergence/blob/main/notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md)
-in `eoc-divergence`.
+in `eoc-divergence`, and the consolidated index of all three closed pointwise routes — with a
+negative-results table — is
+[`notes/CLOSED_POINTWISE_ROUTES_2026-09-29.md`](https://github.com/innerlightr-wq/eoc-divergence/blob/main/notes/CLOSED_POINTWISE_ROUTES_2026-09-29.md).
 
 Repository states audited: this repository at `e4708a2`, `eoc-divergence` at `de2fdea`,
 `eoc-lean-verification` at `6cb67e7`.

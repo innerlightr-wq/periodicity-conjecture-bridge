@@ -40,7 +40,11 @@ is affected. The qualitative closure was already on record in both programmes; t
 the exact identity, the quantified obstruction and certified verification. See
 [`docs/EOC_HANDOFF_CLOSED.md`](docs/EOC_HANDOFF_CLOSED.md), and the companion note
 [`notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md`](https://github.com/innerlightr-wq/eoc-divergence/blob/main/notes/PERIODICITY_HANDOFF_ROUTE_CLOSED.md)
-in [`innerlightr-wq/eoc-divergence`](https://github.com/innerlightr-wq/eoc-divergence).
+in [`innerlightr-wq/eoc-divergence`](https://github.com/innerlightr-wq/eoc-divergence), whose
+[`notes/CLOSED_POINTWISE_ROUTES_2026-09-29.md`](https://github.com/innerlightr-wq/eoc-divergence/blob/main/notes/CLOSED_POINTWISE_ROUTES_2026-09-29.md)
+indexes all three closed pointwise routes. **This repository should not be cited as a path to
+the Collatz conjecture under the presently proved EOC constraints** — see
+[`docs/EOC_HANDOFF_CLOSED.md`](docs/EOC_HANDOFF_CLOSED.md) §7b.
 
 ## Repository structure
 
