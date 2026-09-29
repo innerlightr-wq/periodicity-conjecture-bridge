@@ -2,6 +2,14 @@
 
 Research program on the 3x+1 Periodicity Conjecture using periodic approximation, 2-adic rigidity, symbolic repetition, and arithmetic height to exclude increasingly broad classes of aperiodic parity words.
 
+## Technical Note
+
+The current research program is consolidated in a peer-citable technical note:
+
+**Elias De Jesús (2026), _Beyond Sturmian Words in the 3x+1 Periodicity Conjecture: A Periodic-Approximation and Arithmetic-Height Bridge_.** Zenodo. DOI: **[10.5281/zenodo.23045141](https://doi.org/10.5281/zenodo.23045141)**
+
+This is a technical research note, not a claim to have solved the full Periodicity Conjecture. It consolidates the periodic-approximation / arithmetic-height bridge developed across Phases 1–7, through the bounded-type complementary-symmetric-Rote result (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`). The full 3x+1 Periodicity Conjecture remains open, and complementary symmetric Rote sequences at arbitrary intercepts remain an open frontier (`theorems/phase7/`). See `technical-note/` for the manuscript source, preservation record, and statement-by-statement source-of-truth classification.
+
 ## The ladder
 
 ```
