@@ -1,0 +1,57 @@
+======================================================================
+STRUCTURED INTERCEPT FAMILIES (Section 9)
+======================================================================
+
+--- slope: golden A=1 ---
+  intercept 0 (characteristic)              : ice_est=2.618026  margin=0.618026  (at k=25)
+  shift-probe (first 3 digits forced)       : ice_est=2.617993  margin=0.617993  (at k=25)
+  eventually zero (random prefix len 6)     : ice_est=2.617927  margin=0.617927  (at k=25)
+  eventually maximal admissible             : ice_est=2.618012  margin=0.618012  (at k=25)
+  periodic pattern [max,0]                  : ice_est=2.618012  margin=0.618012  (at k=25)
+  alternating sparse/dense                  : ice_est=3.118012  margin=1.118012  (at k=25)
+  long zero blocks (8)                      : ice_est=3.597179  margin=1.597179  (at k=25)
+  long near-maximal blocks (8)              : ice_est=3.595745  margin=1.595745  (at k=17)
+  adversarial greedy (maximize c_k)         : ice_est=2.618012  margin=0.618012  (at k=25)
+
+--- slope: silver A=2 ---
+  intercept 0 (characteristic)              : ice_est=3.414214  margin=1.414214  (at k=25)
+  shift-probe (first 3 digits forced)       : ice_est=3.414214  margin=1.414214  (at k=25)
+  eventually zero (random prefix len 6)     : ice_est=3.414214  margin=1.414214  (at k=25)
+  eventually maximal admissible             : ice_est=2.207107  margin=0.207107  (at k=25)
+  periodic pattern [max,0]                  : ice_est=3.414214  margin=1.414214  (at k=25)
+  alternating sparse/dense                  : ice_est=4.044815  margin=2.044815  (at k=25)
+  long zero blocks (8)                      : ice_est=4.412734  margin=2.412734  (at k=25)
+  long near-maximal blocks (8)              : ice_est=4.412731  margin=2.412731  (at k=17)
+  adversarial greedy (maximize c_k)         : ice_est=2.207107  margin=0.207107  (at k=25)
+
+--- slope: nonperiodic-A A=2 (mixed) ---
+  intercept 0 (characteristic)              : ice_est=3.730083  margin=1.730083  (at k=25)
+  shift-probe (first 3 digits forced)       : ice_est=3.730082  margin=1.730082  (at k=25)
+  eventually zero (random prefix len 6)     : ice_est=3.730080  margin=1.730080  (at k=25)
+  eventually maximal admissible             : ice_est=2.676282  margin=0.676282  (at k=24)
+  periodic pattern [max,0]                  : ice_est=3.730062  margin=1.730062  (at k=19)
+  alternating sparse/dense                  : ice_est=4.117820  margin=2.117820  (at k=19)
+  long zero blocks (8)                      : ice_est=4.692846  margin=2.692846  (at k=25)
+  long near-maximal blocks (8)              : ice_est=4.692760  margin=2.692760  (at k=17)
+  adversarial greedy (maximize c_k)         : ice_est=2.676282  margin=0.676282  (at k=24)
+
+--- slope: nonperiodic-B A=3 ---
+  intercept 0 (characteristic)              : ice_est=4.734834  margin=2.734834  (at k=21)
+  shift-probe (first 3 digits forced)       : ice_est=4.734833  margin=2.734833  (at k=21)
+  eventually zero (random prefix len 6)     : ice_est=4.734823  margin=2.734823  (at k=21)
+  eventually maximal admissible             : ice_est=2.561916  margin=0.561916  (at k=25)
+  periodic pattern [max,0]                  : ice_est=4.734834  margin=2.734834  (at k=23)
+  alternating sparse/dense                  : ice_est=5.117647  margin=3.117647  (at k=7)
+  long zero blocks (8)                      : ice_est=4.721123  margin=2.721123  (at k=21)
+  long near-maximal blocks (8)              : ice_est=4.721053  margin=2.721053  (at k=13)
+  adversarial greedy (maximize c_k)         : ice_est=2.561916  margin=0.561916  (at k=25)
+
+======================================================================
+SUMMARY: minimum margin found per slope
+======================================================================
+  golden A=1: worst margin = 0.617927  (pattern: eventually zero (random prefix len 6))
+  silver A=2: worst margin = 0.207107  (pattern: adversarial greedy (maximize c_k))
+  nonperiodic-A A=2 (mixed): worst margin = 0.676282  (pattern: adversarial greedy (maximize c_k))
+  nonperiodic-B A=3: worst margin = 0.561916  (pattern: adversarial greedy (maximize c_k))
+
+All tested patterns, all slopes: margin > 0 strictly: True

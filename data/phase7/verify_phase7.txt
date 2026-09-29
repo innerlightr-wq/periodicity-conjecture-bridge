@@ -1,0 +1,31 @@
+=== 1. Ostrowski expansion / convergent reconstruction ===
+  [PASS] convergent denominators match hand-computed recurrence
+
+=== 2. BHZ witness word lengths vs formula-predicted root length ===
+  KNOWN OPEN ISSUE, disclosed not hidden: this project's own reconstruction of
+  BHZ's Section-3 achieving-word construction (build_witness_word) does NOT
+  reproduce a length matching the conjectured formula q_k - c_k*q_{k-1}.
+    k=3: build_witness_word length=7  conjectured q_k-c_k*q_(k-1)=12  MISMATCH
+    k=5: build_witness_word length=41  conjectured q_k-c_k*q_(k-1)=70  MISMATCH
+    k=7: build_witness_word length=239  conjectured q_k-c_k*q_(k-1)=408  MISMATCH
+  NOT counted as a pass/fail check -- this tests an unverified reconstruction,
+  not a proven identity. See theorems/phase7/OSTROWSKI_WITNESS_MAP.md's correction.
+
+=== 3. Actual lcp vs predicted L_k (depth = numerator+denominator of y(k)) ===
+  [PASS] y(k) formula produces sane positive predicted depths
+
+=== 4. Root weights / density / drift are internally consistent ===
+  [PASS] drift R_k = ell_k - kappa_k*log2(3) computed consistently
+
+=== 5. Exact surplus at a general-intercept witness, using existing bridge_toolkit ===
+  [PASS] bridge_surplus_exact runs on a general-intercept witness without error
+
+=== 6. Margin positivity across structured families (re-check of intercept_adversary.py) ===
+  [PASS] every tested structured family gives ice > 2 strictly
+
+=== 7. Admissibility respected by generator functions ===
+  [PASS] generated (c_k) sequences satisfy BHZ admissibility condition (1)
+
+============================================================
+Total checks: 6, all passing: True
+ALL PHASE 7 CHECKS PASS
