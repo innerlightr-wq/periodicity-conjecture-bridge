@@ -1,0 +1,45 @@
+==============================================================================
+PHASE 9 / I.  Theorem 4 applied to fixed points of uniform substitutions
+==============================================================================
+
+    21 uniform substitutions with an aperiodic fixed point.
+    k  sig(0)  sig(1)  best ell  lcp    r_inf      gamma     g(gamma)   r>g?   exact S at m=4  2^L>F
+    2  01      00      2         3      2.000000   0.500000  1.396241   True   62.76           True
+    2  01      10      3         5      1.666667   0.666667  1.408856   True   62.68           True
+    3  001     000     3         8      3.000000   0.333333  1.352214   True   1456.88         True
+    3  001     010     3         7      2.500000   0.333333  1.352214   True   1092.37         True
+    3  001     011     3         7      2.500000   0.333333  1.352214   True   1090.30         True
+    3  001     100     3         6      2.000000   0.333333  1.352214   True   728.51          True
+    3  001     101     3         6      2.000000   0.333333  1.352214   True   727.07          True
+    3  001     110     3         6      2.000000   0.333333  1.352214   True   727.57          True
+    3  001     111     3         6      2.000000   0.333333  1.352214   True   398.67          True
+    3  010     000     2         3      1.750000   0.500000  1.396241   True   363.66          True
+    3  010     001     4         7      1.875000   0.250000  1.297180   True   849.41          True
+    3  010     011     2         3      2.000000   0.500000  1.396241   True   482.48          True
+    3  010     100     2         5      2.500000   0.500000  1.396241   True   728.56          True
+    3  010     110     2         4      2.000000   0.500000  1.396241   True   485.18          True
+    3  010     111     2         4      2.000000   0.500000  1.396241   True   249.75          True
+    3  011     000     3         4      1.500000   0.666667  1.408856   True   363.97          True
+    3  011     001     4         6      1.625000   0.500000  1.396241   True   605.41          True
+    3  011     010     3         5      2.000000   0.666667  1.408856   True   727.08          True
+    3  011     100     5         7      1.400000   0.600000  1.380391   True   483.57          True
+    3  011     101     4         7      1.750000   0.750000  1.485902   True   670.77          True
+    3  011     110     5         8      1.600000   0.800000  1.521564   True   657.25          True
+
+    substitutions whose fixed point Theorem 4 reaches: 21 of 21
+
+    NAMED CASES:
+      period-doubling      sigma(0)=01, sigma(1)=00: r_inf = 2.000000, gamma = 0.5, g = 1.396241, reached = True
+      Thue-Morse           sigma(0)=01, sigma(1)=10: r_inf = 1.666667, gamma = 0.6666666666666666, g = 1.408856, reached = True
+
+    The two substitutions with r_inf = 1 in an earlier pass (sigma(1) = 11 and 111) are
+    EVENTUALLY PERIODIC fixed points and are now excluded: the Periodicity Conjecture says
+    nothing about them, so they were never failures.
+
+    Caveats, explicitly: (i) aperiodicity is tested on a finite prefix, not proved;
+    (ii) the discrepancy bound D(W) = o(|W|) is quoted for PRIMITIVE uniform substitutions
+    and is not verified here per row -- the exact surplus column is what is certified;
+    (iii) r_inf is the LIMIT of the prefix powers; the exact-surplus column confirms the
+    conclusion at a finite m, which is what the criterion actually needs.
+
+STEP I COMPLETE.

@@ -101,7 +101,7 @@ Verified exactly at 1 862 zero-confined checkpoints across 15 certified record h
 Equivalent quantified form, with `R_n = S_n − n log₂ 3` the EOC drift:
 
 ```
-    S_s(W)  =  v₂(m₀ − m_n)  −  |R_n|  +  O(log n).
+    S_s(W)  =  v₂(m₀ − m_n)  − |R_n|  +  O(log n).
 ```
 
 ## 4. Interpretation

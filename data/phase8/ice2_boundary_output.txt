@@ -1,0 +1,77 @@
+==============================================================================
+PHASE 8 / I.  The ice = 2 boundary: where the method dies, and what survives
+==============================================================================
+
+1)  Even-branch threshold at r_u = 2, with the UNCONDITIONAL discrepancy cap.
+    sup_gamma [ max(1, gamma log2 3) + gamma(1-gamma) log2 3 ] = 1.584963  at gamma = 1.0000
+    log2 3 = 1.584963 < 2, so the even branch keeps margin >= 2 - log2 3 = 0.415037 at r_u = 2 exactly,
+    with NO discrepancy hypothesis and NO hypothesis on gamma.  The odd branch has
+    r_v = r_u/2 = 1 exactly, i.e. margin 0.  So the boundary is a PARITY question.
+
+2)  Explicit ice = 2 slopes (BHZ Thm 1.1) and the BHZ Sec. 5.3 minimiser.
+    slope digits          Thm1.1 cond  ice tail (last 8 k)  x(k) tail max  y(k) tail max
+    a_k = k               True         2.0011508518         1.0333346580   2.0011508518
+    a_k = k^2             True         2.0000069292         1.0022732455   2.0000069292
+    a_k = 2^k             True         2.0000001193         1.0001221001   2.0000001193
+    a_k = k, one 1 each   True         2.0356326135         2.0321972297   2.0356326135
+    (ice sits at or just above 2: these are the slopes where the margin vanishes.)
+
+3)  Weight parity of the witness roots (BHZ Lemma 2.6: weights are p_k and
+    p_k - c_k p_{k-1}).  The even branch is available at scale k iff even.
+    slope digits          k range     x-roots even  y-roots even  either even  longest all-odd run
+    a_k = k               3..38       18/36         0/36          18/36        1
+    a_k = k^2             3..28       13/26         0/26          13/26        1
+    a_k = 2^k             3..20       9/18          0/18          9/18         1
+    a_k = k, one 1 each   3..38       12/36         12/36         16/36        3
+
+4)  Can the even branch be unavailable forever?  YES, but only on a thin family.
+    p_{k+1} = a_{k+1} p_k + p_{k-1} with p_0 = 0, p_1 = 1.  So p_2 = a_2, and once
+    (p_{k-1},p_k) = (1,1) the next is odd iff a_{k+1} is even.  Hence
+        p_k odd for every k >= 1   <=>   a_2 odd and a_k even for all k >= 3.
+    (Note p_2 = a_2, so an all-even digit string fails immediately: p_2 is even.)
+    digit string              p_k odd for all k<=25?   predicted
+    a_2 odd then all even     True                     True
+    all digits even           False                    False
+    a_2 odd, one odd later    False                    False
+    a_k = k                   False                    False
+    So at intercept 0 the even branch CAN be unavailable at every scale -- exactly the
+    single bad cycle the Phase 3 automaton found.  At a general intercept the y-roots
+    have weight p_k - c_k p_{k-1}, so an odd c_k with p_{k-1} odd flips the parity:
+    general intercepts have strictly more even-weight opportunities than intercept 0.
+
+4b) The quantitative route: an EXACT identity for the odd-branch surplus driver.
+    For EVERY k and EVERY admissible (c_k), bounded type or not, the y-witness has
+        ell_k = q_{k-1}(lam_{k-1} + d_k),   E_k = y(k) - 2 = lam_{k-1}(m_{k-1}-1)/(lam_{k-1}+d_k),
+    so the root length and the denominator cancel EXACTLY:
+        ell_k * E_k = q_{k-1} lam_{k-1} (m_{k-1} - 1) = q_{k-2} * (m_{k-1} - 1).
+    On a keep-one tail (d_{k-1} = 1) this is q_{k-2} lam_{k-2} m_{k-2} = q_{k-3} m_{k-2}.
+    Since m_{k-2} >= 1 this is >= q_{k-3} -> infinity, EVEN WHEN E_k -> 0.  The odd
+    branch therefore survives ice = 2 provided  q_{k-3} m_{k-2}  beats the penalties
+    ceil(D(R_k)) log2 3 + log2(2 ell_k).  Measured:
+    slope               k            ell_k  ell_k*E_k (exact)     q_(k-3) log2(2 ell_k)   sum a_i ratio vs log
+    a_k = k             33       1.018e+36        1.02719e+33    9.93e+32        120.61       561    8.516e+30
+    a_k = k             36       3.998e+40        3.36226e+37    3.26e+37        135.88       666    2.475e+35
+    a_k = k^2           23       2.954e+42        1.38437e+37   1.381e+37        142.08      4324    9.743e+34
+    a_k = k^2           26       5.622e+50        1.56218e+45   1.559e+45        169.59      6201    9.212e+42
+    a_k = 2^k           15       6.852e+31        5.10573e+23   5.104e+23        106.76     65534    4.783e+21
+    a_k = 2^k           18       1.928e+46        2.24505e+36   2.245e+36        154.76    524286    1.451e+34
+    a_k = k, one 1 each 33       1.851e+25        1.75473e+22   1.753e+22         84.94       374    2.066e+20
+    a_k = k, one 1 each 36       2.332e+28        1.85245e+25   1.851e+25         95.24       444    1.945e+23
+    ell_k*E_k = q_(k-2)*(m_(k-1)-1) asserted exactly at every k tested (general form),
+    and = q_(k-3)*m_(k-2) wherever d_(k-1) = 1.
+    Exhaustive: 135153 (slope, admissible digit string, k) instances of the general
+    identity across 5 slopes -- no exception.
+    Verdict: the surplus driver grows like q_(k-3), the penalty like log2 q_(k-1) plus
+    the discrepancy.  For polynomially or exponentially growing partial quotients the
+    driver wins easily; it can only lose if the partial quotients grow so fast that
+    log q_{k-1} outruns q_{k-3}, i.e. log a_{k-1} >> q_{k-3}.
+
+5)  The reduced target, stated exactly:
+    (E)  For every Sturmian word u (ANY slope, ANY intercept), are there infinitely
+         many initial powers W^r of u with r >= 2 and |W|_1 EVEN?
+    If (E) holds, then Phi(v) not in Q for both CS Rote lifts of EVERY Sturmian word,
+    with no bounded-type hypothesis anywhere -- the p(n) = 2n rung closes completely.
+    (E) is a parity statement about p_k and p_k - c_k p_{k-1}, i.e. about convergent
+    NUMERATORS and Ostrowski digits -- elementary arithmetic, not new combinatorics.
+
+ALL ICE-2 BOUNDARY CHECKS PASS.

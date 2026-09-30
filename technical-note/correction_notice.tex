@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\repo}[1]{\text{\texttt{#1}}}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Correction Notice --- Revision 2}\\[4pt]
+{\itshape Beyond Sturmian Words in the 3x+1 Periodicity Conjecture:\\
+A Periodic-Approximation and Arithmetic-Height Bridge}\\[3pt]
+Elias De Jes\'us \quad (ORCID \href{https://orcid.org/0009-0007-0190-9143}{0009-0007-0190-9143})\\[3pt]
+Revision 1: Zenodo version DOI \texttt{10.5281/zenodo.23045141}\\
+30 September 2026
+\end{center}
+
+\noindent\textbf{Summary.} Revision 1 presented the general-intercept case of its main theorem as
+blocked by one unproved margin lemma, stated there as Conjecture 12.1. That lemma is not open: it is
+Berth\'e--Holton--Zamboni, \emph{Initial powers of Sturmian sequences}, Acta Arith.\ \textbf{122}
+(2006) 315--347, \textbf{Propositions 5.1 and 5.2} --- Section 5 of the same paper Revision 1
+already cites as its primary source. Revision 2 therefore states the main theorem at \emph{every}
+intercept, and corrects four further defects. The affected material is confined to
+Revision 1 \S\S12--13 and its open-problem list; the proved results of \S\S1--11 are unchanged.
+
+\medskip
+\noindent\textbf{Corrections.}
+\begin{description}[leftmargin=2.2em,style=nextline,itemsep=3pt]
+
+\item[C1. Conjecture 12.1 is a published theorem.] BHZ Prop.\ 5.1: if $(a_k,a_{k+1})=(s,t)$ with
+$s>1$ for infinitely many $k$, then \emph{every} Sturmian sequence of that slope has
+$\mathrm{ice}\ge2+\frac1{2(s+1)(t+1)+1}$. BHZ Prop.\ 5.2 covers $(a_k,a_{k+1},a_{k+2})=(1,1,t)$ with
+$2+\frac1{8t+1}$. A bounded-type slope satisfies one hypothesis or the other by pigeonhole, giving
+$\mathrm{ice}(\omega)\ge2+\frac1{2(A_b+1)^2+1}$ at every intercept. The sentences ``It is
+\textbf{not} claimed proved here or anywhere in the underlying record'' and ``until then, that
+extension remains open'' are withdrawn. The weaker claim $\mathrm{ice}(\omega)>2$ per intercept is
+likewise already a corollary of BHZ Theorem 1.1.
+
+\item[C2. The ``exceptional-orbit reduction'' is false.] Revision 1 \S12 and its Open 2 relied on
+$\mathrm{ice}(\omega_\rho)=\mathrm{ind}^*(\gamma)$ off a countable ``return'' set. BHZ Prop.\ 2.1(4)
+gives shift-invariance only off a \emph{finite set of orbits}, and Lemma 2.2 gives equality only
+\emph{almost everywhere}; a measure-zero set need not be countable. BHZ's own Prop.\ 4.1 ``keep
+one'' intercept $c_k=a_k-1$ has $\mathrm{ice}\le1+\theta=2.618\ldots$ at every slope while
+$\mathrm{ind}^*(\gamma)$ is unbounded, and the admissible family $\{a_k-c_k\in\{1,2\}\}$ is
+uncountable with $\mathrm{ice}$ uniformly bounded. Consequently intercept $0$ is one of the
+\emph{easiest} intercepts, not the hardest. Open 2 is withdrawn, its premise being false.
+
+\item[C3. Convergent-denominator indexing.] BHZ Prop.\ 2.7 sets
+$\gamma=[0;a_1{+}1,a_2,a_3,\dots]$ with $q_1=a_1+1$. The record and code used $q_1=a_1$. Every
+$\limsup$, hence every $\mathrm{ice}$ value reported, is unaffected; every \emph{root length}
+computed from $q_k$ was wrong. This is the entire explanation of the root-length mismatch the
+underlying Phase 7 record disclosed against itself; BHZ Prop.\ 3.3 was never wrong.
+
+\item[C4. Missing length factor.] Revision 1 \S13 displayed
+$S_k\ge A\cdot E_k-C_A D_k-O_A(\log\ell_k)$. The leading term must scale like a length. Correctly,
+on the odd-weight branch,
+$S_k\ge\ell_kE_k+1-\lceil D(R_k)\rceil\log_23-\log_2(2\ell_k)$, with $\ell_k=|W_k|$ the Sturmian
+root length. Revision 1's own flexible condition $E_k\gg\log\ell_k/\ell_k$ is equivalent to
+$\ell_kE_k\gg\log\ell_k$, so this was a transcription slip and no conclusion drawn from it changes.
+
+\item[C5. Conditional attainment of $y(k)$.] BHZ Prop.\ 3.3 attains $x(k)$ for every $k$ (root
+length $q_k$) but attains $y(k)$ only when $0<c_k<a_k$ (root length $q_k-c_kq_{k-1}$); Cor.\ 3.5's
+three observations are what upgrade the $\limsup$. Harmless for computing $\mathrm{ice}$, but not
+for a proof that must supply an \emph{attained} root, since the tightest branch at $A=1$ is exactly
+$c_k=a_k$. Revision 2 routes every case through an attained witness explicitly.
+
+\end{description}
+
+\medskip
+\noindent\textbf{Net effect on the results.}
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt]
+\item \emph{Strengthened.} The main theorem now reads: for every irrational $\gamma$ of bounded type,
+every Sturmian word $u$ of slope $\gamma$ (any intercept, either mechanical convention), and either
+complementary symmetric Rote sequence $v$ with $S(v)=u$ (either seed, any shift), $\Phi(v)\notin\Q$.
+\item \emph{Unchanged.} The abstract irrationality criterion; the discrepancy--height bound; the
+repetition--height competition; the exact XOR transfer $L_v=L_u+1$; the density-$\tfrac12$ structural
+fact; the intercept-$0$ case and its $\mathrm{term2}(k)>2+1/(A+1)$ analysis; the counting-route
+material; the self-correction history; and every numerical finding about structured intercepts ---
+including the identification of the near-maximal-digit family as the empirical worst case, which
+Revision 2 confirms is \emph{exactly} extremal, with excess exactly $1/(A\beta_A)$,
+$\beta_A=\frac{A+\sqrt{A^2+4}}2$.
+\item \emph{Superseded or withdrawn.} Conjecture 12.1; Open 1, Open 2, Open 3; the two displayed
+formulas of C3 and C4.
+\item \emph{Attribution.} The load-bearing symbolic input is Berth\'e--Holton--Zamboni's, not this
+program's. The contribution claimed here is the arithmetic application: the
+periodic-approximation/arithmetic-height bridge, the exact XOR transfer, the density-$\tfrac12$ fact,
+the corrected surplus inequality, and the attained-witness bookkeeping with explicit growing root
+lengths that converts a $\limsup$ bound on $\mathrm{ice}$ into an unbounded surplus. Recording a
+published 2006 theorem as an open conjecture was an error of literature search.
+\item \emph{Not affected.} No claim is made, in Revision 1 or Revision 2, of progress on the
+Periodicity Conjecture in general. The live frontier moves to slopes with \emph{unbounded} partial
+quotients, where BHZ Theorem 1.1 shows some intercept has $\mathrm{ice}(\omega)=2$ exactly and the
+odd-weight branch has margin exactly $0$.
+\end{itemize}
+
+\medskip
+\noindent\textbf{One gap closed while auditing.} The discrepancy step reduces to the rotation by
+$\gamma/2$, not $\gamma$, so it needs $\gamma/2$ to be of bounded type as well --- a hypothesis left
+implicit. It holds: $\|q\gamma\|=\|2q(\gamma/2)\|\le2\|q(\gamma/2)\|$, so
+$\inf_q q\|q(\gamma/2)\|\ge\tfrac12\inf_q q\|q\gamma\|>0$, and the partial quotients of $\gamma/2$
+are bounded by $\lfloor2(A+2)\rfloor+1$. The conclusion $D=O_A(\log\ell)$ is unchanged; its proof is
+now complete.
+
+\medskip
+\noindent\textbf{Provenance.} Revision 2 and this notice were prepared on the isolated branch
+\repo{phase8-general-intercept} of the \repo{periodicity-conjecture-bridge} repository. The Phase 1--7
+research record was not rewritten: the Phase 7 files are preserved verbatim and carry conspicuous
+correction banners pointing to \repo{theorems/phase7/PHASE7\_CORRECTIONS.md}. Reproducible
+diagnostics are under \repo{scripts/phase8/} with outputs in \repo{data/phase8/}. Revision 2 is
+intended as a \emph{new Zenodo version} of the existing record, leaving Revision 1 retrievable.
+
+\end{document}

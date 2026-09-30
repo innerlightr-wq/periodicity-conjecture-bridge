@@ -1,3 +1,7 @@
+> **CORRECTED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md)
+> items C3 and C5.** Root lengths here use `q_1 = a_1`; BHZ Prop. 2.7 sets `q_1 = a_1 + 1`.
+> Retained verbatim as the historical record.
+
 # OSTROWSKI_WITNESS_MAP.md
 
 For general `(a_k),(c_k)`, BHZ's Corollary 3.5 (`BHZ_GENERAL_INTERCEPT_MAP.md`) produces **two competing witness families per `k`**, `x'(k)` and `y(k)` — not one. This project does not force them into a single scalar `r_k`; both are tracked.

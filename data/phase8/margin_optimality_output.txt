@@ -1,0 +1,85 @@
+==============================================================================
+PHASE 8 / H.  Margin status: what is proved, and at what scope
+==============================================================================
+
+T1/T2/T3 side by side.  A_b = sup of the BHZ digits a_k.
+ A_b  T1 published 1/(2(A+1)^2+1)   T2 Phase 8 1/(2(A+1)^2)  T3 sharp 1/(A beta_A)   T3/T2
+   1                   0.11111111                0.12500000             0.61803399   4.944
+   2                   0.05263158                0.05555556             0.20710678   3.728
+   3                   0.03030303                0.03125000             0.10092521   3.230
+   4                   0.01960784                0.02000000             0.05901699   2.951
+   5                   0.01369863                0.01388889             0.03851648   2.773
+   6                   0.01010101                0.01020408             0.02704628   2.651
+   7                   0.00775194                0.00781250             0.02000785   2.561
+   8                   0.00613497                0.00617284             0.01538820   2.493
+   9                   0.00497512                0.00500000             0.01219691   2.439
+  10                   0.00411523                0.00413223             0.00990195   2.396
+  T1 < T2 <= T3 at every A: the two lower bounds are consistent with the sharp value.
+
+T3  keep-one closed form.  Slope with BHZ digits a_k == A; c_k = a_k - 1, so d_k == 1.
+    Fixed point of m -> lam m + 1 is m* = beta/(beta-1); with lam = 1/beta and
+    beta^2 - 1 = A beta,  y = 1 + m*/(lam+1) = 1 + beta^2/(beta^2-1) = 2 + 1/(A beta).
+  A     y(k) at k=60 (exact)   2 + 1/(A beta_A)   x prime(k) at k=60  x <= y?
+  1           2.618033988749     2.618033988750       2.618033988749     True
+  2           2.207106781187     2.207106781187       1.707106781187     True
+  3           2.100925212577     2.100925212577       1.434258545911     True
+  4           2.059016994375     2.059016994375       1.309016994375     True
+  5           2.038516480713     2.038516480713       1.238516480713     True
+  6           2.027046276695     2.027046276695       1.193712943361     True
+  7           2.020007849234     2.020007849234       1.162864992091     True
+  8           2.015388203202     2.015388203202       1.140388203202     True
+
+T3b optimality for eventually-constant BHZ digit tails, A >= 2.  Three cases:
+    (1) d_k == 1 eventually            -> limsup = 2 + 1/(A beta_A)      [T3]
+    (2) d_k == 0 infinitely often      -> y(k) = 1 + a_{k-1} + t_{k-2} >= 1 + A
+    (3) d_k >= 2 i.o., d_j >= 1 large  -> x'(k-1) = m_k >= 2 + lam_{k-1} -> 2 + 1/beta_A
+    For A >= 2 both (2) and (3) STRICTLY exceed 2 + 1/(A beta_A):
+  A  2+1/(A beta) [case 1]   1+A [case 2]   2+1/beta [case 3]  min(2,3) > case 1?
+  2             2.20710678     3.00000000          2.41421356                True
+  3             2.10092521     4.00000000          2.30277564                True
+  4             2.05901699     5.00000000          2.23606798                True
+  5             2.03851648     6.00000000          2.19258240                True
+  6             2.02704628     7.00000000          2.16227766                True
+  7             2.02000785     8.00000000          2.14005494                True
+  8             2.01538820     9.00000000          2.12310563                True
+  9             2.01219691    10.00000000          2.10977223                True
+ 10             2.00990195    11.00000000          2.09901951                True
+    So the infimum is attained exactly on the keep-one tails.  PROVED at this scope.
+    A = 1 is NOT covered by this argument (case 2 gives only 2 + t_{k-2}).  For the
+    genuine Fibonacci slope [0;1,1,1,...] BHZ Prop. 4.3 settles it: every omega outside
+    the shift orbit of the characteristic sequence begins in arbitrarily large cubes
+    (ice >= 3), and the orbit members have ice = 1 + theta = 2.618034.
+
+    Pointwise confirmation of the case inequalities (exact arithmetic, 4000 random
+    admissible sequences per A, length 40, constant BHZ digits a_k == A):
+  A  case-2 indices  min y(k) there      1+A  case-3 indices  min m_k there   2+1/beta
+  2           19531      3.35294118        3           48600     2.56097561   2.414214
+  3           10576      4.27906977        4           76869     2.38732394   2.302776
+  4            6714      5.22471910        5           91732     2.28912467   2.236068
+  5            4449      6.19254658        6          101735     2.22846890   2.192582
+  6            3164      7.16257443        7          108147     2.18799755   2.162278
+  7            2344      8.14072291        8          112500     2.15968948   2.140055
+    Both pointwise inequalities hold with no exception, at every A tested.
+
+T4  slopes whose BHZ digit tail is NOT eventually constant: keep-one is observed
+    to be optimal, but the T3b case analysis does not apply (lam_k does not converge,
+    and cases (2)/(3) are compared against a limsup that is no longer a single value).
+    This is recorded as NUMERICAL EVIDENCE ONLY and is not used by Theorem 2.
+slope digits (a_k)      A_b    T2 floor  min ice - 2 over  keep-one ice - 2  keep-one optimal?
+[1, 2]                    2    0.055556        0.36602540        0.36602540               True
+[2, 1]                    2    0.055556        0.36602540        0.36602540               True
+[2, 3]                    3    0.031250        0.14549722        0.14549722               True
+[1, 3]                    3    0.031250        0.26376262        0.26376262               True
+[2, 1, 3]                 3    0.031250        0.28697361        0.28697361               True
+[1, 1, 2]                 2    0.055556        0.50994071        0.50994071               True
+[3, 2]                    3    0.031250        0.14549722        0.14549722               True
+[1, 2, 2]                 2    0.055556        0.33662690        0.33662690               True
+
+STATUS SUMMARY
+  Theorem 2 needs only:  ice >= 2 + delta,  delta = delta(A_b) > 0 fixed.  T1 suffices;
+  T2 is what Phase 8 proves and is what supplies the attained witnesses.
+  The sharp value 1/(A beta_A) is PROVED to be the infimum only for eventually-constant
+  BHZ digit tails with A >= 2 (T3b), plus the Fibonacci slope via BHZ Prop. 4.3.
+  For every other bounded-type slope the sharp value is NUMERICAL EVIDENCE, not a theorem.
+
+ALL MARGIN-STATUS CHECKS PASS.

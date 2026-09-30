@@ -1,0 +1,46 @@
+==============================================================================
+PHASE 11 / exact height and surplus at the R5 witnesses
+==============================================================================
+
+1.  The R5 witnesses ell(M), with every quantity the obligation names.
+    M     ell     k      e_ell     D(W)    L        L-ell    log2|delta_W|-ell  log2 c_W - ell  
+    4     377     238    0.1395    1.1326  846      469      -2.594209          6.661192        
+    8     610     385    0.1329    1.2049  1456     846      -2.669882          7.262688        
+    16    1597    1008   0.4052    1.2098  2478     881      -0.834678          8.900252        
+    32    2584    1630   -0.3225   1.9946  5062     2478     -1.745046          8.338274        
+    64    6765    4268   -0.2398   2.0195  22773    16008    -2.110371          9.984893        
+
+2.  Exact surplus, and the bound (H) it must respect.
+    M     ell     L-ell    bound (H)     S exact       2^L > F(W)  height floor H >=
+    4     377     469      456.051       462.336       True        2^462.3
+    8     610     846      832.367       838.736       True        2^838.7
+    16    1597    881      865.547       872.098       True        2^872.1
+    32    2584    2478     2462.495      2469.660      True        2^2469.7
+    64    6765    16008    15989.521     15998.015     True        2^15998.0
+    (H) holds at every witness -- asserted, not observed.  The surplus is certified by the
+    integer comparison 2^L > F(W); no estimate enters the verdict column.
+
+3.  Growth of the driver.  The obligation is that (L-ell)/log2(ell) be UNBOUNDED along
+    the witness subsequence -- not merely positive.
+    M     ell     L-ell     log2 ell   (L-ell)/log2 ell   S / log2 ell
+    4     377     469       8.558      54.800             54.021
+    8     610     846       9.253      91.433             90.648
+    16    1597    881       10.641     82.792             81.955
+    32    2584    2478      11.335     218.607            217.872
+    64    6765    16008     12.724     1258.107           1257.323
+
+    R5 proves L - ell >= M while log2 ell(M) = O(log M), so the ratio is bounded below by
+    M / (kappa log2 M + O(1)), which tends to infinity.  The table is a consistency check.
+
+4.  A failed scale, inspected rather than hidden.
+    ell = 5 (the M = 4 witness if only the beta-threshold is imposed):
+      ell = 5, k = 3, L = 8, L - ell = 3, |delta| = 0.090170,
+      1/(147|delta|) = 0.0754 < 1, so R3 gives nothing;
+      exact S = 2.608  -- POSITIVE, but small and bounded: L - ell = 3 is
+      a constant, so this scale cannot contribute to an asymptotic argument no matter how
+      the surplus happens to come out.  R3 certifies nothing here because 1/(147|delta|) < 1.
+      (An earlier draft of this line called the surplus negative.  It is not; the witness is
+       useless for a different reason, and the distinction matters.)
+    This is why the construction imposes |delta| <= 1/(147 M) as well.
+
+ALL PHASE-11 HEIGHT/SURPLUS CHECKS PASS.

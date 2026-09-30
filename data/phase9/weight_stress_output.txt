@@ -1,0 +1,63 @@
+==============================================================================
+PHASE 9 / D1.  Exactness of w(k,d) = d p_(k-1) + p_(k-2) at arbitrary intercepts
+==============================================================================
+
+    2384 (slope, intercept, k, d) weight comparisons.
+    distribution of  actual_weight - predicted  :  {-1: 12, 0: 2323, 1: 49}
+
+    *** 61 DEVIATIONS.  The formula is NOT exact at every intercept. ***
+    slope             intercept c[:6]             k   d   ell      pred     actual   off
+    [2, 2, 2, 2, 2, 2]random    [0, 2, 0, 1, 1, 0]3   1   10       3        2        -1
+    [2, 2, 2, 2, 2, 2]random    [2, 0, 1, 0, 2, 0]2   1   4        1        2        +1
+    [2, 2, 2, 2, 2, 2]random    [2, 0, 1, 0, 2, 1]2   1   4        1        2        +1
+    [3, 3, 3, 3, 3, 3]random    [0, 3, 1, 0, 2, 2]3   1   17       4        3        -1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 0, 0, 2]2   1   5        1        2        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 0, 0, 2]2   2   9        2        3        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 0, 0, 2]2   3   13       3        4        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 0, 0, 2]4   1   56       13       14       +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 0, 0, 2]4   2   99       23       24       +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 2, 0, 2]2   1   5        1        2        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 2, 0, 2]2   2   9        2        3        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 0, 3, 2, 0, 2]2   3   13       3        4        +1
+    [3, 3, 3, 3, 3, 3]random    [3, 1, 2, 2, 2, 0]2   1   5        1        2        +1
+    [1, 2, 1, 2, 1, 2]random    [0, 2, 0, 2, 0, 0]3   1   7        3        2        -1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 1, 0, 2]2   1   3        1        2        +1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 1, 0, 2]2   2   5        2        3        +1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 0, 1, 0]2   1   3        1        2        +1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 0, 1, 0]2   2   5        2        3        +1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 0, 1, 0]4   1   12       5        6        +1
+    [1, 2, 1, 2, 1, 2]random    [1, 0, 1, 0, 1, 0]4   2   19       8        9        +1
+
+    CONSEQUENCE: parity of the witness weight cannot be read off p_(k-1), p_(k-2)
+    and d alone.  Any parity argument must use the ACTUAL prefix weight.
+
+D1b Deviation structure: by scale k and by root kind.
+    4750 comparisons.
+    k    off=-1   off=0    off=+1   deviation rate
+    2    0        567      63       63/630
+    3    23       667      0        23/690
+    4    0        738      12       12/750
+    5    3        567      0        3/570
+    6    0        571      3        3/574
+    7    1        427      0        1/428
+    8    0        412      1        1/413
+    9    0        313      0        0/313
+    10   0        222      0        0/222
+    11   0        86       0        0/86
+    12   0        74       0        0/74
+
+    by kind: {'y': {0: 937}, 'x': {0: 2049, 1: 21, -1: 9}, 'int': {0: 1658, 1: 58, -1: 18}}
+    LARGEST k at which a deviation occurs, by kind: {'x': 7, 'y': 0, 'int': 8}
+
+    FINDINGS:
+    (i)  The y-witness weight is EXACT at every intercept and every k tested -- so the
+         y-route parity argument (Case I below) is safe.
+    (ii) x-witness and intermediate-root weights deviate by +-1, but only at SMALL k.
+         These are finite-prefix/boundary effects of the Ostrowski expansion, not a
+         persistent phenomenon: past the listed largest deviating k no deviation occurs
+         in any sample.  Since the bridge needs only infinitely many large-k witnesses,
+         the asymptotic parity classification survives -- but it must be stated for
+         k >= K_0(slope, intercept), NOT for every k, and any finite-prefix claim must
+         use the actual prefix weight.
+
+STEP D1 COMPLETE.

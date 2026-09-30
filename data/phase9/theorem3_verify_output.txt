@@ -1,0 +1,27 @@
+==============================================================================
+PHASE 9 / G.  End-to-end verification of Theorem 3
+==============================================================================
+
+    family                                sup a_k   #Thm3 scales  #exact checks  min S      max S
+    Cor 3.1: a=[3,1] + even, keep-one     8         8             8              9.88       465.22
+    Cor 3.1: a=[5,3] + even, keep-one     8         6             8              24.44      1837.21
+    Cor 3.2 UNBOUNDED: a_k=2k, keep-one   22        8             6              9.88       183.01
+    Cor 3.2 UNBOUNDED: a_k=2^k, keep-one  256       5             6              9.88       231.01
+    UNBOUNDED a_k=k, c=a_k-2              14        5             4              48.44      958.87
+    UNBOUNDED a_k=k!, c=a_k-2             40320     2             2              77.79      79.08
+    bounded control a_k in {1,2,3}, rand  3         2             2              7.74       8.51
+
+    36 exact end-to-end verifications; every assertion holds:
+      weight law (W-y) exact, exponent == y(k) >= 2, transfer L_v = L_u + 1,
+      2^{L_v} > F(V) as exact integers, and S >= ell(y(k) - g(gamma_V)) - log2 ell - log2 3.
+
+    Growth along one UNBOUNDED-type family (a_k = 2k, keep-one):
+    k   a_k   ell     w       y(k)        gamma_V   g         theorem bound  S (exact)
+    3   4     9       2       2.111111    0.555556  1.391349  1.72           9.88
+    4   6     29      6       2.172414    0.517241  1.395769  16.08          33.94
+    5   8     173     36      2.057803    0.502890  1.396227  105.43         183.01
+    6   10    1365    284     2.024908    0.500366  1.396240  846.13         1399.01
+
+    sup_k a_k = 22, i.e. UNBOUNDED partial quotients -- outside Phase 8 Theorem 2.
+
+ALL THEOREM-3 VERIFICATIONS PASS.

@@ -1,0 +1,234 @@
+==============================================================================
+PHASE 12 / item 3.  alpha quadratic irrational in (0,1), rho rational, chi = 1_[0,beta)
+==============================================================================
+
+(A) Slopes: algebraicity, bounded partial quotients A, and q_{k+1} <= (A+1) q_k.
+    alpha            min poly                 a_i (first 14)          A    max q_{k+1}/q_k
+    (sqrt5-1)/2      x^2 +1x -1        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 1    2.0000 <= 2
+    sqrt2-1          x^2 +2x -1        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] 2    2.5000 <= 3
+    sqrt3-1          x^2 +2x -2        [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2] 2    3.0000 <= 3
+    (sqrt13-3)/2     x^2 +3x -1        [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3] 3    3.3333 <= 4
+    (sqrt29-5)/2     x^2 +5x -1        [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5] 5    5.2000 <= 6
+
+(B) The beta-boundary is NEVER hit, and the 0-boundary only at m=0 with rho=0.
+    m*alpha+rho = beta (mod 1) would make beta = m*alpha + p/q - j algebraic: impossible
+    (Gelfond-Schneider).  m*alpha+rho in Z with m>=1 would make alpha rational: impossible.
+    m=0: the orbit point is {rho}, which is 0 exactly when rho = 0.
+    alpha            rho     A_0 = rho - j_0        A_0 > 0?   c_0 = ||rho-beta||
+    (sqrt5-1)/2      0       +1.0000000000        True       0.3690702464
+    (sqrt5-1)/2      1/7     +0.1428571429        True       0.4880726107
+    (sqrt5-1)/2      1/2     +0.5000000000        True       0.1309297536
+    (sqrt5-1)/2      3/11    +0.2727272727        True       0.3582024808
+    (sqrt5-1)/2      2/5     +0.4000000000        True       0.2309297536
+
+    A CLEANER NONVANISHING ARGUMENT, found by this audit and replacing Phase 11B's:
+    j_m is the NEAREST integer to  m*alpha+rho-beta, so |A_m - beta| <= 1/2; and beta > 1/2.
+    Hence  A_m  >  beta - 1/2  =  0.1309297536  >  0   for EVERY m >= 0, every alpha, every rho.
+    So Baker's hypothesis 'beta_1 non-zero' needs no case analysis at all -- in particular
+    m=0 is not exceptional for it (Phase 11B argued nonvanishing from alpha irrational for
+    m>=1 and from 1/7 not integral for m=0; the one-line bound above covers both at once).
+    Verified over the whole family:
+    alpha            rho     min_{0<=m<=3000} A_m      > beta-1/2 ?
+    (sqrt5-1)/2      0       0.1311030711             True
+    (sqrt5-1)/2      1/7     0.1311678002             True
+    (sqrt5-1)/2      1/2     0.1310165360             True
+    (sqrt5-1)/2      3/11    0.1309480300             True
+    (sqrt5-1)/2      2/5     0.1309564436             True
+    sqrt2-1          0       0.1310191274             True
+    sqrt2-1          1/7     0.1310227715             True
+    sqrt2-1          1/2     0.1310934658             True
+    sqrt2-1          3/11    0.1309505865             True
+    sqrt2-1          2/5     0.1312395917             True
+    sqrt3-1          0       0.1311625765             True
+    sqrt3-1          1/7     0.1311663725             True
+    sqrt3-1          1/2     0.1309775284             True
+    sqrt3-1          3/11    0.1311559769             True
+    sqrt3-1          2/5     0.1309405187             True
+    (sqrt13-3)/2     0       0.1313816116             True
+    (sqrt13-3)/2     1/7     0.1311382587             True
+    (sqrt13-3)/2     1/2     0.1309964033             True
+    (sqrt13-3)/2     3/11    0.1310969835             True
+    (sqrt13-3)/2     2/5     0.1310734450             True
+    (sqrt29-5)/2     0       0.1313159063             True
+    (sqrt29-5)/2     1/7     0.1310072784             True
+    (sqrt29-5)/2     1/2     0.1310254981             True
+    (sqrt29-5)/2     3/11    0.1309370203             True
+    (sqrt29-5)/2     2/5     0.1310203966             True
+
+(C) The mismatch set: closed form, no-wrap hypothesis, and the SIGNED refinement.
+    alpha            rho     shifts  |delta|<=0.36907 all?  def-vs-closed  0 in M(d) iff d<0
+    (sqrt5-1)/2      0       10      True                   0              0
+    (sqrt5-1)/2      1/7     10      True                   0              0
+    sqrt2-1          0       10      True                   0              0
+    sqrt2-1          1/7     10      True                   0              0
+    sqrt3-1          0       10      True                   0              0
+    sqrt3-1          1/7     10      True                   0              0
+    (sqrt13-3)/2     0       10      True                   0              0
+    (sqrt13-3)/2     1/7     10      True                   0              0
+    (sqrt29-5)/2     0       10      True                   0              0
+    (sqrt29-5)/2     1/7     10      True                   0              0
+
+(D) Arc at 0.  rho = p/q in lowest terms, A = max partial quotient, K := (A+2)q^2.
+    ||m*alpha+p/q|| >= ||q(m*alpha+p/q)||/q = ||qm*alpha||/q > 1/((A+2)q^2 m) = 1/(Km).
+    alpha            rho     q    K       min_{1<=m<20000} K*m*||m alpha+rho||   ||rho||
+    (sqrt5-1)/2      0       1    3       1.145898              0.0000000000
+    (sqrt5-1)/2      1/7     7    147     1.341033              0.1428571429
+    (sqrt5-1)/2      1/2     2    12      1.337474              0.5000000000
+    (sqrt5-1)/2      3/11    11   363     39.653662             0.2727272727
+    (sqrt5-1)/2      2/5     5    75      1.341642              0.4000000000
+    sqrt2-1          0       1    4       1.372583              0.0000000000
+    sqrt2-1          1/7     7    196     11.256567             0.1428571429
+    sqrt2-1          1/2     2    16      1.372583              0.5000000000
+    sqrt2-1          3/11    11   484     2.828499              0.2727272727
+    sqrt2-1          2/5     5    100     1.414214              0.4000000000
+    sqrt3-1          0       1    4       1.071797              0.0000000000
+    sqrt3-1          1/7     7    196     1.154670              0.1428571429
+    sqrt3-1          1/2     2    16      1.148748              0.5000000000
+    sqrt3-1          3/11    11   484     2.312591              0.2727272727
+    sqrt3-1          2/5     5    100     10.388459             0.4000000000
+    (sqrt13-3)/2     0       1    5       1.375096              0.0000000000
+    (sqrt13-3)/2     1/7     7    245     1.386750              0.1428571429
+    (sqrt13-3)/2     1/2     2    20      1.386750              0.5000000000
+    (sqrt13-3)/2     3/11    11   605     12.479873             0.2727272727
+    (sqrt13-3)/2     2/5     5    125     1.387819              0.4000000000
+    (sqrt29-5)/2     0       1    7       1.298079              0.0000000000
+    (sqrt29-5)/2     1/7     7    343     16.898280             0.1428571429
+    (sqrt29-5)/2     1/2     2    28      1.299867              0.5000000000
+    (sqrt29-5)/2     3/11    11   847     25.997349             0.2727272727
+    (sqrt29-5)/2     2/5     5    175     11.682714             0.4000000000
+    => t_0 > 1/(K|delta|) for the m>=1 part, in every case.
+    m=0: rho!=0 gives ||rho|| >= 1/q > 1/(K*M) >= |delta| for M>=2 since K >= 3q^2 > q;
+         rho=0 gives ||0||=0, so the two-sided ball is useless -- the SIGNED form of (C)
+         is what carries rho=0, restricted to convergents with delta > 0.
+    alpha            rho=0: how many of q_2..q_20 have delta>0 (need infinitely many)
+    (sqrt5-1)/2      10 of 19   e.g. [2, 5, 13, 34, 89, 233]
+    sqrt2-1          10 of 19   e.g. [5, 29, 169, 985, 5741, 33461]
+    sqrt3-1          10 of 19   e.g. [3, 11, 41, 153, 571, 2131]
+    (sqrt13-3)/2     10 of 19   e.g. [10, 109, 1189, 12970, 141481, 1543321]
+    (sqrt29-5)/2     10 of 19   e.g. [26, 701, 18901, 509626, 13741001, 370497401]
+
+(E) Arc at beta.  A_m = m*alpha + p/q - j_m = (a_m + b_m sqrt(D))/g,  g = w*q.
+    Uniform degree 2 (m>=1) and height O(m^2), with the constant depending on alpha,rho.
+    alpha            rho     max_{1<=m<=3000} H(A_m)/m^2   deg=2 all?  A_m != 0 all?
+    (sqrt5-1)/2      0       1.00                         True        True
+    (sqrt5-1)/2      1/7     55.00                        True        True
+    (sqrt5-1)/2      3/11    145.00                       True        True
+    sqrt2-1          0       2.00                         True        True
+    sqrt2-1          1/7     84.00                        True        True
+    sqrt2-1          3/11    178.00                       True        True
+    sqrt3-1          0       2.00                         True        True
+    sqrt3-1          1/7     111.00                       True        True
+    sqrt3-1          3/11    299.00                       True        True
+    (sqrt13-3)/2     0       3.00                         True        True
+    (sqrt13-3)/2     1/7     133.00                       True        True
+    (sqrt13-3)/2     3/11    297.00                       True        True
+    (sqrt29-5)/2     0       5.00                         True        True
+    (sqrt29-5)/2     1/7     231.00                       True        True
+    (sqrt29-5)/2     3/11    539.00                       True        True
+    => log H(A_m) = 2 log m + O(1), so Baker gives c_m >= exp(-c1 (log(m+2))^kappa)
+       with c1 = c1(alpha,rho,kappa) effective, UNIFORMLY in m >= 1.
+
+(F) The construction, end to end.  t(M) = min(C_M, 1/(K M));  ell(M) = least admissible
+    convergent denominator with ||q alpha|| < t(M)  ('admissible' = delta>0 when rho=0).
+    alpha            rho     M     C_M         ell(M)   L-ell   >=M
+    (sqrt5-1)/2      0       2     0.01289576  89       144     True
+    (sqrt5-1)/2      0       4     0.01289576  89       144     True
+    (sqrt5-1)/2      0       8     0.01289576  89       144     True
+    (sqrt5-1)/2      0       16    0.01289576  89       144     True
+    (sqrt5-1)/2      0       32    0.01289576  89       144     True
+    (sqrt5-1)/2      1/7     2     0.12996138  144      92      True
+    (sqrt5-1)/2      1/7     4     0.12996138  377      469     True
+    (sqrt5-1)/2      1/7     8     0.01593666  610      846     True
+    (sqrt5-1)/2      1/7     16    0.01593666  1597     881     True
+    (sqrt5-1)/2      1/7     32    0.01593666  2584     2478    True
+    sqrt2-1          0       2     0.21671619  5        12      True
+    sqrt2-1          0       4     0.19749737  29       16      True
+    sqrt2-1          0       8     0.02592450  29       16      True
+    sqrt2-1          0       16    0.02592450  29       16      True
+    sqrt2-1          0       32    0.00351276  169      185     True
+    sqrt2-1          1/7     2     0.07385905  169      175     True
+    sqrt2-1          1/7     4     0.07385905  408      752     True
+    sqrt2-1          1/7     8     0.00279124  985      398     True
+    sqrt2-1          1/7     16    0.00279124  2378     2145    True
+    sqrt2-1          1/7     32    0.00279124  2378     2145    True
+    sqrt3-1          0       2     0.10112105  11       9       True
+    sqrt3-1          0       4     0.10112105  11       9       True
+    sqrt3-1          0       8     0.02932428  41       35      True
+    sqrt3-1          0       16    0.02932428  41       35      True
+    sqrt3-1          0       32    0.01008640  153      132     True
+    sqrt3-1          1/7     2     0.24397820  209      579     True
+    sqrt3-1          1/7     4     0.02397100  571      8       True
+    sqrt3-1          1/7     8     0.02397100  780      579     True
+    sqrt3-1          1/7     16    0.02397100  2131     1359    True
+    sqrt3-1          1/7     32    0.00935000  2911     711     True
+    (sqrt13-3)/2     0       2     0.32815412  10       2       True
+    (sqrt13-3)/2     0       4     0.02537848  109      263     True
+    (sqrt13-3)/2     0       8     0.02537848  109      263     True
+    (sqrt13-3)/2     0       16    0.00237790  1189     3927    True
+    (sqrt13-3)/2     0       32    0.00237790  1189     3927    True
+    (sqrt13-3)/2     1/7     2     0.18529697  360      104     True
+    (sqrt13-3)/2     1/7     4     0.11747866  360      104     True
+    (sqrt13-3)/2     1/7     8     0.02580558  1189     464     True
+    (sqrt13-3)/2     1/7     16    0.02580558  1189     464     True
+    (sqrt13-3)/2     1/7     32    0.01035475  3927     1653    True
+    (sqrt29-5)/2     0       2     0.36907025  26       50      True
+    (sqrt29-5)/2     0       4     0.05318254  26       50      True
+    (sqrt29-5)/2     0       8     0.05318254  26       50      True
+    (sqrt29-5)/2     0       16    0.05318254  26       50      True
+    (sqrt29-5)/2     0       32    0.00895207  701      616     True
+    (sqrt29-5)/2     1/7     2     0.29549021  135      181     True
+    (sqrt29-5)/2     1/7     4     0.08967460  701      96      True
+    (sqrt29-5)/2     1/7     8     0.08967460  701      96      True
+    (sqrt29-5)/2     1/7     16    0.01549864  3640     8077    True
+    (sqrt29-5)/2     1/7     32    0.01549864  3640     8077    True
+
+(G) Drift and discrepancy, uniformly in rho.  For bounded-type alpha, Kuipers-Niederreiter
+    Ch.2 Thm 3.4 gives N*D_N({m alpha}) <= c1' sum_{i<=k+1} a_i + c2' <= c1' A (k+1) + c2',
+    and q_k <= N with q_k growing geometrically gives k = O(log N).  A shift by rho turns one
+    interval into at most two, so D_N({m alpha + rho}) <= 2 D_N({m alpha}): uniform in rho.
+    alpha            rho     max_{N<=20000} |k_N - N beta| / log2(N)
+    (sqrt5-1)/2      0       0.698572
+    (sqrt5-1)/2      1/7     0.261860
+    (sqrt5-1)/2      1/2     0.329080
+    sqrt2-1          0       0.290900
+    sqrt2-1          1/7     0.416929
+    sqrt2-1          1/2     0.314524
+    sqrt3-1          0       0.303903
+    sqrt3-1          1/7     0.364073
+    sqrt3-1          1/2     0.311732
+    (sqrt13-3)/2     0       0.698572
+    (sqrt13-3)/2     1/7     0.364073
+    (sqrt13-3)/2     1/2     0.317521
+    (sqrt29-5)/2     0       0.738140
+    (sqrt29-5)/2     1/7     0.698572
+    (sqrt29-5)/2     1/2     0.563287
+
+(H) Complexity of the actual coding (needed only for the COVERAGE claim, not the proof).
+    alpha            rho     p(6) p(12) p(20)   all = 2n?
+    (sqrt5-1)/2      0       12   24    40      True
+    (sqrt5-1)/2      1/7     12   24    40      True
+    sqrt2-1          0       12   24    40      True
+    sqrt2-1          1/7     12   24    40      True
+    sqrt3-1          0       12   24    40      True
+    sqrt3-1          1/7     12   24    40      True
+    (sqrt13-3)/2     0       12   24    40      True
+    (sqrt13-3)/2     1/7     12   24    40      True
+    (sqrt29-5)/2     0       12   24    40      True
+    (sqrt29-5)/2     1/7     12   24    40      True
+
+(I) The quantitative content transfers: exact height floors for the general family.
+    If Phi(s)=u/v in lowest terms, H=max(|u|,v), then H >= 2^L / F(W), F = |2^ell-3^k| + c_W.
+    Every entry is an exact integer comparison.
+    alpha            rho     ell     k       L        H >= 2^S
+    (sqrt5-1)/2      0       89      56      233      2^140
+    (sqrt5-1)/2      1/7     2584    1630    5062     2^2469
+    sqrt2-1          0       169     107     354      2^179
+    sqrt2-1          1/7     2378    1500    4523     2^2136
+    sqrt3-1          0       153     97      285      2^125
+    sqrt3-1          1/7     2911    1836    3622     2^701
+    (sqrt13-3)/2     0       1189    750     5116     2^3919
+    (sqrt13-3)/2     1/7     3927    2477    5580     2^1643
+    (sqrt29-5)/2     0       701     443     1317     2^608
+    (sqrt29-5)/2     1/7     3640    2296    11717    2^8069
+
+ALL PHASE-12 GENERALIZATION CHECKS PASS.

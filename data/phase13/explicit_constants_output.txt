@@ -1,0 +1,59 @@
+================================================================================================
+PHASE 13 / item 5.  Explicit constant for  Lambda_m = A_m log 3 - log 2,  A_m algebraic
+================================================================================================
+
+Hypothesis check, m = 2, a_1 = 3, a_2 = 2, b_1 = A_m, b_2 = -1:
+  a_1, a_2 non-zero algebraic                                  : yes (rational integers)
+  b_1 = A_m non-zero  (A_m > beta - 1/2 = 0.13093 > 0)         : yes, Phase 12/13
+  b_2 = -1 non-zero algebraic                                  : yes
+  Lambda_m != 0   (else log_3 2 = A_m algebraic)               : yes, Gelfond-Schneider
+  h(3) = log 3 = 1.098612 ;  h(2) = log 2 = 0.693147  (Weil height of a rational integer n is log n)
+  |l_1| = log 3, |l_2| = log 2
+  D = [Q(A_m) : Q] = [Q(alpha, rho) : Q]   (2 and 3 are rational, so they add nothing)
+
+  D    log A_1 (>=max(1,h(3),e log3/D))  log A_2   c_1 = (50m)^{3m} D^{m+2} logA_1 logA_2
+  2    1.493169                              1.000000  2.38907e+13   (B >= 7.093e+14, log B >= 34.195)
+  3    1.098612                              1.000000  8.89876e+13   (B >= 1.282e+15, log B >= 34.787)
+  4    1.098612                              1.000000  2.81245e+14   (B >= 7.202e+15, log B >= 36.513)
+  6    1.098612                              1.000000  1.4238e+15   (B >= 8.203e+16, log B >= 38.946)
+
+So, with  log B_m := max( log B_min , log H(A_m) + 2 )  and  H(A_m) <= C_h m^D :
+
+    c_m = |Lambda_m| / log 3  >  exp( -c_1 (log B_m)^2 ) / log 3 ,      c_1 EXPLICIT above.
+
+The witness bound and the price.  log ell(M) <= max( c_1 (log B_M)^2 , D^2 log M ) + O(1), and
+the surplus is  S >= M - (C/ln2) log ell(M) - C_0.  Taking C = 1 (optimistic, for orientation
+only -- the true C also needs the Kuipers-Niederreiter constants) the surplus turns positive at
+roughly the M solving  M = 1.45 * c_1 (log B_M)^2 :
+
+  D    c_1          M where M = 1.45 c_1 (log B_M)^2   log10 ell(M) there
+  2    2.389e+13    2.65459e+17                        7.951e+16
+  3    8.899e+13    2.32264e+18                        6.957e+17
+  4    2.812e+14    1.37416e+19                        4.116e+18
+  6    1.424e+15    1.69797e+20                        5.086e+19
+
+READING.  The constant is explicit but astronomical: the first M at which the *effective*
+argument yields a positive surplus is around 10^17, at a witness length ell of about
+10^(2*10^13) -- utterly beyond computation.  So the explicit route does NOT produce usable
+numbers; it produces a WRITTEN-DOWN bound where previously there was only 'effectively
+computable in principle'.  The five finite certificates (H >= 2^462 ... 2^15998) remain the
+only numerically useful height floors, and they are Baker-free.
+
+WHAT IS AND IS NOT SETTLED ABOUT THE SHAPE:
+  Baker 1967 (III, Thm 2)            : exp(-C (log B)^kappa), kappa > 2, C not supplied
+  Waldschmidt Thm 10.1               : exp(-c_1 (log B)^2),   c_1 SUPPLIED (above)
+  polynomial, i.e. B^{-C}            : equivalent to kappa = 1, which is BAKER'S OWN
+                                       CONJECTURE (MR0220680: 'It is conjectured that
+                                       Theorems 3.1 and 3.2 essentially hold with k = 1').
+                                       NOT available.  Phase 12's hope that fixed degree
+                                       might give a polynomial bound is therefore NOT
+                                       supported by the literature, and is withdrawn.
+
+NO VALID REDUCTION TO INTEGER COEFFICIENTS EXISTS.  Clearing denominators in
+  q * Lambda_m = (qm)(alpha log 3) + (p - q j_m) log 3 - q log 2      (rho = p/q)
+gives integer coefficients, but the first logarithm is  alpha log 3 = log(3^alpha), and 3^alpha
+is TRANSCENDENTAL by Gelfond-Schneider (alpha algebraic irrational).  Linear-forms-in-logarithms
+theorems require algebraic arguments, so Laurent-Mignotte-Nesterenko and Baker-Wustholz do not
+apply, with or without clearing denominators.
+
+PHASE-13 EXPLICIT-CONSTANT COMPUTATION COMPLETE.

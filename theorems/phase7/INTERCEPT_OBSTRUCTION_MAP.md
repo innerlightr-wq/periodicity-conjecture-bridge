@@ -1,3 +1,7 @@
+> **CORRECTED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md).**
+> Item 13's "remaining lemma" is BHZ 2006 Prop. 5.1/5.2 (**C1**), and the countable-exceptional-set
+> reduction is refuted (**C2**). Retained verbatim as the historical record.
+
 # INTERCEPT_OBSTRUCTION_MAP.md
 
 ## 1. What exactly changes when intercept `0` is removed?

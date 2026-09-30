@@ -1,3 +1,8 @@
+> **CORRECTED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md)
+> item C4.** The displayed inequality `S_k >= A*E_k - C_A*D_k - O_A(log ell_k)` is dimensionally
+> incomplete; the leading term is `ell_k * E_k`. Conclusions drawn from it are unaffected.
+> Retained verbatim as the historical record.
+
 # SURPLUS_DECOMPOSITION.md
 
 ## The key structural simplification for this phase

@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\repo}[1]{\text{\texttt{#1}}}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Correction Notice --- Revision 4}\\[4pt]
+{\itshape Beyond Sturmian Words in the 3x+1 Periodicity Conjecture:\\
+A Periodic-Approximation and Arithmetic-Height Bridge}\\[3pt]
+Elias De Jes\'us \quad (ORCID \href{https://orcid.org/0009-0007-0190-9143}{0009-0007-0190-9143})\\[3pt]
+Corrects Revision 3, Zenodo version DOI \texttt{10.5281/zenodo.23068563}\\
+Concept DOI \texttt{10.5281/zenodo.23045140} \quad --- \quad 30 September 2026
+\end{center}
+
+\noindent\textbf{Summary.} \textbf{No mathematical statement of Revision 3 is altered or withdrawn.}
+Revision 4 corrects two statements of fact about the deposit itself, one framing error in the
+open-problem list, and adds explicit numerical constants where Revision 3 asserted only effectivity.
+Revision 3's theorems --- in particular the critical-density results for quadratic rotations at
+rational and at algebraic offsets --- stand exactly as stated, with the same proofs.
+
+\medskip
+
+\noindent\textbf{E1. Revision 3 is deposited.} Revision 3's ``Provenance and Verification'' section
+states: ``At the time of writing Revision 3 is a draft and has not been deposited.'' It was deposited
+on 30 September 2026 as Zenodo version DOI \texttt{10.5281/zenodo.23068563}. Revision 4 replaces that
+sentence with the full deposit table.
+
+\medskip
+
+\noindent\textbf{E2. The ``draft'' labelling is removed.} Revision 3 was deposited under a filename
+containing \texttt{DRAFT}. Deposited files cannot be renamed in place; Revision 4 is issued as
+\texttt{note\_rev4.pdf} and nothing in it is labelled a draft.
+
+\medskip
+
+\noindent\textbf{E3. Open 4's framing is corrected --- the only substantive item.} Revision 3
+labelled ``Open 4 --- unbounded partial quotients'' \emph{the live frontier}. That conflates two
+different things, and repeats for the unbounded-type case precisely the error Revision 3 itself
+corrected for the bounded-type case.
+
+Every complementary symmetric Rote sequence has ones-density exactly $1/2$ \emph{whatever} the
+slope's partial quotients: the density-$1/2$ fact concerns the doubled root of the odd-weight
+transfer and is independent of the continued fraction. Since $1/2<\beta=\ln2/\ln3$, Monks--Yazinski,
+\emph{The autoconjugacy of the $3x+1$ function}, Discrete Math.\ \textbf{275} (2004) 219--236,
+Theorem 2.7(b) already gives $\Phi(v)\notin\Q$ for every CS Rote sequence over \emph{every} irrational
+slope, bounded type or not.
+
+What is unfinished at unbounded partial quotients is therefore \emph{the note's own independent
+bridge}, whose odd-weight branch has margin exactly $0$ at an intercept with
+$\mathrm{ice}(\omega)=2$ --- not the irrationality conclusion, which is available. Open 4 asks for a
+second proof of an available statement by a mechanism that presently cannot supply one. It remains
+worth answering, because that mechanism is what yields effective height bounds, but it is not a
+frontier of knowledge about irrationality. The frontier is lower ones-density $\ge\beta$, where
+Revision 3's new theorems operate. Revision 4 rewrites the Open 4 entry and the corresponding
+roadmap item, and downgrades Revision 2's judgement that Open 4(i) was ``the single highest-value
+target''.
+
+\medskip
+
+\noindent\textbf{E4. Explicit constants added.} Revision 3 said the asymptotic argument was
+``effective'' without supplying numbers. Revision 4 adds a section deriving them for the named
+example $\alpha=(\sqrt5-1)/2$, $\rho=1/7$:
+\[
+  S(W)\ \ge\ (L-\ell)-C\log_2\ell-C_0,\qquad C=24.207846,\quad C_0=35.869175,
+\]
+from Kuipers--Niederreiter's discrepancy bound read directly at its source, and an explicit $f(M)$
+with $H\ge2^{f(M)}$ for every integer $M\ge2$, positive for $M\ge1.78337\cdot10^{18}$. In the course
+of that derivation one looseness in Revision 3 was identified and is recorded: Revision 3 set
+$\log B=\log H(A_m)+2$ without distinguishing the absolute logarithmic Weil height appearing in the
+hypothesis of the logarithmic-form estimate from the classical height being bounded. Revision 3's
+choice is \emph{larger}, hence admissible --- the hypotheses on $B$ are lower bounds and the
+conclusion decreases in $B$ --- but wasteful; the sharper conversion
+$h(1:A_m:-1)\le\tfrac12\log H(A_m)+0.275$ is used in Revision 4. \textbf{No conclusion changes.}
+
+The explicit threshold $M\approx1.8\cdot10^{18}$ is beyond computation and is not a computational
+claim. It does not compete with, and does not improve, the exact finite certificates
+$H\ge2^{462},\dots,2^{15998}$, which come from integer comparisons at witnesses of length at most
+$6765$ and use no analytic input.
+
+\medskip
+
+\noindent\textbf{On the deposit history.} The concept record \texttt{10.5281/zenodo.23045140} carries
+four versions. One of them, \texttt{10.5281/zenodo.23068326}, contains the same file as Revision 2
+byte for byte (\texttt{md5:b61d76f6a3a0d23ec6d148f1aeea658b}) under a filename suggesting a later
+build. It is noted here so that a reader arriving at it knows what it holds; it is part of the
+record's history and is left as it stands. \textbf{Cite Revision 2 as
+\texttt{10.5281/zenodo.23061396}.}
+
+\medskip
+
+\noindent\textbf{Acknowledgement and dependency, unchanged.} L\'opez--Stoll's work on density and the
+$3x+1$ conjugacy map helped guide this programme toward the critical density $\beta=\ln2/\ln3$. We
+acknowledge that influence. The results presented here are established through the independent
+arguments given in the note and do not require their proposed upper-density exclusion. We take no
+position on their Theorem 1: we have neither established nor disproved it, and no step of any theorem
+in the note invokes it.
+
+\medskip
+
+\noindent\textbf{Standing scope.} The note proves nothing about divergent orbits of positive
+integers, nothing about the Collatz conjecture, and nothing about the $3x+1$ Periodicity Conjecture
+in general. Novelty of the critical-density results is formally unresolved. Neither the note nor the
+foundation paper it builds on (\texttt{10.5281/zenodo.23019799}, by the same author) has been
+refereed.
+
+\end{document}

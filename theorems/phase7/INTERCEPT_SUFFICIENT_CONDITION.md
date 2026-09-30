@@ -1,3 +1,8 @@
+> **SUPERSEDED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md)
+> item C1.** The condition classified `CONJECTURAL` below is a **published theorem**: BHZ 2006
+> Propositions 5.1 and 5.2. The computational findings in this file are correct and confirmed.
+> Retained verbatim as the historical record.
+
 **CONJECTURAL**
 
 # INTERCEPT_SUFFICIENT_CONDITION.md
