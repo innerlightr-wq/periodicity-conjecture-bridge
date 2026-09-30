@@ -2,6 +2,19 @@
 
 # PHASE12_PROPOSED_UPDATES.md
 
+> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
+> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
+> statement of this repository is the neutral one: *López–Stoll propose an upper-density exclusion. We
+> do not rely on that result; the conclusions developed here follow from the independent arguments
+> stated in this repository.* We have **neither established nor disproved** their theorem and take no
+> position on it. The sharper language retained below is the **audit record** — it preserves a
+> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
+> time of writing) together with its source reference and its verification status, namely **not
+> verified by us and not a result of this repository**. It is kept, not rewritten, because research
+> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
+> this repository depends on López–Stoll in either direction. Canonical wording:
+> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
+
 > **SUPERSEDED BY [`theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md`](../phase13/PROPOSED_PUBLICATION_CORRECTIONS.md)**, which absorbs all eleven items below and adds four (T2 restated as a challenged claim relied on nowhere, the Ridout withdrawal, the polynomial-bound withdrawal, and the foundation paper's public DOI + self-citation label). Still **NOT APPLIED**. Retained as the historical record.
 
 Exact replacement text for every outstanding correction, Phases 9B through 12, in one place. **No

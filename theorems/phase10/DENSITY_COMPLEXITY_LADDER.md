@@ -2,6 +2,19 @@
 
 # DENSITY_COMPLEXITY_LADDER.md
 
+> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
+> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
+> statement of this repository is the neutral one: *López–Stoll propose an upper-density exclusion. We
+> do not rely on that result; the conclusions developed here follow from the independent arguments
+> stated in this repository.* We have **neither established nor disproved** their theorem and take no
+> position on it. The sharper language retained below is the **audit record** — it preserves a
+> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
+> time of writing) together with its source reference and its verification status, namely **not
+> verified by us and not a result of this repository**. It is kept, not rewritten, because research
+> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
+> this repository depends on López–Stoll in either direction. Canonical wording:
+> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
+
 ## 1. The four load-bearing results, with exact hypotheses
 
 Notation: `v ∈ {0,1}^ℕ` a parity word; `k_n(v) = |v[0:n]|_1`; `p_v(L)` the factor complexity;

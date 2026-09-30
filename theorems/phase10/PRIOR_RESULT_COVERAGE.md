@@ -2,6 +2,19 @@
 
 # PRIOR_RESULT_COVERAGE.md
 
+> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
+> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
+> statement of this repository is the neutral one: *López–Stoll propose an upper-density exclusion. We
+> do not rely on that result; the conclusions developed here follow from the independent arguments
+> stated in this repository.* We have **neither established nor disproved** their theorem and take no
+> position on it. The sharper language retained below is the **audit record** — it preserves a
+> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
+> time of writing) together with its source reference and its verification status, namely **not
+> verified by us and not a result of this repository**. It is kept, not rewritten, because research
+> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
+> this repository depends on López–Stoll in either direction. Canonical wording:
+> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
+
 > **CORRECTION (Phase 12).** T2 below is recorded as "preprint". That caveat is too weak: an open, uncontested third-party issue (`innerlightr-wq/eoc-divergence` #30) identifies the step carrying López–Stoll Theorem 1 — from "`Φ_ℝ(v)` irrational" to "`Φ(v)` aperiodic", via an alleged 2-adic expansion of a real irrational — and argues it does not follow. **The securely covered density region is therefore `liminf < β` (Monks–Yazinski 2004, refereed), not `liminf ≠ β`**, and "only density exactly `β` is uncovered" should read "only density at or above `β` is securely uncovered". No verdict about the Phase 11/12 words changes. See [`theorems/phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md`](../phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md) §3.
 
 

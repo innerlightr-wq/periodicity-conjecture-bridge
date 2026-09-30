@@ -7,6 +7,14 @@ Every outstanding correction, Phases 9B → 13, in one reviewable place, with ex
 Zenodo action taken; no deposited artifact overwritten.** Historical files keep their text and carry
 pointers.
 
+> **Standing wording rule (added with the documentation pass).** In current-facing documentation and
+> in the replacement text below, results by other authors that this repository does not use are
+> described in neutral dependency language, not adversarial language. The canonical form is:
+> *"López–Stoll propose an upper-density exclusion. We do not rely on that result; the conclusions
+> developed here follow from the independent arguments stated in this repository."* Technical concerns
+> remain recorded in the audit files with their source references and verification status; they are
+> not repeated as claims. See `docs/DEPENDENCE_ON_PRIOR_RESULTS.md`.
+
 ## 0. Inventory — fifteen items
 
 | # | owed since | subject | vehicle |
@@ -18,11 +26,11 @@ pointers.
 | 5 | 11B | Baker citation: `c_m ≥ C₂m^{−κ}` withdrawn → `C e^{−(log B)^κ}` | banner (applied) + status |
 | 6 | 11B | the no-wrap hypothesis `|δ| ≤ min(β,1−β)` was unstated | banner (applied) |
 | 7 | 11B | the measured constants `0.41`, `2.02` are not asymptotic input | banner (applied) |
-| 8 | 12 | T2 (López–Stoll) downgraded | status + note Rev 3 |
+| 8 | 12 | T2 (López–Stoll) restated as a result **not relied on**, with the coverage claim rephrased against what is independently available | status + note Rev 3 |
 | 9 | 12 | "effective" split into *in principle* / *explicitly supplied* | status |
 | 10 | 12 | the hitting-time mechanism is the foundation paper's own §12 problem (1) | status + note Rev 3 |
 | 11 | 12 | Phases 9–13 absent from `THEOREM_STATUS.md` and `LADDER.md` | status |
-| 12 | **13** | **T2's status sharpened once more: "challenged preprint claim pending verification", relied on nowhere** | status + note Rev 3 |
+| 12 | **13** | **T2 wording made neutral** (see §7): a proposed result we do not rely on, neither established nor disproved by us | status + note Rev 3 |
 | 13 | **13** | **Phase 12's one-line dismissal of the Ridout route is withdrawn** (the exponent exceeds the threshold at 7 of 20 convergents) | status |
 | 14 | **13** | **Phase 12's polynomial-bound hope is withdrawn** (it is Baker's own unproved conjecture `κ=1`) | status |
 | 15 | **13** | **the foundation paper must be cited by its public DOI**, and as a **self-citation to an unrefereed preprint** | status + README + note Rev 3 |
@@ -106,10 +114,12 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 > every s with p(L) <= 2L  (foundation problem (4))  --  OPEN
 > ```
 >
-> **Reading the ladder by density, not by complexity (9B, refined 12, refined 13).** The dichotomy is
-> by lower ones-density. Below `β = ln2/ln3`: Monks–Yazinski (2004) Thm 2.7(b), refereed. Above `β`:
-> only López–Stoll (2021) Thm 1, **a challenged preprint claim pending verification, relied on
-> nowhere here**. So the securely covered region is `liminf < β`, and the residual is `liminf ≥ β`.
+> **Reading the ladder by density, not by complexity (9B, refined 12, refined 13).** The relevant
+> coordinate is lower ones-density. Below `β = ln2/ln3` the conclusion is already available from
+> Monks–Yazinski (2004) Thm 2.7(b), refereed. Above `β`, López–Stoll (2021) Thm 1 propose an
+> upper-density exclusion; **we do not rely on that result, and the conclusions developed here follow
+> from the independent arguments stated in this repository.** Stated against what is independently
+> available, the covered region is `liminf < β` and the residual is `liminf ≥ β`.
 > Rungs 1–3″ sit at density `1/2` or at complexity `n+1` and are covered. The critical-density rungs
 > sit at `= β`, where no density result applies. Each rung's *qualitative* conclusion is decided by
 > that test; its *quantitative* content (height floors) is never covered by T1/T2, which bound
@@ -133,9 +143,10 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 
 > **Standing gate (9B, 10, 12, 13).** Before claiming novelty for any class:
 > 1. Compute the lower ones-density. If `< β`, Monks–Yazinski (2004) Thm 2.7(b) already gives the
->    qualitative conclusion, whatever the complexity. If `> β`, López–Stoll (2021) Thm 1 *would*
->    cover it — but that claim is challenged and pending verification, so treat the region as open and
->    say so, in both directions.
+>    qualitative conclusion, whatever the complexity. If `> β`, López–Stoll (2021) Thm 1 propose an
+>    exclusion covering it; since this repository does not rely on that result, state the coverage
+>    claim against what is independently available and say plainly which of the two situations you are
+>    describing.
 > 2. Compute `liminf p(L)/L`. If `< 1.70951…`, counting already covers it.
 > 3. Ask **separately** whether the *quantitative* content is new, and check it against the foundation
 >    paper's own effectivity claim (Cor. 6.2, Cor. 8.7).
@@ -147,15 +158,24 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 >    low-complexity literature (Adamczewski–Bugeaud; Bugeaud–Kekeç) constrains the digit string of
 >    `D(s) = Σ s_i 2^i`, not `Φ(s)`. They are different numbers.
 
-## 7. `theorems/phase10/PRIOR_RESULT_COVERAGE.md` and every T2 mention
+## 7. `theorems/phase10/PRIOR_RESULT_COVERAGE.md` and every T2 mention — neutral wording
 
 Replace "preprint" with:
 
-> **preprint, and a challenged claim pending verification.** `innerlightr-wq/eoc-divergence` issue
-> #30 (open, uncontested) identifies the step carrying Theorem 1 — from "`Φ_ℝ(v)` irrational" to
-> "`Φ(v)` aperiodic", via an alleged 2-adic expansion of a real irrational — and argues it does not
-> follow. **Neither disproved nor securely established; not relied on anywhere in this repository.**
-> The securely covered density region is `liminf < β` only.
+> **preprint; a proposed result this repository does not rely on.** López–Stoll propose an
+> upper-density exclusion. We do not rely on that result; the conclusions developed here follow from
+> the independent arguments stated in this repository. We have **neither established nor disproved**
+> it and take no position on it. Stated against what is independently available, the covered density
+> region is `liminf < β` (Monks–Yazinski 2004, refereed); the classes treated here sit at exactly `β`
+> and are outside that range either way, so **no conclusion changes in either case.**
+
+A technical observation about one step of that paper, raised by a third party
+(`innerlightr-wq/eoc-divergence` issue #30, open at the time of writing), is retained in the audit
+record with its source reference and verification status — see
+`theorems/phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md` §1 and
+`theorems/phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md` §3. **It has not been verified by us, it is not
+a result of this repository, and it must not be presented as one.** The canonical current-facing
+wording is `docs/DEPENDENCE_ON_PRIOR_RESULTS.md`.
 
 ## 8. The deposited note — **five** corrections owed
 
@@ -166,7 +186,9 @@ Replace "preprint" with:
 2. the **CS Rote novelty framing** — it crosses the counting frontier only;
 3. the **Baker citation** — any polynomial-bound statement becomes `C e^{−(log B)^κ}`, cited to
    Mathematika **14** (1967), Part III, Theorem 2;
-4. the **T2 downgrade** wherever the note relies on density `> β` being covered;
+4. **the T2 wording** wherever the note treats density `> β` as covered — restate it as a proposed
+   result the note does not rely on, and phrase the coverage claim against what is independently
+   available;
 5. **the foundation citation** — now by version DOI `10.5281/zenodo.23019799`, and labelled a
    self-citation to an unrefereed preprint.
 

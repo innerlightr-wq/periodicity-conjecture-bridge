@@ -2,6 +2,37 @@
 
 Research program on the 3x+1 Periodicity Conjecture using periodic approximation, 2-adic rigidity, symbolic repetition, and arithmetic height to exclude increasingly broad classes of aperiodic parity words.
 
+> ### Specialists welcome
+>
+> I am an independent researcher whose professional background is outside mathematics, and **nothing
+> in this repository has been refereed.** If you work in number theory, symbolic dynamics,
+> combinatorics on words, Diophantine approximation, or `p`-adic dynamics, I would be glad of your
+> eyes on it — to correct, strengthen, or extend any part of it, or to tell me it is already known.
+>
+> **→ [An invitation to number theorists and domain experts](docs/INVITATION_TO_DOMAIN_EXPERTS.md)**,
+> with a concrete list of review and extension targets.
+>
+> See also **[what these conclusions depend on](docs/DEPENDENCE_ON_PRIOR_RESULTS.md)** — the external
+> results relied on, their refereeing status, and the ones deliberately not relied on.
+
+## Where the programme currently stands
+
+The ladder diagram, "Headline result", and repository-structure listing below describe the programme
+**through Phase 6**, and are accurate for that range. Phases 7–13 are recorded in
+the `theorems/`, `scripts/` and `data/` directories for phases `7`, `8`, `9`, `9b`, `10`, `10b`, `11`,
+`11b`, `12` and `13`; the consolidated current chain is
+[`theorems/phase13/CONSOLIDATED_THEOREM_AND_DEPENDENCIES.md`](theorems/phase13/CONSOLIDATED_THEOREM_AND_DEPENDENCIES.md),
+and the strongest statement proved so far is in
+[`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`](theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md).
+
+The rewrite of this README, `LADDER.md` and `THEOREM_STATUS.md` to cover Phases 7–13 is **drafted but
+deliberately not applied**, pending my own review of the final theorem statements and of several
+outstanding citation corrections; the exact replacement text is in
+[`theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md`](theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md).
+Until that is settled, treat the sections below as the Phase 1–6 record and the phase directories as
+the current one. **Novelty remains formally unresolved throughout**, and no statement here should be
+read as a claim on the full Periodicity Conjecture or on the Collatz conjecture.
+
 ## Technical Note
 
 The current research program is consolidated in a peer-citable technical note:
@@ -55,7 +86,9 @@ README.md              this file
 LADDER.md              the exclusion-program milestone diagram, with per-rung status
 THEOREM_STATUS.md       consolidated status map, every result across all phases
 PRIOR_ART.md            index into the two adversarial prior-art searches
-docs/                   cross-program scope limits (EOC handoff audit)
+docs/                   INVITATION_TO_DOMAIN_EXPERTS.md   invitation for specialist review
+                        DEPENDENCE_ON_PRIOR_RESULTS.md    what the conclusions rest on
+                        EOC_HANDOFF_CLOSED.md             cross-program scope limit (EOC audit)
 CITATION.cff            citation metadata
 
 theorems/phase1/        Phase 1: abstraction of the source paper's bridge technique,
@@ -99,6 +132,10 @@ cd scripts/phase6 && python3 full_pipeline_nonperiodic.py    # full chain on 4 n
 - Falsification-first throughout: every phase actively attacks its own prior claims before extending them. Real bugs and wrong working hypotheses were found and fixed in-session — a reciprocal continued-fraction bug (Phase 1), a false-positive cycle detector (Phase 2/3), an over-conservative threshold promoted from too few examples that Phase 4 actively stress-tested, broke, and replaced with the correct general bound, a false justification for seed-independence caught and repaired by Phase 5's hostile referee pass, and a small-`k` boundary equality caught by Phase 6's non-periodic adversarial controls — all disclosed in `THEOREM_STATUS.md` and the relevant phase files, not silently corrected.
 - No claim in this repository asserts progress on the full Lagarias Periodicity Conjecture. See `LADDER.md`'s closing section for the precise, structural reason no repetition-based method — however far this ladder is extended — can ever close the conjecture alone.
 - This repository is an audit and proof record, not a manuscript. No paper is drafted here.
+- Unrefereed preprints are labelled as such at every use, **including my own**; a foundation result of
+  mine is additionally labelled a self-citation. No preprint is treated as settled.
+- Specialist review has **not** taken place. See
+  [`docs/INVITATION_TO_DOMAIN_EXPERTS.md`](docs/INVITATION_TO_DOMAIN_EXPERTS.md).
 
 ## License
 

@@ -2,6 +2,19 @@
 
 # PHASE12_VERDICT.md
 
+> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
+> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
+> statement of this repository is the neutral one: *López–Stoll propose an upper-density exclusion. We
+> do not rely on that result; the conclusions developed here follow from the independent arguments
+> stated in this repository.* We have **neither established nor disproved** their theorem and take no
+> position on it. The sharper language retained below is the **audit record** — it preserves a
+> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
+> time of writing) together with its source reference and its verification status, namely **not
+> verified by us and not a result of this repository**. It is kept, not rewritten, because research
+> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
+> this repository depends on López–Stoll in either direction. Canonical wording:
+> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
+
 > **PHASE 13 ADDENDUM.** Two assessments below are superseded. (i) §2's one-line dismissal of the subspace-theorem route ("`L/ℓ → 1`, far too weak") is **withdrawn**: measured against Ridout's threshold the exponent exceeds `2` at 7 of 20 convergents, maximum `3.361` — the route is live, and infinitude is the open point (`theorems/phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md` §5). (ii) §8's hope that a fixed degree might give a **polynomial** logarithmic-form bound is **withdrawn** — that is Baker's own unproved conjecture `κ = 1`; the best explicit shape is `exp(−c₁(log B)²)`, and `c₁` is now a number (`theorems/phase13/EXPLICIT_CONSTANTS_STATUS.md`). Theorem 12 itself stands and is the `ρ ∈ ℚ` case of Theorem 13 (`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`).
 
 Isolated worktree `/home/elias/scratch/phase12-bridge`, branch `phase12-audit-generalize`, cut from
