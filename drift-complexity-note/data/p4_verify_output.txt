@@ -1,0 +1,13 @@
+V1 equal factors => congruent mod 2^L                                        5800 fail 0
+V2 p(L) = #{a_i mod 2^L} (whole orbit)                                      26760 fail 0
+V2 p(L) >= #{distinct a_i in [c, c+2^L)}                                   187320 fail 0
+V4 envelope |a_n| <= 2^Omega_n (|a| + b k_n/2)                             156747 fail 0
+V5 J-set is an initial segment (monotonicity)                               73940 fail 0
+V5 all factors at positions 0..J* distinct                                  73940 fail 0
+V6 Omega*_N(s^r v) <= Omega*_{N+r}(v)                                        2000 fail 0
+V6 Omega*_{N+r}(v) <= Omega*_N(s^r v) + r log2(3/2)                          2000 fail 0
+V7 Lambda == 0 on supercritical (eventually periodic) rational points         261 fail 0
+V7 a_n = 2^rho_n Lambda - b K(s^n v)                                         6741 fail 0
+TOTAL 535509 FAILURES 0
+supercritical cycles tested: 261
+V3 closed-interval off-by-one instances found (a, b, L, #values in closed interval, p(L)): 0

@@ -1,0 +1,493 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\gs}{g^{*}}
+\newcommand{\Om}{\Omega^{*}}
+\DeclareMathOperator{\lcp}{lcp}
+
+\title[Drift-sensitive complexity for rational points of the $3x+1$ conjugacy]{A Drift-Sensitive Complexity Bound for Rational Points\\ of the $3x+1$ Conjugacy Map}
+\author{Elias De Jes\'us}
+\address{Independent Researcher, Burke, Virginia, USA}
+\email{dejesuselias10@gmail.com}
+\thanks{ORCID: 0009-0007-0190-9143. Revision 1 (draft), 30 September 2026.}
+\date{}
+
+\begin{document}
+
+\begin{abstract}
+Let $T$ be the $3x+1$ map on the $2$-adic integers and let $\Phi$ be the Bernstein--Lagarias map sending a binary word $v$ to the unique $2$-adic integer whose $T$-parity vector is $v$. Suppose that $v$ is not eventually periodic but $\Phi(v)$ is rational. With $k_t$ the number of ones among the first $t$ letters of $v$ and $\rho_t=k_t\log_2 3-t$, let $\gs(v)$ be the asymptotic maximal upward excursion of $\rho$ within the first $N$ letters, normalized by $N$. We show that the factor complexity of $v$ satisfies $p_v(L)>L/(\gs(v)+\varepsilon)$ for every $\varepsilon>0$ and all sufficiently large $L$; in particular $p_v(L)/L\to\infty$ when $\gs(v)=0$. Since always $\gs(v)\le\log_2(3/2)$, the classical constant $1/\log_2(3/2)=1.7095\ldots$ is recovered as the worst case. Consequently every aperiodic word with ones-frequency $\ln 2/\ln 3$ and linear factor complexity has irrational image under $\Phi$, and so does every coding of an irrational rotation by an arc of length less than $3\ln 2/(2\ln 3)$. The proof adapts the counting argument of Dubickas, replacing the uniform worst-case growth estimate by an orbit-dependent maximal-drift quantity.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The $3x+1$ map $T\colon\Z_2\to\Z_2$ is conjugate, through the Bernstein--Lagarias map $\Phi$, to the one-sided shift on binary words \cite{Ber94,BL96}. Every eventually periodic word is sent by $\Phi$ to a rational number. The converse, that no aperiodic word has a rational image, is Lagarias's Periodicity Conjecture \cite{Lag85,BL96}. This note does not prove that conjecture. It addresses the following narrower question:
+\begin{quote}
+\emph{What symbolic complexity is forced if an aperiodic parity vector nevertheless has a rational conjugacy value?}
+\end{quote}
+
+If $\Phi(v)=a/b$ with $b$ odd, then every iterate $T^n(a/b)$ has the form $a_n/b$ with $a_n\in\Z$, and the numerators form an integer orbit of the map $a\mapsto a/2$ or $(3a+b)/2$. Dubickas \cite{Dub09} showed, for positive-integer $3x+1$ trajectories tending to infinity, that equal parity blocks force dyadic divisibility of orbit differences, and combined this with the uniform growth bound $x_n<(3/2)^n(x_0+1)$ to obtain a factor complexity exceeding $1.70951129\,n$ for all large $n$. The same argument applies to the integer numerator orbits above \cite[Cor.~9.3]{DJ26}.
+
+The present refinement replaces the uniform worst-case growth $(3/2)^n$ by the growth that the orbit actually has. Informally: \emph{the complexity slope forced by rationality is at least the reciprocal of the maximal normalized upward drift of $k_t\log_2 3-t$.} When that drift is sublinear, the complexity must be superlinear.
+
+The main result is Theorem~\ref{thm:main}. Its principal consequences are the following:
+\begin{itemize}[leftmargin=2em]
+\item the zero-drift case (Corollary~\ref{cor:zero});
+\item a frequency--complexity tradeoff (Corollary~\ref{cor:tradeoff});
+\item the critical-frequency case (Corollary~\ref{cor:critical});
+\item a statement for rotation codings (Corollary~\ref{cor:rotation}).
+\end{itemize}
+Section~\ref{sec:scope} records the range reached by the present state-counting argument. We did not locate an explicit statement of this refinement in the sources examined.
+
+\section{Setting}\label{sec:setting}
+
+Let $T(x)=x/2$ if $x\equiv0\pmod 2$ and $T(x)=(3x+1)/2$ if $x\equiv1\pmod 2$, for $x\in\Z_2$. For $v=(v_0,v_1,\dots)\in\{0,1\}^{\N}$, let $\Phi(v)$ denote the unique $x\in\Z_2$ with $T^n(x)\equiv v_n\pmod 2$ for all $n\ge0$. We use only the following facts from \cite{Ber94,BL96}:
+\begin{itemize}[leftmargin=2em]
+\item $\Phi$ is a bijection $\{0,1\}^{\N}\to\Z_2$;
+\item $\Phi(\sigma v)=T(\Phi(v))$, where $\sigma$ is the shift.
+\end{itemize}
+In particular, if $T^i(x)=T^j(x)$ then $\sigma^i v=\sigma^j v$. A word is \emph{aperiodic} if it is not eventually periodic.
+
+The rational elements of $\Z_2$ are the fractions with odd denominator. Throughout, when $\Phi(v)$ is rational we write
+\[
+\Phi(v)=a/b,\qquad a\in\Z,\quad b\ge1\ \text{odd},\quad \gcd(a,b)=1 .
+\]
+No sign condition on $a$ is imposed.
+
+For $L\ge1$, $p_v(L)$ denotes the number of distinct words of length $L$ occurring as factors $v[i:i+L]=v_i\cdots v_{i+L-1}$ ($i\ge0$) of the one-sided infinite word $v$. By Morse--Hedlund \cite{MH38}, $p_v(L)\ge L+1$ for all $L$ when $v$ is aperiodic.
+
+\subsection*{The numerator orbit}
+
+\begin{lemma}\label{lem:orbit}
+Let $\Phi(v)=a/b$ as above. Define $a_0=a$ and
+\[
+a_{n+1}=\begin{cases} a_n/2, & a_n \text{ even},\\ (3a_n+b)/2, & a_n\text{ odd}.\end{cases}
+\]
+Then every $a_n\in\Z$, $T^n(a/b)=a_n/b$, and $v_n\equiv a_n\pmod 2$. Moreover, with $k_n=\sum_{j<n}v_j$ and $c_n=\sum_{i<n,\ v_i=1}3^{\,k_n-k_{i+1}}\,2^{i}$,
+\begin{equation}\label{eq:prefix}
+2^n a_n=3^{k_n}a+b\,c_n .
+\end{equation}
+If $v$ is aperiodic, the integers $a_0,a_1,a_2,\dots$ are pairwise distinct.
+\end{lemma}
+
+\begin{proof}
+Since $b$ is odd it is a unit in $\Z_2$, so $a_n/b$ and $a_n$ have the same parity. If $a_n$ is odd, $3a_n+b$ is even. Hence $a_{n+1}\in\Z$, and $T(a_n/b)=a_{n+1}/b$; induction gives the first three claims.
+
+For \eqref{eq:prefix}, argue by induction on $n$. A step with $v_n=0$ halves $a_n$ and leaves $k$ and $c$ unchanged. A step with $v_n=1$ gives $2^{n+1}a_{n+1}=3\cdot 2^n a_n+2^n b$, so $k_{n+1}=k_n+1$ and $c_{n+1}=3c_n+2^n$, which matches the definition.
+
+Finally, if $a_i=a_j$ with $i<j$, then $T^i(a/b)=T^j(a/b)$. Hence $\sigma^iv=\sigma^jv$, and $v$ is eventually periodic.
+\end{proof}
+
+Aperiodicity enters the paper only through this last statement.
+
+\section{Equal blocks and the finite counting lemma}\label{sec:counting}
+
+\begin{lemma}\label{lem:blocks}
+Let $\Phi(v)=a/b$ and let $(a_n)$ be as in Lemma~\ref{lem:orbit}. For $i,j\ge0$ and $L\ge1$,
+\[
+v[i:i+L]=v[j:j+L]\iff a_i\equiv a_j \pmod{2^L}.
+\]
+\end{lemma}
+
+\begin{proof}
+($\Rightarrow$) Put $\Delta_t=a_{j+t}-a_{i+t}$. If $v_{i+t}=v_{j+t}=0$ then $\Delta_{t+1}=\Delta_t/2$. If both equal $1$ then $\Delta_{t+1}=3\Delta_t/2$, since the terms $b/2$ cancel. Thus $\Delta_L=3^{\kappa}\Delta_0/2^L$, where $\kappa$ is the number of ones in the block. Since $\Delta_L\in\Z$ and $3$ is odd, $2^L\mid\Delta_0$.
+
+($\Leftarrow$) By induction on $L$; the case $L=1$ is parity. If $a_i\equiv a_j\pmod{2^L}$ with $L\ge2$, then $v_i=v_j$. Moreover $a_{i+1}-a_{j+1}$ equals either $(a_i-a_j)/2$ or $3(a_i-a_j)/2$, so $a_{i+1}\equiv a_{j+1}\pmod{2^{L-1}}$. By the induction hypothesis $v[i+1:i+L]=v[j+1:j+L]$, and together with $v_i=v_j$ this gives the claim.
+\end{proof}
+
+The implication ($\Rightarrow$) is the divisibility step of \cite[proof of Thm.~5]{Dub09}; compare also \cite{Ter76}.
+
+\begin{lemma}[Finite counting lemma]\label{lem:counting}
+Let $\Phi(v)=a/b$ be rational; $v$ need not be aperiodic. Then for every $L\ge1$:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2em]
+\item $p_v(L)=\#\{\,a_i \bmod 2^L : i\ge0\,\}$;
+\item for every $c\in\Z$, $p_v(L)$ is at least the number of distinct values among $\{a_i: i\ge0\}$ lying in the half-open interval $[c,\,c+2^L)$;
+\item if $v$ is aperiodic, then $p_v(L)\ge\#\{\,i\ge0: c\le a_i<c+2^L\,\}$ for every $c\in\Z$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Part (a) is Lemma~\ref{lem:blocks}: the map $i\mapsto v[i:i+L]$ and the map $i\mapsto a_i\bmod 2^L$ induce the same partition of $\{i\ge0\}$.
+
+For (b), a half-open interval of length $2^L$ is a complete residue system modulo $2^L$. So distinct integers in it have distinct residues, and (a) applies.
+
+For (c), the $a_i$ are pairwise distinct by Lemma~\ref{lem:orbit}.
+\end{proof}
+
+\begin{remark}
+The half-open form in (b) is needed. A closed interval of length $2^L$ contains two integers of the same residue.
+\end{remark}
+
+\section{Drift}\label{sec:drift}
+
+\begin{definition}
+For $v\in\{0,1\}^{\N}$ let $k_t=\sum_{j<t}v_j$ and $\rho_t=k_t\log_2 3-t$, so that $\rho_0=0$. For $N\ge0$ put
+\[
+\Om_N=\max_{0\le s\le t\le N}(\rho_t-\rho_s)\ \ (\ge 0),\qquad \gs(v)=\limsup_{N\to\infty}\frac{\Om_N}{N}.
+\]
+For $n\ge0$ also put $\Omega_n=\max_{0\le t\le n}(\rho_n-\rho_t)$. Then $\Omega_n\le\Om_N$ for $n\le N$, and $\Om_N=\max_{n\le N}\Omega_n$.
+\end{definition}
+
+Thus $\gs(v)$ is the asymptotic maximal upward drift excursion within the first $N$ symbols, normalized by $N$. The normalization is by the horizon $N$, not by the length $t-s$ of the excursion. Each letter changes $\rho$ by $\log_2(3/2)$ (a one) or by $-1$ (a zero). Hence
+\begin{equation}\label{eq:worst}
+0\le\Om_N\le N\log_2(3/2),\qquad 0\le\gs(v)\le\log_2(3/2).
+\end{equation}
+
+\begin{lemma}[Shift invariance]\label{lem:shift}
+For every $r\ge0$, $\gs(\sigma^r v)=\gs(v)$.
+\end{lemma}
+
+\begin{proof}
+Let $w=\sigma^r v$, with drift $\rho'$. Then $\rho'_t=\rho_{t+r}-\rho_r$, so
+\[
+\Om_N(w)=\max_{r\le s\le t\le N+r}(\rho_t-\rho_s)\le\Om_{N+r}(v).
+\]
+Conversely, let $0\le s\le t\le N+r$.
+\begin{itemize}[leftmargin=2em]
+\item If $s\ge r$, then $\rho_t-\rho_s\le\Om_N(w)$.
+\item If $t\le r$, then $\rho_t-\rho_s\le(t-s)\log_2(3/2)\le r\log_2(3/2)$.
+\item If $s<r<t$, then $\rho_t-\rho_s=(\rho_r-\rho_s)+(\rho_t-\rho_r)\le r\log_2(3/2)+\Om_N(w)$.
+\end{itemize}
+Hence $\Om_N(w)\le\Om_{N+r}(v)\le\Om_N(w)+r\log_2(3/2)$. Divide by $N$ and let $N\to\infty$, using $(N+r)/N\to1$.
+\end{proof}
+
+\begin{lemma}[Drift from frequency]\label{lem:freq}
+If the ones-frequency $d=\lim_{n\to\infty}k_n/n$ exists, then $\gs(v)=\max(0,\,d\log_2 3-1)$.
+\end{lemma}
+
+\begin{proof}
+Let $D=d\log_2 3-1$, and write $\rho_t=Dt+e_t$ with $e_t=o(t)$. Put $E_N=\max_{u\le N}|e_u|$, which is $o(N)$. For $0\le s\le t\le N$,
+\[
+\rho_t-\rho_s=D(t-s)+e_t-e_s\le \max(0,D)\,N+2E_N,
+\]
+so $\gs\le\max(0,D)$. Conversely $\Om_N\ge\max(0,\rho_N)$, and $\rho_N/N\to D$, which gives $\gs\ge\max(0,D)$.
+\end{proof}
+
+\section{Drift-sensitive growth of the numerators}\label{sec:growth}
+
+\begin{lemma}\label{lem:growth}
+Let $\Phi(v)=a/b$ and let $(a_n)$ be as in Lemma~\ref{lem:orbit}. For every $n\ge0$,
+\[
+|a_n|\le 2^{\Omega_n}\Bigl(|a|+\tfrac{b\,k_n}{2}\Bigr).
+\]
+Consequently, for every $J\ge0$,
+\[
+X_J:=\max_{0\le n\le J}|a_n|\le 2^{\Om_J}\bigl(|a|+\tfrac{bJ}{2}\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Divide \eqref{eq:prefix} by $2^n$.
+\begin{itemize}[leftmargin=2em]
+\item Since $\rho_0=0$, we have $3^{k_n}/2^n=2^{\rho_n-\rho_0}\le 2^{\Omega_n}$.
+\item For a position $i<n$ with $v_i=1$, the corresponding term of $c_n/2^n$ is
+\[
+3^{k_n-k_{i+1}}2^{i-n}=2^{(k_n-k_{i+1})\log_2 3-(n-i-1)-1}=2^{\rho_n-\rho_{i+1}-1}\le 2^{\Omega_n-1}.
+\]
+\item There are $k_n$ such terms.
+\end{itemize}
+The triangle inequality gives the first bound. The second follows from $\Omega_n\le\Om_J$ and $k_n\le J$ for $n\le J$.
+\end{proof}
+
+The uniform estimate used in \cite{Dub09} corresponds to replacing $\Om_J$ by $J\log_2(3/2)$, its largest possible value by \eqref{eq:worst}. Lemma~\ref{lem:growth} retains the actual excursion. It therefore measures how many consecutive numerator states fit inside a dyadic window of given size.
+
+\section{The main theorem}\label{sec:main}
+
+\begin{theorem}[Drift-sensitive complexity bound]\label{thm:main}
+Let $v$ be aperiodic and suppose $\Phi(v)=a/b\in\Q$ with $b\ge1$ odd and $\gcd(a,b)=1$. Then for every $\varepsilon>0$ there exists $L_0=L_0(v,\varepsilon)$ such that
+\[
+p_v(L)>\frac{L}{\gs(v)+\varepsilon}\qquad\text{for every }L\ge L_0 .
+\]
+\end{theorem}
+
+Since $a/b=\Phi(v)$, the dependence of $L_0$ on $a$ and $b$ is a dependence on $v$. An explicit form of the bound is Proposition~\ref{prop:effective} below.
+
+\begin{proof}
+Write $\gs=\gs(v)$ and fix $\varepsilon>0$.
+
+\emph{Step 1 (confinement).} Let $f(J)=\Om_J+\log_2\bigl(|a|+bJ/2\bigr)+1$; this is non-decreasing in $J$. If $f(J)<L$, then Lemma~\ref{lem:growth} gives $X_J<2^{L-1}$. So $a_0,\dots,a_J$ all lie in $[-2^{L-1},2^{L-1})$. By Lemma~\ref{lem:orbit} they are pairwise distinct, so Lemma~\ref{lem:counting}(c) with $c=-2^{L-1}$ gives
+\begin{equation}\label{eq:JL}
+f(J)<L\ \Longrightarrow\ p_v(L)\ge J+1 .
+\end{equation}
+
+\emph{Step 2 (asymptotics).} By the definition of $\gs$, there is $N_0$ with $\Om_N\le(\gs+\varepsilon/2)N$ for all $N\ge N_0$. Since $\log_2(|a|+bJ/2)+1=o(J)$, there is $J_1\ge N_0$ such that $\log_2(|a|+bJ/2)+1<(\varepsilon/2)J$ for all $J\ge J_1$. Hence
+\[
+f(J)<(\gs+\varepsilon)J\qquad\text{for all } J\ge J_1.
+\]
+Let $L_0=(\gs+\varepsilon)(J_1+1)$. For $L\ge L_0$ put $J^{*}=\lfloor L/(\gs+\varepsilon)\rfloor$. Then $J^{*}\ge J_1$, so $f(J^{*})<(\gs+\varepsilon)J^{*}\le L$. By \eqref{eq:JL},
+\[
+p_v(L)\ge J^{*}+1>\frac{L}{\gs+\varepsilon}.\qedhere
+\]
+\end{proof}
+
+\begin{proposition}[Effective form]\label{prop:effective}
+Under the hypotheses of Theorem~\ref{thm:main}, for every $L\ge1$ such that the set below is non-empty,
+\[
+p_v(L)\ge 1+J(L),\qquad J(L)=\max\Bigl\{J\ge0:\ 2^{\Om_J+1}\bigl(|a|+\tfrac{bJ}{2}\bigr)<2^L\Bigr\}.
+\]
+The set of admissible $J$ is an initial segment of $\N$, and $J(L)<\infty$.
+\end{proposition}
+
+\begin{proof}
+This is \eqref{eq:JL}. Monotonicity holds because $\Om_J$ and $J$ are non-decreasing in $J$, and finiteness holds because $|a|+bJ/2\to\infty$.
+\end{proof}
+
+\begin{corollary}[Zero drift]\label{cor:zero}
+If $v$ is aperiodic, $\Phi(v)\in\Q$ and $\gs(v)=0$, then $p_v(L)/L\to\infty$.
+\end{corollary}
+
+\begin{proof}
+Given $M>0$, choose $\varepsilon>0$ with $1/\varepsilon>M$. Theorem~\ref{thm:main} yields $L_0$ with $p_v(L)>L/\varepsilon>ML$ for all $L\ge L_0$. As $M$ is arbitrary, $p_v(L)/L\to\infty$.
+\end{proof}
+
+\begin{corollary}[The classical constant]\label{cor:classical}
+If $v$ is aperiodic and $\Phi(v)\in\Q$, then for every $\varepsilon>0$ and all sufficiently large $L$,
+\[
+p_v(L)>\frac{L}{\log_2(3/2)+\varepsilon}.
+\]
+In particular
+\[
+\liminf_{L\to\infty}\frac{p_v(L)}{L}\ \ge\ \frac1{\log_2(3/2)}=\frac{\log 2}{\log(3/2)}=1.70951129\ldots
+\]
+\end{corollary}
+
+\begin{proof}
+Combine Theorem~\ref{thm:main} with \eqref{eq:worst}.
+\end{proof}
+
+\begin{remark}[Relation to \cite{Dub09}]
+Corollary~\ref{cor:classical} is the constant of \cite[Thm.~5]{Dub09}. There it is stated for positive-integer $3x+1$ trajectories tending to infinity, and its application to rational points goes through the numerator orbit of Lemma~\ref{lem:orbit} \cite[Cor.~9.3]{DJ26}.
+
+The proof of Theorem~\ref{thm:main} follows the counting mechanism of \cite{Dub09}: equal blocks give dyadic divisibility (Lemma~\ref{lem:blocks}), and a pigeonhole argument is applied to consecutive positions. The only change is the growth estimate. The uniform bound $(3/2)^n$ is replaced by the orbit-dependent excursion $2^{\Omega_n}$ of Lemma~\ref{lem:growth}. The present note does not replace that argument; it records what the same mechanism yields when the actual drift of the orbit is retained. The same repetition-and-counting mechanism appears for a different orbit in \cite[Thm.~4.2]{Ste26}, and, for positive-integer orbits with a uniform height estimate, in the formalization \cite{Sha26}.
+\end{remark}
+
+\section{Frequency and complexity}\label{sec:freq}
+
+Let $\beta=\ln2/\ln3=\log_3 2=0.6309297\ldots$, so that $\beta\log_2 3=1$.
+
+\begin{corollary}[Critical frequency]\label{cor:critical}
+Let $v$ have ones-frequency $\beta$, that is $k_n/n\to\beta$, and suppose
+\[
+\liminf_{L\to\infty}\frac{p_v(L)}{L}<\infty .
+\]
+Then $\Phi(v)\notin\Q$. In particular this holds whenever $p_v(L)=O(L)$.
+\end{corollary}
+
+\begin{proof}
+First, $v$ is aperiodic: an eventually periodic word has rational ones-frequency, while $\beta$ is irrational.
+
+Next, $\rho_n/n=(k_n/n)\log_2 3-1\to0$. Given $\eta>0$, choose $n_0$ with $|\rho_n|\le\eta n$ for $n\ge n_0$, and put $C_0=\max_{n<n_0}|\rho_n|$. For $0\le s\le t\le N$,
+\[
+\rho_t-\rho_s\le|\rho_t|+|\rho_s|\le 2\max(C_0,\eta N),
+\]
+so $\Om_N\le 2\max_{n\le N}|\rho_n|=o(N)$ and $\gs(v)=0$. If $\Phi(v)$ were rational, Corollary~\ref{cor:zero} would give $p_v(L)/L\to\infty$, contradicting the hypothesis.
+\end{proof}
+
+The hypothesis concerns the global frequency only. A word of frequency $\beta$ may contain long blocks of ones, of length $o(n)$ near position $n$; these do not affect $\gs$, because $\Om_N$ is normalized by $N$.
+
+\begin{corollary}[Frequency--complexity tradeoff]\label{cor:tradeoff}
+Let $v$ be aperiodic with ones-frequency $d=\lim k_n/n$, and let
+\[
+C=\liminf_{L\to\infty}\frac{p_v(L)}{L}<\infty .
+\]
+If $\Phi(v)\in\Q$, then
+\[
+d\ \ge\ \beta\Bigl(1+\frac1C\Bigr).
+\]
+Equivalently: if $d<\beta(1+1/C)$, then $\Phi(v)\notin\Q$.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:main}, $C\ge 1/(\gs+\varepsilon)$ for every $\varepsilon>0$. Hence $C\,\gs\ge1$, so $\gs>0$ and $\gs\ge1/C$. By Lemma~\ref{lem:freq}, $\gs=d\log_2 3-1$. Therefore $d\log_2 3\ge 1+1/C$, that is, $d\ge\beta(1+1/C)$.
+\end{proof}
+
+The inequality is not strict. The boundary case $d=\beta(1+1/C)$ is not excluded by this argument.
+
+\begin{corollary}[Complexity slope two]\label{cor:two}
+Let $v$ be aperiodic with ones-frequency $d$ and $\liminf_{L}p_v(L)/L\le 2$. For instance, this holds if $p_v(L)\le 2L+o(L)$ for infinitely many $L$. If
+\[
+d<\frac{3\beta}{2}=\frac{3\ln2}{2\ln3}=0.94639463\ldots,
+\]
+then $\Phi(v)\notin\Q$. The case $d\ge 3\beta/2$ is not covered.
+\end{corollary}
+
+\begin{proof}
+Apply Corollary~\ref{cor:tradeoff}. Since $C\le2$, we have $\beta(1+1/C)\ge 3\beta/2$.
+\end{proof}
+
+\begin{remark}[Upper density]\label{rem:upper}
+The existence of the frequency can be replaced by the upper density $\overline d=\limsup k_n/n$, at the cost of an external input. By Monks--Yazinski \cite[Thm.~2.7(b)]{MY04}, a rational $2$-adic integer with an infinite $T$-orbit has $\liminf_n k_n/n\ge\beta$; the proof there establishes the bound for all sufficiently large $n$.
+
+Given $\liminf k_n/n\ge\beta$, the argument of Lemma~\ref{lem:freq} gives $\gs=\overline d\log_2 3-1$. The argument of Corollary~\ref{cor:tradeoff} then yields $\overline d\ge\beta(1+1/C)$ for every aperiodic $v$ with $\Phi(v)\in\Q$ and $C<\infty$.
+
+The results stated above do not use this remark.
+\end{remark}
+
+\section{Codings of irrational rotations}\label{sec:rotation}
+
+\begin{corollary}[Rotation codings]\label{cor:rotation}
+Let $\alpha\in\R\setminus\Q$, $\rho\in\R$, and let $I\subset\R/\Z$ be an arc of length $\lambda$ with
+\[
+0<\lambda<\frac{3\beta}{2},
+\]
+open, closed or half-open. Put $v_n=\mathbf 1_I(\{n\alpha+\rho\})$. Then $\Phi(v)\notin\Q$. The case $\lambda\ge 3\beta/2$ is not covered.
+\end{corollary}
+
+\begin{proof}
+\emph{Endpoint conventions.} Changing the convention at an endpoint $e$ of $I$ changes $v_n$ only for those $n$ with $\{n\alpha+\rho\}=e$. Since $\alpha$ is irrational there is at most one such $n$ for each endpoint.
+
+Words $w,v$ that differ in finitely many positions satisfy $\sigma^r w=\sigma^r v$ for some $r$, so that $T^r\Phi(w)=T^r\Phi(v)$. For any $x$ and $r$, $T^r(x)$ is rational if and only if $x$ is: one direction because $T$ preserves $\Q\cap\Z_2$, the other because on the cylinder of $v[0:r]$ one has $T^r(x)=(3^{k_r}x+c_r)/2^r$ with $c_r$ as in Lemma~\ref{lem:orbit} (the same computation that proves \eqref{eq:prefix}), which expresses $x$ rationally in terms of $T^r(x)$. We may therefore assume $I=[u,u+\lambda)$.
+
+\emph{Frequency.} For every $\rho$, the sequence $(\{n\alpha+\rho\})$ is equidistributed modulo one \cite{Wey16,KN74}. Since $\mathbf 1_I$ is Riemann-integrable, $k_n/n\to\lambda$.
+
+\emph{Complexity.} Fix $n\ge1$. The factor $v[m:m+n]$ is determined by which of the arcs $I-j\alpha$ ($0\le j<n$) contain $y=\{m\alpha+\rho\}$. The at most $2n$ points $u-j\alpha$, $u+\lambda-j\alpha$ ($0\le j<n$) divide the circle into at most $2n$ half-open arcs $[p,p')$. On each such arc, membership in every $[u-j\alpha,\,u+\lambda-j\alpha)$ is constant. Hence $p_v(n)\le 2n$ for all $n\ge1$. See \cite{AB98} for the exact values.
+
+\emph{Aperiodicity.} Suppose $v_{n+P}=v_n$ for all $n\ge n_0$, with $P\ge1$. The points $\{n\alpha+\rho\}$, $n\ge n_0$, are dense, so $\mathbf 1_I=\mathbf 1_{I-P\alpha}$ on a dense set. Since $P\alpha\notin\Z$ and $0<\lambda<1$, the arcs $I$ and $I-P\alpha$ differ on a non-empty open arc, which contains points of the orbit. This is a contradiction.
+
+\emph{Conclusion.} We have $C\le2$ and frequency $\lambda<3\beta/2$, so Corollary~\ref{cor:two} applies.
+\end{proof}
+
+The proof does not use Remark~\ref{rem:upper}. The slope $\alpha$, the intercept $\rho$ and the position of the arc are arbitrary. No condition on the continued fraction of $\alpha$ is used.
+
+\section{Scope of the state-counting argument}\label{sec:scope}
+
+The argument above uses only two facts about the orbit:
+\begin{itemize}[leftmargin=2em]
+\item the numerator states are distinct;
+\item their sizes are controlled by the drift.
+\end{itemize}
+This section records the range of that size-based mechanism. It needs a decomposition that complements Lemma~\ref{lem:growth}.
+
+For $w\in\{0,1\}^{\N}$ with ones at positions $i_1<i_2<\cdots$ (indexed from $0$), set
+\[
+K(w)=\sum_{j\ge1}\frac{2^{i_j}}{3^{j}}\in[0,+\infty] .
+\]
+If $\liminf k_n/n>\beta$ then $K(w)<\infty$, because $i_j\le j/(\beta+\eta)$ for large $j$ and some $\eta>0$, and $2^{1/(\beta+\eta)}<3$. Splitting the series after the first $k_n$ terms gives the identity of convergent real series
+\begin{equation}\label{eq:split}
+K(v)=\frac{c_n}{3^{k_n}}+\frac{2^n}{3^{k_n}}\,K(\sigma^n v).
+\end{equation}
+
+\begin{lemma}[A complementary decomposition]\label{lem:carry}
+If $\Phi(v)=a/b$ and $K(v)<\infty$, then for every $n\ge0$
+\[
+a_n=\Lambda\,\frac{3^{k_n}}{2^n}-b\,K(\sigma^n v),\qquad \Lambda:=a+bK(v)\in\R .
+\]
+\end{lemma}
+
+\begin{proof}
+Multiply \eqref{eq:prefix} by $3^{-k_n}$ and substitute \eqref{eq:split}.
+\end{proof}
+
+This is an identity between real numbers. The left side is the integer supplied by the $2$-adic dynamics. On the right, the first term is the multiplicative drift contribution $\Lambda 2^{\rho_n}$. The second is a carry term depending only on the future $\sigma^n v$.
+
+\begin{proposition}\label{prop:scope}
+Let $v$ be aperiodic with $\Phi(v)=a/b\in\Q$. Suppose that the ones-frequency $\lambda>\beta$ exists, and that $v$ is uniformly supercritical: there are $\delta>0$ and $W_0$ with
+\[
+k_{i+W}-k_i\ge(\beta+\delta)W\qquad\text{for all } i\ge0 \text{ and } W\ge W_0 .
+\]
+Let
+\[
+N_L=\#\{\,i\ge0:\ -2^{L-1}\le a_i<2^{L-1}\,\}
+\]
+be the quantity bounded in Lemma~\ref{lem:counting}(c). Then, with $\gs=\lambda\log_2 3-1$,
+\[
+\frac{N_L}{L}\longrightarrow\frac{1}{\gs}\qquad(L\to\infty).
+\]
+\end{proposition}
+
+\begin{proof}
+\emph{Lower bound.} The proof of Theorem~\ref{thm:main} shows that for each $\varepsilon>0$ and all large $L$, the states $a_0,\dots,a_{J^*}$ with $J^*=\lfloor L/(\gs+\varepsilon)\rfloor$ lie in $[-2^{L-1},2^{L-1})$. Hence $N_L\ge J^*+1>L/(\gs+\varepsilon)$.
+
+\emph{Upper bound.}
+\begin{enumerate}[leftmargin=2em]
+\item Fix $n$. By uniform supercriticality, the $j$-th one of $\sigma^n v$ occurs before position $W_0+j/(\beta+\delta)+1$. Hence
+\[
+K(\sigma^n v)\le 2^{W_0+1}\sum_{j\ge1}q^j=:K^*<\infty,\qquad q=2^{1/(\beta+\delta)}/3<1 .
+\]
+\item If $\Lambda=0$, Lemma~\ref{lem:carry} gives $|a_n|\le bK^*$ for all $n$. This contradicts the pairwise distinctness in Lemma~\ref{lem:orbit}. So $\Lambda\neq0$.
+\item Consequently $|a_i|\ge|\Lambda|2^{\rho_i}-bK^*$. If $|a_i|<2^{L-1}$, then $\rho_i<L+c_0$ with $c_0=\log_2\bigl((1+bK^*)/|\Lambda|\bigr)$.
+\item By Lemma~\ref{lem:freq}, $\rho_i/i\to\gs>0$. So for each $\varepsilon\in(0,\gs)$ there is $i_0$ with $\rho_i\ge(\gs-\varepsilon)i$ for $i\ge i_0$. Therefore $N_L\le i_0+(L+c_0)/(\gs-\varepsilon)$.
+\end{enumerate}
+Letting $\varepsilon\to0$ in both bounds gives the claim.
+\end{proof}
+
+Codings of an irrational rotation by an arc of length $\lambda>\beta$ satisfy the hypotheses of Proposition~\ref{prop:scope}. The discrepancy of $(\{n\alpha+\rho\})_{i\le n<i+W}$ tends to $0$ as $W\to\infty$, uniformly in $i$ and $\rho$ \cite{KN74}.
+
+At $\lambda=3\beta/2$, where $\gs=1/2$, the proposition gives $N_L\sim 2L$. At this threshold the state-counting estimate $p_v(L)\ge N_L$ becomes asymptotically balanced with the available complexity bound $p_v(L)\le2L$. This identifies the point at which the present size-based estimate, without additional arithmetic or recurrence information, ceases to produce a contradiction against a $2L$ complexity bound. It says nothing about other methods.
+
+\section{Computational verification}\label{sec:computation}
+
+The finite statements of Sections~\ref{sec:setting}--\ref{sec:growth}, Proposition~\ref{prop:effective} and Lemma~\ref{lem:carry} were checked in exact integer and rational arithmetic. The scripts were written separately from the exploratory code and use randomly sampled parameters: numerators up to $5000$ in absolute value, odd denominators up to $101$, and block lengths up to $40$. They ran $535{,}509$ checks with no failures.
+
+These computations verify implementations and finite instances of the lemmas. They are not used in any proof. Every rational point tested is eventually periodic: no rational aperiodic parity vector is known, and none was tested. The scripts are available in the repository \url{https://github.com/innerlightr-wq/periodicity-conjecture-bridge}, directory \texttt{drift-complexity-note/}.
+
+\section{Discussion}\label{sec:discussion}
+
+The mechanism is the chain
+\[
+\text{rationality}\ \Longrightarrow\ \text{integer numerator orbit}\ \Longrightarrow\ \text{drift-controlled sizes}\ \Longrightarrow\ \text{complexity floor}.
+\]
+It yields a quantitative tradeoff between arithmetic drift and symbolic complexity. As $\gs\downarrow0$ the forced complexity slope grows without bound. At $\gs=0$, finite linear complexity is impossible for a hypothetical rational aperiodic word.
+
+The results do not prove the Periodicity Conjecture. They say nothing about aperiodic words of high complexity, and positive-entropy words satisfy the bound of Theorem~\ref{thm:main} automatically. Within the rotation codings of Corollary~\ref{cor:rotation}, arcs of length at least $3\beta/2$ are not covered.
+
+The constants in Theorem~\ref{thm:main} depend on the unknown pair $(a,b)$. Proposition~\ref{prop:effective} is effective only once $(a,b)$ is fixed.
+
+Section~\ref{sec:scope} indicates that further progress in the range $\lambda\ge3\beta/2$ would require information beyond the sizes of the numerator states, for example arithmetic or recurrence properties of the orbit. This suggests a separate direction, which is not pursued here.
+
+\section*{Author background and invitation for review}
+
+The author is an independent researcher whose educational and professional background is primarily in electronics, computer systems, and immunogenetics rather than professional mathematics. Specialist examination of the arguments is therefore particularly welcome. Researchers with expertise in $3x+1$ dynamics, symbolic dynamics, combinatorics on words, $2$-adic dynamics, and Diophantine methods are warmly invited to examine the proofs and their dependencies, to point out errors, missing dependencies, or relevant prior results, to suggest corrections, and, where appropriate, to strengthen, sharpen, or extend the results and methods presented here.
+
+\section*{AI assistance}
+
+AI-assisted tools were used during the development of this work for literature search and organization, symbolic and computational exploration, exact-arithmetic verification, adversarial checking of intermediate claims, repository organization, and assistance with drafting and editing. The author selected the sources, checked the arguments, and takes sole responsibility for all mathematical claims, interpretations, and any remaining errors.
+
+\begin{thebibliography}{99}
+
+\bibitem{AB98} P.~Alessandri and V.~Berth\'e, Three distance theorems and combinatorics on words, \emph{Enseign. Math.} \textbf{44} (1998), 103--132.
+
+\bibitem{Ber94} D.~J.~Bernstein, A noniterative $2$-adic statement of the $3N+1$ conjecture, \emph{Proc. Amer. Math. Soc.} \textbf{121} (1994), 405--408.
+
+\bibitem{BL96} D.~J.~Bernstein and J.~C.~Lagarias, The $3x+1$ conjugacy map, \emph{Canad. J. Math.} \textbf{48} (1996), 1154--1169.
+
+\bibitem{DJ26} E.~De Jes\'us, \emph{The $3x+1$ conjugacy map sends every Sturmian word to an irrational $2$-adic integer}, preprint (not refereed), Zenodo, 2026. \texttt{doi:10.5281/zenodo.23019799}.
+
+\bibitem{Dub09} A.~Dubickas, On integer sequences generated by linear maps, \emph{Glasg. Math. J.} \textbf{51} (2009), 243--252.
+
+\bibitem{KN74} L.~Kuipers and H.~Niederreiter, \emph{Uniform Distribution of Sequences}, Wiley, New York, 1974.
+
+\bibitem{Lag85} J.~C.~Lagarias, The $3x+1$ problem and its generalizations, \emph{Amer. Math. Monthly} \textbf{92} (1985), 3--23.
+
+\bibitem{MY04} K.~G.~Monks and J.~Yazinski, The autoconjugacy of the $3x+1$ function, \emph{Discrete Math.} \textbf{275} (2004), 219--236.
+
+\bibitem{MH38} M.~Morse and G.~A.~Hedlund, Symbolic dynamics, \emph{Amer. J. Math.} \textbf{60} (1938), 815--866.
+
+\bibitem{Sha26} M.~Sharpe, \emph{collatz: machine-verified results on the $3x+1$ problem (Lean 4)}, GitHub repository \texttt{github.com/msharpe248/collatz}, 2026, not refereed; see \texttt{paper/parity\_complexity.md}.
+
+\bibitem{Ste26} R.~Stephan, Transcendence criteria for the minimal word of the rational base $3/2$, arXiv:2609.19007, 2026.
+
+\bibitem{Ter76} R.~Terras, A stopping time problem on the positive integers, \emph{Acta Arith.} \textbf{30} (1976), 241--252.
+
+\bibitem{Wey16} H.~Weyl, \"Uber die Gleichverteilung von Zahlen mod.~Eins, \emph{Math. Ann.} \textbf{77} (1916), 313--352.
+
+\end{thebibliography}
+
+\end{document}
