@@ -1,0 +1,1937 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\repo}[1]{\text{\texttt{#1}}}
+\newcommand{\cw}{c_W}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\title{Beyond Sturmian Words in the 3x+1 Periodicity Conjecture:\\
+A Periodic-Approximation and Arithmetic-Height Bridge}
+\author{Elias De Jesús\\
+\textit{Independent Researcher}\\
+ORCID: \href{https://orcid.org/0009-0007-0190-9143}{0009-0007-0190-9143}}
+\date{September 2026 \\[2pt] \textnormal{\small Revision 4, 30 September 2026 --- corrected; see \S\ref{sec:rev4}. Revision history: Appendix \ref{app:history}.}}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+Let $T:\Z_2\to\Z_2$ be the $3x+1$ map and $\Phi$ the Bernstein--Lagarias conjugacy map sending a parity vector $v\in\{0,1\}^\N$ to the 2-adic integer it codes. Lagarias's Periodicity Conjecture asserts that $\Phi(v)\in\Q$ only if $v$ is eventually periodic; it is open in general. A companion unpublished paper by the present author proves it for every Sturmian parity word, by two independent mechanisms (a transported counting bound, and an effective Liouville-style argument using an initial square). This note consolidates a subsequent research program that pushes the periodic-approximation/arithmetic-height mechanism of the second route past the Sturmian case, into symbolic classes the counting route cannot reach. The main proved result: for \emph{every} irrational slope with bounded partial quotients, every complementary symmetric Rote sequence (factor complexity exactly $2n$) built on \emph{any} Sturmian word of that slope --- any intercept, either mechanical convention, either seed, any shift --- has irrational $\Phi$-value. We give the full proof architecture, including a structural fact (an odd-weight transfer route's doubled root always has density exactly $1/2$) that collapses an earlier, over-conservative repetition-exponent requirement down to the true one. We document, rather than hide, four working hypotheses this program formed and then disproved by direct adversarial testing. A late-stage exploratory probe into a conjectural symbolic-symmetry/arithmetic-admissibility tradeoff is reported honestly as inconclusive, not as a result.
+
+\smallskip
+\noindent\textbf{Revision 4.} Revision 4 is a corrected release of Revision 3
+(\texttt{10.5281/zenodo.23068563}); the mathematics is unchanged. It records that Revision 3 is
+deposited, where Revision 3's own provenance section mistakenly said it was not; it removes the
+``draft'' labelling; it corrects the framing of Open 4, which described the removal of the
+bounded-partial-quotient hypothesis as the live frontier when the \emph{conclusion} there is already
+available from Monks--Yazinski (2004) --- what is unfinished is this note's own independent bridge,
+not the irrationality statement; and it adds the explicit discrepancy and height constants of
+\S\ref{sec:explicitconstants}, so that the asymptotic argument now carries written-down numbers rather
+than the phrase ``effectively computable''. The detailed revision history, previously occupying the
+first two sections, is moved to Appendix \ref{app:history}.
+
+\smallskip
+\noindent\textbf{Main results.} For every quadratic irrational $\alpha\in(0,1)$ and every
+\emph{rational} $\rho$, and then for every \emph{real algebraic} $\rho$, the coding
+$s_n=1\iff\{n\alpha+\rho\}\in[0,\beta)$ with $\beta=\ln2/\ln3$ has $\Phi(s)\notin\Q$
+(\S\ref{sec:ratint}, \S\ref{sec:algint}); more generally the interval may be $[u,u+\beta)$ whenever
+the offset $\rho-u$ is algebraic, with $\rho$ and $u$ themselves unrestricted
+(Corollary \ref{cor:translated}). These words are aperiodic, have factor complexity $2n$, and have
+lower ones-density exactly the critical value $\beta$ --- which matters, because the density
+coordinate, not the complexity coordinate, is what the existing exclusion results read
+(\S\ref{sec:density}). Earlier revisions' complementary-symmetric-Rote theorems sit at density
+exactly $1/2<\beta$ and their conclusion was therefore already available from Monks--Yazinski (2004)
+Theorem 2.7(b); what this note contributes there is an independent second proof and effective height
+bounds, which a density argument does not supply. \textbf{Novelty of the critical-density results is
+formally unresolved, and this note has not been refereed.}
+
+\end{abstract}
+
+\tableofcontents
+
+\section{Revision 4: What Changed}
+\label{sec:rev4}
+
+Revision 4 corrects Revision 3 (\texttt{10.5281/zenodo.23068563}) in four places and adds one
+section. \textbf{No mathematical statement of Revision 3 is altered or withdrawn.} The full revision
+history of Revisions 2--4, with every earlier correction stated in the form it was first recorded,
+is in Appendix \ref{app:history}; a standalone erratum accompanies this revision.
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+
+\item[E1 --- Revision 3 is deposited.] Revision 3's ``Provenance and Verification'' section said
+``At the time of writing Revision 3 is a draft and has not been deposited.'' It was deposited on
+30 September 2026 as Zenodo version DOI \texttt{10.5281/zenodo.23068563}. Corrected in
+\S\ref{sec:provenance}.
+
+\item[E2 --- The ``draft'' labelling is removed.] Revision 3 was deposited under a filename
+containing \texttt{DRAFT}. That file cannot be renamed in place; this revision is issued as
+\texttt{note\_rev4.pdf} and no part of it is labelled a draft.
+
+\item[E3 --- Open 4's framing is corrected.] Revision 3 labelled ``Open 4 --- unbounded partial
+quotients'' \emph{the live frontier}. That conflates two different things, and it repeats for the
+unbounded-type case exactly the framing error Revision 3 corrected for the bounded-type case.
+Complementary symmetric Rote sequences have ones-density exactly $1/2$ \emph{whatever} the slope's
+partial quotients --- a structural fact about the doubled root (\S\ref{sec:oddweight}), not a
+consequence of bounded type --- so Corollary \ref{cor:my} already gives $\Phi(v)\notin\Q$ for every
+CS Rote sequence over \emph{every} irrational slope. What is unfinished at unbounded partial
+quotients is \emph{this note's own independent bridge}, whose odd-weight branch has margin exactly
+$0$ at an intercept with $\text{ice}(\omega)=2$. Open 4 therefore asks for a second proof of an
+available conclusion, not for a new exclusion; the live frontier is lower ones-density $\ge\beta$,
+where \S\S\ref{sec:ratint}--\ref{sec:algint} operate. Rewritten in \S\ref{sec:open} and
+\S\ref{sec:roadmap}.
+
+\item[E4 --- Explicit constants added.] \S\ref{sec:explicitconstants} is new. It derives numerical
+values for the constants in the surplus estimate from Kuipers--Niederreiter's bound read directly,
+audits the height conventions in the logarithmic-form estimate, and assembles an explicit function
+$f(M)$ with $H\ge2^{f(M)}$. It also separates that function, whose positivity begins at
+$M\approx1.8\cdot10^{18}$, from the exact finite certificates of \S\ref{sec:certificates}, which are
+small enough to write down.
+
+\end{description}
+
+\paragraph{Acknowledgement and dependency.}
+L\'opez--Stoll's work on density and the $3x+1$ conjugacy map helped guide this programme toward the
+critical density $\beta=\ln2/\ln3$. We acknowledge that influence. The results presented here are
+established through the independent arguments given in this note and do not require their proposed
+upper-density exclusion \cite{LopezStoll2021}. The critical-density Sturmian word is theirs
+\cite{LopezStoll2009}, and so is the observation that critical density is where the existing methods
+stop. We take no position on their Theorem 1: we have neither established nor disproved it, and no
+step of any theorem in this note invokes it.
+
+\paragraph{Provenance of the foundation reference.}
+\cite{DeJesus2026Sturmian} is deposited at version DOI \texttt{10.5281/zenodo.23019799} (concept DOI
+\texttt{10.5281/zenodo.22920055}), CC BY 4.0. It is a preprint, it is not refereed, and it is by the
+present author; every use of it is a self-citation to unrefereed work and is treated with the caution
+applied to any other preprint. Neither is this note refereed.
+
+\paragraph{Theorem numbering.}
+Theorems are numbered by section, so ``Theorem 14.1'' means the first theorem of \S14 and carries no
+relation to any phase of the underlying research record. The record's informal labels map as follows.
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+research record & this note & content \\
+\midrule
+Theorem 11 & Theorem~\ref{thm:ratint} (case $\alpha=\tfrac{\sqrt5-1}2$, $\rho=\tfrac17$) & the named word \\
+Theorem 12 & Theorem~\ref{thm:ratint} & quadratic slope, rational offset \\
+Theorem 13 & Theorem~\ref{thm:algint} & quadratic slope, algebraic offset \\
+Corollary 13.1 & Corollary~\ref{cor:translated} & translated interval $[u,u+\beta)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{The Periodicity Conjecture and the Conjugacy Map}
+\label{sec:conjecture}
+
+Let $T:\Z_2\to\Z_2$ be the $3x+1$ map in its standard form,
+\[
+T(x)=\begin{cases} x/2, & x\equiv 0 \pmod 2,\\ (3x+1)/2, & x\equiv 1\pmod 2.\end{cases}
+\]
+The \emph{parity vector} of $x\in\Z_2$ is $v(x)=(v_0,v_1,\dots)\in\{0,1\}^\N$ with $v_i\equiv T^i(x)\pmod 2$; the conjecture below is Lagarias's \cite{Lagarias1985}. Bernstein and Lagarias showed that $x\mapsto v(x)$ is a bijection of $\Z_2$ onto $\{0,1\}^\N$, and in fact a \emph{2-adic isometry} \cite{BernsteinLagarias1996,Bernstein1994}: identifying $\{0,1\}^\N$ with $\Z_2$ through binary expansions,
+\[
+v_2\bigl(\Phi(a)-\Phi(b)\bigr) = \operatorname{lcp}(a,b),
+\]
+where $\Phi$ is the inverse map (so $\Phi(v)$ is the unique 2-adic integer with parity vector $v$), and $\operatorname{lcp}$ is longest-common-prefix length. Conjugating $T$ by $\Phi$ turns it into the shift map on $\{0,1\}^\N$. This isometry property is the single fact the entire bridge in this note exploits: two sequences agreeing on a long prefix must have 2-adically close $\Phi$-images.
+
+Rationality of $\Phi(v)$ corresponds to eventual periodicity of $v$ in one direction only: if $v$ is eventually periodic then $\Phi(v)\in\Q$. The converse is:
+
+\begin{quote}
+\textbf{Lagarias's Periodicity Conjecture} \cite[\S2]{Lagarias1985}. No aperiodic parity vector has a rational $\Phi$-value.
+\end{quote}
+(See also López and Stoll's continuous-setting formulation of the same conjecture, \cite{LopezStoll2021}.)
+
+This conjecture is open, and \emph{very little is known unconditionally in the converse direction} --- a fact worth stating plainly, since it frames everything that follows. The conjecture quantifies over \emph{all} $v\in\{0,1\}^\N$ that fail to be eventually periodic: an uncountable family with no assumed combinatorial structure.
+
+\paragraph{Full conjecture versus the classes treated here.} This note --- and the research program it consolidates --- does not address the full conjecture. It proves $\Phi(v)\notin\Q$ for two structurally defined sub-families of aperiodic words (Sturmian words, proved in the companion foundation paper; and complementary symmetric Rote sequences over bounded-type slopes at intercept $0$, proved here), and precisely maps, without resolving, one further natural extension (Rote sequences at arbitrary intercepts). \S\ref{sec:open} records a structural fact showing that no extension of this program's method, however far pushed, can by itself close the full conjecture. Nothing in this note should be read as narrowing that gap beyond what is explicitly proved.
+
+\section{Two Routes to Irrationality}
+\label{sec:tworoutes}
+
+The foundation paper and this program's extension of it use two logically independent mechanisms to force $\Phi(v)\notin\Q$.
+
+\subsection{Route A --- Counting}
+\label{sec:routeA}
+
+Let $p_v(L)$ denote the number of distinct length-$L$ factors of $v$ (its \emph{factor complexity}). Dubickas proved in 2009 \cite{Dubickas2009} that a positive-integer $3x+1$ trajectory tending to infinity has parity-word complexity $p(L) > 1.70951129\,L$ eventually; the foundation paper transports this to every rational 2-adic integer, since $T$ preserves a fixed odd denominator. The exact threshold constant is
+\[
+\frac{1}{\log_2(3/2)} = 1.709511\ldots,
+\]
+and the transported statement is: if $v$ is not eventually periodic and $\Phi(v)\in\Q$, then $\liminf_L p_v(L)/L \ge 1/\log_2(3/2)$. Contrapositively: \emph{any} aperiodic $v$ with $\liminf_L p_v(L)/L < 1.70951\ldots$ has $\Phi(v)\notin\Q$, unconditionally, with no repetition or discrepancy hypothesis whatsoever.
+
+This is a purely counting-based exclusion, and it is exactly as strong as its complexity bound: it says nothing once a word's complexity crosses the threshold. Sturmian words ($p(n)=n+1$) sit far below it. Complementary symmetric Rote sequences, the next class this program treats, have $p(n)=2n$ --- strictly above $1.70951\ldots\,n$ for every $n\ge 2$ --- and are therefore \emph{entirely outside Route A's reach}. This is precisely where Route A stops, and why a second, structurally different mechanism is needed to make any further progress.
+
+\subsection{Route B --- Periodic Approximation and Arithmetic Height}
+\label{sec:routeB}
+
+This is the central mechanism of this note. Informally, the chain of implications is: symbolic periodic approximation $\to$ exact 2-adic agreement $\to$ divisibility $\to$ rational periodic approximant $\to$ Archimedean height $\to$ contradiction.
+
+Concretely: if $v$ agrees with a periodic word $W^\infty$ on a long prefix, the 2-adic isometry forces $\Phi(v)$ and the \emph{rational number} $\Phi(W^\infty)$ to be 2-adically close to a precisely quantified depth. If $\Phi(v)$ were itself rational, this closeness becomes an exact integer divisibility statement between two specific integers built from $\Phi(v)$'s numerator/denominator and $W$'s combinatorial data. When the periodic approximation is long and clean enough relative to the arithmetic size (\emph{height}) of the numbers involved, that divisibility is impossible unless the two rationals coincide --- and they were assumed not to. The whole of \S\ref{sec:abstract}--\S\ref{sec:repheight} makes this precise.
+
+\section{The Abstract Bridge Theorem}
+\label{sec:abstract}
+
+Following Proposition 4.1 of the foundation paper, every finite word $W$ (length $\ell=|W|$, $k=|W|_1$ ones) has an explicit periodic-value formula
+\[
+\Phi(W^\infty) = \frac{c_W}{2^\ell - 3^k}
+\]
+for an explicit integer $c_W$ (\repo{THEOREM\_STATUS.md}, citing the foundation paper's Prop.\ 4.1).
+
+Suppose, for contradiction, $\Phi(s)=u/v\in\Q\cap\Z_2$ in lowest terms. For any finite word $W_n$ with $s\ne W_n^\infty$, put $\ell_n=|W_n|$, $k_n=|W_n|_1$, $L_n=\operatorname{lcp}(s,W_n^\infty)$, $\delta_n = 2^{\ell_n}-3^{k_n}$, and define the integer
+\[
+M_n := u\,\delta_n - v\,c_{W_n}.
+\]
+By the 2-adic isometry, $v_2(\Phi(s)-\Phi(W_n^\infty))\ge L_n$, which translates into a 2-adic divisibility lower bound on $M_n$; on the other hand $|M_n|$ is bounded above in terms of $|u|,v,\delta_n,c_{W_n}$ --- an Archimedean (ordinary absolute-value) bound. When the 2-adic lower bound forces $M_n$ to be divisible by more than its Archimedean bound allows, $M_n=0$ is forced, and (with $s\ne W_n^\infty$) that is eventually impossible. This comparison is exactly what the repository's \emph{surplus} quantity measures.
+
+\begin{definition}[Surplus, canonical form \cite{Phase2Surplus}]
+\[
+S_s(W) := \operatorname{lcp}(s,W^\infty) - \log_2\bigl(|2^{|W|}-3^{|W|_1}| + c_W\bigr).
+\]
+\end{definition}
+This is the repository's own proof-native quantity, fixed from Phase 1 onward and not altered by any later phase: \emph{``the proof-native quantity, not a convenient after-the-fact packaging''} (\repo{theorems/phase2/SURPLUS\_THEOREM.md}).
+
+\begin{theorem}[Abstract 2-adic periodic-approximation criterion \cite{Phase2Abstract}]
+\label{thm:abstract}
+Let $s\in\{0,1\}^\N$ and $(W_n)_{n\ge1}$ finite binary words with $s\ne W_n^\infty$ for all $n$. If
+\[
+\limsup_{n\to\infty} S_s(W_n) = +\infty,
+\]
+then $\Phi(s)\notin\Q$.
+\end{theorem}
+This is stated and proved with no Sturmian or Rote terminology at all --- it is the Sturmian-free abstraction every later result in this note specializes.
+
+\begin{theorem}[Dual necessity, \cite{Phase2Surplus}]
+If $\Phi(s)=u/v\in\Q$ in lowest terms, height $H=\max(|u|,v)$, then for every finite $W$ with $s\ne W^\infty$,
+\[
+S_s(W) \le \log_2 H.
+\]
+\end{theorem}
+Together: \emph{surplus $\to+\infty$ along some sequence of periodic approximants forces irrationality; rationality forces surplus to stay uniformly bounded.} Everything that follows is the construction of periodic approximants along which surplus is provably unbounded, for successively broader symbolic classes.
+
+\section{Discrepancy as the Height Bridge}
+\label{sec:discrepancy}
+
+Repetition length $L_n$ alone is not enough: the surplus definition also involves $c_W$, and the periodic-value formula gives no a priori control on how large $c_W$ can be relative to $2^\ell-3^k$. The quantity that closes this gap is prefix \emph{discrepancy}:
+\[
+D(W) := \max_{0\le i\le \ell} \left| k_i(W) - \frac{ik}{\ell}\right|,
+\]
+where $k_i(W)$ counts ones in the length-$i$ prefix of $W$.
+
+\begin{theorem}[Discrepancy-height bound \cite{Phase1Discrepancy}]
+For every finite word $W$, $\ell=|W|$, $k$ ones, $D=D(W)$:
+\[
+c_W \;\le\; \ell\cdot 3^{\lceil D\rceil}\cdot\max(2^\ell,3^k).
+\]
+\end{theorem}
+(Proved, and exhaustively verified by direct computation for $\ell\le 16$.) This single inequality is what converts symbolic regularity (a bound on how unevenly $1$s are distributed in $W$) into an arithmetic height estimate the surplus computation can use. The relevant hierarchy of discrepancy regimes, from weakest to strongest sufficient hypothesis actually used somewhere in this program, is:
+\begin{itemize}
+\item $D(W)=O(1)$ --- e.g., single-block or highly regular words; strongest, rarely needed.
+\item $D(W)=O(\log \ell)$ --- achieved for rotations by any slope with \emph{bounded partial quotients}, via the classical three-distance theorem; this is the regime used throughout \S\ref{sec:oddweight}--\S\ref{sec:boundedtype}.
+\item $D(W)=o(\ell)$ --- the general sufficient hypothesis for the abstract sublinear-discrepancy theorem below; strictly weaker, but gives up the explicit logarithmic rate.
+\end{itemize}
+Sublinear discrepancy is exactly what is needed for the height cost to be dominated by a linear repetition gain (\S\ref{sec:repheight}); the sharper $O(\log\ell)$ rate is what the bounded-partial-quotient hypothesis buys on top of that.
+
+\section{Repetition--Height Competition}
+\label{sec:repheight}
+
+\begin{theorem}[Sublinear-discrepancy repetition criterion \cite{Phase1Discrepancy}]
+Suppose $s$ begins in initial powers $W_n^{r_n}$, $\ell_n=|W_n|\to\infty$, densities $\gamma_n=k_n/\ell_n\to\gamma_\infty$, and $D(W_n)=o(\ell_n)$. If
+\[
+\liminf_n r_n > \max(1,\gamma_\infty\log_2 3) \quad\text{strictly},
+\]
+then $S_s(W_n)\to+\infty$, hence $\Phi(s)\notin\Q$.
+\end{theorem}
+Taking the supremum over $\gamma\in(0,1)$ of $\max(1,\gamma\log_2 3)$ gives $\log_2 3=1.58496\ldots$, so $r>\log_2 3$ suffices \emph{uniformly in the density}. Because $\log_2 3<2$, an initial \emph{square} ($r=2$) always clears this bar, with an explicit margin $2-\log_2 3=0.41503\ldots$ --- which is exactly why squares are the workhorse repetition structure throughout this program:
+
+\begin{theorem}[Squares suffice unconditionally \cite{Phase1Repetition}]
+If $s$ begins in arbitrarily long initial squares $W_nW_n$ --- with \emph{no} hypothesis on discrepancy, balance, or internal structure of the roots $W_n$ --- then $\Phi(s)\notin\Q$.
+\end{theorem}
+
+The later, more flexible sufficient condition used once a fixed margin is no longer available (\S\ref{sec:ostrowski}) does not require a fixed constant margin at all; it only requires the repetition \emph{excess} above the threshold to dominate the discrepancy-plus-logarithmic height cost, i.e.\ excess $\cdot\, \ell \gg \log \ell$ rather than excess $\ge$ const.
+
+\section{The Sturmian Foundation}
+\label{sec:sturmian}
+
+The foundation paper \cite{DeJesus2026Sturmian} proves, by \emph{two independent mechanisms}, that every Sturmian parity word has irrational $\Phi$-value:
+
+\begin{enumerate}
+\item \textbf{Counting.} Every Sturmian word has $p(L)=L+1$, far below the Dubickas threshold, so Route A (\S\ref{sec:routeA}) applies directly.
+\item \textbf{Liouville / initial-square route.} Sturmian words have arbitrarily long initial squares (Theorem 10.2 of \cite{DeJesus2026Sturmian}, citing Allouche, Davison, Queffélec, and Zamboni \cite{ADQZ2001}), which triggers the repetition--height mechanism of \S\ref{sec:repheight} directly (Theorem 10.1 of \cite{DeJesus2026Sturmian}). The foundation paper also gives a second, independent and effective proof, for the specific case López and Stoll's own paper \cite{LopezStoll2009} had identified as open (their critical-density Sturmian word at slope $\beta=\ln2/\ln3$): this is then generalized to every irrational slope, and a further argument removes the restriction to intercept $0$ via an initial square of the word itself.
+\end{enumerate}
+
+Both mechanisms are cited, not re-derived, in this note; nothing in this program alters or extends the Sturmian case itself. What matters for everything that follows is where the foundation paper's own abstract explicitly places the frontier: \emph{``Counting reaches every complexity below $1.70951\ldots L$; the frontier is complexity $2L$ (Rote words, rotation codings), open for both routes.''} This is the exact motivation for the program consolidated here.
+
+\section{Crossing the Counting Frontier: Complementary Symmetric Rote Sequences}
+\label{sec:rote}
+
+A \emph{complementary symmetric (CS) Rote sequence} $v\in\{0,1\}^\N$ is one whose first-difference (XOR) transform is Sturmian:
+\[
+v \text{ is CS Rote} \iff u:=S(v) \text{ is Sturmian}, \qquad u_i = v_i\oplus v_{i+1}\ \ (i\ge0),
+\]
+with inverse recovery $v_{n+1}=v_n\oplus u_n$ \cite{Phase2Transfer}. Such sequences have factor complexity exactly $p(n)=2n$, standard in the combinatorics-on-words literature on this class (background on the surrounding Sturmian/complementary-word theory: \cite{Lothaire2002}; see the bibliography note on primary Rote-sequence sourcing) --- past the Dubickas threshold, so Route A never applies to them; every irrationality result about CS Rote sequences in this note is a Route B result.
+
+\begin{theorem}[Exact transfer, with a $+1$ bonus \cite{Phase2Transfer}]
+\label{thm:transfer}
+Let $L:=\operatorname{lcp}(u,W^\infty)$ for a Sturmian $u=S(v)$ and finite word $W$, and let $L_v:=\operatorname{lcp}(v,\mathrm{target}^\infty)$ where $\mathrm{target}=V$ (if $W=V$ has even weight) or $\mathrm{target}=R:=V\bar V$ (if $V$ has odd weight, $\bar V$ its bitwise complement). Then
+\[
+L_v = L+1, \quad\text{exactly, not merely } \ge L \text{ or } \approx L.
+\]
+\end{theorem}
+Verified by induction (both directions of the inequality) and computationally over $6$ initial cases in Phase 2; re-derived completely independently in Phase 5 and cross-checked exhaustively over every binary root of length $2$ to $10$ and every mismatch position from $\ell$ to $4\ell$ --- $114{,}680$ cases, $0$ failures \cite{Phase5Transfer}. The theorem is intercept-agnostic: it holds verbatim regardless of the intercept of the underlying Sturmian word.
+
+\section{The Odd-Weight Mechanism}
+\label{sec:oddweight}
+
+This is the structural discovery that makes the whole bounded-type theorem (\S\ref{sec:boundedtype}) possible, and it deserves to be isolated on its own.
+
+When the Sturmian root $W$ has \emph{odd} weight, Theorem \ref{thm:transfer}'s target is $R=V\bar V$, not $V$ itself.
+
+\begin{theorem}[Density of the doubled root, exactly $1/2$ \cite{Phase4Required}]
+For every finite word $V$, $R:=V\bar V$ satisfies $|R|=2|V|$ and $|R|_1=|V|$, hence
+\[
+\text{density}(R) = \frac{|R|_1}{|R|} = \frac12, \quad\text{exactly, unconditionally.}
+\]
+\end{theorem}
+\begin{proof}[Proof (as recorded)]
+$|R|_1 = |V|_1 + |\bar V|_1 = |V|_1 + (|V|-|V|_1) = |V| = \ell$; and $|R|=2\ell$; so density $=\ell/(2\ell)=1/2$. $\blacksquare$
+\end{proof}
+
+Arithmetically, this matters because $3^{|R|_1}=3^{|R|/2}$ grows strictly more slowly than $2^{|R|}$ (since $\sqrt3<2$), so the dominant exponential height scale in the periodic-value denominator $2^{|R|}-3^{|R|_1}$ is unambiguously $2^{|R|}$, regardless of the fine structure of $V$. Plugging $\gamma=1/2$ into the repetition--height criterion of \S\ref{sec:repheight} collapses the required threshold on the Sturmian side from an earlier, over-conservative estimate of $2\log_2 3\approx3.170$ down to the true requirement,
+\[
+r_{\text{required}}(\gamma) = 2, \qquad\text{uniformly, for both the even- and odd-weight transfer routes.}
+\]
+This is established in \cite{Phase4Required}. This single fact replaced two working hypotheses this program had earlier formed and found false --- a universal even-weight witness hypothesis, and a silver-ratio extremality claim --- both recorded in full in \S\ref{sec:selfcorrection}.
+
+\section{Self-Correction History}
+\label{sec:selfcorrection}
+
+This program is falsification-first throughout: every phase actively attacked its own prior claims before extending them. Four corrections are recorded here in full, not hidden, because they show how the final theorem (\S\ref{sec:boundedtype}) was actually reached, and because a future researcher extending this work needs to know which paths were tried and ruled out.
+
+\paragraph{A. Universal even-weight witness hypothesis --- rejected.} An early working assumption was that the Rote-transfer route could always be arranged to use an even-weight root $V$ (avoiding the doubled root $R$ altogether). A finite $8$-state automaton analysis of the weight-parity sequence found exactly one ``bad'' cycle sustaining all-odd weight forever, and an explicit quadratic-irrational counterexample slope was found and verified to $28$ convergents: $\gamma=[0;1,1,1,\overline{2}]$ has weight parity $0,0,1,1,1,1,1,\ldots$ --- all odd (weight $1$) from index $2$ onward, forever \cite{Phase3Automaton}. The universal claim is false. The bridge still succeeds on this slope because the odd-weight transfer route (\S\ref{sec:oddweight}) handles exactly this case.
+
+\paragraph{B. Silver-ratio extremality --- rejected, explicit counterexample.} A subsequent working hypothesis, formed from testing only four continued-fraction tails, was that among all-even-tail slopes the silver ratio ($\overline{2}$ tail) is \emph{extremal}, with minimal achievable exponent $2+\sqrt2\approx3.4142$. An adversarial search found $\gamma=[0;1,4,1,5,1,\overline{6,2}]$ with $\text{ice}(u)\approx3.1547 < 2+\sqrt2$ \cite{Phase4Silver}, disproving the hypothesis outright. The constant $2+\sqrt2$ itself is not wrong --- it is the exact value for the pure silver-ratio tail \cite{Phase4SilverAudit} --- but it was the wrong threshold to be solving for: once the density-$1/2$ fact (\S\ref{sec:oddweight}) is known, the actual required threshold is $r>2$, and $2+\sqrt2\gg2$ was never close to the real boundary.
+
+\paragraph{C. Seed-independence via complement-invariance of $c_W$ --- rejected, repaired.} The claim that both CS Rote seeds ($v_0=0$ or $v_0=1$) give identical surplus was correct, but its stated justification (``complementing uniformly complements $R$, so $c_W$ is unaffected'') was not: direct testing found $c_W\ne c_{\bar W}$ in $8$ of $8$ random odd-weight cases, often by an order of magnitude \cite{Phase5Hostile}. The repaired reason: every verification script's height bound $F_{\text{bound}}(W)$ depends on the root only through $(\ell,k,D(\text{root}))$, never through $c_W$ directly, and $D(V\bar V)=D(\bar V V)$ exactly, checked in $15$ of $15$ random cases. The \emph{conclusion} survives untouched; only its justification needed repair --- exactly the kind of error a hostile self-audit is designed to catch.
+
+\paragraph{D. Phase 6 small-$k$ boundary correction.} The load-bearing inequality $\text{term2}(k)>2+1/(A+1)$ (\S\ref{sec:boundedtype}) was stated to hold strictly for every $k$. Adversarial testing against genuinely non-eventually-periodic bounded-type controls (Thue--Morse-coded, Fibonacci-word-coded, and two independent random $\{1,2\}$ sequences) found one case of non-strict \emph{equality} rather than a violation: in the Fibonacci-coded control, $\text{term2}(2)$ equals $2+1/(A+1)=7/3$ exactly, at $k=2$, the only such case out of $232$ checks across all four sequences \cite{Phase6Arrow}. This does not weaken the theorem, because the abstract criterion (Theorem \ref{thm:abstract}) only requires $\limsup$ unboundedness along \emph{some} growing sequence of witnesses, not strict inequality at literally every finite $k$.
+
+None of these four corrections changed the truth of the final headline theorem; each changed (and, in cases B and C, simplified) the reason it is true.
+
+\section{The Bounded-Type CS Rote Theorem (Every Intercept)}
+\label{sec:boundedtype}
+
+\begin{theorem}[Headline result of the program \cite{Phase8Proof}]
+\label{thm:boundedtype}
+Let $\gamma\in(0,1)$ be irrational with bounded partial quotients ($A:=\sup_n a_n<\infty$). Let $u$
+be \textbf{any} Sturmian word of slope $\gamma$ --- \textbf{any} intercept $\rho$, either the upper
+or the lower mechanical convention. Let $v$ be either complementary symmetric Rote sequence with
+$S(v)=u$ (either seed), or any shift $\sigma^j(v)$. Then
+\[
+\Phi(v)\notin\Q.
+\]
+\end{theorem}
+
+The intercept-$0$ case of Theorem \ref{thm:boundedtype} is the result Revision 1 stated
+\cite{Phase6Bounded}; the general-intercept extension is \S\ref{sec:generalintercept}, whose
+symbolic input is BHZ \cite{BHZ2006} \S5 (Revision 2, C1). The proof architecture of
+\S\ref{sec:architecture} is unchanged apart from that one arrow: every other step was already
+proved intercept-agnostic, and each has been re-verified on literally constructed mechanical words
+at general intercepts, under both conventions and both seeds \cite{Phase8Chain}.
+
+This supersedes an earlier theorem of the same program, proved first for the strictly narrower class of \emph{quadratic}-irrational slopes \cite{Phase4Quadratic}, \emph{without weakening any of its quantifiers} --- both seeds, every shift, still covered. The upgrade matters because quadratic irrationals are countable (each is a root of an integer quadratic, and there are only countably many such polynomials), while bounded-partial-quotient irrationals are uncountable: for each bound $A$, the set of irrationals whose partial quotients never exceed $A$ contains a Cantor-type subset, and the union over all $A$ is an uncountable set.
+
+\begin{remark}[What ``uncountable'' does and does not say here]
+Uncountability is a statement about cardinality only. The set of bounded-type irrationals has Lebesgue measure zero: a Lebesgue-almost-every real number has \emph{unbounded} partial quotients. Theorem \ref{thm:boundedtype} says nothing about a randomly chosen real slope, and nothing about density among all irrationals --- only that the class it covers, while structurally constrained, is not merely a countable list of algebraic special cases.
+\end{remark}
+
+\section{Proof Architecture of the Bounded-Type Theorem}
+\label{sec:architecture}
+
+The shortest audited chain, reconstructed in Phase 6 without any periodicity hypothesis and cross-checked against four genuinely non-eventually-periodic bounded-type controls \cite{Phase6Arrow}, adapting the original Phase 4 chain \cite{Phase4Chain}:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Step & Cites \\
+\midrule
+bounded partial quotients, $A=\sup_n a_n$ & hypothesis \\
+$\downarrow$ Sturmian words have arbitrarily long initial squares & Thm 10.2 \cite{DeJesus2026Sturmian}, \cite{ADQZ2001} \\
+$\downarrow$ BHZ margin at intercept $0$, $\text{term2}(k)>2+\tfrac1{A+1}$ (every $k$, up to \S\ref{sec:selfcorrection}.D) & \cite{BHZ2006}, Cor.\ 3.5 \\
+$\downarrow$ \emph{or, at any intercept:} $\text{ice}(\omega)\ge2+\delta(A)$, attained, roots $\to\infty$ & \cite{BHZ2006}, Prop.\ 5.1--5.2; Thm \ref{thm:generalmargin} \\
+$\downarrow$ arbitrarily long usable witnesses & \S\ref{sec:repheight} \\
+$\downarrow$ exact XOR transfer, $L_v=L+1$ & Thm \ref{thm:transfer} \cite{Phase2Transfer,Phase5Transfer} \\
+$\downarrow$ even/odd branch split & \S\ref{sec:rote} \\
+$\downarrow$ odd branch: doubled root density exactly $1/2$ & \S\ref{sec:oddweight} \cite{Phase4Required} \\
+$\downarrow$ actual-root discrepancy control, $O(\log\ell)$, uniform in $\rho$ & \cite{Phase2Discrepancy}, repaired \cite{Phase5Hostile}, Lem.\ \ref{lem:halfslope} \\
+$\downarrow$ sublinear height penalty & \S\ref{sec:discrepancy} \\
+$\downarrow$ positive, unbounded surplus & \S\ref{sec:abstract} \\
+$\downarrow$ abstract irrationality criterion (Thm \ref{thm:abstract}) & \cite{Phase2Abstract} \\
+$\Rightarrow$ $\Phi(v)\notin\Q$ & Thm \ref{thm:boundedtype} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Notably absent from this chain: the weight-parity automaton of \S\ref{sec:selfcorrection}.A, and the silver-ratio constant $2+\sqrt2$ of \S\ref{sec:selfcorrection}.B --- both were real, correctly-derived facts about this problem, and neither is needed by the final proof.
+
+\section{General Intercepts}
+\label{sec:generalintercept}
+
+Sections \ref{sec:oddweight}--\ref{sec:architecture} were originally stated for the
+\emph{intercept-$0$} representative of a slope $\gamma$: the lower mechanical word
+$u_i=\lfloor(i+1)\gamma\rfloor-\lfloor i\gamma\rfloor$. This section removes that restriction.
+
+An arbitrary intercept is encoded by an \emph{Ostrowski digit sequence} $(c_k)_{k\ge1}$, subject to
+BHZ's admissibility condition \cite{BHZ2006}:
+\[
+a_k \ge c_k \ge 0 \text{ for all } k,\quad a_k\ge1 \text{ for } k\ge2,\quad \text{and if } c_k=a_k \text{ then } c_{k-1}=0.
+\]
+The characteristic (intercept-$0$) sequence is $c_k\equiv0$. Where the partial quotients $(a_k)$ fix
+the canonical Sturmian \emph{scale hierarchy} (the convergent denominators $q_k$), the digits
+$(c_k)$ determine \emph{where inside that hierarchy} a particular intercept's word sits.
+
+\paragraph{Conventions, stated exactly (Revision 2, C3).} BHZ Proposition 2.7 sets
+\[
+\alpha=[0;a_1+1,a_2,a_3,\dots],\qquad q_0=1,\quad q_1=a_1+1,\quad q_k=a_kq_{k-1}+q_{k-2}\ (k\ge2),
+\]
+so the BHZ digit $a_1$ is one less than the first partial quotient of $\alpha$, while $(q_k)$ are
+the ordinary convergent denominators. Write $A_b:=\sup_k a_k$; always $A_b\le A$. Bounds below are
+sharpest in $A_b$, and remain true with $A$ substituted.
+
+At intercept $0$, BHZ's Corollary 3.5 collapses to the clean closed form used in
+\S\ref{sec:architecture}. In general it does not collapse:
+\[
+x'(k) = \frac{\sum_{j=1}^{k+1}(a_j-c_j)q_{j-1}}{q_k}, \qquad
+y(k) = 1 + \frac{\sum_{j=1}^{k}(a_j-c_j)q_{j-1}}{q_k-c_kq_{k-1}},
+\]
+\[
+\text{ice}(\omega)=\limsup_k \max(x'(k),y(k)).
+\]
+Both terms depend on the entire digit history, not just on $(a_j)$.
+
+\paragraph{Attainment, stated exactly (Revision 2, C5).} By BHZ Proposition 3.3, $x(k)$ is the
+prefix power of an actually occurring initial power of $\omega$ with primitive root of length
+exactly $q_k$, \emph{for every} $k$; and $y(k)$ is, with root length exactly $q_k-c_kq_{k-1}$,
+\emph{provided} $0<c_k<a_k$. Nothing is asserted about $y(k)$ as an attained power otherwise;
+Corollary 3.5's three observations convert those cases into attained $x$-witnesses.
+
+\paragraph{The margin is a published theorem (Revision 2, C1).}
+
+\begin{theorem}[Berth\'e--Holton--Zamboni \cite{BHZ2006}, Propositions 5.1 and 5.2]
+\label{thm:bhzmargin}
+If $(s,t)$ are integers with $s>1$ and $(a_k,a_{k+1})=(s,t)$ for infinitely many $k$, then every
+$\omega\in X_\alpha$ satisfies $\text{ice}(\omega)\ge2+\frac1{2(s+1)(t+1)+1}$. If
+$(a_k,a_{k+1},a_{k+2})=(1,1,t)$ for infinitely many $k$, then every $\omega\in X_\alpha$ satisfies
+$\text{ice}(\omega)\ge2+\frac1{8t+1}$.
+\end{theorem}
+
+\begin{corollary}
+\label{cor:bhzbounded}
+For every irrational $\gamma$ of bounded type and every $\omega\in X_\gamma$,
+$\text{ice}(\omega)\ge2+\frac1{2(A_b+1)^2+1}$.
+\end{corollary}
+
+\begin{proof}
+There are finitely many digit pairs. If $a_k>1$ for infinitely many $k$, some pair $(s,t)$ with
+$s>1$ and $s,t\le A_b$ recurs infinitely often, and Proposition 5.1 applies. Otherwise $a_k=1$ for
+all large $k$, so $(a_k,a_{k+1},a_{k+2})=(1,1,1)$ recurs infinitely often and Proposition 5.2
+applies with $t=1$, giving $2+\frac19\ge2+\frac1{2(A_b+1)^2+1}$.
+\end{proof}
+
+Here $X_\gamma$ is BHZ's set of \emph{all} Sturmian sequences of slope $\gamma$, i.e.\ the
+itineraries of every point under either of the two interval exchanges of their \S2.1 --- so
+Corollary \ref{cor:bhzbounded} quantifies over every intercept \emph{and} both mechanical
+conventions at once, which is exactly the quantifier the bridge needs.
+
+\paragraph{An attained-witness form, with growing roots.} Corollary \ref{cor:bhzbounded} bounds a
+$\limsup$. A $\limsup$ bound $\text{ice}(\omega)\ge2+\delta$ yields, for each $\varepsilon>0$,
+infinitely many $n$ with an attained initial power of exponent $>2+\delta-\varepsilon$; taking
+$\varepsilon=\delta/2$ already supplies attained witnesses of exponent $>2+\delta/2$ whose root
+lengths necessarily tend to infinity, which suffices for Theorem \ref{thm:boundedtype}. The
+following stronger, per-scale form is what this program proves independently, and is what makes the
+surplus bound uniform in $k$ rather than only along an unspecified subsequence.
+
+\begin{theorem}[Attained general-intercept margin \cite{Phase8Proof}]
+\label{thm:generalmargin}
+Let $\gamma$ be irrational with $A_b<\infty$ and let $\omega$ be any Sturmian sequence of slope
+$\gamma$ (any intercept, either convention). Put $\delta(A_b):=\frac1{2(A_b+1)^2}$. Then for every
+$k\ge7$ there is a word $W$ with $|W|\ge q_{k-4}$ such that $W^r$ is a prefix of $\omega$ with
+$r\ge2+\delta(A_b)$. In particular $\text{ice}(\omega)\ge2+\delta(A_b)$, and the bound is realised by
+actually occurring initial powers whose root lengths tend to infinity.
+\end{theorem}
+
+The proof is a three-case analysis on $d_k:=a_k-c_k$ driven by the substitution
+$\lambda_k:=q_{k-1}/q_k$, $m_k:=t_{k-1}+d_k$ with $t_k:=\lambda_km_k$, under which
+$x'(k)=m_{k+1}$, $q_k-c_kq_{k-1}=q_{k-1}(\lambda_{k-1}+d_k)$ and
+\[
+y(k)-2=\frac{\lambda_{k-1}\,(m_{k-1}-1)}{\lambda_{k-1}+d_k},
+\]
+so that $y(k)>2$ if and only if $m_{k-1}>1$. Admissibility forbids two consecutive $d_k=0$, which
+floors $m_k$; the three cases $d_k=0$ (route through $x(k-2)=y(k)$), $d_k\ge2$ (route through
+$x(k-1)\ge m_k$) and $d_k=1$ (route through $y(k)$, or through $x(k)$/$x(k-1)$ when $c_k=0$) each
+deliver an \emph{attained} power. Full proof in \cite{Phase8Proof}; BHZ's own three-case proof of
+Proposition 5.1 is structurally the same trichotomy, reached independently, with constants agreeing
+to a factor $1+\frac1{2(A_b+1)^2}$.
+
+\paragraph{How sharp is the margin.} Let $\beta_A$ denote the unique root $>1$ of
+$\beta^2=A\beta+1$, i.e.\ $\beta_A=\frac{A+\sqrt{A^2+4}}2$; equivalently
+$\beta_A=\lim_kq_k/q_{k-1}$ for any slope whose partial quotients are eventually $A$. On BHZ's
+``keep one'' intercept $c_k=a_k-1$ (so $d_k\equiv1$) with BHZ digits eventually $\equiv A$, the
+recurrences above solve in closed form: $\lambda_k\to1/\beta_A$, $m_k\to\beta_A/(\beta_A-1)$, and
+since $\beta_A^2-1=A\beta_A$,
+\[
+\text{ice}(\omega)=2+\frac1{A\beta_A}\qquad\text{exactly.}
+\]
+Hence $\delta^*(\gamma)\le\frac1{A\beta_A}=\Theta(A^{-2})$ there, so the proved floor
+$\frac1{2(A_b+1)^2}$ is off by at most a bounded factor (between $2$ and $4.90$), and --- because
+$1/(A\beta_A)\to0$ --- \textbf{no margin uniform in $A$ can exist}: the $A$-dependence in
+Revision 1's Conjecture 12.1 was necessary, not a convenience. This also recovers BHZ Proposition
+4.1 from the other side, their bound $\text{ice}(\text{keep one})\le1+\theta$ and the floor above
+pinning the keep-one value between $2+\frac1{A\beta_A}$ and $1+\theta$.
+
+\begin{remark}[What is \emph{not} claimed]
+That $\frac1{A\beta_A}$ \emph{is} the infimum of $\text{ice}-2$ over all intercepts is proved only
+for slopes whose BHZ digits are eventually constant with $A\ge2$ (a three-case argument: deviating
+from $d_k\equiv1$ costs at least $\min(1+A,\,2+1/\beta_A)$, both strictly larger), plus the
+Fibonacci slope via BHZ Proposition 4.3. On every other bounded-type slope it is numerical evidence
+only and is deliberately not promoted to a theorem \cite{Phase8Margin}. Theorem
+\ref{thm:boundedtype} uses none of it: any fixed $\delta>0$ suffices, and Corollary
+\ref{cor:bhzbounded} alone would do.
+\end{remark}
+
+\paragraph{The remaining intercept-dependent step, and its hidden hypothesis.} Every ingredient of
+\S\ref{sec:architecture} after ``a witness exists'' was already proved intercept-agnostic: the XOR
+transfer uses no property of $u$ beyond being a binary sequence; the doubled root's density is
+$1/2$ by construction; and the discrepancy bound is a statement about a rotation's equidistribution
+rate, uniform in the starting phase. That last step needs one hypothesis Revision 1 left implicit.
+For the intercept-$\rho$ word, $k_i(u)=\lfloor i\gamma+\rho\rfloor-\lfloor\rho\rfloor$, so
+$k_i\bmod2$ codes the orbit $\{i(\gamma/2)+\rho/2\}$ against $[\tfrac12,1)$: the relevant rotation
+is by $\gamma/2$, not $\gamma$.
+
+\begin{lemma}
+\label{lem:halfslope}
+If $\gamma$ has bounded partial quotients then so does $\gamma/2$, with a bound depending only on
+$A$.
+\end{lemma}
+
+\begin{proof}
+Bounded type is equivalent to $c:=\inf_{q\ge1}q\|q\gamma\|>0$, and $c\ge1/(A+2)$. For any $q\ge1$,
+$\|q\gamma\|=\|2\cdot q(\gamma/2)\|\le2\|q(\gamma/2)\|$, so
+$q\|q(\gamma/2)\|\ge q\|q\gamma\|/2\ge c/2>0$. Hence $\gamma/2$ is badly approximable with constant
+at least $1/(2(A+2))$, and its partial quotients are bounded by $\lfloor2(A+2)\rfloor+1$.
+\end{proof}
+
+With Lemma \ref{lem:halfslope} the three-distance bound applies to $\gamma/2$ and gives
+$D(R_k)=O_A(\log\ell_k)$ uniformly in $\rho$, completing the chain. Only $D=o(\ell)$ is actually
+needed; measured across 534 witnesses at general intercepts, $D(R)/\log_2\ell_k$ stays in
+$[0.30,0.61]$ while $D(R)/\ell_k$ falls from $0.20$ to $0.0004$ \cite{Phase8Chain}.
+
+\paragraph{Independent verification.} The whole chain was re-run on literally constructed mechanical
+words --- certified rational brackets for both $\gamma$ and $\rho$, every floor and ceiling either
+decided by the bracket or raised, and no BHZ formula used anywhere --- across four slopes
+(including a non-eventually-periodic one), four intercept families (including keep-one), both
+mechanical conventions and both seeds: 534 attained witnesses with $\ell$ from $8$ to $10\,946$;
+the transfer identity $L_v=L_u+1$ held $534/534$; $2^{L_v}>F(R)$ as exact integers $534/534$; and
+the odd-branch density was exactly $1/2$ in all $338$ odd-branch cases \cite{Phase8Chain}.
+
+\section{Ostrowski Repetition Structure}
+\label{sec:ostrowski}
+
+A subtlety worth making explicit for anyone continuing this work: \textbf{low factor complexity is not the same thing as strong initial repetition.} A CS Rote sequence may remain globally $p(n)=2n$ while its intercept changes \emph{which} large canonical blocks (Ostrowski/continuant-scale factors) happen to align at the origin --- which is exactly what determines how long an initial repetition is actually available to feed the bridge.
+
+The scale-dependent quantity that tracks this is an \emph{excess}:
+\[
+E_k := \max(r'_k, r_k) - 2,
+\]
+where $r'_k,r_k$ are the two branch-specific repetition exponents at scale $k$ \cite{Phase7Surplus}. The corresponding surplus decomposition, re-derived from the integer periodic-value formula with
+every length factor kept explicit (Revision 2, C4), is
+\[
+\text{odd branch:}\quad S_k \;\ge\; \ell_k\,E_k \;+\;1\;-\;\lceil D(R_k)\rceil\log_23\;-\;\log_2(2\ell_k),
+\]
+\[
+\text{even branch:}\quad S_k \;\ge\; \ell_k\,(r_k-\log_23)\;+\;1\;-\;\lceil D(V_k)\rceil\log_23\;-\;\log_2\ell_k,
+\]
+where $\ell_k=|W_k|$ is the \emph{Sturmian} root length \cite{Phase8Proof}. Revision 1 displayed
+$S_k\ge A\cdot E_k-C_A D_k-O_A(\log\ell_k)$, which is dimensionally incomplete: the leading term is
+a length times an excess, not the partial-quotient bound times an excess. The flexible sufficient
+condition this leads to --- used in place of a fixed margin whenever one is not cleanly available ---
+is
+\[
+E_k \gg \frac{\log \ell_k}{\ell_k}, \qquad\text{equivalently}\qquad \ell_kE_k\gg\log\ell_k,
+\]
+which is manifestly the same statement as the corrected inequality, and is why no conclusion Revision
+1 drew from the displayed formula changes \cite{Phase7Flexible}. With Theorem
+\ref{thm:generalmargin} the excess is bounded below by the \emph{constant} $\delta(A_b)$ and
+$\ell_k\ge q_{k-4}\to\infty$, so the flexible machinery is not needed at all: the general-intercept
+case lands in the easiest regime, $E_k\asymp1$. Every structured intercept family tested lands there
+too \cite{Phase7Structured}, and the near-maximal family those tests identified as worst is exactly
+the keep-one family, for which the excess is exactly $1/(A\beta_A)$.
+
+The even branch needs no discrepancy hypothesis at all: the combinatorial cap
+$D(V)\le\gamma_V(1-\gamma_V)\ell$ together with
+$\sup_\gamma[\max(1,\gamma\log_23)+\gamma(1-\gamma)\log_23]=\log_23<2$ already suffices
+\cite{Phase1Repetition}. Only the odd branch needs $D=o(\ell)$.
+
+\section{The Density Coordinate, and Where the Residual Case Is}
+\label{sec:density}
+
+Revisions 1--2 organised this programme along the \emph{factor-complexity} axis: Sturmian
+($p(n)=n+1$), then the counting classes below Dubickas's threshold, then $p(n)=2n$. That is the axis
+on which Route A operates. It is not the axis the other known exclusion results read.
+
+\begin{definition}
+For $v\in\{0,1\}^\N$ write $k_N(v):=\#\{i<N:v_i=1\}$ and call
+$\liminf_{N}k_N(v)/N$ the \emph{lower ones-density} of $v$.
+\end{definition}
+
+\begin{theorem}[Monks--Yazinski \cite{MonksYazinski2004}, Theorem 2.7(b)]
+\label{thm:my}
+If $x\in\Q_{\mathrm{odd}}$ has divergent $T$-orbit, then
+$\ln2/\ln3\le\liminf_N \kappa_N(x)/N$, where $\kappa_N(x)$ counts the odd elements among the first
+$N$ terms of the orbit.
+\end{theorem}
+
+Since $\kappa_N(x)/N$ is exactly $k_N/N$ for the parity vector of $x$, and since an orbit is
+eventually cyclic precisely when its parity vector is eventually periodic, Theorem~\ref{thm:my}
+contraposes to a statement about words:
+
+\begin{corollary}
+\label{cor:my}
+If $v$ is not eventually periodic and has lower ones-density $<\beta:=\ln2/\ln3$, then
+$\Phi(v)\notin\Q$ --- whatever the factor complexity of $v$.
+\end{corollary}
+
+This forces a correction to how Revisions 1--2 framed their headline (D2 of \S\ref{sec:rev3}).
+
+\begin{remark}[The CS Rote chain sits inside Corollary~\ref{cor:my}]
+Every complementary symmetric Rote sequence has ones-density exactly $1/2$ --- this is the same
+structural fact, established in Phase 4 and used throughout \S\S\ref{sec:oddweight}--\ref{sec:architecture},
+that collapses the required repetition exponent to $2$. Since $1/2<\beta=0.63092\ldots$,
+Corollary~\ref{cor:my} already gives $\Phi(v)\notin\Q$ for every such $v$. Theorem~\ref{thm:boundedtype}
+is therefore \textbf{not} a new exclusion; it is an independent second proof of an available one, by a
+mechanism that also yields effective height floors (\S\ref{sec:certificates}) that a density argument
+does not give. The same applies to the Thue--Morse word, of density $1/2$.
+\end{remark}
+
+\paragraph{What each result reads.}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+result & coordinate read & reaches & status of source \\
+\midrule
+Monks--Yazinski Thm 2.7(b) \cite{MonksYazinski2004} & density & $\liminf k_N/N<\beta$ & refereed \\
+Dubickas, transported \cite{Dubickas2009,DeJesus2026Sturmian} & complexity & $\liminf p(L)/L<1.70951\ldots$ & refereed \\
+Foundation Thm 10.1 \cite{DeJesus2026Sturmian} & both & all Sturmian ($p(n)=n+1$, any slope) & preprint (self) \\
+Lop\'ez--Stoll Thm 1 \cite{LopezStoll2021} & density & (proposed) $\liminf k_N/N>\beta$ & preprint; not used here \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Acknowledgement, and what is not used.}
+Lop\'ez--Stoll's work on density and the $3x+1$ conjugacy map helped guide this programme toward the
+critical density $\beta=\ln2/\ln3$. We acknowledge that influence. The results presented here are
+established through the independent arguments given in this note and do not require their proposed
+upper-density exclusion. The critical-density Sturmian word is theirs \cite{LopezStoll2009}, and so
+is the observation that critical density is where the existing methods stop. We take no position on
+their Theorem 1 \cite{LopezStoll2021} --- we have neither established nor disproved it --- and no
+argument below invokes it. Accordingly the residual region is described against what is
+independently available:
+
+\begin{center}
+\emph{the densities reached by refereed work are those below $\beta$; the residual region is
+lower ones-density $\ge\beta$.}
+\end{center}
+
+At lower ones-density exactly $\beta$ and factor complexity $n+1$ the foundation paper already has
+the conclusion, since a Sturmian word of slope $\beta$ has ones-density $\beta$
+\cite{DeJesus2026Sturmian}. So the uncovered corner is \textbf{lower ones-density exactly $\beta$ at
+factor complexity $2n$}, and that is what \S\S\ref{sec:ratint}--\ref{sec:algint} address \cite{Phase10Density}. The
+foundation paper's own open problem (4) asks exactly for the complexity-$2n$ class and records that
+no substitute repetition-and-height input for it was known to its author.
+
+\section{Critical-Density Rotation Codings: Rational Intercepts}
+\label{sec:ratint}
+
+Throughout this section and the next, $\beta:=\ln2/\ln3=\log_32=0.6309297535\ldots$, which is
+transcendental by Gelfond--Schneider, and $\chi:=\mathbf 1_{[0,\beta)}$. Note the identity
+$\beta\log_23=1$, used in \S\ref{sec:discrepancy}'s height inequality.
+
+\begin{definition}
+For $\alpha\in(0,1)$ irrational and $\rho\in\R$ define the \emph{critical-density coding}
+$s=s(\alpha,\rho)$ by
+\[
+  s_n=1\iff \{n\alpha+\rho\}\in[0,\beta),\qquad n=0,1,2,\ldots
+\]
+\end{definition}
+
+The interval length is $\beta$, not $\alpha$: this is a two-interval coding of a rotation whose
+partition endpoint is \emph{not} in $\Z\alpha+\Z$, not a mechanical word.
+
+\begin{lemma}[Basic properties]
+\label{lem:basic}
+Let $\alpha\in(0,1)$ be irrational and algebraic and let $\rho\in\R$. Then $s(\alpha,\rho)$ is
+aperiodic; its ones-density exists and equals $\beta$; and $p_s(n)=2n$ for all $n\ge1$.
+\end{lemma}
+
+\begin{proof}
+A period $p\ge1$ would make the proper arc $[0,\beta)$ invariant under rotation by
+$p\alpha\not\equiv0\pmod 1$, which is impossible. The density statement is Weyl equidistribution for
+irrational $\alpha$; the limit exists, so $\liminf=\limsup=\beta$. For the complexity: $\beta$ is
+transcendental and $\alpha$ algebraic, so $\Z\alpha+\Z$ consists of algebraic numbers and
+$\beta\notin\Z\alpha+\Z$; by Rote \cite{Rote1994} and Berstel--Vuillon \cite{BerstelVuillon2001} a
+two-interval coding of an irrational rotation has $p(n)=2n$ exactly when the partition endpoint lies
+outside $\Z\alpha+\Z$.
+\end{proof}
+
+The complexity value is recorded for the coverage discussion of \S\ref{sec:density} only; no
+argument below uses it.
+
+\subsection{The agreement excess is a first hitting time}
+
+Write $L(\ell):=\operatorname{lcp}\bigl(s,(s[0{:}\ell])^\infty\bigr)$ and, for $\ell\ge1$,
+$\delta(\ell):=\ell\alpha-\operatorname{round}(\ell\alpha)$, so $|\delta(\ell)|=\lVert\ell\alpha\rVert$.
+Since $\{x+\ell\alpha\}=\{x+\delta(\ell)\}$, the symbols $s_{m+\ell}$ and $s_m$ differ exactly when
+$\{m\alpha+\rho\}$ lies in the symmetric difference of $[0,\beta)$ with its translate.
+
+\begin{lemma}[The mismatch set]
+\label{lem:mismatch}
+Put $M(d):=\{x\in[0,1):\chi(x)\ne\chi(\{x+d\})\}$. If $|d|\le\min(\beta,1-\beta)=0.3690702464\ldots$
+then
+\[
+  M(d)=\begin{cases}[\beta-d,\beta)\ \cup\ [1-d,1), & d>0,\\[2pt]
+                    [0,|d|)\ \cup\ [\beta,\beta+|d|), & d<0,\end{cases}
+\]
+two arcs of length $|d|$, one at each discontinuity of $\chi$. Consequently
+\[
+  L(\ell)-\ell \;=\; m^*(\ell)\;:=\;\min\{m\ge0:\{m\alpha+\rho\}\in M(\delta(\ell))\}.
+\]
+\end{lemma}
+
+\begin{proof}
+For $d>0$ compare $\chi$ on $x$ and $x+d$ across the four intervals
+$[0,\beta-d)$, $[\beta-d,\beta)$, $[\beta,1-d)$, $[1-d,1)$: the values agree on the first and third
+and differ on the second and fourth. The hypothesis $|d|\le\min(\beta,1-\beta)$ is what keeps these
+four intervals in this order, i.e.\ keeps the two arcs from wrapping past $0$ and merging; without
+it the description fails. The case $d<0$ is symmetric. The half-open side of each arc matches the
+half-open side of $[0,\beta)$. For the second statement, the first index at which $s$ differs from
+$(s[0{:}\ell])^\infty$ is $\ell+m$ for the least $m\ge0$ with $s_{m+\ell}\ne s_m$.
+\end{proof}
+
+\begin{remark}
+The hypothesis of Lemma~\ref{lem:mismatch} is not cosmetic. Among convergent denominators of
+$(\sqrt5-1)/2$ it fails only at $q=1$, where $|\delta|=0.3819660\ldots>0.3690702\ldots$, and there
+the closed form is genuinely wrong; the construction below uses $|\delta|<1/294$, with a factor of
+about $10^2$ to spare \cite{Phase11bAudit}. The mechanism itself --- reading the agreement excess as a
+first entry time of the rotation orbit into an arc at a partition endpoint --- is proposed in the
+foundation paper's own open problem (1) \cite{DeJesus2026Sturmian}; it is not original here. What is
+done here is its execution with \emph{two} discontinuities instead of one.
+\end{remark}
+
+Two relaxations of Lemma~\ref{lem:mismatch} are used. Writing $B(y,r)$ for the two-sided arc of
+radius $r$ about $y$:
+\begin{equation}
+  M(\delta)\subseteq B(0,|\delta|)\cup B(\beta,|\delta|),
+  \qquad\text{hence}\qquad m^*(\ell)\ \ge\ \min\bigl(t_0,\,t_\beta\bigr),
+  \label{eq:twoball}
+\end{equation}
+with $t_0:=\min\{m:\lVert m\alpha+\rho\rVert\le|\delta|\}$ and
+$t_\beta:=\min\{m:\lVert m\alpha+\rho-\beta\rVert\le|\delta|\}$; and, sharper, under the hypothesis
+of Lemma~\ref{lem:mismatch},
+\begin{equation}
+  \delta>0\ \Longrightarrow\ 0\notin M(\delta).
+  \label{eq:signed}
+\end{equation}
+Inclusion \eqref{eq:twoball} holds without the no-wrap hypothesis, since an arc crossing $1$
+overspills next to $0$ and $B(0,\cdot)$ is two-sided.
+
+\subsection{The arc at $0$: rational intercepts}
+
+\begin{lemma}
+\label{lem:arc0rat}
+Let $\alpha$ be a quadratic irrational with largest partial quotient $A$, and let $\rho=p/q\in\Q$ in
+lowest terms. Put $K:=(A+2)q^2$. Then $\lVert m\alpha+\rho\rVert>1/(Km)$ for every $m\ge1$, and
+hence $t_0>1/(K|\delta|)$ on those indices.
+\end{lemma}
+
+\begin{proof}
+A quadratic irrational has an eventually periodic continued fraction, so its partial quotients are
+bounded by some $A<\infty$, and then $\lVert n\alpha\rVert>1/((A+2)n)$ for every $n\ge1$. Using
+$\lVert x\rVert\ge\lVert qx\rVert/q$ and $q(m\alpha+p/q)=qm\alpha+p$,
+\[
+  \lVert m\alpha+p/q\rVert\ \ge\ \tfrac1q\lVert qm\alpha\rVert\ >\ \tfrac1q\cdot\tfrac1{(A+2)qm}
+  \ =\ \tfrac1{Km}.
+\]
+\end{proof}
+
+For $\alpha=(\sqrt5-1)/2$ and $\rho=1/7$ this is $K=3\cdot49=147$. The rationality of $\rho$ is what
+makes Lemma~\ref{lem:arc0rat} available; \S\ref{sec:algint} replaces it.
+
+At $m=0$ the orbit point is $\{\rho\}$. If $\rho\ne0$ then $\lVert\rho\rVert\ge1/q$, while
+$|\delta|<1/(KM)\le1/(6q^2)<1/q$ for $M\ge2$, so $m=0$ lies outside $B(0,|\delta|)$ and
+\eqref{eq:twoball} suffices. If $\rho=0$ then $\lVert0\rVert=0$ and \eqref{eq:twoball} is vacuous;
+\eqref{eq:signed} is used instead, restricting to convergent denominators with $\delta>0$. Since
+$\delta(q_k)=q_k\alpha-p_k$ alternates in sign, infinitely many qualify, and
+$q_{k+1}=a_{k+1}q_k+q_{k-1}\le(A+1)q_k$ absorbs the cost of skipping every other one. \textbf{No
+finite shift is used, and none would help}: shifting replaces $\rho=0$ by $\{\alpha\}$, which is
+irrational, destroying the hypothesis Lemma~\ref{lem:arc0rat} needs.
+
+\subsection{The arc at $\beta$, the witnesses, and the theorem}
+
+Let $j_m$ be the nearest integer to $m\alpha+\rho-\beta$ and put $A_m:=m\alpha+\rho-j_m$, so that
+$c_m:=\lVert m\alpha+\rho-\beta\rVert=|A_m-\beta|$. Section~\ref{sec:analytic} proves, for any fixed
+$\kappa>2$,
+\begin{equation}
+  c_m\ \ge\ \exp\bigl(-c_1(\log(m+2))^\kappa\bigr),\qquad c_1=c_1(\alpha,\rho,\kappa)\ \text{effective}.
+  \label{eq:arcbeta}
+\end{equation}
+In particular $c_m>0$ for every $m$: the orbit never hits $\beta$, since $m\alpha+\rho\equiv\beta$
+would make $\beta$ algebraic.
+
+\begin{proposition}[The witnesses]
+\label{prop:witness}
+For $M\ge2$ put $t(M):=\min\bigl(\min_{0\le m<M}c_m,\ 1/(KM)\bigr)$ and let $\ell(M)$ be the least
+admissible convergent denominator $q_k$ of $\alpha$ with $\lVert q_k\alpha\rVert<t(M)$, where
+``admissible'' means all of them if $\rho\ne0$ and those with $\delta(q_k)>0$ if $\rho=0$. Then
+\[
+  L(\ell(M))-\ell(M)\ \ge\ M,\qquad
+  \ell(M)>\tfrac{K}{A+2}M\to\infty,\qquad
+  \log\ell(M)=O\bigl((\log(M+2))^\kappa\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+No-wrap holds automatically since $t(M)\le1/(2K)\le1/6<0.369$. For $0\le m<M$: the first threshold
+gives $c_m\ge t(M)>|\delta|$, so $m\notin B(\beta,|\delta|)$; the second, with
+Lemma~\ref{lem:arc0rat}, gives $\lVert m\alpha+\rho\rVert>1/(Km)\ge1/(KM)>|\delta|$ for $m\ge1$,
+and $m=0$ is handled as above. So $m^*(\ell(M))\ge M$, and
+Lemma~\ref{lem:mismatch} converts this into the first display.
+
+For the size of $\ell(M)=q_k$: by minimality the previous admissible denominator $q$ has
+$\lVert q\alpha\rVert\ge t(M)$, while $\lVert q\alpha\rVert<1/q'$ for its successor $q'$; hence
+$q'<1/t(M)$ and $\ell(M)\le(A+1)q'<(A+1)/t(M)$. Combining with \eqref{eq:arcbeta} and
+$1/(KM)$ gives the third display, because $\kappa>2>1$. For the lower bound,
+$\lVert q_k\alpha\rVert>1/(q_{k+1}+q_k)\ge1/((A+2)q_k)$ forces $t(M)>1/((A+2)\ell(M))$.
+\end{proof}
+
+\begin{theorem}[Critical density, quadratic slope, rational intercept]
+\label{thm:ratint}
+Let $\alpha\in(0,1)$ be a quadratic irrational and let $\rho\in\Q$, including $\rho=0$. Then
+$s(\alpha,\rho)$ is aperiodic with ones-density exactly $\beta$ and factor complexity $2n$, and
+\[
+  \Phi\bigl(s(\alpha,\rho)\bigr)\notin\Q .
+\]
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:basic}, $s$ is aperiodic, so $s\ne W^\infty$ for every finite $W$ --- the only
+standing hypothesis of Theorem~\ref{thm:abstract}. For bounded-type $\alpha$ the discrepancy bound of
+\S\ref{sec:discrepancy} gives, \emph{uniformly in $\rho$},
+$|k_\ell-\ell\beta|\le C_D\log_2\ell+C_D'$ and
+$D(W)\le2C_D\log_2\ell+2C_D'$; uniformity holds because shifting the orbit by $\rho$ replaces one
+interval by at most two, so the extreme discrepancy at most doubles. Substituting into the height
+inequality of \S\ref{sec:discrepancy} and using $\beta\log_23=1$,
+\[
+  S(W)\ \ge\ (L-\ell)-C\log_2\ell-C_0,\qquad
+  C:=1+3C_D\log_23,\quad C_0:=1+\log_23\,(3C_D'+1),
+\]
+with $C,C_0$ depending on $\alpha$ alone. Evaluating at $\ell=\ell(M)$ and applying
+Proposition~\ref{prop:witness},
+\[
+  S\bigl(s[0{:}\ell(M)]\bigr)\ \ge\ M-\tfrac{C}{\ln2}\,O\bigl((\log(M+2))^\kappa\bigr)-C_0
+  \ \xrightarrow[M\to\infty]{}\ +\infty,
+\]
+since $(\log M)^\kappa=o(M)$ for every fixed $\kappa$. Hence $\limsup_\ell S(s[0{:}\ell])=+\infty$
+and Theorem~\ref{thm:abstract} gives $\Phi(s)\notin\Q$.
+\end{proof}
+
+\section{Algebraic Intercepts}
+\label{sec:algint}
+
+Lemma~\ref{lem:arc0rat} is the only place Theorem~\ref{thm:ratint} used the rationality of $\rho$.
+It can be replaced by Liouville's inequality, at no cost in the conclusion and none in the analytic
+input.
+
+\begin{lemma}[The arc at $0$, algebraic intercepts]
+\label{lem:arc0alg}
+Let $\alpha$ be a quadratic irrational, let $\rho$ be real algebraic, and put
+$D:=[\Q(\alpha,\rho):\Q]$. For $m\ge0$ let $\theta_m:=m\alpha+\rho-j$ with $j$ the nearest integer to
+$m\alpha+\rho$, so $\lVert m\alpha+\rho\rVert=|\theta_m|$. Then
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item $\deg\theta_m\le D$ and $H(\theta_m)\le C_h\,m^{D}$ for a constant $C_h=C_h(\alpha,\rho)$,
+      where $H$ is the classical height;
+\item $\theta_m=0$ for some $m$ if and only if $\rho\in\Z\alpha+\Z$, and then that index is unique;
+\item if $\theta_m\ne0$ then $|\theta_m|\ge(1+H(\theta_m))^{-D}$, hence
+      $\lVert m\alpha+\rho\rVert\ge c_L\,m^{-D^2}$ with $c_L=c_L(\alpha,\rho)>0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) $\theta_m\in\Q(\alpha,\rho)$, so its degree divides $D$. Each conjugate is
+$m\alpha^{(i)}+\rho^{(i)}-j$ with $|j|\le m+1$, hence $O(m)$; the coefficients of the characteristic
+polynomial of multiplication by $\theta_m$ are the elementary symmetric functions of these $D$
+conjugates, hence $O(m^D)$, and the denominators of $\alpha,\rho$ clear once and for all.
+
+(ii) $\theta_m=0$ means $m\alpha+\rho\in\Z$, i.e.\ $\rho\in\Z\alpha+\Z$. Two indices $m\ne m'$ would
+give $\alpha=(j-j')/(m'-m)\in\Q$.
+
+(iii) Let $P(X)=\sum_{i\le d}a_iX^i$ be the primitive integer minimal polynomial of
+$\theta:=\theta_m\ne0$, so $a_0\ne0$ and $|a_0|\ge1$. Then $\prod|\text{roots}|=|a_0/a_d|\ge1/H$ and
+every root has modulus $\le1+H/|a_d|\le1+H$, whence $|\theta|\ge(1+H)^{-d}\ge(1+H)^{-D}$. Combining
+with (i) gives the stated power of $m$.
+\end{proof}
+
+No transcendence theory enters Lemma~\ref{lem:arc0alg}: the bound is Liouville's, and it is
+\emph{polynomial} in $m$, which is more than the construction needs. The exceptional case of (ii)
+is handled by \eqref{eq:signed} exactly as $\rho=0$ was in \S\ref{sec:ratint}, and this is
+insensitive to the value of the exceptional index --- which, unlike the rational case, need not be
+$0$: for $\alpha=(\sqrt5-1)/2$ and $\rho=3-5\alpha$ it is $m=5$.
+
+\begin{theorem}[Critical density, quadratic slope, algebraic intercept]
+\label{thm:algint}
+Let $\alpha\in(0,1)$ be a quadratic irrational and let $\rho$ be any real algebraic number
+(interpreted modulo $1$). Then $s(\alpha,\rho)$ is aperiodic with ones-density exactly $\beta$ and
+factor complexity $2n$, and
+\[
+  \Phi\bigl(s(\alpha,\rho)\bigr)\notin\Q .
+\]
+\end{theorem}
+
+\begin{proof}
+As for Theorem~\ref{thm:ratint}, with Lemma~\ref{lem:arc0alg}(iii) in place of
+Lemma~\ref{lem:arc0rat} and $t(M):=\min\bigl(\min_{0\le m<M}c_m,\ c_LM^{-D^2}\bigr)$. Then
+$t(M)\ge\exp\bigl(-O((\log(M+2))^\kappa)\bigr)$, since a power of $M$ dominates
+$\exp(-c_1(\log M)^\kappa)$ from above, and Proposition~\ref{prop:witness} goes through verbatim:
+the upper bound on $\ell(M)$ becomes
+$\log\ell(M)\le\max\bigl(c_1(\log(M+2))^\kappa,\ D^2\log M+O(1)\bigr)+O(1)$, still
+$O((\log(M+2))^\kappa)$, and $\ell(M)>1/((A+2)t(M))\to\infty$. The $\beta$-arc bound
+\eqref{eq:arcbeta} holds for algebraic $\rho$ with $D$ in place of $2$
+(\S\ref{sec:analytic}), and the discrepancy bound never sees $\rho$ at all.
+\end{proof}
+
+\begin{remark}[The exceptional intercepts reduce, too]
+If $\rho\in\Z\alpha+\Z$, say $\rho=j_0-m_0\alpha$, then $\{n\alpha+\rho\}=\{(n-m_0)\alpha\}$ for all
+$n$, so $s(\alpha,\rho)$ is the $\rho=0$ coding read from index $-m_0$. Since $\Phi\circ S=T\circ\Phi$
+and both branches $y\mapsto2y$, $y\mapsto(2y-1)/3$ of $T^{-1}$ preserve rationality, rationality of
+$\Phi$ is invariant under the shift in both directions, so these cases also follow from the $\rho=0$
+case of Theorem~\ref{thm:ratint}. Both routes were verified \cite{Phase13Alg}.
+\end{remark}
+
+\begin{corollary}[Translated intervals]
+\label{cor:translated}
+Let $\alpha\in(0,1)$ be a quadratic irrational and let $u,\rho\in\R$ with $\rho-u$ algebraic. If
+$s_n=1\iff\{n\alpha+\rho\}\in[u,u+\beta)\pmod 1$, then $\Phi(s)\notin\Q$.
+\end{corollary}
+
+\begin{proof}
+$\mathbf 1_{[u,u+\beta)\bmod 1}(x)=\mathbf 1_{[0,\beta)}(\{x-u\})$ --- both sides are the indicator
+of the same arc of length $\beta$, and the identity holds also when $u+\beta>1$ and the arc wraps.
+So $s$ is the coding $s(\alpha,\rho-u)$, and Theorem~\ref{thm:algint} applies.
+\end{proof}
+
+Corollary~\ref{cor:translated} is strictly stronger than Theorem~\ref{thm:algint}: what must be
+algebraic is the \emph{offset} between the intercept and the interval's left endpoint, not the
+intercept. Both may be transcendental --- $\rho=\pi$, $u=\pi-1/7$, say. Accordingly the remaining
+obstruction on this axis is a transcendental offset, where both boundary bounds fail at once:
+Lemma~\ref{lem:arc0alg} needs algebraicity, and $\lVert m\alpha+\rho-\beta\rVert$ stops being a
+logarithmic form in algebraic data.
+
+\begin{remark}[Two widenings that are not available]
+The proof needs $\alpha$ algebraic (for \S\ref{sec:analytic}) \emph{and} of bounded type (for
+Lemma~\ref{lem:arc0rat}/\ref{lem:arc0alg} and Proposition~\ref{prop:witness}). It therefore holds
+verbatim for every algebraic $\alpha$ with bounded partial quotients; whether any of degree $\ge3$
+exists is a well-known open problem, so that generality is presently vacuous, which is why the
+theorems are stated for quadratics. For transcendental $\alpha$ the method fails outright:
+$A_m$ is then transcendental and no logarithmic-form estimate applies.
+\end{remark}
+
+\section{The Analytic Input, and Its Constants}
+\label{sec:analytic}
+
+The one analytic ingredient is a lower bound for $|A_m\log3-\log2|$ where $A_m=m\alpha+\rho-j_m$ is
+\emph{algebraic}. We use Baker's algebraic-coefficient theorem; to avoid a clash with the density
+$\beta$ we write the coefficients as $b_i$.
+
+\begin{theorem}[Baker \cite{Baker1967III}, Theorem 2]
+\label{thm:baker}
+Let $\alpha_1,\ldots,\alpha_n$ and $b_1,\ldots,b_n$ be non-zero algebraic numbers. Suppose that
+either $\log\alpha_1,\ldots,\log\alpha_n$ or $b_1,\ldots,b_n$ are linearly independent over the
+rationals. Suppose further that $\kappa>n$, and let $d$ and $B$ denote respectively the maximum of
+the degrees and heights of $b_1,\ldots,b_n$. Then
+\[
+  |b_1\log\alpha_1+\cdots+b_n\log\alpha_n|\ >\ C\,e^{-(\log B)^\kappa}
+\]
+for some effectively computable $C=C(n,\alpha_1,\ldots,\alpha_n,\kappa,d)>0$.
+\end{theorem}
+
+\begin{lemma}[Hypotheses, verified]
+\label{lem:bakerhyp}
+Take $n=2$, $\alpha_1=3$, $\alpha_2=2$, $b_1=A_m$, $b_2=-1$. Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item $A_m>\beta-\tfrac12=0.1309297536\ldots>0$ for every $m\ge0$, every $\alpha$ and every $\rho$;
+\item $\Lambda_m:=A_m\log3-\log2\ne0$;
+\item $\log3$ and $\log2$ are linearly independent over $\Q$;
+\item $\deg A_m\le D$ and $H(A_m)\le C_h'\,m^{D}$, with $D=[\Q(\alpha,\rho):\Q]$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) $j_m$ is the \emph{nearest} integer to $m\alpha+\rho-\beta$, so $|A_m-\beta|\le\tfrac12$; and
+$\beta>\tfrac12$. (ii) $\Lambda_m=0$ would make $\log_32=A_m$ algebraic, contradicting
+Gelfond--Schneider. (iii) A relation $a\log2+b\log3=0$ with $(a,b)\ne0$ gives $2^a=3^{-b}$,
+contradicting unique factorisation. (iv) As in Lemma~\ref{lem:arc0alg}(i).
+\end{proof}
+
+Item (i) deserves emphasis: it makes Baker's non-vanishing hypothesis hold with \emph{no} case
+analysis --- in particular at $m=0$, and at an exceptional index of
+Lemma~\ref{lem:arc0alg}(ii). This matters because the \emph{second} branch of the disjunction in
+Theorem~\ref{thm:baker} --- linear independence of $b_1,b_2$, i.e.\ $A_m\notin\Q$ --- genuinely
+fails at $m=0$ when $\rho\in\Q$; it is the first branch, item (iii), that is load-bearing.
+
+Since $C$ depends on $d$ and not on $B$, Lemma~\ref{lem:bakerhyp} gives \eqref{eq:arcbeta} with a
+single constant for all $m$, for any fixed $\kappa>2$. When $D>2$ the degree $\deg A_m$ may vary with
+$m$, and it is then cleaner to invoke Baker's Part~I \cite{Baker1966I}, Theorem 1.1, which is stated
+for all algebraic $b_1,\ldots,b_n$, not all zero, \emph{of degree at most $d$}, and so supplies one
+constant for every degree $\le D$; the price is $\kappa>n+1$ and the extra hypothesis that
+$\log\alpha_1,\ldots,\log\alpha_n$ and $2\pi i$ be $\Q$-independent, which holds here by taking
+imaginary parts. The index $m=0$ needs no theorem at all: $c_0=\lVert\rho-\beta\rVert$ is one
+explicit positive number.
+
+\subsection{Stretched exponential, not polynomial}
+
+\begin{remark}[No polynomial bound is available, and none is used]
+\label{rem:nopoly}
+Theorem~\ref{thm:baker} gives $e^{-(\log B)^\kappa}$ with $\kappa>n$, not $B^{-\kappa}$. A
+polynomial bound is the case $\kappa=1$, which is Baker's own conjecture and is unproved. It is also
+unnecessary: Proposition~\ref{prop:witness} needs only $\log\ell(M)=o(M)$, and
+$(\log M)^\kappa=o(M)$ for every fixed $\kappa$. D6 of \S\ref{sec:rev3} records that an intermediate
+stage of this work claimed the polynomial bound; that claim is withdrawn.
+\end{remark}
+
+\begin{remark}[No reduction to integer coefficients]
+\label{rem:noreduction}
+It is tempting to clear denominators: for $\rho=p/q$,
+\[
+  q\Lambda_m=(qm)\bigl(\alpha\log3\bigr)+(p-qj_m)\log3-q\log2,
+\]
+which has rational integer coefficients. But the first ``logarithm'' is
+$\alpha\log3=\log(3^\alpha)$, and $3^\alpha$ is \emph{transcendental} by Gelfond--Schneider, $\alpha$
+being algebraic irrational. Linear-forms-in-logarithms theorems require algebraic arguments, so the
+sharp integer-coefficient estimates --- Baker--W\"ustholz, Laurent--Mignotte--Nesterenko --- do not
+apply, with or without clearing denominators. The algebraic-coefficient theory is the only route.
+\end{remark}
+
+\subsection{An explicit constant}
+
+Waldschmidt's algebraic-coefficient measure supplies a numerical constant, and a better exponent.
+
+\begin{theorem}[Waldschmidt \cite{Waldschmidt2000}, Theorem 10.1]
+\label{thm:wald}
+Let $\ell_1,\ldots,\ell_m$ be logarithms of algebraic numbers, $\alpha_i=\exp(\ell_i)$, let
+$b_1,\ldots,b_m$ be algebraic, let $D$ be the degree of
+$\Q(\alpha_1,\ldots,\alpha_m,b_1,\ldots,b_m)$, and let $A_1,\ldots,A_m,B\ge e$ satisfy
+$\log A_i\ge h(\alpha_i)$, $D\log A_i\ge e|\ell_i|$, $\log B\ge h(1:b_1:\cdots:b_m)$ and
+$B\ge(50mD\log A)^{3m}$ with $A=\max A_i$. If $\Lambda=b_1\ell_1+\cdots+b_m\ell_m\ne0$ then
+\[
+  |\Lambda|\ >\ \exp\bigl\{-(50m)^{3m}D^{m+2}(\log B)^2\log A_1\cdots\log A_m\bigr\}.
+\]
+\end{theorem}
+
+The hypotheses hold for our form by Lemma~\ref{lem:bakerhyp}; note that
+Theorem~\ref{thm:wald} imposes \emph{no} independence condition on the coefficients, which removes
+the one place where $m=0$ fell outside a branch of Theorem~\ref{thm:baker}. With $m=2$,
+$h(3)=\log3$, $h(2)=\log2$, $\log A_1=\max(1,\log3,e\log3/D)$ and $\log A_2=\max(1,\log2,e\log2/D)$:
+
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$D$ & $\log A_1$ & $c_1=(50\cdot2)^6D^4\log A_1\log A_2$ & $\log B_{\min}$ \\
+\midrule
+2 & 1.49317 & $2.389\times10^{13}$ & 34.20 \\
+3 & 1.09861 & $8.899\times10^{13}$ & 34.79 \\
+4 & 1.09861 & $2.812\times10^{14}$ & 36.51 \\
+6 & 1.09861 & $1.424\times10^{15}$ & 38.95 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So $c_m>\exp(-c_1(\log B_m)^2)/\log3$ with $\log B_m=\max(\log B_{\min},\log H(A_m)+2)$ and every
+constant numerically supplied. The exponent is exactly $2$, sharper than
+Theorem~\ref{thm:baker}'s $\kappa>2$.
+
+\begin{remark}[What the explicit constant costs]
+Propagated through Proposition~\ref{prop:witness}, and taking the discrepancy constant optimistically
+as $C=1$, the surplus first becomes positive near $M\approx2.7\times10^{17}$, at a witness length
+$\ell(M)$ of order $10^{8\times10^{16}}$. The explicit route therefore buys \emph{rigour, not
+numbers}: it replaces ``effectively computable in principle'' by a written-down bound. The
+numerically useful height floors remain those of \S\ref{sec:certificates}, which need no analytic
+input at all.
+\end{remark}
+
+\begin{remark}[Effective in principle versus numerically supplied]
+\label{rem:effectivity}
+These are different, and this note keeps them apart.
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+constant & role & numerically supplied? \\
+\midrule
+the floors of \S\ref{sec:certificates} & height bounds at computed witnesses & \textbf{yes}, exactly \\
+$K=(A+2)q^2$ & arc at $0$, rational $\rho$ & \textbf{yes} \\
+$c_L$, $D$ & arc at $0$, algebraic $\rho$ & \textbf{yes} (Liouville, per $\alpha,\rho$) \\
+$c_1$ & arc at $\beta$ & \textbf{yes}, via Theorem~\ref{thm:wald} \\
+$C$, $C_0$ & drift and discrepancy & \textbf{no} --- requires the Kuipers--Niederreiter constants \\
+\bottomrule
+\end{tabular}
+\end{center}
+One constant therefore stands between Theorem~\ref{thm:ratint} and a fully numerical
+$H\ge2^{f(M)}$ at every $M$. Making it explicit is bookkeeping in a classical estimate
+\cite{KuipersNiederreiter}, not new mathematics \cite{Phase13Constants}.
+\end{remark}
+
+\section{Explicit Constants, and the Height Bound They Give}
+\label{sec:explicitconstants}
+
+Everything in \S\ref{sec:analytic} is effective, and until this revision none of it was numerical.
+This section supplies numbers for the named example $\alpha=(\sqrt5-1)/2$, $\rho=1/7$, $u=0$, and says
+exactly what they are worth. Verification: \repo{scripts/phase14/explicit\_constants.py}
+\cite{Phase14Constants}.
+
+\subsection{The discrepancy constants}
+
+The input is quoted from its source rather than from a summary.
+
+\begin{theorem}[Kuipers--Niederreiter \cite{KuipersNiederreiter}, Ch.\ 2, Thm 3.4, eq.\ (3.16)]
+\label{thm:kn}
+Suppose the irrational $\alpha=[a_0;a_1,a_2,\dots]$ has bounded partial quotients, say $a_i\le K$ for
+$i\ge1$. Then the discrepancy $D_N(\omega)$ of $\omega=(n\alpha)$ satisfies
+\[
+  N\,D_N(\omega)\ \le\ 3+\Bigl(\tfrac1{\log\varphi}+\tfrac K{\log(K+1)}\Bigr)\log N,
+  \qquad \varphi=\tfrac{1+\sqrt5}2 .
+\]
+\end{theorem}
+
+Here $\log$ is the natural logarithm, $D_N$ is the \emph{extreme} discrepancy, and $\omega$ runs
+$n=1,\dots,N$. The result is credited there to Niederreiter, improving Ostrowski. For
+$\alpha=(\sqrt5-1)/2$ every partial quotient is $1$, so $K=1$ and
+\[
+  c_K:=\tfrac1{\log\varphi}+\tfrac1{\log2}=2.078087+1.442695=3.520782 .
+\]
+
+Two adjustments separate Theorem \ref{thm:kn} from what the bridge needs, namely
+$\Delta(N):=\max_{1\le i\le N}|k_i-i\beta|$ where $k_i=\#\{m<i:\{m\alpha+\rho\}\in[0,\beta)\}$.
+
+\begin{lemma}
+\label{lem:drift}
+$\Delta(N)\le C_D\log_2N+C_D'$ with $C_D=2c_K\ln2=4.880840$ and $C_D'=7$.
+\end{lemma}
+
+\begin{proof}
+\emph{(i) The intercept costs a factor $2$.} Counting $\{m\alpha+\rho\}$ in $[0,\beta)$ is counting
+$\{m\alpha\}$ in $[0,\beta)-\rho$, which modulo $1$ is one interval or two; two intervals cost two
+applications of $D_N$. For $\rho=1/7$ the set $[-1/7,\beta-1/7)$ does wrap, so the factor is incurred
+and not merely allowed for. \emph{(ii) The index range costs $1$.} Theorem \ref{thm:kn} counts
+$n=1,\dots,N$ and we count $m=0,\dots,N-1$; the symmetric difference is one point. Hence
+$\Delta(N)\le2\bigl(3+c_K\ln N\bigr)+1=7+2c_K\ln N$, and $\ln N=(\ln2)\log_2N$.
+\end{proof}
+
+\begin{proposition}
+\label{prop:surplus}
+For every finite prefix $W=s[0{:}\ell]$ of the named word,
+\[
+  S(W)\ \ge\ (L-\ell)-C\log_2\ell-C_0,
+  \qquad C=3C_D\log_23+1=24.207846,\quad C_0=3C_D'\log_23+\log_23+1=35.869175 .
+\]
+\end{proposition}
+
+\begin{proof}
+From \S\ref{sec:discrepancy}, $c_W\le\ell\cdot3^{\lceil D(W)\rceil}\max(2^\ell,3^k)$ and
+$F(W)=|2^\ell-3^k|+c_W\le(1+\ell3^{\lceil D(W)\rceil})\max(2^\ell,3^k)$, so
+$\log_2F(W)\le1+\log_2\ell+\lceil D(W)\rceil\log_23+\max(\ell,k\log_23)$. Since
+$\beta\log_23=1$ exactly, writing $e_\ell:=k-\ell\beta$ gives $k\log_23=\ell+e_\ell\log_23$ and hence
+$\max(\ell,k\log_23)=\ell+\log_23\max(0,e_\ell)$. The discrepancy $D(W)$ of \S\ref{sec:discrepancy} is
+measured against the word's \emph{own} density $k/\ell$; since
+$k_i-ik/\ell=(k_i-i\beta)-(i/\ell)e_\ell$ we get $D(W)\le2\Delta(\ell)$, while
+$|e_\ell|\le\Delta(\ell)$. Substituting Lemma \ref{lem:drift} and $\lceil x\rceil\le x+1$ gives the
+claim.
+\end{proof}
+
+Proposition \ref{prop:surplus} was checked against exactly computed surpluses at twelve convergent
+denominators, with no failures; at $\ell=987$ the exact surplus is $1447.868$ and the bound gives
+$1179.338$, so the estimate is loose by roughly a factor $1.2$ there, as a worst-case discrepancy
+bound should be.
+
+\subsection{The logarithmic-form constant, and its height convention}
+
+Theorem \ref{thm:wald} is applied with $n=2$, $\alpha_1=3$, $\alpha_2=2$, $b_1=A_m$, $b_2=-1$, so
+$D=[\Q(A_m):\Q]=2$ for $m\ge1$. Then $\log A_1=\max(1,\log3,e\log3/2)=1.493169$,
+$\log A_2=\max(1,\log2,e\log2/2)=1$, and
+\[
+  c_1=(50n)^{3n}D^{n+2}\log A_1\log A_2=100^6\cdot2^4\cdot1.493169=2.38907\cdot10^{13},
+  \qquad \log B_{\min}=34.1953 .
+\]
+
+\begin{remark}[Two height conventions, kept apart]
+\label{rem:heights}
+Theorem \ref{thm:wald} requires $\log B\ge h(1:b_1:\dots:b_n)$ with $h$ the \emph{absolute
+logarithmic Weil} height, whereas $H(A_m)$ below is the \emph{classical} height --- the largest
+$|$coefficient$|$ of the primitive minimal polynomial. Revision 3 wrote $\log B=\log H(A_m)+2$ without
+distinguishing them. The conversion is $h(a)=\tfrac1d\log M(P)$ with
+$M(P)\le\lVert P\rVert_2\le\sqrt{d+1}\,H$, so for $d=2$, $h(A_m)\le\tfrac12\log H(A_m)+\tfrac12\log\sqrt3$;
+with $h(-1)=0$ and $h(1:b_1:b_2)\le h(b_1)+h(b_2)$ this gives
+\[
+  h(1:A_m:-1)\ \le\ \tfrac12\log H(A_m)+0.275 .
+\]
+Revision 3's choice is \emph{larger}, hence still admissible --- both hypotheses on $B$ are lower
+bounds and the conclusion is monotone decreasing in $B$, so overestimating $B$ is safe --- but
+wasteful by about a factor $4$ in the exponent. The sharper form is used here.
+\end{remark}
+
+\begin{lemma}
+\label{lem:heightbound}
+$H(A_m)\le2601\,m^2$ for every $m\ge1$.
+\end{lemma}
+
+\begin{proof}
+$A_m=(a_m+7m\sqrt5)/14$ with $a_m=-7m+2-14j_m$ and $|j_m|\le m+2$, so $|a_m|\le21m+30$, and the
+minimal polynomial divides $196x^2-28a_mx+(a_m^2-245m^2)$. For $m\ge1$: $196\le196m^2$;
+$28|a_m|\le588m+840\le1428m^2$; and $|a_m^2-245m^2|\le\max((21m+30)^2,245m^2)\le2601m^2$.
+\end{proof}
+
+The measured maximum of $H(A_m)/m^2$ over $m\le20000$ is $55$. Lemma \ref{lem:heightbound} is what the
+argument uses; the measured value is recorded only to show how much the transparent bound gives away,
+and is not substituted for it.
+
+\subsection{The height bound}
+
+\begin{theorem}[Explicit height bound for the named word]
+\label{thm:fM}
+Let $\alpha=(\sqrt5-1)/2$, $\rho=1/7$, $u=0$. Put
+\[
+  \log B_M:=\max\bigl(34.1953,\ \tfrac12\log(2601M^2)+0.275\bigr),\qquad
+  g(M):=1+\max\Bigl(\tfrac{c_1(\log B_M)^2+1}{\ln2},\ \log_2(147M)\Bigr),
+\]
+and $f(M):=M-C\,g(M)-C_0$ with $C,C_0$ as in Proposition \ref{prop:surplus}. Then for every integer
+$M\ge2$ the witness $\ell(M)$ of Proposition \ref{prop:witness} satisfies
+$S\bigl(s[0{:}\ell(M)]\bigr)\ge f(M)$; consequently, if $\Phi(s)=u/v$ in lowest terms with
+$H=\max(|u|,v)$, then
+\[
+  H\ \ge\ 2^{f(M)}\qquad\text{for every integer } M\ge2 .
+\]
+Moreover $f(M)>0$ for every $M\ge M_0=1.78337\cdot10^{18}$, and $f$ is strictly increasing there.
+\end{theorem}
+
+\begin{proof}
+$C_M\ge\min\bigl(c_0,\exp(-c_1(\log B_M)^2)/\log3\bigr)\ge\exp(-c_1(\log B_M)^2-1)$ by
+\S\ref{sec:analytic} with Remark \ref{rem:heights} and Lemma \ref{lem:heightbound}, where
+$c_0=\lVert1/7-\beta\rVert=0.4880726107$ needs no theorem. With $t(M)=\min(C_M,1/(147M))$ and
+$\ell(M)<(A+1)/t(M)=2/t(M)$ this gives $\log_2\ell(M)\le g(M)$, and Proposition \ref{prop:surplus}
+together with $L(\ell(M))-\ell(M)\ge M$ (Proposition \ref{prop:witness}) gives the first display; the
+second is the criterion of \S\ref{sec:abstract}. For monotonicity, on the branch where the
+logarithmic-form term dominates, $f'(M)=1-2Cc_1(\log B_M)/(M\ln2)>0$ as soon as
+$M>2Cc_1(\log B_M)/\ln2$, which at $M=M_0$ is $7.715\cdot10^{16}<M_0$.
+\end{proof}
+
+\paragraph{Starting-index restrictions, in full.}
+$M\ge2$; the witness $\ell(M)$ is a convergent denominator $q_k$ with $k\ge2$, which is what makes
+$|\delta|\le\min(\beta,1-\beta)=0.3690702464$ hold (it fails at $q_1=1$); $m$ ranges over
+$0\le m<M$, with Lemma \ref{lem:heightbound} for $m\ge1$ and $m=0$ handled by $c_0$ above; and
+Theorem \ref{thm:wald} is invoked only for $m\ge1$, where $\deg A_m=2$ exactly.
+
+\subsection{What these numbers are worth}
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+$M$ & $\log B_M$ & $\log_2\ell(M)$ & $f(M)$ \\
+\midrule
+$10^{6}$ & 34.195 & $4.03\cdot10^{16}$ & $-9.76\cdot10^{17}$ \\
+$10^{18}$ & 45.653 & $7.18\cdot10^{16}$ & $-7.39\cdot10^{17}$ \\
+$10^{19}$ & 47.956 & $7.93\cdot10^{16}$ & $+8.08\cdot10^{18}$ \\
+$10^{20}$ & 50.259 & $8.71\cdot10^{16}$ & $+9.79\cdot10^{19}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[The threshold is not a computation, and the certificates are]
+\label{rem:twoscales}
+Theorem \ref{thm:fM} first says something non-vacuous at $M\approx1.8\cdot10^{18}$, where the witness
+length $\ell(M)$ is about $2^{7.4\cdot10^{16}}$. Nothing of that size will ever be exhibited. Its value
+is that it is \emph{written down}: where Revision 3 said ``effective'', this revision says
+$2^{f(M)}$ with $f$ on the page. That is a different kind of claim from \S\ref{sec:certificates},
+whose floors --- up to $H\ge2^{15998}$, a $4816$-digit bound --- come from exact integer comparisons
+$2^L>F(W)\cdot2^S$ at witnesses of length $\ell\le6765$, use no analytic input at all, and are the only
+numerically useful statements in this note. \textbf{The two do not compete and neither improves the
+other.} A reader wanting a number should take \S\ref{sec:certificates}; a reader wanting a theorem
+valid at every $M$ should take Theorem \ref{thm:fM}.
+\end{remark}
+
+\subsection{Dependence on the parameters}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+constant & depends on & uniform over the family? \\
+\midrule
+$C_0=35.869175$ & nothing & \textbf{yes, absolutely} \\
+$C=3(2c_A\ln2)\log_23+1$ & the largest partial quotient $A$ only & \textbf{yes, given $A$} \\
+$c_1=100^6D^4\log A_1\log A_2$ & $D=[\Q(\alpha,\rho):\Q]$ only & \textbf{yes, given $D$} \\
+$C_h$ in $H(A_m)\le C_hm^{D}$ & the actual $\alpha,\rho$ & no \\
+$c_L$ in $\lVert m\alpha+\rho\rVert\ge c_Lm^{-D^2}$ & the actual $\alpha,\rho$ & no \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$C$ takes the values $24.207846$, $26.698071$, $28.962733$, $33.092487$, $42.187486$ at $A=1,2,3,5,10$,
+and $c_1$ the values $2.39\cdot10^{13}$, $8.90\cdot10^{13}$, $2.81\cdot10^{14}$, $1.42\cdot10^{15}$ at
+$D=2,3,4,6$. \textbf{But $f(M)$ is not uniformly numerical over the family, and no such claim is made}:
+an offset of large height pushes $C_h$ up without bound at fixed $(A,D)$. For any single explicit
+$(\alpha,\rho)$ both missing constants are a finite computation, so $f(M)$ is numerical case by case,
+which is what was done above and all that is asserted.
+
+\section{Finite Height Certificates}
+\label{sec:certificates}
+
+Independently of every analytic input, the bridge yields explicit lower bounds on the height of any
+rational that could equal a given conjugacy value. If $\Phi(s)=u/v$ in lowest terms and
+$H=\max(|u|,v)$, then $2^{L}\le H\,F(W)$ with $F(W)=|2^\ell-3^k|+\cw$, so
+$H\ge2^{L-\log_2F(W)}$. Each row below is an exact integer comparison $2^L>F(W)\cdot2^S$; no
+floating-point value and no analytic estimate enters.
+
+\begin{center}
+\begin{tabular}{@{}rrrl@{}}
+\toprule
+$\ell$ & $k$ & $L$ & $H\ \ge$ \\
+\midrule
+377 & 238 & 846 & $2^{462}$ \\
+610 & 385 & 1456 & $2^{838}$ \\
+1597 & 1008 & 2478 & $2^{872}$ \\
+2584 & 1630 & 5062 & $2^{2469}$ \\
+6765 & 4268 & 22773 & $2^{15998}$ \quad(a $4816$-digit bound) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These are for $\alpha=(\sqrt5-1)/2$, $\rho=1/7$. Analogous certificates were computed across the
+families of Theorems~\ref{thm:ratint} and~\ref{thm:algint} --- ten $(\alpha,\rho)$ pairs with
+$\rho\in\Q$, giving floors from $2^{140}$ to $2^{8069}$, and seven with $\rho$ algebraic of field
+degree $2$, $4$ and $6$, giving $2^{67}$ to $2^{598}$ \cite{Phase12Quad,Phase13Alg}.
+
+See Remark \ref{rem:twoscales} for how these relate to the explicit bound of
+Theorem \ref{thm:fM}: they are the small, exact end of the same inequality.
+
+\begin{remark}[These are not new as a \emph{kind} of result]
+Producing effective height floors by this bridge is the foundation paper's own claimed contribution
+\cite{DeJesus2026Sturmian}; the certificates above are new instances of an existing method, not a new
+method. They are also not reached by the density results of \S\ref{sec:density}, which are
+contradiction arguments and bound nothing.
+\end{remark}
+
+\section{A Measurement, Not a Theorem: the Ridout Exponent}
+\label{sec:ridout}
+
+One observation is recorded because it is the most promising open direction the audit surfaced, and
+it is recorded as an observation only.
+
+\begin{theorem}[Ridout; as stated by Bugeaud--Keke\c{c} \cite{BugeaudKekec}, Theorem 1.3]
+\label{thm:ridout}
+Let $\xi$ be a $p$-adic number and $\varepsilon>0$. Suppose there are rationals $x_n/y_n$ with
+$\gcd(x_n,y_n)=1$, heights $2\le|x_1,y_1|<|x_2,y_2|<\cdots$, and
+$0<|\xi-x_n/y_n|_p<|x_n,y_n|^{-2-\varepsilon}$ for all $n$. Then $\xi$ is transcendental.
+\end{theorem}
+
+Our approximants have $|\Phi(s)-\cw/\delta_W|_2=2^{-L}$ and reduced height $H_{\mathrm{red}}\le
+F(W)=2^{\ell+O(\log\ell)}$, so the relevant exponent is
+$E(\ell):=L(\ell)/\log_2H_{\mathrm{red}}(\ell)$, and Theorem~\ref{thm:ridout} asks for
+$E>2+\varepsilon$ infinitely often. Measured at every convergent denominator
+$3\le q\le28657$ of $(\sqrt5-1)/2$ for the word $\alpha=(\sqrt5-1)/2$, $\rho=1/7$
+\cite{Phase13Ridout}:
+
+\begin{center}
+\begin{tabular}{@{}rrrrc@{}}
+\toprule
+$\ell$ & $L$ & $\log_2H_{\mathrm{red}}$ & $E$ & $E>2$ \\
+\midrule
+8 & 24 & 9.12 & 2.631 & yes \\
+55 & 147 & 59.46 & 2.472 & yes \\
+377 & 846 & 383.66 & 2.205 & yes \\
+610 & 1456 & 617.26 & 2.359 & yes \\
+987 & 2443 & 995.13 & 2.455 & yes \\
+4181 & 9243 & 4190.94 & 2.205 & yes \\
+6765 & 22773 & 6774.98 & \textbf{3.361} & yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Seven of the twenty convergents tested exceed the threshold; the maximum observed is $3.361$.
+
+\begin{remark}[What is and is not claimed]
+Nothing is claimed. Theorem~\ref{thm:ridout} requires infinitely many such $n$ with a \emph{fixed}
+$\varepsilon$, which by Lemma~\ref{lem:mismatch} is the statement that
+$m^*(\ell)/\ell>1+\varepsilon$ infinitely often --- an open question about hitting times. Seven of
+twenty, with no visible pattern, is not evidence of infinitude, and the witness family of
+Proposition~\ref{prop:witness} deliberately drives $E\to1$, so it is no evidence either way. If the
+statement did hold, the conclusion of Theorem~\ref{thm:ratint} would strengthen from irrationality to
+transcendence, answering the foundation paper's open problem (3) for this word. Controlling
+$m^*(\ell)$ from \emph{below} along a subsequence needs the opposite of what
+Proposition~\ref{prop:witness} arranges, so this would be a different argument, not a refinement of
+the present one.
+\end{remark}
+
+\section{Interpretation: Symbolic, Statistical, and Arithmetic Space}
+\label{sec:interpretation}
+
+This section is conceptual, not a theorem statement, and should be read as orientation for a reader extending this work rather than as a claim.
+
+It is useful to separate three levels at which a parity word can be described:
+
+\begin{description}[leftmargin=2em]
+\item[Symbolic space.] The actual word: its literal order, block structure, and factor-by-factor arrangement.
+\item[Statistical projection.] Aggregated summaries of the symbolic object --- density $\gamma=k/\ell$, discrepancy $D(W)$, block frequencies, factor complexity. Many distinct symbolic objects can share the same statistical projection.
+\item[Arithmetic admissibility.] Which symbolic objects, specifically, correspond to a rational $\Phi$-value. This is a pointwise, not a statistical, property.
+\end{description}
+
+The relationship is a \emph{fiber}: symbolic object $\to$ statistical state is generally many-to-one. A crucial consequence, easy to state and easy to get wrong in either direction: \textbf{statistical sparsity of a class (low complexity, small discrepancy, controlled density) does not by itself imply arithmetic impossibility of rational $\Phi$-values within it}, and conversely, statistical richness does not by itself force irrationality. The bridge proved in this note works precisely because it does \emph{not} stop at a statistical argument: it lifts symbolic and statistical information (repetition length, discrepancy) back into a pointwise arithmetic contradiction (Theorem \ref{thm:abstract}'s exact integer divisibility argument) for the \emph{specific} word $s$ under study, not for a statistical ensemble containing it. This is why the method scales from Sturmian words to CS Rote sequences without a change in kind --- and also why it stalls exactly where the statistical control (discrepancy, excess) it depends on stalls (\S\ref{sec:generalintercept}).
+
+\section{The Drift/Resonance Coordinate}
+\label{sec:drift}
+
+For a finite word $W$ ($\ell=|W|$, $k=|W|_1$), define
+\[
+R(W) := \ell - k\log_2 3.
+\]
+Then $2^\ell - 3^k = 2^\ell\bigl(1-2^{-R(W)}\bigr)$, and near $R=0$ (i.e.\ near the ``resonance'' $\ell\approx k\log_2 3$), $|2^\ell-3^k| \approx 2^\ell \ln2\,|R(W)|$.
+
+This coordinate is explanatory, not structural: it was investigated directly in Phase 7 as a candidate new invariant, and the record is explicit that it is not one. \emph{``No new information is encoded by $R$ that $\gamma$ did not already carry''} \cite{Phase7Drift}; \emph{``Resonance did not materially help or hurt in any tested case''} \cite{Phase7DriftDigits}. $R(W)$ is a reparameterization of the density margin $\gamma\log_2 3$ already used throughout \S\ref{sec:repheight}--\S\ref{sec:oddweight}, useful for visualizing how close a given witness sits to the arithmetic boundary, but supplying no additional proof-theoretic leverage found anywhere in this program.
+
+\section{The Symmetry-Tradeoff Probe (Exploratory, Inconclusive)}
+\label{sec:symmetryprobe}
+
+\textbf{This section reports an exploratory investigation. Nothing in it is a theorem, and nothing in it should be read as evidence for or against any conjecture stated elsewhere in this note.} It is included so a future researcher does not repeat the same probe without knowing what was already tried and why it did not resolve anything.
+
+The idea investigated: does \emph{approach to symmetry} in the Ostrowski digit sequence (roughly, how often the maximal admissible continuation is available) trade off against arithmetic \emph{resonance} (how close $R(W)$, \S\ref{sec:drift}, sits to $0$)? Two experiments were run.
+
+\textbf{Experiment 1} correlated a normalized arithmetic-slack quantity $A(W):=|1-2^{-R(W)}|$ against the exact surplus $S(W)$ and against the achieved repetition ratio $L/\ell$, using $74$ genuine witnesses from the general-intercept search of \S\ref{sec:generalintercept}. Result: $A(W)$ vs.\ $S(W)$, $r\approx0.208$; $A(W)$ vs.\ $L/\ell$, $r\approx-0.125$. Both fall below the probe's own $0.3$ threshold for ``worth a theorem-seeking follow-up,'' and $n=74$ is too small for $r=0.208$ to clear the standard significance threshold for that sample size. Separately, the first correlation is only weak evidence in any case: the surplus machinery already leans on the same $\ell-k\log_2 3$ resonance quantity that defines $A(W)$, so a correlation there may be partly definitional rather than an independent discovery.
+
+\textbf{Experiment 2}, testing a genuinely independent quantity (a windowed frequency of admissible-digit freedom, $N_{\text{sym}}$, against $A(W)$), did not run to completion in its original form: it materialized an explicit substitution-image word whose length grows exponentially in the search depth $k$ (for slope $A=6$, a projected $\sim9.9\times10^{14}$ symbols by $k=19$), exhausting memory. This was diagnosed and repaired: the word's length and weight can be obtained exactly, without ever materializing it, via a $2\times2$ integer transfer-matrix representation of the same substitutions ($\tau_0,\tau_1$; see \S\ref{sec:transfermatrix}), cross-checked against brute-force construction in $150$ of $150$ small cases with exact agreement. With this fix, Experiment 2 completed on $724$ points: $A(W)$ vs.\ $N_{\text{sym}}$, $r\approx-0.0058$; on a log--log scale, $r\approx-0.0319$. \textbf{These numbers must not be read at face value}: $596$ of the $724$ points ($82\%$) had $A(W)$ pinned to exactly $1.0$ by the probe's own floating-point underflow clamp ($|R(W)|>60$), an artifact of the diagnostic's float arithmetic, not a genuine measurement in the near-resonance regime where any real effect would have to live.
+
+\begin{quote}
+\textbf{Verdict: INCONCLUSIVE.} Neither experiment produces a correlation free of confounding structure (definitional entanglement in Experiment 1; a numerical clamping artifact dominating Experiment 2). This is consistent with, and independently corroborates, the Phase 7 drift-coordinate finding of \S\ref{sec:drift} that resonance carries no separately exploitable signal in every case tested so far --- but it establishes nothing new, and \emph{the symbolic-symmetry/arithmetic-freedom tradeoff hypothesis is neither supported nor contradicted} by this probe.
+\end{quote}
+
+A methodologically sound re-run would need $A(W)$ computed at sufficient precision to avoid the clamp, restricted to (or stratified by) genuine near-resonance witnesses, before any correlation from it could be informative.
+
+\section{A Transfer-Matrix Computational Tool}
+\label{sec:transfermatrix}
+
+\textbf{This section records a computational/structural tool, not a new irrationality theorem.} It is preserved here because it is broadly useful and easy to lose track of.
+
+The Sturmian substitutions used throughout this program (e.g., in constructing explicit BHZ witness words, \S\ref{sec:generalintercept}) are
+\[
+\tau_0: 0\mapsto 0,\ 1\mapsto 01; \qquad \tau_1: 0\mapsto 10,\ 1\mapsto 1.
+\]
+Applying either substitution repeatedly can make the resulting word's length grow exponentially in the number of applications --- and that length is all that is needed for most downstream computations (arithmetic slack $A(W)$, weight $\kappa$, density). It need never be materialized. Tracking only $(n_0,n_1)$, the counts of $0$s and $1$s, the two substitutions act linearly:
+\[
+\tau_0: (n_0,n_1)\mapsto(n_0+n_1,\ n_1), \qquad
+\tau_1: (n_0,n_1)\mapsto(n_0,\ n_0+n_1),
+\]
+i.e.\ by the integer matrices $M_0=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$, $M_1=\begin{psmallmatrix}1&0\\1&1\end{psmallmatrix}$ (both determinant $1$; their products are exactly the continuant recurrence generating the convergent denominators $q_k$). Applying $\tau_i$ exactly $e$ times in a row is $M_i^e$; composing across an entire substitution schedule of length $k$ is $k$ integer matrix--vector multiplications, giving the word's exact length $\ell=n_0+n_1$ and weight $\kappa=n_1$ in $O(k)$ exact-integer steps regardless of how astronomically large $\ell$ becomes --- verified against brute-force construction with $150/150$ exact agreement wherever brute force was still feasible to run.
+
+A related, separate observation: counting the number of admissible Ostrowski digit sequences $(c_k)$ (rather than computing one fixed sequence's word) is itself governed by a minimal two-state automaton, not by any larger state. The admissibility rule (\S\ref{sec:generalintercept}) depends only on whether the immediately preceding digit was exactly $0$: from that state, the next digit has $a_k+1$ admissible choices; from any nonzero-previous state, only $a_k$. No memory of the actual previous digit value, nor of anything beyond the current index into $(a_k)$, is needed. This directly mirrors the admissible-sequence generator already used throughout the repository's scripts, and is recorded here as a structural fact about that generator, not as a separately theorem-proving result.
+
+\section{What Is Still Open}
+\label{sec:open}
+
+\begin{description}[leftmargin=3em,style=nextline]
+\item[Open 1 --- General intercept margin. \textnormal{\textbf{CLOSED} (Revision 2, C1).}] Revision
+1's Conjecture 12.1 is BHZ Propositions 5.1 and 5.2 (Theorem \ref{thm:bhzmargin}), with an
+attained-witness refinement in Theorem \ref{thm:generalmargin}. Theorem \ref{thm:boundedtype} now
+holds at every intercept. What remains here is only a sharpness question, not an obstruction: is
+$\frac1{A\beta_A}$ the infimum of $\text{ice}-2$ on slopes whose digit tail is \emph{not} eventually
+constant? Proved for eventually-constant tails with $A\ge2$; numerical elsewhere
+\cite{Phase8Margin}. Nothing depends on the answer.
+\item[Open 2 --- Return/exceptional intercept set. \textnormal{\textbf{WITHDRAWN} (Revision 2, C2).}]
+The premise was false: the set of intercepts with $\text{ice}(\omega)<\text{ind}^*(\gamma)$ is
+uncountable, not a countable return set, and intercept $0$ sits among the \emph{easiest} intercepts
+rather than the hardest. There is no distinguished countable family left to classify.
+\item[Open 3 --- Intrinsic-square bypass. \textnormal{\textbf{SUPERSEDED} (reading confirmed).}] The
+Revision 1 analysis was correct --- bare squares ($r=2$) give a fixed margin $2-\log_23$ on the
+even-weight branch and \emph{exactly zero} on the odd-weight branch \cite{Phase7Intrinsic} --- and
+Theorem \ref{thm:generalmargin} makes the bypass unnecessary by supplying $r>2$ strictly at every
+intercept. The route retains one distinct virtue, recorded in Open 4: Allouche--Davison--Queff\'elec--Zamboni's
+square theorem has \emph{no} hypothesis on $\gamma$, so it is the only part of the chain that
+survives unbounded partial quotients.
+\item[Open 4 --- Unbounded partial quotients. \textnormal{\emph{An unfinished proof, not an open
+conclusion.}}] Remove the bounded-partial-quotient hypothesis from Theorem \ref{thm:boundedtype}.
+\textbf{Two statements must be kept apart here, and Revision 3 ran them together (E3 of
+\S\ref{sec:rev4}).}
+
+\emph{The conclusion is not open.} Every complementary symmetric Rote sequence has ones-density
+exactly $1/2$ whatever the slope's partial quotients --- the density-$1/2$ fact of
+\S\ref{sec:oddweight} concerns the doubled root and is independent of the continued fraction --- so
+Corollary \ref{cor:my} already gives $\Phi(v)\notin\Q$ for every CS Rote sequence over every
+irrational slope.
+
+\emph{What is open is whether this note's own bridge reaches them}, and there the obstruction is
+sharp: BHZ Theorem 1.1 \emph{characterises} the slopes carrying an intercept with
+$\text{ice}(\omega)=2$ exactly --- for each pair $(s,t)$, $s>1$, only finitely many $k$ with
+$(a_k,a_{k+1})=(s,t)$ or $(a_k,a_{k+1},a_{k+2})=(1,1,t)$ --- and every such slope has unbounded
+partial quotients. At such an intercept the odd-weight branch has margin exactly $0$, so the present
+sufficient criterion cannot apply, independently of any discrepancy estimate. So Open 4 asks for an
+independent second proof of an available conclusion, by a mechanism that presently cannot supply one.
+That is a methodological question, and it is worth answering because the bridge is what yields
+effective height bounds; but it is not a frontier of knowledge about irrationality. The frontier is
+lower ones-density $\ge\beta$ (\S\ref{sec:density}). Three distinct questions, in increasing order of
+ambition: (i) can the \emph{even} branch be forced infinitely
+often, where bare squares already give $2-\log_23$ and the discrepancy hypothesis can be dropped
+entirely? (ii) is the $O(\log\ell)$ discrepancy bound replaceable by an exact height estimate that
+tolerates $E_k=0$? (iii) does a CS Rote sequence carry intrinsic initial repetition of its own,
+beyond what transfers from $u$? See \repo{theorems/phase8/PHASE8\_NEXT\_TARGET.md}.
+\item[Open 5 --- Higher complexity.] Only once the $p(n)=2n$ rung is fully closed (Open 1--4): which symbolic classes beyond Rote sequences --- higher, structured complexity classes; general two-interval rotation codings, for which the repetition-existence half of the argument is itself still open \cite{Phase2Rotation}; general morphic words --- can this bridge reach next?
+\item[Open 6 --- The full Periodicity Conjecture.] What mechanism, if any, could cover aperiodic
+words that admit no useful repetition structure at all? \textbf{Revision 2 answered this badly and
+the answer is withdrawn} (D1 of \S\ref{sec:rev3}). It asserted that because the Thue--Morse word $t$
+has no square prefix below half-length $2048$ \cite{Phase1Gap}, every purely repetition-based method
+is structurally inapplicable to it. That does not follow, and it is false: the bridge needs periodic
+approximants whose 2-adic agreement outruns their height, not a square. For $t$ the substitution
+supplies them --- $\mu(0)=01$, $\mu(1)=10$ satisfy
+$\operatorname{lcp}(\mu(x),\mu(y))=2\operatorname{lcp}(x,y)$, so iterating $\mu$ doubles the
+agreement while the height grows only with the length --- and $\Phi(t)\notin\Q$ follows from
+Theorem~\ref{thm:abstract} with no square anywhere \cite{Phase9bTM}. (The conclusion is in any case
+available from Corollary~\ref{cor:my}, $t$ having density $1/2<\beta$.) What remains genuinely open
+is the conjecture itself, which quantifies over an uncountable family of which every class treated
+here is a measure-zero subset; and the honest statement is that no mechanism in this note is known to
+extend to that family, not that a structural obstruction has been identified.
+\item[Open 7 --- Beyond an algebraic offset.] Corollary~\ref{cor:translated} covers the coding of a
+quadratic rotation by an interval of length $\beta$ whenever the offset between intercept and left
+endpoint is algebraic. When that offset is transcendental both boundary bounds fail at once:
+Lemma~\ref{lem:arc0alg} needs algebraicity, and $\lVert m\alpha+\rho-\beta\rVert$ is no longer a
+logarithmic form in algebraic data. Is there any route there, or is a transcendental offset a real
+barrier?
+\item[Open 8 --- Explicit constants.] Evaluate the Kuipers--Niederreiter constants
+\cite{KuipersNiederreiter} for the interval $[0,\beta)$ and bounded-type $\alpha$, obtaining $C$ and
+$C_0$ of Remark~\ref{rem:effectivity} numerically. With $c_1$ already explicit
+(Theorem~\ref{thm:wald}) this would give a written-down $H\ge2^{f(M)}$ at every $M$ --- the first
+fully numerical statement in this programme beyond the finite certificates.
+\item[Open 9 --- Transcendence.] Does $m^*(\ell)/\ell>1+\varepsilon$ hold for infinitely many
+convergent denominators, for a fixed $\varepsilon>0$? If so, \S\ref{sec:ridout} upgrades
+Theorem~\ref{thm:ratint} from irrationality to transcendence. Measured data are suggestive and prove
+nothing.
+\end{description}
+
+\section{Future-Work Roadmap}
+\label{sec:roadmap}
+
+The roadmap below is organized directly around the six open problems of \S\ref{sec:open} and the repository's own stated priorities.
+
+\begin{description}[leftmargin=3em,style=nextline]
+\item[Near term.] Open 1--3 are settled or withdrawn, and Open 8 is discharged for the named example
+by \S\ref{sec:explicitconstants}, so the near-term work is largely editorial and hygienic: propagate the $q_1=a_1+1$ convention through the underlying record's code
+and re-derive every root length reported there (no $\text{ice}$ value changes), and fold Lemma
+\ref{lem:halfslope} into the discrepancy audit where it was previously implicit.
+\item[Medium term.] Two candidates, and the ordering between them has changed.
+
+\emph{Higher value: the constants.} Complete what \S\ref{sec:explicitconstants} begins by evaluating
+the analogues of $C_h$ and $c_L$ for slopes and offsets other than the named example, so that the
+explicit height bound holds with numerical constants across a stated subfamily rather than case by
+case. This is bookkeeping in estimates already cited, needs no new theorem, and is the only axis on
+which this programme's quantitative content is uncontested.
+
+\emph{Lower value than Revision 2 judged it: Open 4(i).} A general-intercept weight-parity criterion.
+The even-weight branch survives $\text{ice}(\omega)=2$ with margin $2-\log_23\approx0.415$ and needs
+no discrepancy hypothesis, so it suffices to force even weight infinitely often. At intercept $0$
+this was the Phase 3 automaton; at general intercepts the prefix-count parity is the classical
+Ostrowski-digit sum $k_i(u)=\lfloor i\gamma+\rho\rfloor-\lfloor\rho\rfloor$ read mod $2$, so a
+literature search on Ostrowski-digit parity should precede any new derivation. Revision 2 called this
+``the single highest-value target''; \textbf{E3 of \S\ref{sec:rev4} downgrades that judgement}, since
+what it would buy is a second proof of a conclusion already available, together with the effective
+height bounds that second proof supplies.
+\item[Longer term.] Open 4(ii)--(iii): an exact height estimate tolerating zero repetition excess,
+or intrinsic Rote repetition not inherited from $u$. Both would be genuinely new mechanisms rather
+than extensions, and both should be attempted only after 4(i) is decided.
+\item[Structural.] Open 6 is not, as Revision 2 claimed, blocked by a structural obstruction; D1 of
+\S\ref{sec:rev3} withdraws that claim. What is true is weaker and still discouraging: no mechanism in
+this note is known to reach an arbitrary aperiodic word, and the classes reached so far are
+parametrised families of measure zero. The nearest concrete targets are Open 7--9.
+\item[Process.] Continue the falsification-first discipline of \S\ref{sec:selfcorrection}: every extension of this program should include an adversarial audit pass against genuinely non-periodic, non-quadratic controls before any theorem upgrade is accepted, exactly as Phases 5 and 6 did for the bounded-type theorem.
+\end{description}
+
+\section*{Provenance and Verification}
+\label{sec:provenance}
+\addcontentsline{toc}{section}{Provenance and Verification}
+
+\textbf{Revision 3} was prepared from the \repo{periodicity-conjecture-bridge} repository on an
+isolated branch, from the Phase 9--13 deliverables (\repo{theorems/phase9b/},
+\repo{theorems/phase10/}, \repo{theorems/phase11/}, \repo{theorems/phase11b/},
+\repo{theorems/phase12/}, \repo{theorems/phase13/} with the matching \repo{scripts/} and \repo{data/}
+directories), which was not pushed during this preparation and from which nothing was published. No
+Phase 1--8 research file was rewritten; the Phase 7, 10, 11, 11b, 12 and 13 records are preserved
+verbatim and carry conspicuous correction and clarification banners. Every statement in
+\S\S\ref{sec:density}--\ref{sec:ridout} was extracted from the corresponding file under
+\repo{theorems/phase\{9b,10,11,11b,12,13\}/} and re-checked against the verification scripts named in
+the bibliography; none was reconstructed from memory. Every pass/fail decision in those scripts is an
+exact integer or exact algebraic-number comparison, and comparisons against $\beta$ use a certified
+$300$-digit bracket that either decides or raises. Theorem~\ref{thm:ratint} was additionally rebuilt
+from the definitions in independent code that imports none of the earlier phase scripts
+\cite{Phase12Quad}. The deposited Revision~2 PDF and its erratum were not rebuilt or modified in the
+preparation of this revision.
+
+\textbf{Revision 2} was prepared from the \repo{periodicity-conjecture-bridge} repository on the
+isolated branch \repo{phase8-general-intercept}, whose Phase 8 deliverables
+(\repo{theorems/phase8/}, \repo{scripts/phase8/}, \repo{data/phase8/}) carry every corrected
+statement, and which was not pushed during this preparation. No Phase 1--7 research file was
+rewritten: the Phase 7 record is preserved verbatim and carries conspicuous correction banners
+pointing to \repo{theorems/phase7/PHASE7\_CORRECTIONS.md} \cite{Phase7Corrections}. Revision 1 was consolidated from the same
+repository at commit \texttt{a4ac46aebf17fb2ce14cea50f5ce60a58704da15} (``Phase 7: map
+general-intercept CS Rote obstruction''). Every theorem statement, definition, and quoted result above was extracted directly from the corresponding file under \repo{theorems/phase\{1..7\}/} and cross-checked against \repo{THEOREM\_STATUS.md} and \repo{LADDER.md}; none was reconstructed from memory. SHA-256 checksums of every file under \repo{theorems/}, \repo{scripts/}, \repo{data/}, and \repo{reference/} at the time of writing are recorded in \repo{technical-note/PRESERVATION\allowbreak\_RECORD.md}. A full statement-by-statement classification (known/cited, proved in foundation paper, proved in this program, computationally verified, counterexample, rejected hypothesis, open, or exploratory only) is recorded in \repo{technical-note/SOURCE\_OF\_TRUTH.md}. No Phase 1--7 research file was modified in the preparation of this note.
+
+\textbf{Deposit record.} All revisions are separate versions of one Zenodo record, concept DOI
+\texttt{10.5281/zenodo.23045140}; each stays retrievable at its own version DOI.
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+revision & version DOI & date & file \\
+\midrule
+Revision 1 & \texttt{10.5281/zenodo.23045141} & 2026-09-29 & 16 pp \\
+Revision 2 & \texttt{10.5281/zenodo.23061396} & 2026-09-30 & 21 pp \\
+--- & \texttt{10.5281/zenodo.23068326} & 2026-09-30 & \emph{a duplicate of Revision 2; see below} \\
+Revision 3 & \texttt{10.5281/zenodo.23068563} & 2026-09-30 & 34 pp \\
+\bottomrule
+\end{tabular}
+\end{center}
+Record \texttt{10.5281/zenodo.23068326} carries the same file as Revision 2, byte for byte
+(\texttt{md5:b61d76f6a3a0d23ec6d148f1aeea658b}), deposited under a filename suggesting a later build.
+It is recorded here for accuracy so that a reader who arrives at it knows what it contains; it is part
+of the record's history and is left exactly as it stands. \textbf{Cite Revision 2 as
+\texttt{10.5281/zenodo.23061396}.} Revision 4 is intended as a further new version, not an edit of any
+earlier one.
+
+\section*{Acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
+I thank Josefina L\'opez and Peter Stoll, whose work on density and the $3x+1$ conjugacy map guided
+this programme toward the critical density $\beta=\ln2/\ln3$; the results here are established by the
+independent arguments given above and do not require their proposed upper-density exclusion. I also
+record that a technical question about one step of \cite{LopezStoll2021} was raised publicly by a
+third party; I have not verified it in either direction, and no argument in this note depends on it.
+
+The author is an independent researcher whose professional experience is outside mathematics.
+\textbf{This note has not been refereed}, and neither has the foundation paper
+\cite{DeJesus2026Sturmian}, which is the present author's own preprint. Specialist review is invited:
+see \repo{docs/INVITATION\_TO\_DOMAIN\_EXPERTS.md} in the repository for the review and extension
+targets most likely to repay attention, and \repo{docs/DEPENDENCE\_ON\_PRIOR\_RESULTS.md} for exactly
+which external results the conclusions rest on.
+
+AI assistance (Anthropic's Claude) was used for repository archaeology, adversarial diagnostic work (including diagnosing and repairing the Experiment 2 performance bug in \S\ref{sec:symmetryprobe}), literature cross-checking against primary sources, exact-arithmetic verification scripting, and drafting of this note, consistent with the acknowledgment practice of the foundation paper \cite{DeJesus2026Sturmian}. All mathematical claims, their framing, and any errors are the author's.
+
+\appendix
+
+\section{Revision History}
+\label{app:history}
+
+This appendix holds the correction record of Revisions 2--4. It is placed here, rather than at the
+front where Revision 3 kept it, so that the note reads as a mathematical note and the reader who wants
+the audit trail knows exactly where to find it. Nothing is restated more favourably than it was first
+recorded; each item appears in the form it was written when found.
+
+Revision 4's own four corrections are in \S\ref{sec:rev4} and are not repeated here. The full audit
+trail behind Revision 2's corrections is \cite{Phase8Target,Phase8Verdict}; behind Revisions 3--4 it is
+\cite{Phase12Quad,Phase13Alg,Phase14Constants}.
+
+\subsection{Revision 3 (30 September 2026)}
+\label{sec:rev3}
+
+Revision 3 supersedes Revision 2 in the following places. The mathematics of Revisions~1--2
+is unchanged except where explicitly listed; the changes are two new theorems, two framing
+corrections, and several citation corrections.
+
+\subsubsection*{New results}
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[N1 --- Critical-density rotation codings, rational intercept.]
+Theorem~\ref{thm:ratint} (\S\ref{sec:ratint}): for every quadratic irrational $\alpha\in(0,1)$ and
+every $\rho\in\Q$ --- including $\rho=0$ --- the word $s_n=1\iff\{n\alpha+\rho\}\in[0,\beta)$ has
+$\Phi(s)\notin\Q$.
+\item[N2 --- Algebraic intercepts.]
+Theorem~\ref{thm:algint} (\S\ref{sec:algint}): the same for every \emph{real algebraic} $\rho$; and
+Corollary~\ref{cor:translated}, for the interval $[u,u+\beta)$ whenever $u-\rho$ is algebraic, with
+$\rho$ and $u$ themselves unrestricted.
+\item[N3 --- Where the residual case is.]
+\S\ref{sec:density} rebuilds the coverage map on lower ones-density rather than factor complexity,
+which is the coordinate the existing exclusion results actually read.
+\end{description}
+
+\subsubsection*{Corrections to Revision 2}
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+
+\item[D1 --- The Thue--Morse scope claim is withdrawn.] Revision 2 \S19 (Open 6) and \S20 asserted
+that because the Thue--Morse word $t$ has no square prefix, ``every purely repetition-based
+method'' is ``structurally inapplicable to it by construction''. \textbf{That is false.} The bridge
+does not need a square; it needs periodic approximants whose 2-adic agreement outruns their height.
+For $t$ these are supplied by the substitution itself: with $\mu(0)=01$, $\mu(1)=10$ one has
+$\operatorname{lcp}(\mu(x),\mu(y))=2\operatorname{lcp}(x,y)$, so iterating $\mu$ on any one
+approximant doubles the agreement while the height grows only as the length, and
+$\Phi(t)\notin\Q$ follows from the criterion of \S\ref{sec:abstract} without any square
+\cite{Phase9bTM}. The corrected statement appears in \S\ref{sec:open}. (The conclusion itself is not
+new: $t$ has ones-density $1/2<\beta$, so Monks--Yazinski \cite{MonksYazinski2004} already
+covers it. See D2.)
+
+\item[D2 --- The novelty framing of the CS Rote theorem is corrected.] Revision 2 presented the
+bounded-type CS Rote theorem as crossing a frontier. It crosses the \emph{counting} frontier ---
+factor complexity $2n$ lies above Dubickas's threshold $1/\log_2(3/2)=1.70951\ldots$ --- and only
+that one. Every complementary symmetric Rote sequence has ones-density exactly $1/2$, and
+Monks--Yazinski \cite{MonksYazinski2004}, Theorem 2.7(b) excludes every aperiodic word of lower
+ones-density below $\beta=\ln2/\ln3$ regardless of its complexity. \textbf{The conclusion of the
+headline theorem of Revisions 1--2 was therefore already available.} What the chain of
+\S\S\ref{sec:rote}--\ref{sec:ostrowski} contributes is an independent second proof by a different
+mechanism, and the effective height floors of \S\ref{sec:certificates}, which a density argument
+does not give. Revision 2's own \S7 already states the density dichotomy correctly for the Sturmian
+family; the same sentence applies to the CS Rote family and is now stated.
+
+\item[D3 --- Lop\'ez--Stoll: acknowledgement, and a statement of what is not used.]
+Lop\'ez--Stoll's work on density and the $3x+1$ conjugacy map helped guide this programme toward the
+critical density $\beta=\ln2/\ln3$. We acknowledge that influence. The results presented here are
+established through the independent arguments given in this note and do not require their proposed
+upper-density exclusion \cite{LopezStoll2021}. The critical-density Sturmian word is theirs
+\cite{LopezStoll2009}, and so is the observation that critical density is where the existing methods
+stop --- which is why $\beta$ is the place worth working. We take no position on their Theorem 1: we
+have neither established nor disproved it, and no step of any theorem in this note invokes it. The
+coverage statements of \S\ref{sec:density} are accordingly phrased against what is independently
+available, and no conclusion here changes in either case.
+
+\item[D4 --- The foundation paper is now public; it remains an unrefereed self-citation.]
+\cite{DeJesus2026Sturmian} is deposited at version DOI \texttt{10.5281/zenodo.23019799} (concept DOI
+\texttt{10.5281/zenodo.22920055}), CC BY 4.0. It is a preprint, it is not refereed, and it is by the
+present author. Every use of it in this note is a self-citation to unrefereed work and is treated
+with the same caution applied to any other preprint.
+
+\item[D5 --- Theorem numbering.] Revision 3 added the section-based numbering note and the mapping
+between the research record's informal theorem labels and this note's numbers. Both now live in
+\S\ref{sec:rev4}, where a reader meets them before the mathematics rather than inside the history;
+they are not repeated here.
+\end{description}
+
+\subsubsection*{A correction carried in from the research record}
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[D6 --- A polynomial logarithmic-form bound was claimed and is withdrawn.] An intermediate
+stage of the work behind \S\ref{sec:ratint} asserted a bound $c_m\ge C_2m^{-\kappa}$ for the
+quantity $\lVert m\alpha+\rho-\beta\rVert$, citing Baker's \emph{Transcendental Number Theory}.
+No such polynomial bound is available for \emph{algebraic} coefficients. The correct citation, and
+the bound actually used in \S\ref{sec:analytic}, is Baker \cite{Baker1967III}, Theorem 2, whose
+right-hand side is $Ce^{-(\log B)^\kappa}$ --- stretched exponential in $\log B$, strictly weaker
+than any power of $B$. The proof was rebuilt to need only $\log\ell(M)=o(M)$, which that bound
+supplies with room to spare. A polynomial bound would be the case $\kappa=1$, which is Baker's own
+conjecture and is not available. This note states no polynomial bound anywhere.
+\end{description}
+
+\subsubsection*{What survives unchanged}
+
+Theorem~\ref{thm:abstract} (the abstract criterion), the discrepancy--height bound, the
+repetition--height competition, the exact XOR transfer, the density-$1/2$ structural fact, and the
+bounded-type CS Rote theorem at every intercept (\S\ref{sec:boundedtype}) are all unchanged as
+\emph{mathematics}. D2 changes what may be claimed for the last of these, not whether it is true.
+The five corrections of Revision 2 (\S\ref{sec:rev2}) stand as recorded.
+
+\subsection{Revision 2 (30 September 2026)}
+\label{sec:rev2}
+
+Revision 1 of this note (Zenodo version DOI \texttt{10.5281/zenodo.23045141}) is superseded in five
+places. All five were found by auditing this program's own record against
+Berth\'e--Holton--Zamboni \cite{BHZ2006} read first-hand, including its \S5, which the underlying
+Phase 7 work did not reach.
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+
+\item[C1 --- The ``one remaining lemma'' is a published theorem.] Revision 1 \S12 stated as
+\emph{Conjecture 12.1} the claim that for every admissible Ostrowski digit sequence of a
+bounded-type slope, $\limsup_k\max(x'(k),y(k))>2$ with a margin depending only on $A$, and said it
+was ``not claimed proved here or anywhere in the underlying record'' \cite{Phase7Sufficient,Phase7Verdict}. This is \textbf{BHZ
+Propositions 5.1 and 5.2} \cite{BHZ2006}: if $(a_k,a_{k+1})=(s,t)$ with $s>1$ for infinitely many
+$k$ then \emph{every} $\omega\in X_\alpha$ has $\text{ice}(\omega)\ge2+\frac1{2(s+1)(t+1)+1}$, and if
+$(a_k,a_{k+1},a_{k+2})=(1,1,t)$ for infinitely many $k$ then every $\omega\in X_\alpha$ has
+$\text{ice}(\omega)\ge2+\frac1{8t+1}$. A bounded-type slope satisfies one hypothesis or the other by
+pigeonhole. \emph{Consequence:} Theorem \ref{thm:boundedtype} now holds at every intercept
+(\S\ref{sec:generalintercept}), and Revision 1's Open 1 is not open. The weaker statement
+$\text{ice}(\omega)>2$ at each individual intercept is likewise already a corollary of BHZ
+Theorem 1.1.
+
+\item[C2 --- The ``exceptional-orbit reduction'' is false.] Revision 1's Open 2, and the Phase 7
+verdict it quoted, rested on the claim that $\text{ice}(\omega_\rho)=\text{ind}^*(\alpha)$ for every
+intercept outside the countable ``return'' set $\{j\alpha\bmod1\}$ \cite{BHZGeneralMap}, so that the genuinely open cases
+were countable and intercept $0$ was ``if anything a harder case than generic.'' The cited
+ingredients do not give this: BHZ Proposition 2.1(4) gives shift-invariance of $\text{ice}$ only off
+a \emph{finite set of orbits}, and Lemma 2.2 gives $\text{ice}=\text{ind}^*(\alpha)$ only
+\emph{almost everywhere} for the unique invariant measure --- and a measure-zero set need not be
+countable. BHZ's own Proposition 4.1 supplies the counterexample: the ``keep one'' intercept
+$c_k=a_k-1$ has $\text{ice}(\omega)\le1+\theta=2.618\ldots$ at \emph{every} irrational slope, while
+$\text{ind}^*(\alpha)=2+\limsup_k[a_k;a_{k-1},\dots,a_1]$ is unbounded in $A$; its digit string is
+neither eventually $0$ nor either shift-orbit pattern of the characteristic sequence, so its
+intercept is not a return intercept. Moreover the family
+$\{(c_k)\ \text{admissible}: a_k-c_k\in\{1,2\}\}$ is \emph{uncountable} and has $\text{ice}$
+uniformly bounded, so for every $A\ge2$ an uncountable set of intercepts has
+$\text{ice}(\omega)<\text{ind}^*(\alpha)$. \emph{Consequence:} intercept $0$ is in fact one of the
+\emph{easiest} intercepts ($\text{ice}=\text{ind}^*(\alpha)-1\to\infty$), not the hardest; the
+hardest are the keep-one intercepts, where $\text{ice}\to2$ as $A\to\infty$. Revision 1's Open 2 is
+withdrawn, its premise being false.
+
+\item[C3 --- Convergent-denominator indexing.] BHZ Proposition 2.7 fixes
+$\alpha=[0;a_1+1,a_2,a_3,\dots]$ with $q_0=1$, $q_1=a_1+1$, $q_k=a_kq_{k-1}+q_{k-2}$ for $k\ge2$:
+the BHZ \emph{digit} $a_1$ is one less than the first partial quotient of $\alpha$, while $(q_k)$
+are the ordinary convergent denominators. This program's record and code used $q_1=a_1$. Every
+$\limsup$ is insensitive to a single shifted digit, so \emph{every} $\text{ice}$ value reported in
+Revision 1 is correct; every \emph{root length} computed from $q_k$ was not. This is the complete
+explanation of the root-length mismatch the Phase 7 record disclosed against itself --- BHZ
+Proposition 3.3 was never wrong. Under the correct convention the root-length formulas reproduce
+exactly against literal longest common prefixes (562 checks, no failure).
+
+\item[C4 --- Missing length factor in the surplus decomposition.] Revision 1 \S13 displayed
+$S_k\ge A\cdot E_k-C_A\cdot D_k-O_A(\log\ell_k)$. The leading term cannot be $A\cdot E_k$: $A$ is a
+pure number while $S_k$ scales like a length. Re-derived from the integer periodic-value formula
+with every factor kept (\S\ref{sec:ostrowski}), the correct statement on the odd-weight branch is
+$S_k\ge\ell_k E_k+1-\lceil D(R_k)\rceil\log_23-\log_2(2\ell_k)$, with $\ell_k=|W_k|$ the
+\emph{Sturmian} root length. Revision 1's own flexible condition $E_k\gg\log\ell_k/\ell_k$ is
+equivalent to $\ell_kE_k\gg\log\ell_k$ and so is consistent with $\ell_k\cdot E_k$; the displayed
+inequality was a transcription slip, not a different claim, and no conclusion drawn from it changes.
+
+\item[C5 --- Conditional attainment of $y(k)$.] Revision 1 treated both Ostrowski expressions as
+giving actually-occurring initial powers for every admissible $(c_k)$. BHZ Proposition 3.3 attains
+$x(k)$ for \emph{every} $k$, with primitive root of length exactly $q_k$, but attains $y(k)$ only
+when $0<c_k<a_k$, with root length $q_k-c_kq_{k-1}$; Corollary 3.5's three observations
+($c_k=a_k\Rightarrow y(k)=x(k-2)$; $c_k=0,c_{k+1}=a_{k+1}\Rightarrow y(k)<y(k+1)=x(k-1)$;
+$c_k=0,c_{k+1}<a_{k+1}\Rightarrow y(k)\le x(k)$) are what upgrade the $\limsup$. For a $\limsup$
+this is harmless; for a proof that must hand the bridge an \emph{attained} root it is not, because
+the branch of the argument that is tightest at $A=1$ is exactly $c_k=a_k$, where $y(k)$ is not
+directly attained. Theorem \ref{thm:generalmargin} routes every case through an attained witness
+explicitly.
+
+\end{description}
+
+\paragraph{What survives unchanged.} Theorem \ref{thm:abstract} (the abstract criterion), the
+discrepancy--height bound, the repetition--height competition, the exact XOR transfer
+$L_v=L+1$, the density-$1/2$ structural fact, the intercept-$0$ case of
+Theorem \ref{thm:boundedtype} and its $\text{term2}(k)>2+1/(A+1)$ analysis, the whole
+self-correction history of \S\ref{sec:selfcorrection}, the counting-route material, and every
+numerical finding about structured intercepts --- including the identification of the
+near-maximal-digit family as the empirical worst case, which \S\ref{sec:generalintercept} now
+confirms is \emph{exactly} extremal. What is superseded: Revision 1's \S12 conjecture, its Open 1,
+Open 2 and Open 3, and the two displayed formulas of C3 and C4.
+
+\paragraph{Attribution.} The load-bearing symbolic input to the general-intercept theorem is
+Berth\'e--Holton--Zamboni's, not this program's. This note claims as its own contribution the
+arithmetic application: the periodic-approximation/arithmetic-height bridge, the exact XOR
+transfer, the density-$1/2$ fact, the corrected surplus inequality, and the attained-witness
+bookkeeping with explicit growing root lengths that turns a $\limsup$ bound on $\text{ice}$ into an
+unbounded surplus. Recording a published 2006 theorem as an open conjecture was an error of
+literature search, and is corrected here rather than quietly dropped.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{DeJesus2026Sturmian} Elias De Jesús, \emph{The 3x+1 Conjugacy Map Sends Every Sturmian Word to an Irrational 2-Adic Integer}, Zenodo, 28 September 2026, version DOI \href{https://doi.org/10.5281/zenodo.23019799}{\texttt{10.5281/zenodo.23019799}} (concept DOI \texttt{10.5281/zenodo.22920055}), CC BY 4.0. \textbf{Preprint; not refereed; by the present author --- a self-citation.} (Foundation paper for this research program.)
+
+\bibitem{ADQZ2001} Jean-Paul Allouche, J.\ L.\ Davison, Michel Queffélec, and Luca Q.\ Zamboni, \emph{Transcendence of Sturmian or morphic continued fractions}, Journal of Number Theory \textbf{91} (2001), no.\ 1, 39--66.
+
+\bibitem{Bernstein1994} Daniel J.\ Bernstein, \emph{A noniterative 2-adic statement of the $3N+1$ conjecture}, Proceedings of the American Mathematical Society \textbf{121} (1994), no.\ 2, 405--408.
+
+\bibitem{BernsteinLagarias1996} Daniel J.\ Bernstein and Jeffrey C.\ Lagarias, \emph{The $3x+1$ conjugacy map}, Canadian Journal of Mathematics \textbf{48} (1996), no.\ 6, 1154--1169.
+
+\bibitem{BHZ2006} Valérie Berthé, Charles Holton, and Luca Q.\ Zamboni, \emph{Initial powers of Sturmian sequences}, Acta Arithmetica \textbf{122} (2006), no.\ 4, 315--347.
+
+\bibitem{Dubickas2009} Artūras Dubickas, \emph{On integer sequences generated by linear maps}, Glasgow Mathematical Journal \textbf{51} (2009), no.\ 2, 243--252.
+
+\bibitem{Lagarias1985} Jeffrey C.\ Lagarias, \emph{The $3x+1$ problem and its generalizations}, The American Mathematical Monthly \textbf{92} (1985), no.\ 1, 3--23.
+
+\bibitem{LopezStoll2009} Josefina López and Peter Stoll, \emph{The $3x+1$ conjugacy map over a Sturmian word}, Integers \textbf{9} (2009), no.\ A13, 141--162.
+
+\bibitem{LopezStoll2021} Josefina López and Peter Stoll, \emph{The $3x+1$ periodicity conjecture in $\mathbb{R}$}, arXiv:2101.12747, 2021. \textbf{Preprint.} Cited for context; its Theorem 1 is not used in this note.
+
+\bibitem{Lothaire2002} M.\ Lothaire, \emph{Algebraic Combinatorics on Words}, Encyclopedia of Mathematics and its Applications, vol.\ 90, Cambridge University Press, 2002, Chapter 2 (Sturmian words, by J.\ Berstel and P.\ Séébold). Cited here as the standard reference for the combinatorics-on-words background of complementary symmetric Rote sequences; the primary source defining this class (G.\ Rote, 1994) should be verified directly against primary literature before formal submission, as this repository's record does not independently confirm its exact publication details.
+
+\bibitem{Phase2Abstract} \repo{theorems/phase2/ABSTRACT\_IRRATIONALITY\_CRITERION.md}, periodicity-conjecture-bridge repository, commit \texttt{a4ac46a}.
+\bibitem{Phase2Surplus} \repo{theorems/phase2/SURPLUS\_THEOREM.md} and \repo{theorems/phase1/SURPLUS\_INVARIANT.md}, ibid.
+\bibitem{Phase1Discrepancy} \repo{theorems/phase1/DISCREPANCY\_HEIGHT\_THEOREM.md}, ibid.
+\bibitem{Phase1Repetition} \repo{theorems/phase1/REPETITION\_HEIGHT\_CRITERION.md}, ibid.
+\bibitem{Phase2Discrepancy} \repo{theorems/phase2/ROTE\_ROOT\_DISCREPANCY.md}, ibid.
+\bibitem{Phase2Transfer} \repo{theorems/phase2/ROTE\_TRANSFER\_THEOREM.md}, ibid.
+\bibitem{Phase5Transfer} \repo{theorems/phase5/TRANSFER\_REDERIVATION.md}, ibid.
+\bibitem{Phase3Automaton} \repo{theorems/phase3/WEIGHT\_PARITY\_CLASSIFICATION.md}, ibid.
+\bibitem{Phase4Silver} \repo{theorems/phase4/SILVER\_EXTREMALITY.md}, ibid.
+\bibitem{Phase4SilverAudit} \repo{theorems/phase4/SILVER\_CONSTANT\_AUDIT.md}, ibid.
+\bibitem{Phase4Required} \repo{theorems/phase4/REQUIRED\_EXPONENT.md}, ibid.
+\bibitem{Phase5Hostile} \repo{theorems/phase5/HOSTILE\_REFEREE\_REPORT.md}, ibid.
+\bibitem{Phase6Arrow} \repo{theorems/phase6/ARROW\_BY\_ARROW\_RECONSTRUCTION.md}, ibid.
+\bibitem{Phase4Quadratic} \repo{theorems/phase4/QUADRATIC\_CS\_ROTE\_THEOREM.md}, ibid.
+\bibitem{Phase6Bounded} \repo{theorems/phase6/BOUNDED\_TYPE\_THEOREM.md}, ibid.
+\bibitem{Phase4Chain} \repo{theorems/phase4/FINAL\_PROOF\_CHAIN.md}, ibid.
+\bibitem{BHZGeneralMap} \repo{theorems/phase7/BHZ\_GENERAL\_INTERCEPT\_MAP.md}, ibid.
+\bibitem{Phase7Verdict} \repo{theorems/phase7/PHASE7\_VERDICT.md}, ibid.
+\bibitem{Phase7Sufficient} \repo{theorems/phase7/INTERCEPT\_SUFFICIENT\_CONDITION.md}, ibid.
+\bibitem{Phase7Surplus} \repo{theorems/phase7/SURPLUS\_DECOMPOSITION.md} and \repo{theorems/phase7/INTERCEPT\allowbreak\_EXCESS.md}, ibid.
+\bibitem{Phase7Flexible} \repo{theorems/phase7/FLEXIBLE\_MARGIN\_BOUNDARY.md}, ibid.
+\bibitem{Phase7Structured} \repo{theorems/phase7/STRUCTURED\_INTERCEPTS.md}, ibid.
+\bibitem{Phase7Drift} \repo{theorems/phase7/DRIFT\_COORDINATES.md}, ibid.
+\bibitem{Phase7DriftDigits} \repo{theorems/phase7/DRIFT\_VS\_DIGITS.md}, ibid.
+\bibitem{Phase7Intrinsic} \repo{theorems/phase7/INTRINSIC\_SQUARE\_ROUTE.md}, ibid.
+\bibitem{Phase2Rotation} \repo{theorems/phase2/ROTATION\_EXAMPLE\_THEOREM.md}, ibid.
+\bibitem{Phase1Gap} \repo{theorems/phase1/FULL\_PERIODICITY\_GAP.md}, ibid.
+
+\bibitem{Phase8Proof} \repo{theorems/phase8/PHASE8\_PROOF\_OR\_OBSTRUCTION.md}, periodicity-conjecture-bridge repository, branch \repo{phase8-general-intercept}.
+\bibitem{Phase8Target} \repo{theorems/phase8/PHASE8\_TARGET\_AUDIT.md}, ibid.
+\bibitem{Phase8Chain} \repo{theorems/phase8/PHASE8\_CHAIN\_AUDIT.md}, ibid.
+\bibitem{Phase8Margin} \repo{theorems/phase8/PHASE8\_MARGIN\_STATUS.md}, ibid.
+\bibitem{Phase8Verdict} \repo{theorems/phase8/PHASE8\_VERDICT.md}, ibid.
+\bibitem{Phase7Corrections} \repo{theorems/phase7/PHASE7\_CORRECTIONS.md}, ibid.
+
+\bibitem{MonksYazinski2004} Kenneth G.\ Monks and Jonathan Yazinski, \emph{The autoconjugacy of the $3x+1$ function}, Discrete Mathematics \textbf{275} (2004), no.\ 1--3, 219--236.
+
+\bibitem{Baker1966I} Alan Baker, \emph{Linear forms in the logarithms of algebraic numbers I}, Mathematika \textbf{13} (1966), 204--216.
+
+\bibitem{Baker1967III} Alan Baker, \emph{Linear forms in the logarithms of algebraic numbers III}, Mathematika \textbf{14} (1967), 220--228. (Theorem 2 is the homogeneous algebraic-coefficient case; reviewed in MR0220680.)
+
+\bibitem{Waldschmidt2000} Michel Waldschmidt, \emph{Diophantine Approximation on Linear Algebraic Groups: Transcendence Properties of the Exponential Function in Several Variables}, Grundlehren der mathematischen Wissenschaften \textbf{326}, Springer, 2000; and the companion survey \emph{Linear independence of logarithms of algebraic numbers}, Theorem 10.1.
+
+\bibitem{KuipersNiederreiter} Lauwerens Kuipers and Harald Niederreiter, \emph{Uniform Distribution of Sequences}, Wiley, 1974, Chapter 2, Theorem 3.4.
+
+\bibitem{Rote1994} Gerhard Rote, \emph{Sequences with subword complexity $2n$}, Journal of Number Theory \textbf{46} (1994), no.\ 2, 196--213.
+
+\bibitem{BerstelVuillon2001} Jean Berstel and Laurent Vuillon, \emph{Coding rotations on intervals}, arXiv:math/0106217, 2001.
+
+\bibitem{BugeaudKekec} Yann Bugeaud and Gülcan Kekeç, \emph{On Mahler's classification of $p$-adic numbers}. (Theorem 1.3 there is Ridout's 1958 $p$-adic analogue of Roth's theorem, quoted in \S\ref{sec:ridout}.)
+
+\bibitem{Phase9bTM} \repo{theorems/phase9b/THUE\_MORSE\_INDEPENDENT\_PROOF.md} and \repo{theorems/phase9b/PHASE9B\_VERDICT.md} (repository record; script \repo{scripts/phase9b/tm\_independent\_proof.py}).
+
+\bibitem{Phase10Density} \repo{theorems/phase10/DENSITY\_COMPLEXITY\_LADDER.md} and \repo{theorems/phase10/PRIOR\_RESULT\_COVERAGE.md} (repository record).
+
+\bibitem{Phase11bAudit} \repo{theorems/phase11b/THEOREM11\_DEPENDENCY\_AUDIT.md}, \repo{theorems/phase11b/BAKER\_SOURCE\_AND\_APPLICATION.md} and \repo{theorems/phase11b/REPAIRED\_WITNESS\_GROWTH.md} (repository record).
+
+\bibitem{Phase12Quad} \repo{theorems/phase12/QUADRATIC\_RATIONAL\_INTERCEPT\_THEOREM.md} and \repo{theorems/phase12/THEOREM11\_INDEPENDENT\_AUDIT.md} (repository record; scripts \repo{scripts/phase12/independent\_audit.py}, \repo{scripts/phase12/general\_quadratic.py}).
+
+\bibitem{Phase13Alg} \repo{theorems/phase13/ALGEBRAIC\_INTERCEPT\_THEOREM.md} and \repo{theorems/phase13/CONSOLIDATED\_THEOREM\_AND\_DEPENDENCIES.md} (repository record; scripts \repo{scripts/phase13/numfield.py}, \repo{scripts/phase13/algebraic\_intercept.py}).
+
+\bibitem{Phase13Ridout} \repo{theorems/phase13/FAMILY\_THEOREM\_PRIOR\_COVERAGE.md} \S5 (repository record; script \repo{scripts/phase13/ridout\_exponent.py}).
+
+\bibitem{Phase14Constants} \repo{theorems/phase14/EXPLICIT\_DISCREPANCY\_CONSTANTS.md} and \repo{theorems/phase14/EXPLICIT\_HEIGHT\_BOUND.md} (repository record; script \repo{scripts/phase14/explicit\_constants.py}).
+
+\bibitem{Phase13Constants} \repo{theorems/phase13/EXPLICIT\_CONSTANTS\_STATUS.md} (repository record; script \repo{scripts/phase13/explicit\_constants.py}).
+
+\end{thebibliography}
+
+\end{document}

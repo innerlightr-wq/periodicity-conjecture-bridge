@@ -10,7 +10,7 @@ The programme is organised along two coordinates, and it matters which one a giv
               |                |  Thm 10.1      |  Thm 10.1      |
               +----------------+----------------+----------------+
   p(n)=2n     |  covered (T1)  |  PHASE 11-13   |   open         |
-              |  + our 2nd     |  Thm 17.5/18.2 |                |
+              |  + our 2nd     |  Thm 16.5/17.2 |                |
               |  proof (CS Rote)|  <- the frontier|               |
               +----------------+----------------+----------------+
   higher      |  covered (T1)  |   open         |   open         |

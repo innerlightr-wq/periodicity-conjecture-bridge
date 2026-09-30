@@ -20,7 +20,7 @@ proof, of absence. Unrefereed preprints are labelled at every use, including the
 > and `s_n = 1 ⟺ {nα+ρ} ∈ [u, u+β) (mod 1)`. If the offset `ρ−u` is **algebraic** — `ρ` and `u`
 > themselves unrestricted — then `s` is aperiodic, has lower ones-density exactly `β` and factor
 > complexity `2n`, and **`Φ(s) ∉ ℚ`**.
-> (`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`; note Revision 3 Theorem 18.2 and Corollary 18.3.)
+> (`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`; manuscript Revision 4 Theorem 17.2 and Corollary 17.3 (Revision 3: 18.2 / 18.3).)
 
 **Why this rung and not the earlier ones.** Every complementary-symmetric-Rote result of Phases 2–9
 sits at ones-density exactly `1/2 < β` and is therefore **ALREADY IMPLIED** by Monks–Yazinski (2004)
@@ -71,7 +71,7 @@ classes are a measure-zero subset.
 | **`Φ(s) ∉ ℚ`, quadratic slope, rational offset** | **PROVED HERE, NOT IMPLIED** | `theorems/phase12/QUADRATIC_RATIONAL_INTERCEPT_THEOREM.md` |
 | **`Φ(s) ∉ ℚ`, quadratic slope, algebraic offset; and `[u,u+β)` whenever `ρ−u` algebraic** | **PROVED HERE, NOT IMPLIED** | `theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md` |
 | `C = 24.207846`, `C₀ = 35.869175` in `S ≥ (L−ℓ) − C log₂ℓ − C₀` | **PROVED, numerically explicit** | `theorems/phase14/EXPLICIT_DISCREPANCY_CONSTANTS.md` |
-| `H ≥ 2^{f(M)}` with `f` explicit; `f(M) > 0` for `M ≥ 1.78·10^18` | **PROVED, numerically explicit** | `theorems/phase14/EXPLICIT_HEIGHT_BOUND.md` |
+| `H ≥ 2^{f(M)}` with `f` explicit; `f(M) > 0` for `M ≥ 1.78·10^18` | **PROVED, numerically explicit** | `theorems/phase14/EXPLICIT_HEIGHT_BOUND.md`; manuscript §19, Thm 19.5 |
 
 ## Certified finite computations
 
@@ -115,7 +115,15 @@ See [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](docs/DEPENDENCE_ON_PRIOR_RESULTS.md)
 
 ## Published record
 
-Technical note Revision 3: doi:10.5281/zenodo.23068563 (concept 10.5281/zenodo.23045140), CC BY 4.0,
-34 pp, deposited 2026-09-30, byte-identical to `technical-note/note_rev3.pdf`. Four corrections are
-owed to the record and none has been applied — see
+**Deposited:** Revision 3, doi:10.5281/zenodo.23068563 (concept 10.5281/zenodo.23045140), CC BY 4.0,
+34 pp, byte-identical to `technical-note/note_rev3.pdf`.
+
+**Prepared, not deposited:** Revision 4 — `technical-note/note_rev4.{tex,pdf}` (39 pp) with
+`correction_notice_rev4.{tex,pdf}`, correcting Revision 3 in four places without altering any
+mathematical statement. Proposed record text: `technical-note/ZENODO_DESCRIPTION_REV4.md`. Release
+manifest: [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md); reconciliation:
 [`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
+Record 10.5281/zenodo.23068326 duplicates Revision 2 byte for byte; cite Revision 2 as
+10.5281/zenodo.23061396.
+
+**For reviewers:** [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md).

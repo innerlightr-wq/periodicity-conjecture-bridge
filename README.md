@@ -20,11 +20,18 @@ Research program on the 3x+1 Periodicity Conjecture using periodic approximation
 The programme is consolidated in a citable technical note:
 
 **Elias De Jesús (2026), _Beyond Sturmian Words in the 3x+1 Periodicity Conjecture: A
-Periodic-Approximation and Arithmetic-Height Bridge_, Revision 3.** Zenodo.
-DOI: **[10.5281/zenodo.23068563](https://doi.org/10.5281/zenodo.23068563)** (concept DOI
-`10.5281/zenodo.23045140`), CC BY 4.0, 34 pp. **Preprint; not refereed.** The deposited file is
-byte-identical to `technical-note/note_rev3.pdf`. Four corrections are owed to that record, none yet
-applied — [`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
+Periodic-Approximation and Arithmetic-Height Bridge_.** Zenodo, concept DOI
+`10.5281/zenodo.23045140`, CC BY 4.0. **Preprint; not refereed.**
+
+- **Deposited:** Revision 3, DOI **[10.5281/zenodo.23068563](https://doi.org/10.5281/zenodo.23068563)**,
+  34 pp, byte-identical to `technical-note/note_rev3.pdf`.
+- **Prepared, not deposited:** Revision 4, `technical-note/note_rev4.pdf` (39 pp) with a standalone
+  correction notice. It corrects Revision 3 in four places — the deposit statement, "draft" labelling,
+  the framing of one open problem, and the addition of explicit constants — **without altering any
+  mathematical statement**. See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md) and
+  [`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
+- Record `10.5281/zenodo.23068326` duplicates Revision 2 byte for byte; cite Revision 2 as
+  `10.5281/zenodo.23061396`.
 
 The foundation paper this programme builds on is **doi:10.5281/zenodo.23019799** — also a preprint,
 also not refereed, and **by the same author**: a self-citation, treated with the same caution as any
@@ -37,7 +44,8 @@ other preprint.
 > unrestricted, so both may be transcendental — then `s` is aperiodic, has lower ones-density exactly
 > `β` and factor complexity `2n`, and **`Φ(s) ∉ ℚ`**.
 
-`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`; note Revision 3 Theorem 18.2 and Corollary 18.3.
+`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`; manuscript Revision 4 Theorem 17.2 and
+Corollary 17.3. **New readers: start with [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md).**
 
 **Why this and not the earlier headline.** Through Phase 8 this README claimed a
 complementary-symmetric-Rote theorem as the headline. That theorem is true, but its *conclusion* was
