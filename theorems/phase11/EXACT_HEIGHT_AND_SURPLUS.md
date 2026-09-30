@@ -36,7 +36,7 @@ With `e_ℓ := k − ℓβ` and the identity `β·log₂3 = 1` **exactly**, `k l
 
 > **(H)**  `S(W) := L − log₂F(W) ≥ (L − ℓ) − log₂3·max(0, e_ℓ) − ⌈D(W)⌉·log₂3 − log₂(2ℓ).`
 
-This is the form the task asks for: the leading term is the **overshoot** `L − ℓ`, and the only
+This is the operative form: the leading term is the **overshoot** `L − ℓ`, and the only
 corrections are the finite-scale drift `e_ℓ` and the root discrepancy `D(W)`. Limiting density
 contributes nothing.
 

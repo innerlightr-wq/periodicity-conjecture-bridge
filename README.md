@@ -15,49 +15,65 @@ Research program on the 3x+1 Periodicity Conjecture using periodic approximation
 > See also **[what these conclusions depend on](docs/DEPENDENCE_ON_PRIOR_RESULTS.md)** — the external
 > results relied on, their refereeing status, and the ones deliberately not relied on.
 
-## Where the programme currently stands
-
-The ladder diagram, "Headline result", and repository-structure listing below describe the programme
-**through Phase 6**, and are accurate for that range. Phases 7–13 are recorded in
-the `theorems/`, `scripts/` and `data/` directories for phases `7`, `8`, `9`, `9b`, `10`, `10b`, `11`,
-`11b`, `12` and `13`; the consolidated current chain is
-[`theorems/phase13/CONSOLIDATED_THEOREM_AND_DEPENDENCIES.md`](theorems/phase13/CONSOLIDATED_THEOREM_AND_DEPENDENCIES.md),
-and the strongest statement proved so far is in
-[`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`](theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md).
-
-The rewrite of this README, `LADDER.md` and `THEOREM_STATUS.md` to cover Phases 7–13 is **drafted but
-deliberately not applied**, pending my own review of the final theorem statements and of several
-outstanding citation corrections; the exact replacement text is in
-[`theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md`](theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md).
-Until that is settled, treat the sections below as the Phase 1–6 record and the phase directories as
-the current one. **Novelty remains formally unresolved throughout**, and no statement here should be
-read as a claim on the full Periodicity Conjecture or on the Collatz conjecture.
-
 ## Technical Note
 
-The current research program is consolidated in a peer-citable technical note:
+The programme is consolidated in a citable technical note:
 
-**Elias De Jesús (2026), _Beyond Sturmian Words in the 3x+1 Periodicity Conjecture: A Periodic-Approximation and Arithmetic-Height Bridge_.** Zenodo. DOI: **[10.5281/zenodo.23045141](https://doi.org/10.5281/zenodo.23045141)**
+**Elias De Jesús (2026), _Beyond Sturmian Words in the 3x+1 Periodicity Conjecture: A
+Periodic-Approximation and Arithmetic-Height Bridge_, Revision 3.** Zenodo.
+DOI: **[10.5281/zenodo.23068563](https://doi.org/10.5281/zenodo.23068563)** (concept DOI
+`10.5281/zenodo.23045140`), CC BY 4.0, 34 pp. **Preprint; not refereed.** The deposited file is
+byte-identical to `technical-note/note_rev3.pdf`. Four corrections are owed to that record, none yet
+applied — [`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
 
-This is a technical research note, not a claim to have solved the full Periodicity Conjecture. It consolidates the periodic-approximation / arithmetic-height bridge developed across Phases 1–7, through the bounded-type complementary-symmetric-Rote result (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`). The full 3x+1 Periodicity Conjecture remains open, and complementary symmetric Rote sequences at arbitrary intercepts remain an open frontier (`theorems/phase7/`). See `technical-note/` for the manuscript source, preservation record, and statement-by-statement source-of-truth classification.
-
-## The ladder
-
-```
-Sturmian  p(n) = n+1
-    ↓
-counting classes  p(n) < 1.709511... n
-    ↓
-bounded-type CS Rote  p(n) = 2n     (PROVED, Phase 6)
-    ↓
-general CS Rote / next frontier
-```
-
-This is a **milestone map of an exclusion program**, not a chain of nested sets — see `LADDER.md` for the precise reading and per-rung status.
+The foundation paper this programme builds on is **doi:10.5281/zenodo.23019799** — also a preprint,
+also not refereed, and **by the same author**: a self-citation, treated with the same caution as any
+other preprint.
 
 ## Headline result
 
-For **every** complementary symmetric Rote sequence `v` (factor complexity exactly `2n`, strictly beyond the Dubickas counting threshold) whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients** (any seed, any shift of `v`), `Φ(v) ∉ ℚ` — **proved** (`theorems/phase6/BOUNDED_TYPE_THEOREM.md`). The proof rests on one clean structural fact discovered in Phase 4: the odd-weight transfer route's doubled root always has density exactly `1/2`, which drops the required Sturmian repetition exponent from an earlier, over-conservative `2\log_23\approx3.17` down to the true requirement, `2` — comfortably supplied, with an explicit margin, by a classical initial-critical-exponent bound (Berthé–Holton–Zamboni 2006). Phase 5 audited this chain end to end and found it survives (with one justification repaired); Phase 6 then reconstructed the same chain against genuinely non-periodic bounded-type slopes and found it needs only boundedness of partial quotients, not eventual periodicity — upgrading the theorem from a countable class (quadratic irrationals) to an uncountable one (bounded-type irrationals). One precise gap remains throughout (CS Rote sequences at *other* intercepts of the same slope) — see `THEOREM_STATUS.md` for the complete, honest status map. Nothing here is overclaimed past what is actually proved.
+> Let `α ∈ (0,1)` be a quadratic irrational, `β = ln2/ln3`, and
+> `s_n = 1 ⟺ {nα+ρ} ∈ [u, u+β) (mod 1)`. If the offset `ρ−u` is **algebraic** — `ρ` and `u` themselves
+> unrestricted, so both may be transcendental — then `s` is aperiodic, has lower ones-density exactly
+> `β` and factor complexity `2n`, and **`Φ(s) ∉ ℚ`**.
+
+`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`; note Revision 3 Theorem 18.2 and Corollary 18.3.
+
+**Why this and not the earlier headline.** Through Phase 8 this README claimed a
+complementary-symmetric-Rote theorem as the headline. That theorem is true, but its *conclusion* was
+already available: CS Rote sequences have ones-density exactly `1/2`, and Monks–Yazinski (2004)
+Theorem 2.7(b) excludes every aperiodic word of lower ones-density below `β`, whatever its complexity.
+It crosses the **counting** frontier, not the density one. What this repository contributes there is
+an independent second proof and effective height bounds. Lower ones-density exactly `β` is the one
+place no density criterion reaches, and that is where the headline above sits.
+
+**What is proved, checked, and open** — kept apart deliberately:
+
+| | |
+|---|---|
+| **already implied by prior results** | every CS Rote rung, and Thue–Morse (all at density `1/2 < β`) |
+| **independent effective proofs + quantitative refinements** | the same rungs, plus explicit height floors a density argument cannot give |
+| **proved here and not implied** | the critical-density family above |
+| **certified finite computations** | `H ≥ 2^462, …, 2^15998` for the named word — exact integer comparisons, no analytic input |
+| **explicit constants** | `S ≥ (L−ℓ) − 24.207846·log₂ℓ − 35.869175`, and `H ≥ 2^{f(M)}` with `f` written down, positive for `M ≥ 1.78·10^18` — beyond computation, and not a computational claim |
+| **unresolved novelty** | formal. No literature pass located a covering result; absence of a hit is not proof of absence |
+| **open extensions** | transcendental offset; density `> β`; all `s` with `p(L) ≤ 2L`; transcendence |
+
+**Scope.** Nothing here bears on divergent orbits of positive integers, on the Collatz conjecture, or
+on the Periodicity Conjecture in general.
+
+## Acknowledgement and dependency
+
+López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are established through the independent arguments given in this repository and do not require their proposed upper-density exclusion.
+
+We have neither established nor disproved their Theorem 1, and no argument here invokes it. See
+[`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
+
+## The ladder
+
+See [`LADDER.md`](LADDER.md). The programme is organised on **two** coordinates — lower ones-density
+and factor complexity — and the exclusion results in the literature read the density one. The live
+frontier is density exactly `β` at complexity `2n`.
 
 ## Cross-program scope limit
 
@@ -91,23 +107,17 @@ docs/                   INVITATION_TO_DOMAIN_EXPERTS.md   invitation for special
                         EOC_HANDOFF_CLOSED.md             cross-program scope limit (EOC audit)
 CITATION.cff            citation metadata
 
-theorems/phase1/        Phase 1: abstraction of the source paper's bridge technique,
-                         first computational evidence beyond Sturmian words
-theorems/phase2/         Phase 2: theorem-conversion — proofs replacing computational
-                         evidence wherever possible
-theorems/phase3/         Phase 3: closes Phase 2's precise open lemma (weight-parity),
-                         finds and resolves a genuine counterexample
-theorems/phase4/         Phase 4: corrects Phase 3's threshold, proves the quadratic
-                         CS Rote theorem in full generality via a structural density fact
-theorems/phase5/         Phase 5: fresh adversarial audit of Phase 4, independently
-                         re-derived end to end; theorem survives, one justification repaired
-theorems/phase6/         Phase 6: reconstructs the audited chain against non-periodic
-                         bounded-type slopes, upgrading quadratic -> bounded-partial-quotient
+theorems/phase{1..8}/   the complementary-symmetric-Rote chain (proved; conclusion
+                        already implied by Monks-Yazinski -- see THEOREM_STATUS.md)
+theorems/phase9b/       Thue-Morse, independently proved and subsumed
+theorems/phase10/       the (density, complexity) coverage map
+theorems/phase11{,b}/   the named critical-density word; the Baker repair
+theorems/phase12/       quadratic slope, rational offset
+theorems/phase13/       quadratic slope, ALGEBRAIC offset; prior-result coverage
+theorems/phase14/       Zenodo reconciliation; explicit discrepancy and height constants
 
-scripts/phase{1..6}/     exact-arithmetic verification scripts, one directory per phase,
-                         each runnable standalone (`python3 <script>.py` from its own
-                         directory — no cross-phase import dependencies)
-data/phase{1..6}/        saved script outputs, for the record
+scripts/phase{1..14}/   exact-arithmetic verification scripts, one directory per phase
+data/phase{1..14}/      saved script outputs, for the record
 
 reference/               the foundation paper this program audits and builds on
                          (separately copyrighted — see NOTICE)
@@ -125,13 +135,30 @@ cd scripts/phase3 && python3 counterexample_and_recovery.py  # the found counter
 cd scripts/phase4 && python3 verify_phase4.py            # consolidated Phase 4 verification (13 checks)
 cd scripts/phase5 && python3 independent_transfer_check.py   # 114,680-case independent transfer re-check
 cd scripts/phase6 && python3 full_pipeline_nonperiodic.py    # full chain on 4 non-periodic bounded-type slopes
+cd scripts/phase12 && python3 independent_audit.py       # Theorem rebuilt from definitions, all 5 height floors
+cd scripts/phase12 && python3 general_quadratic.py       # quadratic slope x rational offset, 50 end-to-end rows
+cd scripts/phase13 && python3 algebraic_intercept.py     # ALGEBRAIC offset, field degrees 2, 4, 6
+cd scripts/phase13 && python3 ridout_exponent.py         # the Ridout exponent (a measurement, not a theorem)
+cd scripts/phase14 && python3 explicit_constants.py      # C, C_0, f(M) and the certified threshold
 ```
+
+Phase 13 adds exact arithmetic in a general number field `ℚ(θ)`: an element is zero exactly when its
+coefficient vector is, and for a non-zero element the characteristic polynomial gives an a priori
+separation bound, so a high-precision evaluation decides every sign with certainty. Comparisons
+against the transcendental `β` use a certified 300-digit bracket that either decides or raises.
 
 ## Discipline notes
 
 - Falsification-first throughout: every phase actively attacks its own prior claims before extending them. Real bugs and wrong working hypotheses were found and fixed in-session — a reciprocal continued-fraction bug (Phase 1), a false-positive cycle detector (Phase 2/3), an over-conservative threshold promoted from too few examples that Phase 4 actively stress-tested, broke, and replaced with the correct general bound, a false justification for seed-independence caught and repaired by Phase 5's hostile referee pass, and a small-`k` boundary equality caught by Phase 6's non-periodic adversarial controls — all disclosed in `THEOREM_STATUS.md` and the relevant phase files, not silently corrected.
-- No claim in this repository asserts progress on the full Lagarias Periodicity Conjecture. See `LADDER.md`'s closing section for the precise, structural reason no repetition-based method — however far this ladder is extended — can ever close the conjecture alone.
-- This repository is an audit and proof record, not a manuscript. No paper is drafted here.
+- No claim here asserts progress on the full Lagarias Periodicity Conjecture. An earlier version of
+  this note claimed a *structural* reason why no repetition-based method could ever reach it, arguing
+  from the Thue–Morse word's lack of a square prefix. **That claim was false and is withdrawn**: the
+  method needs approximants whose 2-adic agreement outruns their height, not a square, and the
+  Thue–Morse substitution supplies them. What remains true is weaker — the classes reached so far are
+  parametrised families of measure zero, and no mechanism here is known to reach an arbitrary
+  aperiodic word.
+- This repository is an audit and proof record. The technical note drafted from it lives in
+  `technical-note/`; the repository is the source of truth and the note follows it, never the reverse.
 - Unrefereed preprints are labelled as such at every use, **including my own**; a foundation result of
   mine is additionally labelled a self-citation. No preprint is treated as settled.
 - Specialist review has **not** taken place. See

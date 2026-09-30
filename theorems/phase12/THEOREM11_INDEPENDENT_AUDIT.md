@@ -88,7 +88,7 @@ III, Mathematika 14 (1967)`, quoted verbatim, identical hypotheses and conclusio
 numbering of paper III is Theorem 1 (inhomogeneous) / Theorem 2 (homogeneous); MR renumbers them
 3.1 / 3.2 to disambiguate across the four parts. Phase 11B's "Theorem 2" = MR's Theorem 3.2. ✓
 
-**The "either … or" condition, checked as the task asks.** It is a disjunction and only one branch is
+**The "either … or" condition, checked.** It is a disjunction and only one branch is
 needed. We use the **first** branch: `n = 2`, `α₁ = 3`, `α₂ = 2`, and `log 3, log 2` are linearly
 independent over `ℚ` (a relation `a log2 + b log3 = 0` with `(a,b) ≠ 0` gives `2^a = 3^{−b}`,
 contradicting unique factorisation). The second branch (`β₁ = A_m`, `β₂ = −1` linearly independent

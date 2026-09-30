@@ -52,8 +52,9 @@ changed most:
 | `c₁` (arc at `β`) | **no** | **yes — `≈ 2.39·10^13` at `D = 2`** |
 | `C, C₀` (drift / discrepancy) | no | **still no** |
 
-**López–Stoll is treated as instructed**: a challenged preprint claim pending verification, neither
-disproved nor securely established, **relied on nowhere**. The consequence is stated once and
+**López–Stoll.** Their work on density and the 3x+1 conjugacy map helped guide this programme
+toward the critical density `β = ln2/ln3`; we acknowledge that influence. Their proposed
+upper-density exclusion is **relied on nowhere** — we have neither established nor disproved it. The consequence is stated once and
 propagated: the securely covered density region is `liminf < β`, and the residual is `liminf ≥ β`.
 
 ## 3. Item 2 — prior coverage: **(d) not located in the searched literature**
