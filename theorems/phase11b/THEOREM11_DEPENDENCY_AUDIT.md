@@ -90,7 +90,7 @@ and for `α = (√5−1)/2` every `a_i = 1`, so `Σ_{i≤k+1} a_i = k+1 ≤ log_
 `C_D := c_1'/log₂φ`:
 
 ```
-| e_ell |  =  | k_ell - ell*beta |  <=  C_D log2(ell) + C_D' ,
+| e_ell |  = | k_ell - ell*beta |  <=  C_D log2(ell) + C_D' ,
   D(W)     <=  max_i |k_i - i*beta| + |e_ell|  <=  2 C_D log2(ell) + 2 C_D' .
 ```
 

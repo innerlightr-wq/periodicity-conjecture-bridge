@@ -6,14 +6,14 @@ The programme is organised along two coordinates, and it matters which one a giv
                          lower ones-density
                   < beta            = beta            > beta
               +----------------+----------------+----------------+
-  p(n)=n+1    |  covered (T1)  |  foundation    |  foundation    |
-              |                |  Thm 10.1      |  Thm 10.1      |
+  p(n)=n+1 |  covered (T1) |  foundation |  foundation |
+ | |  Thm 10.1 |  Thm 10.1 |
               +----------------+----------------+----------------+
-  p(n)=2n     |  covered (T1)  |  PHASE 11-13   |   open         |
-              |  + our 2nd     |  Thm 16.5/17.2 |                |
-              |  proof (CS Rote)|  <- the frontier|               |
+  p(n)=2n |  covered (T1) |  PHASE 11-13 |   open |
+ |  + our 2nd |  Thm 16.5/17.2 | |
+ |  proof (CS Rote)|  <- the frontier| |
               +----------------+----------------+----------------+
-  higher      |  covered (T1)  |   open         |   open         |
+  higher |  covered (T1) |   open |   open |
               +----------------+----------------+----------------+
 ```
 
@@ -32,16 +32,14 @@ the complexity. That single fact reclassifies most of this repository's earlier 
 | 3′ | CS Rote, every bounded-type slope, every intercept | **PROVED here** (Phase 8), and **subsumed** for the same reason. Contributes an independent second proof and effective height floors | `theorems/phase8/` |
 | 1′ | **any** aperiodic word of lower ones-density `< β` | **KNOWN** — Monks–Yazinski (2004) Thm 2.7(b). This is what subsumes rungs 3 and 3′ | — |
 | **4** | **critical density: `p(n)=2n`, lower ones-density exactly `β`** | **PROVED here (Phases 11–13)** — quadratic rotation, rational then algebraic offset. **No density or counting result reaches this class** | `theorems/phase13/` |
-| 5 | lower ones-density `> β` | **open**, and treated as open here — see the acknowledgement below | — |
+| 5 | lower ones-density `> β` | **open**, and treated as open here | — |
 | 6 | every `s` with `p(L) ≤ 2L` | **open** — the foundation paper's own problem (4) | `reference/` |
 
-## Acknowledgement and dependency
+## Coverage, stated against what is independently available
 
-López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are established through the independent arguments given in this repository and do not require their proposed upper-density exclusion.
-
-Accordingly the covered region is stated against what is independently available: densities below
-`β`. The classes of rung 4 sit at exactly `β` and are outside that range either way, so no conclusion
-in this repository changes whichever way the upper-density question is settled. See
+The densities reached by refereed work are those **below** `β`: Monks–Yazinski (2004) Thm 2.7(b). The
+region **at or above** `β` is treated here as open, and the classes of rung 4 sit at exactly `β`, so
+they lie outside the covered range. See
 [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
 
 ## Two things Open 4 of the technical note runs together

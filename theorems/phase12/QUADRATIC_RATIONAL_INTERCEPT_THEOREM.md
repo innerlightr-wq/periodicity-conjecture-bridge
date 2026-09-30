@@ -73,7 +73,7 @@ Checked over 5 slopes × 2 intercepts × 10 shifts × 400 points: **0 disagreeme
 `‖nα‖ > 1/((A+2)n)` for every `n ≥ 1`. And `‖x‖ ≥ ‖qx‖/q` with `q(mα + p/q) = qmα + p`:
 
 ```
-|| m*alpha + p/q ||  >=  || q m alpha ||/q  >  1/( (A+2) q^2 m )  =  1/(K m)        (m >= 1).
+|| m*alpha + p/q ||  >= || q m alpha ||/q  >  1/( (A+2) q^2 m )  =  1/(K m)        (m >= 1).
 ```
 
 Verified: `min_{1≤m<20000} K·m·‖mα+ρ‖ > 1` in **all 25** `(α,ρ)` cases (smallest observed `1.0718`).
@@ -117,7 +117,7 @@ So `t₀ > 1/(K|δ|)` **for the `m ≥ 1` part**. The `m = 0` orbit point is `{�
 **(P8) The witnesses.** Set `t(M) := min( C_M , 1/(K M) )` and
 
 ```
-ell(M) := the least ADMISSIBLE convergent denominator q_k of alpha with  || q_k alpha || < t(M) ,
+ell(M) := the least ADMISSIBLE convergent denominator q_k of alpha with || q_k alpha || < t(M) ,
 ```
 
 where *admissible* means "all of them" if `ρ ≠ 0`, and "those with `δ(q_k) > 0`" if `ρ = 0`.

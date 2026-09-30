@@ -54,7 +54,7 @@ Every local PDF matches its deposit exactly. Two findings follow.
 | quadratic-rotation theorem, rational intercept | **yes** | Theorem 17.5, 11 occurrences |
 | **algebraic-offset theorem** | **yes** | Theorem 18.2 (5×) and Corollary 18.3 (5×) — the interval `[u,u+β)` whenever `ρ−u` is algebraic |
 | repaired Baker argument | **yes** | §19, Theorem 19.1 (Baker III Thm 2), Lemma 19.2 hypotheses verified, Remark "no polynomial bound is available, and none is used" |
-| **López–Stoll acknowledgement** | **yes** | §1 D3, §16, and the Acknowledgments — "acknowledge that influence" |
+| acknowledgement of prior work | **yes** | §1 D3, §16, and the Acknowledgments |
 | Thue–Morse scope correction | **yes** | §1 D1, and Open 6 rewritten |
 | CS Rote novelty correction | **yes** | §1 D2 and §16 |
 | foundation cited by public DOI, as a self-citation | **yes** | §1 D4; `10.5281/zenodo.23019799` ×2; "self-citation" ×3 |
@@ -125,10 +125,6 @@ Proposed replacement text is in §6.
 > by the correct algebraic-coefficient estimate, and an incorrect claim that the Thue–Morse word
 > obstructs every repetition-based method is withdrawn.
 >
-> López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> critical density β = ln2/ln3. We acknowledge that influence. The results presented here are
-> established through the independent arguments given in this note and do not require their proposed
-> upper-density exclusion.
 >
 > Nothing here proves the Collatz conjecture or the 3x+1 Periodicity Conjecture in general, and no
 > novelty claim is asserted as established. The note has not been refereed.

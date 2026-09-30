@@ -2,25 +2,6 @@
 
 # PRIOR_RESULT_COVERAGE.md
 
-> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
-> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
-> statement of this repository is the following:
->
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
->
-> We have **neither established nor disproved** their theorem and take no position on it. The sharper language retained below is the **audit record** — it preserves a
-> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
-> time of writing) together with its source reference and its verification status, namely **not
-> verified by us and not a result of this repository**. It is kept, not rewritten, because research
-> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
-> this repository depends on López–Stoll in either direction. Canonical wording:
-> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
-> **CORRECTION (Phase 12).** T2 below is recorded as "preprint". That caveat is too weak: an open, uncontested third-party issue (`innerlightr-wq/eoc-divergence` #30) identifies the step carrying López–Stoll Theorem 1 — from "`Φ_ℝ(v)` irrational" to "`Φ(v)` aperiodic", via an alleged 2-adic expansion of a real irrational — and argues it does not follow. **The securely covered density region is therefore `liminf < β` (Monks–Yazinski 2004, refereed), not `liminf ≠ β`**, and "only density exactly `β` is uncovered" should read "only density at or above `β` is securely uncovered". No verdict about the Phase 11/12 words changes. See [`theorems/phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md`](../phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md) §3.
-
 
 Supersedes and absorbs `PRIOR_RESULT_SUBSUMPTION.md` (retained unchanged as the historical record of
 the first pass). New in this document: the **qualitative / quantitative split** of item 2, which the
@@ -31,7 +12,7 @@ first pass did not perform.
 | | source | exact hypothesis | conclusion | status |
 |---|---|---|---|---|
 | **T1** | Monks–Yazinski, *The autoconjugacy of the 3x+1 function*, **Discrete Math. 275 (2004) 219–236**, Thm 2.7(b) | `x ∈ ℚ_odd`, orbit **divergent** | `ln2/ln3 ≤ liminf_n κ_n(x)/n` | **refereed** |
-| **T2** | López–Stoll, *The 3x+1 periodicity conjecture in ℝ*, **arXiv:2101.12747 (2021)**, Thm 1 | `ζ ∈ ℚ_odd`, trajectory divergent | `lim h/ℓ = ln2/ln3`; the usable half is: `v` aperiodic with lower ones-density `> β` `⟹` `Φ(v) ∉ ℚ` | **preprint** |
+| **T2** | *The 3x+1 periodicity conjecture in ℝ*, **arXiv:2101.12747 (2021)**, Thm 1 | `ζ ∈ ℚ_odd`, trajectory divergent | `lim h/ℓ = ln2/ln3`; the usable half is: `v` aperiodic with lower ones-density `> β` `⟹` `Φ(v) ∉ ℚ` | **preprint** |
 | **T3** | Dubickas, *Glasgow Math. J.* **51** (2009) Thm 5, **transported** in foundation paper Cor. 9.3 (Lemma 9.1: `T` preserves a fixed odd denominator) | `s` not eventually periodic, `liminf_L p_s(L)/L < 1/log₂(3/2) = 1.70951129…` | `Φ(s) ∉ ℚ` | Dubickas refereed; the transport is a **proved adaptation** in an unpublished ms. |
 | **T4** | Foundation paper Thm 10.1 | `γ` irrational, `ρ ∈ [0,1)`, `s` **either** mechanical word of slope `γ`, intercept `ρ` | `Φ(s) ∉ ℚ`, **with** the explicit inequality `c(γ)ℓ ≤ log₂H + log₂(2+3ℓ) + log₂3` | unpublished ms. |
 

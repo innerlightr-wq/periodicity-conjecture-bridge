@@ -96,7 +96,7 @@ Let `A_m := mα + ρ − j_m` with `j_m` the nearest integer to `mα + ρ − β
 |A_m − β|` and
 
 ```
-c_m = | A_m ln 3 - ln 2 | / ln 3  =  | Lambda_m | / ln 3 .
+c_m = | A_m ln 3 - ln 2 | / ln 3  = | Lambda_m | / ln 3 .
 ```
 
 **(a) The boundary is never hit.** `mα+ρ ≡ β (mod 1)` would make `β = mα+ρ−j` algebraic,

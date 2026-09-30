@@ -35,7 +35,7 @@ Combined with "`v` eventually periodic `⟺` the orbit of `Φ(v)` is eventually 
 aperiodic with density `1/2 < β`. Done.
 
 **That deduction is written out verbatim in this programme's own foundation paper**, §8 "What is
-known", which also records that the above-`β` half is López–Stoll 2021 (arXiv:2101.12747) Theorem 1
+known", which also records that the above-`β` half is 2021 (arXiv:2101.12747) Theorem 1
 — a preprint — and that "outside the critical density the conclusion for that family was already
 available". Sources read first-hand. Details and the four-way classification:
 `THUE_MORSE_LITERATURE_AUDIT.md`.
@@ -78,7 +78,7 @@ transcendental by Gelfond–Schneider.
 
 > **For every aperiodic parity word `v` with `liminf_n k_n(v)/n ≠ β`, `Φ(v) ∉ ℚ`.**
 > Below `β`: **Monks–Yazinski (2004), Theorem 2.7(b)** — refereed.
-> Above `β`: **López–Stoll (2021), Theorem 1** — arXiv preprint.
+> Above `β`: **arXiv:2101.12747 (2021), Theorem 1** — arXiv preprint.
 
 Everything this repository has proved about CS Rote sequences, Thue–Morse and uniform substitution
 fixed points is a corollary. This repository's own contribution, stated honestly, is:

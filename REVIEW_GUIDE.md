@@ -4,10 +4,9 @@ This is the short path into the work for someone qualified to check it. It state
 its assumptions, lists the four places where I most want an expert eye, and says what would invalidate
 or narrow the result. It assumes no familiarity with the repository.
 
-**Manuscript:** `technical-note/note_rev4.pdf` (Revision 4). Revision 3 is the currently deposited
-version, doi:[10.5281/zenodo.23068563](https://doi.org/10.5281/zenodo.23068563); Revision 4 corrects
-it in four places without changing any mathematical statement, and is not yet deposited. Section
-numbers below are Revision 4's.
+**Manuscript:** `technical-note/note_rev4.pdf`, deposited as Revision 4,
+doi:[10.5281/zenodo.23070093](https://doi.org/10.5281/zenodo.23070093) — byte-identical to the file in
+this repository. Section numbers below are Revision 4's.
 
 **Standing caveats, stated once.** Nothing here has been refereed. The foundation paper it builds on
 (doi:10.5281/zenodo.23019799) is also a preprint and is **by the same author** — a self-citation.
@@ -61,11 +60,9 @@ when `u+β > 1` and the arc wraps. So WLOG `u = 0` and `ρ` algebraic (Revision 
 | S10 | the **mechanism**: read the agreement excess as a first entry time of the rotation orbit into an arc at a partition endpoint | **foundation paper §12 open problem (1)** | **preprint, self-citation** | the shape of the whole argument. **Not original here** |
 | — | Monks–Yazinski, *Discrete Math.* **275** (2004) 219–236, Thm 2.7(b) | refereed | used **only** to say which densities are already covered — not to prove anything |
 
-**Not relied on.** López–Stoll, *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021),
-Theorem 1. Their work on density and the conjugacy map helped guide this programme toward the critical
-density `β = ln2/ln3`, and I acknowledge that influence; the results here are established through the
-independent arguments in the manuscript and do not require their proposed upper-density exclusion. I
-take no position on it — neither established nor disproved — and no step invokes it.
+**On results not used as premises.** The dependency table above lists everything the conclusions rest
+on. Results that are relevant to the literature landscape but are not used as premises are discussed in
+the manuscript; nothing in §3 below depends on any of them.
 
 ## 3. The four highest-priority checks
 

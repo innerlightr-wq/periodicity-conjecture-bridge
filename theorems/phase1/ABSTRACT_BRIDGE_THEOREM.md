@@ -14,7 +14,7 @@ v₂(M_n) = v₂(vδ_n · (Φ(s) − Φ(W_n^∞))) = v₂(Φ(s) − Φ(W_n^∞))
 ```
 the middle equality being Proposition 2.2 applied to `v = s`, `v' = W_n^∞` **verbatim, with no hypothesis on `s` or `W_n` beyond both being elements of `{0,1}ℕ`.** Since `M_n` is a nonzero integer of 2-adic valuation exactly `L_n`,
 ```
-2^{L_n} | M_n  and  |M_n| ≥ 2^{L_n}.                                                    (★)
+2^{L_n} | M_n  and |M_n| ≥ 2^{L_n}.                                                    (★)
 ```
 This is **exact**, not an inequality with slack — the isometry gives equality of valuations, and `(★)` follows from `M_n ≠ 0`.
 

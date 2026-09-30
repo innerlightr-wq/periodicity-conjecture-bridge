@@ -123,14 +123,9 @@ under `reference/` retains its own separate copyright.
    something I have not found already covers the same ground. Attribution corrections are welcome
    without qualification.
 
-   One acknowledgement belongs here rather than in a footnote. **López–Stoll's work on density and the
-   3x+1 conjugacy map helped guide this programme toward the critical density `β = ln2/ln3`. I
-   acknowledge that influence.** The critical-density Sturmian word is theirs, and so is the
-   observation that critical density is where the existing methods stop — which is why `β` turned out
-   to be the place worth working. The results presented here are established through the independent
-   arguments given in this repository and do not require their proposed upper-density exclusion; I
-   take no position on that proposal in either direction. See
-   [`DEPENDENCE_ON_PRIOR_RESULTS.md`](DEPENDENCE_ON_PRIOR_RESULTS.md).
+   Attribution is set out in the manuscript and summarised in
+   [`DEPENDENCE_ON_PRIOR_RESULTS.md`](DEPENDENCE_ON_PRIOR_RESULTS.md); corrections to it are welcome
+   without qualification.
 5. **Extensions beyond algebraic offsets.** The current statement covers codings where the offset
    between the intercept and the interval endpoint is algebraic. When that offset is transcendental
    both of the boundary bounds fail, and I do not see a route. Whether that is a real barrier or a

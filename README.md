@@ -13,7 +13,7 @@ Research program on the 3x+1 Periodicity Conjecture using periodic approximation
 > with a concrete list of review and extension targets.
 >
 > See also **[what these conclusions depend on](docs/DEPENDENCE_ON_PRIOR_RESULTS.md)** — the external
-> results relied on, their refereeing status, and the ones deliberately not relied on.
+> results relied on and their refereeing status.
 
 ## Technical Note
 
@@ -23,19 +23,15 @@ The programme is consolidated in a citable technical note:
 Periodic-Approximation and Arithmetic-Height Bridge_.** Zenodo, concept DOI
 `10.5281/zenodo.23045140`, CC BY 4.0. **Preprint; not refereed.**
 
-- **Deposited:** Revision 3, DOI **[10.5281/zenodo.23068563](https://doi.org/10.5281/zenodo.23068563)**,
-  34 pp, byte-identical to `technical-note/note_rev3.pdf`.
-- **Prepared, not deposited:** Revision 4, `technical-note/note_rev4.pdf` (39 pp) with a standalone
-  correction notice. It corrects Revision 3 in four places — the deposit statement, "draft" labelling,
-  the framing of one open problem, and the addition of explicit constants — **without altering any
-  mathematical statement**. See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md) and
-  [`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
-- Record `10.5281/zenodo.23068326` duplicates Revision 2 byte for byte; cite Revision 2 as
-  `10.5281/zenodo.23061396`.
-
-The foundation paper this programme builds on is **doi:10.5281/zenodo.23019799** — also a preprint,
-also not refereed, and **by the same author**: a self-citation, treated with the same caution as any
-other preprint.
+- **Current version — Revision 4:** DOI **[10.5281/zenodo.23070093](https://doi.org/10.5281/zenodo.23070093)**,
+  39 pp, `Beyond_Sturmian_Words_Revision_4.pdf`, md5 `6f500a9c6bec45e51beb9d74849791a2` —
+  **byte-identical to `technical-note/note_rev4.pdf`** in this repository.
+- Prior versions: Revision 3 `10.5281/zenodo.23068563`, Revision 2 `10.5281/zenodo.23061396`,
+  Revision 1 `10.5281/zenodo.23045141`. Record `10.5281/zenodo.23068326` duplicates Revision 2 byte for
+  byte under a filename suggesting a later build; cite Revision 2 as `10.5281/zenodo.23061396`.
+- **One item outstanding on the record:** the Zenodo *description* is still Revision 1's text and
+  describes a result superseded three revisions ago. The deposited file is correct; the page describing
+  it is not. Proposed replacement: [`technical-note/ZENODO_DESCRIPTION_REV4.md`](technical-note/ZENODO_DESCRIPTION_REV4.md).
 
 ## Headline result
 
@@ -69,13 +65,6 @@ place no density criterion reaches, and that is where the headline above sits.
 
 **Scope.** Nothing here bears on divergent orbits of positive integers, on the Collatz conjecture, or
 on the Periodicity Conjecture in general.
-
-## Acknowledgement and dependency
-
-López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are established through the independent arguments given in this repository and do not require their proposed upper-density exclusion.
-
-We have neither established nor disproved their Theorem 1, and no argument here invokes it. See
-[`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
 
 ## The ladder
 

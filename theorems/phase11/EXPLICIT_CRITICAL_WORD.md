@@ -32,7 +32,7 @@ arc of the circle is not invariant under a non-trivial rotation. ∎
 `k_N/N → β`. The limit exists, hence `liminf = limsup = β`. ∎
 
 This is the whole point: both T1 (Monks–Yazinski 2004 Thm 2.7(b), needs `liminf < β`) and T2
-(López–Stoll 2021 Thm 1, needs lower density `> β`) are **strict**, so neither applies.
+(arXiv:2101.12747 (2021) Thm 1, needs lower density `> β`) are **strict**, so neither applies.
 
 ## 4. Factor complexity — and the role of `β ∉ ℤα + ℤ`
 
@@ -68,7 +68,7 @@ theorem proved here is for `ρ = 1/7`, and that is not cosmetic.
 | exclusion | hypothesis | applies to `s`? |
 |---|---|---|
 | **T1** Monks–Yazinski 2004 Thm 2.7(b) [refereed] | aperiodic, `liminf k_n/n < β` | **No** — density is `= β` |
-| **T2** López–Stoll 2021 Thm 1 [preprint] | aperiodic, lower density `> β` | **No** — density is `= β` |
+| **T2** arXiv:2101.12747 (2021) Thm 1 [preprint] | aperiodic, lower density `> β` | **No** — density is `= β` |
 | **T3** Dubickas transported (foundation Cor. 9.3) | `liminf p(L)/L < 1/log₂(3/2) = 1.70951129…` | **No** — `liminf p(L)/L = 2` |
 | **T4** foundation Thm 10.1 (all Sturmian) | `s` a mechanical word, `p(n) = n+1` | **No** — `p(20) = 40 ≠ 21` |
 

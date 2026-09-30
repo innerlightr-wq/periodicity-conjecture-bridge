@@ -13,7 +13,7 @@ Add immediately after the rung table:
 > **Reading the ladder by density, not by complexity (Phase 9B).** The complexity axis of this
 > diagram is the wrong coordinate. The known dichotomy for `Φ(v) ∉ ℚ` is by **lower ones-density**:
 > below `β = ln2/ln3 = 0.63093` by Monks–Yazinski (2004) Thm 2.7(b) [refereed], above `β` by
-> López–Stoll (2021) Thm 1 [preprint]. **Every rung above sits at ones-density `1/2`**, hence is a
+> arXiv:2101.12747 (2021) Thm 1 [preprint]. **Every rung above sits at ones-density `1/2`**, hence is a
 > corollary of the 2004 result, whatever its complexity. What the rungs supply is an independent
 > second proof by a different mechanism, not a new class. The one uncovered density is exactly `β`,
 > which no rung above approaches. See `theorems/phase9b/`.
@@ -38,7 +38,7 @@ And change the Phase 9 rows' status from `PROVED` to `PROVED (subsumed — see t
 ## 4. `PRIOR_ART.md` — add a standing gate
 
 > **Standing gate (Phase 9B).** Before claiming novelty for any class, check the conclusion against
-> the density dichotomy (`< β`: Monks–Yazinski 2004 Thm 2.7(b); `> β`: López–Stoll 2021 Thm 1). All
+> the density dichotomy (`< β`: Monks–Yazinski 2004 Thm 2.7(b); `> β`: arXiv:2101.12747 (2021) Thm 1). All
 > three searches recorded here targeted the *mechanism* and missed this. A class is only new if it
 > sits at lower ones-density exactly `β`.
 

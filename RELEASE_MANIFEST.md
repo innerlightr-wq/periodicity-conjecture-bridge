@@ -1,6 +1,8 @@
 # RELEASE_MANIFEST.md — Revision 4 package
 
-**Status: prepared for review. Nothing deposited, uploaded, or published.**
+**Status: Revision 4 is deposited as doi:10.5281/zenodo.23070093**, byte-identical to
+`technical-note/note_rev4.pdf` (md5 `6f500a9c6bec45e51beb9d74849791a2`, 514 623 bytes, 39 pp).
+One item remains outstanding on the record: its Zenodo *description* is still Revision 1's text.
 Branch `phase15-corrected-release`. Commit recorded in §5 below.
 
 ## 1. New artifacts
@@ -11,8 +13,8 @@ Branch `phase15-corrected-release`. Commit recorded in §5 below.
 | `technical-note/note_rev4.pdf` | 39 | `861d9994dddbc2df2b37c6dc6e80e308cc432cc760f048621d6f21854eeeacdf` |
 | `technical-note/correction_notice_rev4.tex` | — | `9fc42ed8f2f007bb9fdee3deb4e734989800cdb0cc22724db89d7bdc9580fe37` |
 | `technical-note/correction_notice_rev4.pdf` | 2 | `b7edea35887d1065b73db5b6b67b3a59b9ffc3b4630efce179620b77ef7fd78b` |
-| `technical-note/ZENODO_DESCRIPTION_REV4.md` | — | `f60af3df6bdd9ab32b55f15dc1e35d3450d66ad914ceb3da10b5ce81bd06e3ec` |
-| `REVIEW_GUIDE.md` | — | `11dee4da6d5324936ea7ee1c954f40f7d7d617b01f52c9d939f98d38aedd366a` |
+| `technical-note/ZENODO_DESCRIPTION_REV4.md` | — | `6e051654b3a17ac98baad46e7714d5b368652f5af510337f2164c83a95f08529` |
+| `REVIEW_GUIDE.md` | — | `e63a709fce3a500575ab67779bcabd26ac18943771b9df6794a33da7aa54e7e9` |
 | `RELEASE_MANIFEST.md` | — | (this file) |
 
 ## 2. Deposited artifacts — unchanged, byte for byte
@@ -35,6 +37,7 @@ Every deposited file is untouched by this phase. Verified at the time of the com
 | `10.5281/zenodo.23061396` | 2026-09-30 | `Beyond_Sturmian_Words_Revision_2.pdf` | Revision 2, 21 pp |
 | `10.5281/zenodo.23068326` | 2026-09-30 | `Beyond_Sturmian_Words_Latest_Built.pdf` | **the same file as Revision 2, byte for byte** |
 | `10.5281/zenodo.23068563` | 2026-09-30 | `Beyond_Sturmian_Words_Revision_3_DRAFT.pdf` | Revision 3, 34 pp |
+| `10.5281/zenodo.23070093` | 2026-09-30 | `Beyond_Sturmian_Words_Revision_4.pdf` | **Revision 4, 39 pp — current**; md5 `6f500a9c6bec45e51beb9d74849791a2`, byte-identical to `technical-note/note_rev4.pdf` |
 
 Record `…23068326` is documented, not altered. Zenodo versions are permanent by design; the correct
 response is accurate citation guidance, which is given in the manuscript's provenance table, in the
@@ -104,7 +107,9 @@ xdg-open ~/Downloads/Beyond_Sturmian_Words_Revision_4_Correction_Notice.pdf
 
 ## 7. What is deliberately not done
 
-- Nothing pushed; nothing deposited; no Zenodo field edited; no review invitation sent.
+- Revision 4 **is** deposited (`10.5281/zenodo.23070093`); its Zenodo **description** has not been
+  updated and still carries Revision 1's text, so `ZENODO_DESCRIPTION_REV4.md` remains an outstanding
+  proposal. No review invitation sent.
 - No deposited PDF modified or renamed.
 - No mathematical statement of Revision 3 altered or withdrawn.
 - The duplicate record is documented, not deleted.

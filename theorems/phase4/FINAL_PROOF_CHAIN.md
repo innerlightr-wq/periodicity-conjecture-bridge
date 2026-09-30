@@ -4,25 +4,25 @@ Shortest architecture actually used by `QUADRATIC_CS_ROTE_THEOREM.md` — the sp
 
 ```
 quadratic slope gamma, bounded partial quotients, max value A
-    |
+ |
 Theorem 10.2 (cited, ADQZ 2001): arbitrarily long initial squares in u
-    |
+ |
 BHZ Corollary 3.5, omega(-gamma) case (cited, verified): term2(k) = 1+a_{2k-1}+q_{2k-3}/q_{2k-2}
-    |
+ |
 term2(k) > 2 + 1/(A+1), for EVERY k in the periodic regime (elementary CF bound, this phase)
-    |
+ |
 Rote transfer theorem (exact, Phase 2): depth preserved exactly (L+1); root -> V (even weight) or R=V-Vbar (odd weight)
-    |
+ |
 KEY FACT (this phase): R = V-Vbar has density EXACTLY 1/2, unconditionally
-    |
+ |
 required threshold collapses: tau=1 needs r_u>log2(3)<2; tau=1/2 needs r_u>2*max(1,0.5*log2(3))=2
-    |          <- both branches need only r_u > 2, which the bound above supplies with margin 1/(A+1)
+ |          <- both branches need only r_u > 2, which the bound above supplies with margin 1/(A+1)
 O(log ell) discrepancy of V and R (Phase 2 three-distance-theorem reduction, extends unchanged)
-    |
+ |
 S_k >= ell_k/(A+1) - O(log ell_k)  ->  +infinity
-    |
+ |
 abstract irrationality criterion (Phase 2, every subtlety resolved)
-    |
+ |
 Phi(v) not in Q
 ```
 

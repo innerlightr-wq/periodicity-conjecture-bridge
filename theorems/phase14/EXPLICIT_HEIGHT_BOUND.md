@@ -38,7 +38,7 @@ about a factor of 4 in the exponent. The sharper form is used from here on.
 `196x² − 28a_m x + (a_m²−245m²)`:
 
 ```
-196 <= 196 m^2,   28|a_m| <= 588m + 840 <= 1428 m^2,   |a_m^2 - 245 m^2| <= 2601 m^2   (m >= 1),
+196 <= 196 m^2,   28|a_m| <= 588m + 840 <= 1428 m^2, |a_m^2 - 245 m^2| <= 2601 m^2   (m >= 1),
 ```
 
 so **`H(A_m) ≤ 2601 m²` for every `m ≥ 1`**. The measured maximum of `H(A_m)/m²` over `m ≤ 20000` is

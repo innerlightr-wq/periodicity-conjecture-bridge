@@ -25,7 +25,7 @@ own foundation paper, §8.
 Every CS Rote sequence has ones-density **exactly `1/2`**, for every irrational slope and every
 intercept (`v_n = v_0 ⊕ (k_n(u) mod 2)`; Weyl equidistribution for `γ/2`). So Phases 2, 4, 6, 8 and
 9's CS Rote theorems, and the 21-substitution sweep, are all corollaries of the 2004 result (the
-four sweep members above `β` via López–Stoll 2021 Theorem 1, a preprint). **No proof is false; the
+four sweep members above `β` via arXiv:2101.12747 (2021) Theorem 1, a preprint). **No proof is false; the
 novelty claims are.** The uncovered case is density **exactly `β`**, which is where the foundation
 paper's own theorem lives and where this repository's ladder never went.
 

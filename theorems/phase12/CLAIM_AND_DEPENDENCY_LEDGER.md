@@ -11,26 +11,26 @@ settled.
 ```
                      THEOREM 12:  Phi(s) not in Q
                  s_n = 1 <=> {n a + r} in [0, beta),  a quadratic, r rational
-                                      |
+ |
         +-----------------------------+-----------------------------+
-        |                             |                             |
+ | | |
    COMBINATORIAL                 ANALYTIC                     ARITHMETIC
-        |                             |                             |
+ | | |
   (P4) mismatch set            (P6) arc at 0                (P11) 2^L <= H F(W)
-   M(d) = 2 arcs               ||n a|| > 1/((A+2)n)          [S1] isometry
+   M(d) = 2 arcs ||n a|| > 1/((A+2)n)          [S1] isometry
    [M1] no-wrap |d| <= .369     [S3] bounded p.q. (a quad)   [S2] periodic formula
-   [M2] signed rule 0 in M          |                        [A4] criterion, all
-        |                      (P7) arc at beta                  subtleties resolved
-  (P5) relaxation                   |                             |
+   [M2] signed rule 0 in M |                        [A4] criterion, all
+ |                      (P7) arc at beta                  subtleties resolved
+  (P5) relaxation | |
    [M3] two-sided                 c_m >= exp(-c1 (log m)^k)  (P10) drift/discrepancy
-   [M2] one-sided (r=0)             |                         [S5] Kuipers-Niederreiter
-        |                     [S4] BAKER III Thm 2                Ch.2 Thm 3.4
+   [M2] one-sided (r=0) |                         [S5] Kuipers-Niederreiter
+ |                     [S4] BAKER III Thm 2                Ch.2 Thm 3.4
   (P1)(P2)(P3)                [M4] A_m > beta - 1/2 > 0       [A3] uniform in rho
-   [S6] Rote/Berstel-Vuillon  [M5] H(A_m) = O(m^2), d = 2          |
-   (complexity 2n; coverage    (P8) witnesses                      |
-    claim only)                [M6] log ell(M) = O((log M)^k)      |
-                               [M7] ell(M) > q^2 M -> infinity     |
-                                     |                             |
+   [S6] Rote/Berstel-Vuillon  [M5] H(A_m) = O(m^2), d = 2 |
+   (complexity 2n; coverage    (P8) witnesses |
+    claim only)                [M6] log ell(M) = O((log M)^k) |
+                               [M7] ell(M) > q^2 M -> infinity |
+ | |
                                      +------> (P9) L - ell >= M <--+
 ```
 

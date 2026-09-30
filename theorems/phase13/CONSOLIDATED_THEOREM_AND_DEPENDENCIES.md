@@ -24,26 +24,26 @@ chain for the established case and states which links the extension changes.
  [S6] Rote / Berstel-Vuillon    [S3] Lagrange, Perron:          [S1] Bernstein-Lagarias:
       p(n) = 2n  (coverage           quadratic a  =>  a_i <= A        v2(Phi(a)-Phi(b)) = lcp
       claim only)                    q_{k+1} <= (A+1) q_k            Phi . S = T . Phi
-        |                            1/(q_{k+1}+q_k) < ||q_k a||   [S2] Phi(W^inf) = c_W/(2^l-3^k)
- [M1] M(d) = two arcs                               < 1/q_{k+1}        |
-      needs |d| <= min(b,1-b)            |                        [A1] S(W) = lcp - log2 F(W)
+ |                            1/(q_{k+1}+q_k) < ||q_k a||   [S2] Phi(W^inf) = c_W/(2^l-3^k)
+ [M1] M(d) = two arcs                               < 1/q_{k+1} |
+      needs |d| <= min(b,1-b) |                        [A1] S(W) = lcp - log2 F(W)
  [M2] signed rule: 0 in M(d)     ARC AT 0                        [A2] limsup S = +inf => Phi not in Q
-      iff d < 0                  [M9] rational r:  ||ma+r||       [A4] fine print: delta_W odd,
+      iff d < 0                  [M9] rational r: ||ma+r||       [A4] fine print: delta_W odd,
  [M3] two-ball relaxation              > 1/((A+2)q^2 m)                M_n != 0, cancellation,
       (unconditional)            [M13] algebraic r: Liouville          no ceilings
- [M8] L(l) - l = m*(l)                 ||ma+r|| >= c m^{-D^2}     [A3] discrepancy uniform in r
+ [M8] L(l) - l = m*(l) ||ma+r|| >= c m^{-D^2}     [A3] discrepancy uniform in r
       (mechanism = [S8])         [M14] exact hits classified      [S5] Kuipers-Niederreiter
-        |                              (unique index m0)               Ch.2 Thm 3.4
-        |                        ARC AT BETA                      [A5] beta log2(3) = 1  =>  (H)
-        |                        [S7] Gelfond-Schneider:               S >= (L-l) - C log2 l - C0
-        |                              beta transcendental              |
-        |                        [M4] A_m > beta - 1/2 > 0                |
-        |                        [M5] deg A_m <= D, H = O(m^D)            |
-        |                        [S4] BAKER (III Thm 2, or I Thm 1.1)     |
-        |                        [S9] Waldschmidt Thm 10.1 (explicit)     |
-        |                              |                                 |
+ |                              (unique index m0)               Ch.2 Thm 3.4
+ |                        ARC AT BETA                      [A5] beta log2(3) = 1  =>  (H)
+ |                        [S7] Gelfond-Schneider:               S >= (L-l) - C log2 l - C0
+ |                              beta transcendental |
+ |                        [M4] A_m > beta - 1/2 > 0 |
+ |                        [M5] deg A_m <= D, H = O(m^D) |
+ |                        [S4] BAKER (III Thm 2, or I Thm 1.1) |
+ |                        [S9] Waldschmidt Thm 10.1 (explicit) |
+ | | |
         +---------> [M6] log l(M) = O((log M)^k),  [M7] l(M) -> inf <-----+
-                              |
+ |
                     [M12/M15] L(l(M)) - l(M) >= M   =>   S -> +inf   =>   Phi(s) not in Q
 ```
 

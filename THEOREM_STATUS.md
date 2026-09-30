@@ -98,7 +98,7 @@ classes are a measure-zero subset.
    are not. Per-`(α,ρ)` they are a finite computation. Not claimed for the family.
 3. **Transcendence** — is `m*(ℓ)/ℓ > 1+ε` for infinitely many convergents? If so Ridout upgrades
    irrationality to transcendence.
-4. **Density `> β`** — treated as open here; see the acknowledgement below.
+4. **Density `> β`** — treated as open here.
 5. **All `s` with `p(L) ≤ 2L`** — the foundation paper's problem (4). Our classes are one
    two-parameter family inside it.
 6. **CS Rote over unbounded-partial-quotient slopes** — *an unfinished second proof, not an open
@@ -106,24 +106,17 @@ classes are a measure-zero subset.
    this repository's own criterion, whose odd-weight branch has margin exactly `0` at an
    `ice(ω) = 2` intercept.
 
-## Acknowledgement and dependency
-
-López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are established through the independent arguments given in this repository and do not require their proposed upper-density exclusion.
-
-We have neither established nor disproved their Theorem 1, and no argument here invokes it.
-See [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
 ## Published record
 
-**Deposited:** Revision 3, doi:10.5281/zenodo.23068563 (concept 10.5281/zenodo.23045140), CC BY 4.0,
-34 pp, byte-identical to `technical-note/note_rev3.pdf`.
+**Current version — Revision 4:** doi:10.5281/zenodo.23070093 (concept `10.5281/zenodo.23045140`),
+CC BY 4.0, 39 pp, md5 `6f500a9c6bec45e51beb9d74849791a2` — **byte-identical to
+`technical-note/note_rev4.pdf`**. Prior versions: Revision 3 `…23068563`, Revision 2 `…23061396`,
+Revision 1 `…23045141`; record `…23068326` duplicates Revision 2 byte for byte, so cite Revision 2 as
+`…23061396`.
 
-**Prepared, not deposited:** Revision 4 — `technical-note/note_rev4.{tex,pdf}` (39 pp) with
-`correction_notice_rev4.{tex,pdf}`, correcting Revision 3 in four places without altering any
-mathematical statement. Proposed record text: `technical-note/ZENODO_DESCRIPTION_REV4.md`. Release
-manifest: [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md); reconciliation:
-[`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md).
-Record 10.5281/zenodo.23068326 duplicates Revision 2 byte for byte; cite Revision 2 as
-10.5281/zenodo.23061396.
+**Outstanding on the record:** the Zenodo description is still Revision 1's text. Proposed replacement
+in `technical-note/ZENODO_DESCRIPTION_REV4.md`. Reconciliation:
+[`theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md`](theorems/phase14/ZENODO_RELEASE_RECONCILIATION.md);
+release manifest: [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 **For reviewers:** [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md).

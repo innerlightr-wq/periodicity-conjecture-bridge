@@ -2,23 +2,6 @@
 
 # DENSITY_COMPLEXITY_LADDER.md
 
-> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
-> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
-> statement of this repository is the following:
->
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
->
-> We have **neither established nor disproved** their theorem and take no position on it. The sharper language retained below is the **audit record** — it preserves a
-> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
-> time of writing) together with its source reference and its verification status, namely **not
-> verified by us and not a result of this repository**. It is kept, not rewritten, because research
-> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
-> this repository depends on López–Stoll in either direction. Canonical wording:
-> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
 ## 1. The four load-bearing results, with exact hypotheses
 
 Notation: `v ∈ {0,1}^ℕ` a parity word; `k_n(v) = |v[0:n]|_1`; `p_v(L)` the factor complexity;
@@ -31,7 +14,7 @@ integer. Note `β·log₂3 = 1` exactly — that identity is what "critical" mea
 |---|---|---|---|---|
 | **T1** | **Monks–Yazinski**, *The autoconjugacy of the 3x+1 function*, **Discrete Math. 275 (2004) 219–236, Thm 2.7(b)** | `x ∈ ℚ_odd` with **divergent** orbit | `ln2/ln3 ≤ liminf_n κ_n(x)/n` | **refereed** |
 | | *contrapositive used here* | `v` aperiodic, `liminf k_n(v)/n < β` | `Φ(v) ∉ ℚ` | — |
-| **T2** | **López–Stoll**, *The 3x+1 periodicity conjecture in ℝ*, **arXiv:2101.12747 (2021), Thm 1** | `v` aperiodic, lower ones-density **`> β`** | `Φ(v) ∉ ℚ` | **preprint** |
+| **T2** | *The 3x+1 periodicity conjecture in ℝ*, **arXiv:2101.12747 (2021), Thm 1** | `v` aperiodic, lower ones-density **`> β`** | `Φ(v) ∉ ℚ` | **preprint** |
 | **T3** | **Dubickas transported** — foundation paper **Cor. 9.3** (after Dubickas, *Glasgow Math. J.* 51 (2009), Thm 5) | `s` not eventually periodic, `liminf_L p_s(L)/L < 1/λ = 1.70951129…` | `Φ(s) ∉ ℚ` | unpublished ms. (Dubickas's own theorem is refereed) |
 | **T4** | **Foundation paper, Thm 10.1** | `γ` irrational, `ρ ∈ [0,1)`, `s` **either mechanical word** of slope `γ`, intercept `ρ` (so `p_s(n) = n+1`) | `Φ(s) ∉ ℚ` | unpublished ms. |
 
@@ -45,11 +28,11 @@ Plot a word by `(d, c) :=` (lower ones-density, `liminf p(L)/L`).
 ```
                  c = liminf p(L)/L
    2n  --|--------------------------------------------------------
-         |  T1 covers      |  ###############  |  T2 covers
-         |  (refereed)     |  ## UNCOVERED ##  |  (preprint)
+ |  T1 covers |  ############### |  T2 covers
+ |  (refereed) |  ## UNCOVERED ## |  (preprint)
 1.70951--|-----------------|-------------------|------------------
-         |  T3 covers everything below this line, at every density
-         |  (and T4 covers the whole line c = 1, i.e. all Sturmian words)
+ |  T3 covers everything below this line, at every density
+ |  (and T4 covers the whole line c = 1, i.e. all Sturmian words)
       1  --|-------------|-----------------|--------------------
             0          d < beta        d = beta        d > beta      1
 ```

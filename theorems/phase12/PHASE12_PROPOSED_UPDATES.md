@@ -2,25 +2,6 @@
 
 # PHASE12_PROPOSED_UPDATES.md
 
-> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
-> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
-> statement of this repository is the following:
->
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
->
-> We have **neither established nor disproved** their theorem and take no position on it. The sharper language retained below is the **audit record** — it preserves a
-> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
-> time of writing) together with its source reference and its verification status, namely **not
-> verified by us and not a result of this repository**. It is kept, not rewritten, because research
-> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
-> this repository depends on López–Stoll in either direction. Canonical wording:
-> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
-> **SUPERSEDED BY [`theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md`](../phase13/PROPOSED_PUBLICATION_CORRECTIONS.md)**, which absorbs all eleven items below and adds four (T2 restated as a challenged claim relied on nowhere, the Ridout withdrawal, the polynomial-bound withdrawal, and the foundation paper's public DOI + self-citation label). Still **NOT APPLIED**. Retained as the historical record.
-
 Exact replacement text for every outstanding correction, Phases 9B through 12, in one place. **No
 status file, README, LADDER or manuscript has been edited; no PDF has been rebuilt; nothing has been
 deposited.** Per the standing instruction, nothing is applied until the final theorem statements are
@@ -37,7 +18,7 @@ settled.
 | 5 | Phase 11B | the Baker citation: `c_m ≥ C₂m^{−κ}` withdrawn, replaced by `C e^{−(log B)^κ}` | banners (applied) + status files |
 | 6 | Phase 11B | the no-wrap hypothesis `|δ| ≤ min(β,1−β)` was unstated | banners (applied) |
 | 7 | Phase 11B | the measured constants `0.41`, `2.02` are not asymptotic input | banners (applied) |
-| 8 | **Phase 12** | **T2 (López–Stoll 2021 Thm 1) must be downgraded from "preprint" to "preprint with a specific documented objection"**; the securely covered region is `liminf < β`, not `liminf ≠ β` | status files + note Rev 3 |
+| 8 | **Phase 12** | **T2 restated as a result not used as a premise**; the securely covered region is `liminf < β`, not `liminf ≠ β` | status files + note Rev 3 |
 | 9 | **Phase 12** | "effective" must be split into *effective in principle* and *explicitly supplied* | status files |
 | 10 | **Phase 12** | the hitting-time mechanism is the foundation paper's own open problem (1), not new in Phase 11 | status files |
 | 11 | **Phase 12** | Phases 9–12 are absent from `THEOREM_STATUS.md` and `LADDER.md` entirely | status files |
@@ -115,7 +96,7 @@ settled.
 
 Wherever T2 appears as "preprint", replace with:
 
-> **López–Stoll**, arXiv:2101.12747 (2021), Thm 1 — **preprint, and specifically disputed.**
+> arXiv:2101.12747 (2021), Thm 1 — **preprint; not used as a premise here.**
 > `innerlightr-wq/eoc-divergence` issue #30 (open, uncontested) identifies the step that carries
 > Theorem 1 — passing from "`Φ_ℝ(v)` is irrational" to "`Φ(v)` is aperiodic" through an alleged
 > 2-adic expansion of a real irrational — and argues it does not follow, the real and 2-adic limits of
@@ -134,15 +115,15 @@ Replace the diagram's last line and add:
 
 > ```
 > bounded-type CS Rote, EVERY intercept  p(n) = 2n        (Phase 8; density 1/2, SUBSUMED)
->     |
+> |
 > critical-density rotation codings  p(n) = 2n, density exactly beta   (Phase 12, Theorem 12)
->     |
+> |
 > every s with p(L) <= 2L  (foundation paper problem (4)) -- OPEN
 > ```
 >
 > **Reading the ladder by density, not by complexity (Phase 9B, refined Phase 12).** The known
 > dichotomy for `Φ(v) ∉ ℚ` is by **lower ones-density**: below `β = ln2/ln3` by Monks–Yazinski (2004)
-> Thm 2.7(b) [refereed]; above `β` **only** by López–Stoll (2021) Thm 1, a preprint whose load-bearing
+> Thm 2.7(b) [refereed]; above `β` **only** by arXiv:2101.12747 (2021) Thm 1, a preprint whose load-bearing
 > step is specifically disputed (§3 above). Rungs 1–3″ all sit at density `1/2` or `n+1`-complexity and
 > are covered. Rung 4 is at density exactly `β`, where no density result applies. Each rung's
 > *qualitative* conclusion is covered or not by that test; its *quantitative* content (effective height
@@ -164,7 +145,7 @@ Replace the diagram's last line and add:
 
 > **Standing gate (Phases 9B, 10, 12).** Before claiming novelty for any class:
 > 1. Compute the lower ones-density. If `< β` the qualitative conclusion is already available from
->    Monks–Yazinski (2004) Thm 2.7(b), whatever the complexity. If `> β`, López–Stoll (2021) Thm 1
+>    Monks–Yazinski (2004) Thm 2.7(b), whatever the complexity. If `> β`, arXiv:2101.12747 (2021) Thm 1
 >    would cover it, **but that step is disputed** — treat the region as open and say so.
 > 2. Compute `liminf p(L)/L`. If `< 1.70951…`, the counting route already covers it.
 > 3. Ask **separately** whether the *quantitative* content is new, and check it against the foundation

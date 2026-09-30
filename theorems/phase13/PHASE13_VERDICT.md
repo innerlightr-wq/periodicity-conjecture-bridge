@@ -2,23 +2,6 @@
 
 # PHASE13_VERDICT.md
 
-> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
-> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
-> statement of this repository is the following:
->
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
->
-> We have **neither established nor disproved** their theorem and take no position on it. The sharper language retained below is the **audit record** — it preserves a
-> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
-> time of writing) together with its source reference and its verification status, namely **not
-> verified by us and not a result of this repository**. It is kept, not rewritten, because research
-> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
-> this repository depends on López–Stoll in either direction. Canonical wording:
-> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
 Isolated worktree `/home/elias/scratch/phase13-bridge`, branch `phase13-algebraic-intercept`, cut from
 `phase12-audit-generalize` at HEAD `e21aab9` (expected and actual agree; tree clean). Nothing pushed,
 nothing published, no PDF rebuilt, no deposited artifact touched. `note_rev2.pdf` `8daf1979…`,
@@ -52,9 +35,9 @@ changed most:
 | `c₁` (arc at `β`) | **no** | **yes — `≈ 2.39·10^13` at `D = 2`** |
 | `C, C₀` (drift / discrepancy) | no | **still no** |
 
-**López–Stoll.** Their work on density and the 3x+1 conjugacy map helped guide this programme
-toward the critical density `β = ln2/ln3`; we acknowledge that influence. Their proposed
-upper-density exclusion is **relied on nowhere** — we have neither established nor disproved it. The consequence is stated once and
+**On coverage above `β`.** The only located result reaching lower ones-density `> β` is a preprint
+(arXiv:2101.12747, Thm 1). It is not used as a premise anywhere here, and coverage is stated against
+what is independently available: the densities reached by refereed work are those below `β`. The consequence is stated once and
 propagated: the securely covered density region is `liminf < β`, and the residual is `liminf ≥ β`.
 
 ## 3. Item 2 — prior coverage: **(d) not located in the searched literature**

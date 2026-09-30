@@ -2,25 +2,6 @@
 
 # PHASE12_VERDICT.md
 
-> **WORDING CLARIFICATION (documentation pass).** Where this file describes **López & Stoll**,
-> *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1, the current-facing
-> statement of this repository is the following:
->
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
->
-> We have **neither established nor disproved** their theorem and take no position on it. The sharper language retained below is the **audit record** — it preserves a
-> technical observation raised by a third party (`innerlightr-wq/eoc-divergence` issue #30, open at the
-> time of writing) together with its source reference and its verification status, namely **not
-> verified by us and not a result of this repository**. It is kept, not rewritten, because research
-> history should not be edited after the fact; it should not be quoted as a claim. No conclusion in
-> this repository depends on López–Stoll in either direction. Canonical wording:
-> [`docs/DEPENDENCE_ON_PRIOR_RESULTS.md`](../../docs/DEPENDENCE_ON_PRIOR_RESULTS.md).
-
-> **PHASE 13 ADDENDUM.** Two assessments below are superseded. (i) §2's one-line dismissal of the subspace-theorem route ("`L/ℓ → 1`, far too weak") is **withdrawn**: measured against Ridout's threshold the exponent exceeds `2` at 7 of 20 convergents, maximum `3.361` — the route is live, and infinitude is the open point (`theorems/phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md` §5). (ii) §8's hope that a fixed degree might give a **polynomial** logarithmic-form bound is **withdrawn** — that is Baker's own unproved conjecture `κ = 1`; the best explicit shape is `exp(−c₁(log B)²)`, and `c₁` is now a number (`theorems/phase13/EXPLICIT_CONSTANTS_STATUS.md`). Theorem 12 itself stands and is the `ρ ∈ ℚ` case of Theorem 13 (`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`).
-
 Isolated worktree `/home/elias/scratch/phase12-bridge`, branch `phase12-audit-generalize`, cut from
 `phase11b-baker-audit` at HEAD `c1bbff4` (expected and actual agree; tree was clean). Nothing pushed,
 nothing published, no release rebuilt, no PDF regenerated. `note_rev2.pdf` `8daf1979…`,
@@ -71,13 +52,9 @@ digit-preserving, so neither complexity bounds the other; T7 (Sharpe) is about p
 at slope `< 5/3`; T8 (arXiv:2601.04289) is archimedean and its authors disclaim any bearing on the
 Periodicity Conjecture.
 
-**The downgrade.** The repository records **T2 (López–Stoll 2021 Thm 1)** everywhere as "preprint".
-That is now too weak. An open, uncontested third-party issue (`innerlightr-wq/eoc-divergence` #30)
-identifies the step carrying Theorem 1 — from "`Φ_ℝ(v)` irrational" to "`Φ(v)` aperiodic", via an
-alleged 2-adic expansion of a real irrational — and argues it does not follow. **Consequence: the
-securely covered density region is `liminf < β` (Monks–Yazinski 2004, refereed), not `liminf ≠ β`.**
-Theorem 12's standing is unaffected — density exactly `β` is uncovered under either reading — but
-several repository files assert the stronger version and must be corrected.
+**On coverage above `β`.** The only located result reaching lower ones-density `> β` is a preprint
+(arXiv:2101.12747, Thm 1). It is not used as a premise anywhere here, and coverage is stated against
+what is independently available: the densities reached by refereed work are those below `β`.
 
 **An attribution point that must not be lost.** The foundation paper's own §12 open problem (1)
 already proposes the mechanism: "the first entry time of the orbit `{jγ+ρ}` into an interval of length

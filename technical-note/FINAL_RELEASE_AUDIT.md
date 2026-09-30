@@ -54,12 +54,12 @@ Every external bibliography entry was checked against the foundation paper's own
 | Berthé–Holton–Zamboni 2006, *Acta Arithmetica* 122(4), 315–347 | EXACTLY SUPPORTED | None |
 | Allouche–Davison–Queffélec–Zamboni 2001, *J. Number Theory* 91(1), 39–66 | EXACTLY SUPPORTED (this is "ADQZ 2001") | None |
 | Dubickas 2009, *Glasgow Math. J.* 51(2), 243–252 | EXACTLY SUPPORTED | None |
-| López–Stoll 2009, *Integers* 9, A13, 141–162 | EXACTLY SUPPORTED | None |
-| López–Stoll 2021, "The 3x+1 periodicity conjecture in ℝ" | Present in bibliography but **never cited in body text** | **FIXED** — added a citing sentence in §1 |
+| *Integers* **9** (2009), A13, 141–162 | EXACTLY SUPPORTED | None |
+| arXiv:2101.12747 (2021), "The 3x+1 periodicity conjecture in ℝ" | Present in bibliography but **never cited in body text** | **FIXED** — added a citing sentence in §1 |
 | Lothaire 2002, *Algebraic Combinatorics on Words*, Ch. 2 (Sturmian words) | **SUPPORTED BUT MISATTACHED** — this chapter is specifically about Sturmian words, not Rote sequences; it was cited directly in support of the CS-Rote complexity claim $p(n)=2n$, which it does not itself establish | **FIXED** — decoupled from the specific numeric claim; kept only as general background, with the existing sourcing caveat left in place |
 | G. Rote (1994), primary CS-Rote source | Not independently held/verified in the repository record | Already correctly hedged in the bibliography note (no fabricated page numbers); no action needed beyond what was already there |
 
-**Two-independent-proofs claim (item 7):** the original note wording ("using López and Stoll's critical-density Sturmian word... extended to every irrational slope and... to arbitrary intercept") compressed three distinct steps the PDF states separately: (a) the second proof is for **the specific case López–Stoll's own paper had identified as open**; (b) it is then generalized to every irrational slope; (c) a **further, separate argument** removes the intercept-0 restriction. Classified **SUPPORTED BUT WORDING TOO BROAD**. **FIXED** — §6 rewritten to state the three steps in the PDF's own order and attribution.
+**Two-independent-proofs claim (item 7):** the original note wording ("using the critical-density Sturmian word... extended to every irrational slope and... to arbitrary intercept") compressed three distinct steps the PDF states separately: (a) the second proof is for **the specific case that preprint's own paper had identified as open**; (b) it is then generalized to every irrational slope; (c) a **further, separate argument** removes the intercept-0 restriction. Classified **SUPPORTED BUT WORDING TOO BROAD**. **FIXED** — §6 rewritten to state the three steps in the PDF's own order and attribution.
 
 ## 8. Section 19 / Future-Work Roadmap
 
@@ -87,7 +87,7 @@ The "Editorial note" disclosing that the roadmap section's source instructions w
 3. Decoupled the `Lothaire2002` citation from the CS-Rote complexity claim it does not itself support (§7).
 4. Fixed a missing math-mode space before a citation in §8 (cosmetic; also removed a redundant duplicate-citation artifact introduced while fixing it).
 5. Removed an unsupported, vaguely-defined auxiliary clause ("$\varepsilon_k := E_k\cdot(\text{scale factor})$") from §13's flexible sufficient condition, keeping only the one verified inequality.
-6. Added the missing citation to `LopezStoll2021` in §1.
+6. Added the missing citation to `arXiv:2101.12747` in §1.
 7. Reflowed the Route B implication chain (§2.2) from an overflowing display equation into wrapping inline text.
 8. Split the General Intercepts $x'(k),y(k),\text{ice}(\omega)$ display equation (§12) into two lines to fit the margin.
 9. Added `\sloppy` document-wide and one targeted `\allowbreak` to resolve paragraph-packing overfull boxes caused by long monospaced repository file paths.

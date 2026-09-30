@@ -42,7 +42,7 @@ of bound. The height is the **classical** height.)
 `mα + 1/7 − β` and put
 
 ```
-A_m := m*alpha + 1/7 - j_m ,        c_m := || m*alpha + 1/7 - beta ||  =  | A_m - beta | .
+A_m := m*alpha + 1/7 - j_m ,        c_m := || m*alpha + 1/7 - beta ||  = | A_m - beta | .
 ```
 
 **Explicit form and uniform degree/height bounds.** Over the common denominator `14`,

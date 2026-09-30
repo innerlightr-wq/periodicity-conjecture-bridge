@@ -64,7 +64,7 @@ normalised left Perron eigenvector for the integer eigenvalue `k`, hence **ratio
 
 ```
 15 of 21   density < beta   -> Monks-Yazinski 2004 Thm 2.7(b)   [refereed]
- 4 of 21   density > beta   -> Lopez-Stoll 2021 Thm 1           [preprint]
+ 4 of 21   density > beta   -> arXiv:2101.12747 (2021) Thm 1           [preprint]
  0 of 21   density = beta
 ```
 

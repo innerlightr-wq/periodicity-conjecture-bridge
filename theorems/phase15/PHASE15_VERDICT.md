@@ -10,8 +10,8 @@ PDF byte-identical** (`RELEASE_MANIFEST.md` §2).
 ## 1. Release record reconciled
 
 Phase 14's reconciliation confirmed: the deposited Revision 3 (`10.5281/zenodo.23068563`) already
-contains the critical-density theorems, the repaired Baker argument and the López–Stoll
-acknowledgement. **None of those was redone.** Four corrections had arisen *since* the deposit, and
+contains the critical-density theorems, the repaired Baker argument and the acknowledgement of
+prior work. **None of those was redone.** Four corrections had arisen *since* the deposit, and
 all four are now discharged in the prepared release:
 
 | | correction | how |
@@ -93,7 +93,7 @@ manuscript: **no contradictory value**. No new check was needed — §19 states 
 2. **Whether to attach the Revision 2 erratum.** `correction_notice.pdf` (md5 `afd30d3b…`) exists
    locally and appears on no version of the record. Attaching it to Revision 4 would complete the
    history; leaving it out is also defensible.
-3. **The acknowledgement and the Acknowledgments section name López and Stoll directly.** Read those
+3. **The acknowledgement and the Acknowledgments section name that preprint directly.** Read those
    paragraphs — they concern real people and should sound like you.
 4. **E3's tone.** It says, in the paper, that a judgement of Revision 2's was wrong. I believe that is
    correct and worth stating; how prominently is your call.

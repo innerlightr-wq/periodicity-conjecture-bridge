@@ -55,7 +55,7 @@ For the golden conjugate, `inf_{q≥1} q‖qα‖ = ‖α‖ = 0.38196… > 1/3`
 `q ≥ 1`. Using `‖x‖ ≥ ‖7x‖/7` and `7(mα + 1/7) = 7mα + 1`:
 
 ```
-||m*alpha + 1/7||  >=  ||7m*alpha + 1||/7  =  ||7m*alpha||/7  >  1/(7 * 3 * 7m)  =  1/(147 m)   (m >= 1),
+||m*alpha + 1/7||  >= ||7m*alpha + 1||/7  = ||7m*alpha||/7  >  1/(7 * 3 * 7m)  =  1/(147 m)   (m >= 1),
 ```
 
 and `‖0·α + 1/7‖ = 1/7`. Therefore
@@ -73,7 +73,7 @@ Put `c_m := ‖mα + ρ − β‖`. Writing the nearest integer as `n`, `c_m = |
 `A := mα + 1/7 − n ∈ ℚ(√5)` algebraic of degree `≤ 2` and height `O(m²)`. Since `β = ln2/ln3`,
 
 ```
-c_m  =  | A*ln3 - ln2 | / ln3 ,
+c_m  = | A*ln3 - ln2 | / ln3 ,
 ```
 
 a **nonzero** linear form in the logarithms of the algebraic numbers `3` and `2` with **algebraic**
@@ -93,7 +93,7 @@ effective too. A consistency table of `c_m` for `m ≤ 5000` shows no super-expo
 Fix `M ≥ 2`. Put `C_M := min_{0≤m<M} c_m > 0`; by R4, `C_M ≥ C₂M^{−κ}`. Let
 
 ```
-ell(M) := least convergent denominator q of alpha with  ||q*alpha||  <  min( C_M , 1/(147 M) ) .
+ell(M) := least convergent denominator q of alpha with ||q*alpha||  <  min( C_M , 1/(147 M) ) .
 ```
 
 **Both thresholds are needed.** The first gives, for every `m < M`, `c_m ≥ C_M > |δ|`, hence
@@ -123,7 +123,7 @@ estimate `EXACT_HEIGHT_AND_SURPLUS.md` needs.
 ## Verified instances
 
 ```
- M    min(C_M, 1/147M)    ell(M)    |delta(ell)|        m*(ell)    m* >= M
+ M    min(C_M, 1/147M)    ell(M) |delta(ell)|        m*(ell)    m* >= M
   4   1.7006802721e-03       377    1.1862412896e-03       469     True
   8   8.5034013605e-04       610    7.3313743587e-04       846     True
  16   4.2517006803e-04      1597    2.8003358216e-04       881     True

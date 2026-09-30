@@ -14,7 +14,7 @@ integer. Fix `κ > 2` and let `c₁` be Baker's effective constant, so
 
 ```
 t(M)  :=  min( C_M , 1/(147 M) ) ,
-ell(M) := the LEAST convergent denominator q_k with  || q_k * alpha ||  <  t(M) .
+ell(M) := the LEAST convergent denominator q_k with || q_k * alpha ||  <  t(M) .
 ```
 
 ## 2. Two facts about the golden continued fraction, used explicitly

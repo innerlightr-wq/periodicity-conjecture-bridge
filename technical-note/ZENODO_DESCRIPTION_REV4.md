@@ -1,4 +1,6 @@
-**PROPOSED — NOT APPLIED. No Zenodo field has been edited.**
+**PROPOSED — STILL NOT APPLIED.** Revision 4 was deposited on 2026-09-30 as
+`10.5281/zenodo.23070093`, and the record's description carried over from Revision 1 unchanged. The
+text below is the proposed replacement; no Zenodo field has been edited from this repository.
 
 # Proposed Zenodo description for Revision 4
 
@@ -20,7 +22,7 @@ none of the attribution language. **The deposited file is right; the page descri
 | license | CC BY 4.0 (unchanged) |
 | file | `note_rev4.pdf` — **no `DRAFT` in the filename** |
 | additional file | `correction_notice_rev4.pdf` |
-| related identifier | "is new version of" `10.5281/zenodo.23068563` |
+| related identifier | "is new version of" `10.5281/zenodo.23068563` (Revision 3) |
 | keywords | 3x+1 problem, Collatz, Periodicity Conjecture, Bernstein–Lagarias conjugacy map, 2-adic, Sturmian words, Rote sequences, rotation codings, linear forms in logarithms, discrepancy |
 
 ## Proposed description text
@@ -63,11 +65,10 @@ none of the attribution language. **The deposited file is right; the page descri
 > arc at a partition endpoint — is proposed in the author's own earlier preprint and is not original
 > here.
 >
-> **Acknowledgement.** López–Stoll's work on density and the 3x+1 conjugacy map helped guide this
-> programme toward the critical density β = ln2/ln3. We acknowledge that influence. The results
-> presented here are established through the independent arguments given in this note and do not
-> require their proposed upper-density exclusion. We take no position on that result: we have neither
-> established nor disproved it, and no step of any theorem here invokes it.
+>
+> **Attribution.** Every external result the conclusions rest on is listed in the manuscript, with
+> its refereeing status; the mechanism itself is proposed in the author's own earlier preprint and is not
+> original here.
 >
 > **Novelty and refereeing.** Novelty of the critical-density results is **formally unresolved**.
 > Several literature passes located no result covering lower ones-density exactly β at factor

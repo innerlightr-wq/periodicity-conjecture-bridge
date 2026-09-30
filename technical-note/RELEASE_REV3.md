@@ -44,7 +44,7 @@ numbering is by section and carries no relation to phase numbers; §1 D5 says so
 |---|---|
 | D1 | the **Thue–Morse scope claim** of Revision 2 §19 Open 6 and §20 is **withdrawn** — it is false; the substitution supplies approximants without any square |
 | D2 | the **CS Rote novelty framing** — it crosses the *counting* frontier only; the conclusion was already available from Monks–Yazinski (2004) Thm 2.7(b), CS Rote having density `1/2 < β` |
-| D3 | **López–Stoll**: acknowledgement of influence, and a statement that their proposed upper-density exclusion is not used and is neither established nor disproved here |
+| D3 | acknowledgement of prior work, and a statement that the upper-density result of a cited preprint is not used as a premise |
 | D4 | the **foundation paper** is now public; cited by version DOI `10.5281/zenodo.23019799`, and labelled an unrefereed **self-citation** |
 | D5 | **theorem numbering** clarified (section-based, not phase-based) |
 | D6 | the **polynomial logarithmic-form bound** claimed at an intermediate stage is **withdrawn**; the note states none |

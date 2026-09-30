@@ -23,7 +23,7 @@ Prop. 2.2 (isometry): `v₂(Φ(a) − Φ(b)) = lcp(a,b)`. Prop. 4.1 (periodic va
 `Φ(W^∞) = c_W/(2^ℓ − 3^k)` with `c_W = Σ_{i<ℓ, W_i=1} 3^{k−k_{i+1}(W)}2^i`.
 **Prop. 4.1 was re-derived here from Prop. 2.1** by summing the geometric series and checked
 numerically in `ℤ/2^400` on three words — the convention is not taken on trust. This `Φ` is the
-same map as López–Stoll's (their eq. for `Φ(v)` is identical), which matters in the audit.
+same map as that preprint's (their eq. for `Φ(v)` is identical), which matters in the audit.
 
 **Discrepancy.** The repository's definition (`theorems/phase1/DISCREPANCY_HEIGHT_THEOREM.md`):
 

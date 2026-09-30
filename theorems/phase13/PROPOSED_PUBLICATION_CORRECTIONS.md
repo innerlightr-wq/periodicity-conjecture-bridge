@@ -12,10 +12,6 @@ pointers.
 > described in dependency-and-acknowledgement language, not adversarial language. The canonical form
 > is:
 >
-> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
-> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
-> > established through the independent arguments given in this repository and do not require their
-> > proposed upper-density exclusion.
 >
 > Technical concerns remain recorded in the audit files with their source references and verification
 > status; they are not repeated as claims. See `docs/DEPENDENCE_ON_PRIOR_RESULTS.md`.
@@ -31,7 +27,7 @@ pointers.
 | 5 | 11B | Baker citation: `c_m ≥ C₂m^{−κ}` withdrawn → `C e^{−(log B)^κ}` | banner (applied) + status |
 | 6 | 11B | the no-wrap hypothesis `|δ| ≤ min(β,1−β)` was unstated | banner (applied) |
 | 7 | 11B | the measured constants `0.41`, `2.02` are not asymptotic input | banner (applied) |
-| 8 | 12 | T2 (López–Stoll) restated as a result **not relied on**, with the coverage claim rephrased against what is independently available | status + note Rev 3 |
+| 8 | 12 | T2 restated as a result **not used as a premise**, with the coverage claim rephrased against what is independently available | status + note Rev 3 |
 | 9 | 12 | "effective" split into *in principle* / *explicitly supplied* | status |
 | 10 | 12 | the hitting-time mechanism is the foundation paper's own §12 problem (1) | status + note Rev 3 |
 | 11 | 12 | Phases 9–13 absent from `THEOREM_STATUS.md` and `LADDER.md` | status |
@@ -108,24 +104,21 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 
 > ```
 > bounded-type CS Rote, EVERY intercept   p(n)=2n           (Phase 8; density 1/2, SUBSUMED)
->     |
+> |
 > critical-density rotation codings, rational intercept       (Phase 12, Theorem 12)
->     |
+> |
 > critical-density rotation codings, ALGEBRAIC intercept,     (Phase 13, Theorem 13)
 > and any interval [u,u+beta) with rho-u algebraic
->     |
+> |
 > rho - u transcendental  --  OPEN, the intercept-axis boundary
->     |
+> |
 > every s with p(L) <= 2L  (foundation problem (4))  --  OPEN
 > ```
 >
 > **Reading the ladder by density, not by complexity (9B, refined 12, refined 13).** The relevant
 > coordinate is lower ones-density. Below `β = ln2/ln3` the conclusion is already available from
-> Monks–Yazinski (2004) Thm 2.7(b), refereed. Above `β`, López–Stoll (2021) Thm 1 propose an
-> upper-density exclusion. **López–Stoll's work on density and the 3x+1 conjugacy map helped guide
-> this programme toward the critical density `β`; we acknowledge that influence. The results
-> presented here are established through the independent arguments given in this repository and do not
-> require their proposed upper-density exclusion.** Stated against what is independently available,
+> Monks–Yazinski (2004) Thm 2.7(b), refereed. Above `β`, arXiv:2101.12747 (2021) Thm 1 propose an
+> upper-density exclusion, which **is not used as a premise here**. Stated against what is independently available,
 > the covered region is `liminf < β` and the residual is `liminf ≥ β`.
 > Rungs 1–3″ sit at density `1/2` or at complexity `n+1` and are covered. The critical-density rungs
 > sit at `= β`, where no density result applies. Each rung's *qualitative* conclusion is decided by
@@ -150,7 +143,7 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 
 > **Standing gate (9B, 10, 12, 13).** Before claiming novelty for any class:
 > 1. Compute the lower ones-density. If `< β`, Monks–Yazinski (2004) Thm 2.7(b) already gives the
->    qualitative conclusion, whatever the complexity. If `> β`, López–Stoll (2021) Thm 1 propose an
+>    qualitative conclusion, whatever the complexity. If `> β`, arXiv:2101.12747 (2021) Thm 1 propose an
 >    exclusion covering it; since this repository does not rely on that result, state the coverage
 >    claim against what is independently available and say plainly which of the two situations you are
 >    describing.
@@ -169,12 +162,8 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 
 Replace "preprint" with:
 
-> **preprint; a proposed result this repository does not rely on, by authors whose earlier work this
-> programme is indebted to.** López–Stoll's work on density and the 3x+1 conjugacy map helped guide
-> this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results
-> presented here are established through the independent arguments given in this repository and do not
-> require their proposed upper-density exclusion. We have **neither established nor disproved** it and
-> take no position on it. Stated against what is independently available, the covered density region
+> **preprint; a proposed result not used as a premise here.** We have **neither established nor
+> disproved** it and take no position on it. Stated against what is independently available, the covered density region
 > is `liminf < β` (Monks–Yazinski 2004, refereed); the classes treated here sit at exactly `β` and are
 > outside that range either way, so **no conclusion changes in either case.**
 

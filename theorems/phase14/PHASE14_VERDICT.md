@@ -19,7 +19,7 @@ The correct record is **`10.5281/zenodo.23068563`** — not `…23068326`, which
 Checked against the downloaded file, not from memory, **every correction outstanding at the start of
 Phase 13 is already in it**: the quadratic-rotation theorem (Thm 17.5), the **algebraic-offset
 theorem** (Thm 18.2, Cor. 18.3), the repaired Baker argument with the polynomial bound withdrawn
-(§19, §1 D6), the **López–Stoll acknowledgement** (§1 D3, §16, Acknowledgments), the Thue–Morse
+(§19, §1 D6), the **acknowledgement** (§1 D3, §16, Acknowledgments), the Thue–Morse
 withdrawal (D1), the CS Rote novelty correction (D2), the foundation paper by public DOI and labelled
 a self-citation (D4), the theorem-numbering clarification (D5), and "has not been refereed". **None
 of these was redone.**

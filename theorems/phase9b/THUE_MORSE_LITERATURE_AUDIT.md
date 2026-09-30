@@ -36,13 +36,13 @@ De Jesús, *The 3x+1 Conjugacy Map Sends Every Sturmian Word to an Irrational 2-
 > this gives at once: **if `v` is aperiodic and `liminf k_n(v)/n < β`, then `Φ(v) ∉ ℚ`.**"
 
 with `β = ln2/ln3 = log₃2 = 1/log₂3 = 0.6309297535714575…`. The paper adds that the deduction "is
-made explicitly by López and Stoll [12, p. 6]".
+made explicitly by that preprint [12, p. 6]".
 
 **Thue–Morse is aperiodic with `liminf k_n/n = 1/2 < β`. Apply the boxed sentence. Done.**
 
 ## 2. The other half of the dichotomy
 
-> **López, J. and Stoll, P., *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021),
+> ***The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021),
 > Theorem 1.** `Φ` maps an aperiodic parity word of lower ones-density **strictly greater** than `β`
 > to an aperiodic (hence irrational) 2-adic integer; and if a rational 2-adic integer had a
 > non-cyclic trajectory its lower ones-density would be exactly `β`.
@@ -59,7 +59,7 @@ below-`β` half refereed (2004) and the above-`β` half a preprint (2021).
 |---|---|---|
 | `Φ(Thue–Morse) ∉ ℚ` (Phase 9 Cor. 4.1) | **(a) explicit prior theorem, applied** | Monks–Yazinski 2004 Thm 2.7(b), density `1/2 < β`. Refereed. |
 | Phase 9 Cor. 4.2, the 15 sweep members with density `< β` | **(b) consequence of an existing theorem** | Monks–Yazinski 2004 Thm 2.7(b). Refereed. |
-| Phase 9 Cor. 4.2, the 4 sweep members with density `> β` | **(b) consequence of an existing theorem** | López–Stoll 2021 Thm 1. **Preprint only.** |
+| Phase 9 Cor. 4.2, the 4 sweep members with density `> β` | **(b) consequence of an existing theorem** | arXiv:2101.12747 (2021) Thm 1. **Preprint only.** |
 | Phase 9 Theorem 3 (CS Rote, unbounded type) | **(b) consequence of an existing theorem** | CS Rote has ones-density exactly `1/2 < β`; Monks–Yazinski 2004. |
 | Phase 8 Theorem 2, Phase 6, Phase 4, Phase 2 CS Rote theorems | **(b) consequence of an existing theorem** | same — all at density `1/2`. |
 | Phase 9 Theorem 4, the `g(γ)` threshold (a *criterion*, not a class) | **(c) not located in the searched literature** | it is a refinement of this repository's own Phase 1 unconditional theorem; no external source searched for or found. Novelty **unresolved** — and it is a minor sharpening, not a headline. |
@@ -115,7 +115,7 @@ only against the **Dubickas counting** route, which indeed fails at complexity `
 Targeted searches run: Thue–Morse × Collatz/3x+1 parity vector; automatic sequences × Collatz
 parity; Bernstein–Lagarias conjugacy × morphic/automatic; rational 2-adic trajectories × parity
 density. Sources read first-hand: Monks–Yazinski 2004 (full PDF, Theorem 2.7 and surrounding text);
-López–Stoll 2021 arXiv:2101.12747 (abstract, conventions §1, Theorem 1 statement and its citation of
+arXiv:2101.12747 (2021) (abstract, conventions §1, Theorem 1 statement and its citation of
 Monks–Yazinski at line 1643 of the extracted text); Rozier arXiv:1805.00133 (full PDF — *not*
 relevant: it concerns the inverse transform, ergodicity on small invariant sets, cycles and a plane
 embedding; it contains no density theorem and no mention of Thue–Morse or automatic sequences, so
