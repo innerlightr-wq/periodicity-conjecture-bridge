@@ -2,6 +2,8 @@
 
 # CRITICAL_ROTATION_PRIOR_RESULTS.md
 
+> **CORRECTION (Phase 13).** §5's dismissal of the subspace-theorem route is **withdrawn** — see [`theorems/phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md`](../phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md) §5. Also: T2 is now treated as a **challenged preprint claim pending verification, relied on nowhere**, and the foundation paper is cited by its public version DOI `10.5281/zenodo.23019799` and labelled a self-citation to an unrefereed preprint.
+
 Phase 12 / item 2. Searches were run for **the conclusion and broader implying theorems**, not only
 for our mechanism or the named word. Primary sources were read where obtainable; third-party PDFs are
 cached outside the repository and are not committed.

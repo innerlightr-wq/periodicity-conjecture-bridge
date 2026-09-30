@@ -2,6 +2,8 @@
 
 # PHASE12_PROPOSED_UPDATES.md
 
+> **SUPERSEDED BY [`theorems/phase13/PROPOSED_PUBLICATION_CORRECTIONS.md`](../phase13/PROPOSED_PUBLICATION_CORRECTIONS.md)**, which absorbs all eleven items below and adds four (T2 restated as a challenged claim relied on nowhere, the Ridout withdrawal, the polynomial-bound withdrawal, and the foundation paper's public DOI + self-citation label). Still **NOT APPLIED**. Retained as the historical record.
+
 Exact replacement text for every outstanding correction, Phases 9B through 12, in one place. **No
 status file, README, LADDER or manuscript has been edited; no PDF has been rebuilt; nothing has been
 deposited.** Per the standing instruction, nothing is applied until the final theorem statements are

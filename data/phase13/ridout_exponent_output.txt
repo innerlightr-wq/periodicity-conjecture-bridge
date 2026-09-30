@@ -1,0 +1,40 @@
+================================================================================================
+PHASE 13 / item 2.  The Ridout exponent of the periodic approximants (named Phase 11 word)
+================================================================================================
+
+  ell     k      L        log2 H_red   E = L/log2(H_red)   > 2 ?   m*/ell
+  3       2      3        2.81         1.068622            False   0.0000
+  5       3      8        5.21         1.535670            False   0.6000
+  8       5      24       9.12         2.631137            True    2.0000
+  13      8      16       14.58        1.097308            False   0.2308
+  21      13     38       23.24        1.634883            False   0.8095
+  34      21     37       36.76        1.006470            False   0.0882
+  55      35     147      59.46        2.472096            True    1.6727
+  89      56     92       93.34        0.985669            False   0.0337
+  144     91     236      149.28       1.580913            False   0.6389
+  233     147    469      238.73       1.964560            False   1.0129
+  377     238    846      383.66       2.205071            True    1.2440
+  610     385    1456     617.26       2.358801            True    1.3869
+  987     623    2443     995.13       2.454955            True    1.4752
+  1597    1008   2478     1605.90      1.543060            False   0.5517
+  2584    1630   5062     2592.34      1.952677            False   0.9590
+  4181    2638   9243     4190.94      2.205471            True    1.2107
+  6765    4268   22773    6774.98      3.361336            True    2.3663
+  10946   6906   16008    10954.71     1.461289            False   0.4625
+  17711   11174  33719    17722.52     1.902607            False   0.9038
+  28657   18080  35281    28669.16     1.230626            False   0.2311
+
+  max exponent observed: E = 3.361336   (Ridout needs E > 2 + eps for INFINITELY many)
+  gcd(c_W, delta_W) was sometimes > 1
+  convergents with E > 2 : 7 of 20  -> ell = [8, 55, 377, 610, 987, 4181, 6765]
+
+  READING.  E > 2 happens, repeatedly, but NOT along the constructed witness family: the
+  construction takes ell(M) with L - ell >= M and ell(M) >= 49M, so E -> 1 there.  Whether
+  E > 2 + eps for INFINITELY many convergents is exactly the statement  m*(ell)/ell > 1 + eps
+  infinitely often, which is open.  If it held, Ridout would give TRANSCENDENCE of Phi(s),
+  answering the foundation paper's open problem (3) for this word.  It is NOT claimed here.
+
+  Empirical distribution of m*(ell)/ell over the convergents above:
+    min 0.0000   median 0.9038   max 2.3663   fraction > 1: 8/20
+
+ALL PHASE-13 RIDOUT-EXPONENT COMPUTATIONS COMPLETE (no assertion: this is a measurement).

@@ -1,0 +1,168 @@
+============================================================================================
+PHASE 13 / items 3-4.  alpha quadratic irrational, rho REAL ALGEBRAIC, interval [0,beta)
+============================================================================================
+
+(A) The family, its degrees, and the quadratic slope.
+    case                            D   alpha        rho          A=max p.q.  q_{k+1}/q_k <= A+1
+    Q(v5)  a=(v5-1)/2  r=v5/3       2   0.618033989  0.7453559924 1           2.0000 <= 2
+    Q(v5)  a=(v5-1)/2  r=1/7        2   0.618033989  0.1428571429 1           2.0000 <= 2
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  2   0.618033989  -0.090169944 1           2.0000 <= 2
+    Q(v5)  a=(v5-1)/2  r=0     EXC  2   0.618033989  0            1           2.0000 <= 2
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      4   0.618033990  0.471404521  1           2.0000 <= 2
+    Q(2^1/4) a=v2-1 r=2^1/4/3       4   0.414213562  0.3964023716 2           2.5000 <= 3
+    Q(2^1/6) a=v2-1 r=2^1/6/5       6   0.414213562  0.2244924097 2           2.5000 <= 3
+
+(B) Exact 0-boundary hits.  {m alpha + rho} = 0  <=>  rho = j - m alpha  <=>  rho in Z*alpha+Z.
+    Then the index m0 is UNIQUE (alpha irrational).  Classified by an exact zero test on the
+    coefficient vector of  m*alpha + rho - j  -- no numerics involved.
+    case                            rho in Z a + Z ?   m0 (first hit, m<4000)   theta_m0 exactly 0?
+    Q(v5)  a=(v5-1)/2  r=v5/3       False              None                     False
+    Q(v5)  a=(v5-1)/2  r=1/7        False              None                     False
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  True               5                        True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  True               0                        True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      False              None                     False
+    Q(2^1/4) a=v2-1 r=2^1/4/3       False              None                     False
+    Q(2^1/6) a=v2-1 r=2^1/6/5       False              None                     False
+    => the two EXC cases have exactly one hit each (m0 = 5 and m0 = 0); the rest have none.
+
+(C) The 0-boundary bound.  theta_m := m*alpha + rho - j is algebraic of degree <= D with
+    H(theta_m) = O(m^D), and Liouville gives |theta_m| >= (1 + H(theta_m))^{-D} for theta_m != 0.
+    Hence ||m alpha + rho|| >= c * m^{-D^2}: a POLYNOMIAL bound, with NO transcendence input.
+    case                            D  max H(th_m)/m^D  Liouville holds  min_m m^{D^2}||.||
+    Q(v5)  a=(v5-1)/2  r=v5/3       2  27               True             0.297216
+    Q(v5)  a=(v5-1)/2  r=1/7        2  133              True             0.239109
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  2  8                True             0.472136
+    Q(v5)  a=(v5-1)/2  r=0     EXC  2  3                True             0.381966
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      4  855              True             0.0894385
+    Q(2^1/4) a=v2-1 r=2^1/4/3       4  1620             True             0.189384
+    Q(2^1/6) a=v2-1 r=2^1/6/5       6  1.75e+06         True             0.361294
+
+(D) The beta-boundary.  A_m := m*alpha + rho - j_m, j_m nearest to m*alpha+rho-beta.
+    A_m > beta - 1/2 = 0.1309297536 > 0 ALWAYS (nearest integer + beta > 1/2), so Baker's
+    'every beta_j non-zero' hypothesis holds with no case analysis, m=0 and any hit included.
+    case                            min_m A_m      > b-1/2  deg<=D  max H(A_m)/m^D   min c_m
+    Q(v5)  a=(v5-1)/2  r=v5/3       0.1323470025   True     True    27               1.356e-04
+    Q(v5)  a=(v5-1)/2  r=1/7        0.1316209041   True     True    55               8.617e-04
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  0.1315561750   True     True    13               2.599e-04
+    Q(v5)  a=(v5-1)/2  r=0     EXC  0.1315561750   True     True    2                2.599e-04
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      0.1339303608   True     True    198              4.716e-04
+    Q(2^1/4) a=v2-1 r=2^1/4/3       0.1314671080   True     True    396              1.041e-04
+    Q(2^1/6) a=v2-1 r=2^1/6/5       0.1311300212   True     True    1.421e+05        2.330e-04
+
+(E) The mismatch set: closed form, no-wrap hypothesis, signed rule.  (Independent of rho,
+    but re-verified here in every field.)  M(d) = [b-d,b) u [1-d,1) for d>0; [0,d) u [b,b+d) for d<0.
+    case                            shifts  def-vs-closed  '0 in M(d) iff d<0'
+    Q(v5)  a=(v5-1)/2  r=v5/3       8       0              0
+    Q(v5)  a=(v5-1)/2  r=1/7        8       0              0
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  8       0              0
+    Q(v5)  a=(v5-1)/2  r=0     EXC  8       0              0
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      8       0              0
+    Q(2^1/4) a=v2-1 r=2^1/4/3       8       0              0
+    Q(2^1/6) a=v2-1 r=2^1/6/5       8       0              0
+
+(F) The identity L(ell) - ell = m*(ell), by literal prefix scan vs first hitting time.
+    case                            ell     L-ell   m*      agree
+    Q(v5)  a=(v5-1)/2  r=v5/3       5       2       2       True
+    Q(v5)  a=(v5-1)/2  r=v5/3       8       15      15      True
+    Q(v5)  a=(v5-1)/2  r=v5/3       13      2       2       True
+    Q(v5)  a=(v5-1)/2  r=v5/3       21      15      15      True
+    Q(v5)  a=(v5-1)/2  r=1/7        5       3       3       True
+    Q(v5)  a=(v5-1)/2  r=1/7        8       16      16      True
+    Q(v5)  a=(v5-1)/2  r=1/7        13      3       3       True
+    Q(v5)  a=(v5-1)/2  r=1/7        21      17      17      True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  5       0       0       True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  8       5       5       True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  13      6       6       True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  21      5       5       True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  5       1       1       True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  8       0       0       True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  13      1       1       True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  21      0       0       True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      5       4       4       True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      8       9       9       True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      13      17      17      True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      21      10      10      True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       29      28      28      True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       70      73      73      True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       169     143     143     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       408     312     312     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       29      26      26      True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       70      71      71      True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       169     310     310     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       408     533     533     True
+
+(G) The construction.  t(M) = min(C0_M, Cb_M) with C0_M = min_{m<M, theta_m != 0}||m a + r||
+    and Cb_M = min_{m<M} c_m;  ell(M) = least admissible convergent denominator with
+    ||q alpha|| < t(M),  'admissible' = delta > 0 when an exact 0-hit exists.
+    case                            M    C0_M       Cb_M       ell(M)  L-ell  >=M
+    Q(v5)  a=(v5-1)/2  r=v5/3       2    2.546e-01  1.144e-01  5       2      True
+    Q(v5)  a=(v5-1)/2  r=v5/3       4    1.858e-02  3.147e-02  34      36     True
+    Q(v5)  a=(v5-1)/2  r=v5/3       8    1.858e-02  3.147e-02  34      36     True
+    Q(v5)  a=(v5-1)/2  r=v5/3       16   1.587e-02  3.147e-02  34      36     True
+    Q(v5)  a=(v5-1)/2  r=v5/3       32   1.587e-02  2.970e-03  233     125    True
+    Q(v5)  a=(v5-1)/2  r=1/7        2    1.429e-01  1.300e-01  5       3      True
+    Q(v5)  a=(v5-1)/2  r=1/7        4    3.041e-03  1.300e-01  233     236    True
+    Q(v5)  a=(v5-1)/2  r=1/7        8    3.041e-03  1.594e-02  233     236    True
+    Q(v5)  a=(v5-1)/2  r=1/7        16   3.041e-03  1.594e-02  233     236    True
+    Q(v5)  a=(v5-1)/2  r=1/7        32   3.041e-03  1.594e-02  233     236    True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  2    9.017e-02  1.031e-01  13      6      True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  4    9.017e-02  1.031e-01  13      6      True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  8    9.017e-02  1.290e-02  89      149    True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  16   5.573e-02  1.290e-02  89      149    True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  32   2.129e-02  1.290e-02  89      149    True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  2    3.820e-01  1.290e-02  89      144    True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  4    1.459e-01  1.290e-02  89      144    True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  8    9.017e-02  1.290e-02  89      144    True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  16   3.444e-02  1.290e-02  89      144    True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  32   2.129e-02  1.290e-02  89      144    True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      2    8.944e-02  1.595e-01  8       9      True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      4    8.944e-02  7.654e-02  8       9      True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      8    5.646e-02  6.936e-02  8       9      True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      16   3.371e-02  2.081e-02  34      31     True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      32   1.242e-02  4.716e-04  987     606    True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       2    1.894e-01  1.797e-01  5       11     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       4    1.894e-01  8.113e-03  70      73     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       8    5.326e-02  8.113e-03  70      73     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       16   4.725e-02  8.113e-03  70      73     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       32   5.618e-03  8.113e-03  70      73     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       2    2.245e-01  7.776e-03  70      71     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       4    5.292e-02  7.776e-03  70      71     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       8    5.292e-02  7.776e-03  70      71     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       16   2.348e-02  7.776e-03  70      71     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       32   5.955e-03  7.776e-03  70      71     True
+
+(H) Exact height certificates (integer comparisons 2^L > F(W) 2^S, F = |2^ell-3^k| + c_W).
+    case                            ell     k      L       H >= 2^S
+    Q(v5)  a=(v5-1)/2  r=v5/3       233     147    358     2^117
+    Q(v5)  a=(v5-1)/2  r=1/7        233     147    469     2^230
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  89      56     238     2^144
+    Q(v5)  a=(v5-1)/2  r=0     EXC  89      56     233     2^140
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      987     623    1593    2^598
+    Q(2^1/4) a=v2-1 r=2^1/4/3       70      44     143     2^68
+    Q(2^1/6) a=v2-1 r=2^1/6/5       70      44     141     2^67
+
+(I) Aperiodicity, density beta, factor complexity of the ACTUAL coding.
+    case                            no period p<=120  k_N/N (N=4000)  p(6) p(12) p(20)  =2n?
+    Q(v5)  a=(v5-1)/2  r=v5/3       True              0.630750        12   24    40     True
+    Q(v5)  a=(v5-1)/2  r=1/7        True              0.631000        12   24    40     True
+    Q(v5)  a=(v5-1)/2  r=3-5a  EXC  True              0.631000        12   24    40     True
+    Q(v5)  a=(v5-1)/2  r=0     EXC  True              0.631000        12   24    40     True
+    Q(v2,v5) a=(v5-1)/2 r=v2/3      True              0.631000        12   24    40     True
+    Q(2^1/4) a=v2-1 r=2^1/4/3       True              0.631000        12   24    40     True
+    Q(2^1/6) a=v2-1 r=2^1/6/5       True              0.631250        12   24    40     True
+
+(J) The EXCEPTIONAL case is a finite shift of the rho = 0 word.  rho = j0 - m0*alpha gives
+    {n alpha + rho} = {(n - m0) alpha}, so s_n = t_{n-m0} with t the rho=0 coding.  Since
+    Phi(sigma s) = T(Phi(s)) and T maps Q_odd bijectively onto the relevant rationals both ways,
+    rationality of Phi is shift-invariant -- so the case reduces to Phase 12's rho=0 theorem.
+    s_n == t_(n-5) for 5 <= n < 600 : True
+
+(K) Translated intervals.  1_{[u,u+beta) mod 1}({n a + r}) == 1_{[0,beta)}({n a + r - u}),
+    INCLUDING when u + beta > 1 and the interval wraps.  So the theorem at intercept rho and
+    interval [u,u+beta) IS the theorem at intercept rho-u and interval [0,beta): what must be
+    algebraic is the OFFSET rho - u, not rho itself.
+    wrap and non-wrap u, 400 orbit points each: mismatches 0, undecided-by-float 0
+    (u is taken rational here so the shifted intercept stays in the same field; the identity
+     itself is an arc identity and needs no arithmetic hypothesis at all.)
+
+ALL PHASE-13 ALGEBRAIC-INTERCEPT CHECKS PASS.

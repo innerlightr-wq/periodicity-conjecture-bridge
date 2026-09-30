@@ -2,6 +2,8 @@
 
 # PHASE12_VERDICT.md
 
+> **PHASE 13 ADDENDUM.** Two assessments below are superseded. (i) §2's one-line dismissal of the subspace-theorem route ("`L/ℓ → 1`, far too weak") is **withdrawn**: measured against Ridout's threshold the exponent exceeds `2` at 7 of 20 convergents, maximum `3.361` — the route is live, and infinitude is the open point (`theorems/phase13/FAMILY_THEOREM_PRIOR_COVERAGE.md` §5). (ii) §8's hope that a fixed degree might give a **polynomial** logarithmic-form bound is **withdrawn** — that is Baker's own unproved conjecture `κ = 1`; the best explicit shape is `exp(−c₁(log B)²)`, and `c₁` is now a number (`theorems/phase13/EXPLICIT_CONSTANTS_STATUS.md`). Theorem 12 itself stands and is the `ρ ∈ ℚ` case of Theorem 13 (`theorems/phase13/ALGEBRAIC_INTERCEPT_THEOREM.md`).
+
 Isolated worktree `/home/elias/scratch/phase12-bridge`, branch `phase12-audit-generalize`, cut from
 `phase11b-baker-audit` at HEAD `c1bbff4` (expected and actual agree; tree was clean). Nothing pushed,
 nothing published, no release rebuilt, no PDF regenerated. `note_rev2.pdf` `8daf1979…`,
