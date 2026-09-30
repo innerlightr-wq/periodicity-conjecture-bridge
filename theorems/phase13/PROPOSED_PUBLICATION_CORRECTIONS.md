@@ -9,11 +9,16 @@ pointers.
 
 > **Standing wording rule (added with the documentation pass).** In current-facing documentation and
 > in the replacement text below, results by other authors that this repository does not use are
-> described in neutral dependency language, not adversarial language. The canonical form is:
-> *"López–Stoll propose an upper-density exclusion. We do not rely on that result; the conclusions
-> developed here follow from the independent arguments stated in this repository."* Technical concerns
-> remain recorded in the audit files with their source references and verification status; they are
-> not repeated as claims. See `docs/DEPENDENCE_ON_PRIOR_RESULTS.md`.
+> described in dependency-and-acknowledgement language, not adversarial language. The canonical form
+> is:
+>
+> > López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
+> > critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
+> > established through the independent arguments given in this repository and do not require their
+> > proposed upper-density exclusion.
+>
+> Technical concerns remain recorded in the audit files with their source references and verification
+> status; they are not repeated as claims. See `docs/DEPENDENCE_ON_PRIOR_RESULTS.md`.
 
 ## 0. Inventory — fifteen items
 
@@ -117,9 +122,11 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 > **Reading the ladder by density, not by complexity (9B, refined 12, refined 13).** The relevant
 > coordinate is lower ones-density. Below `β = ln2/ln3` the conclusion is already available from
 > Monks–Yazinski (2004) Thm 2.7(b), refereed. Above `β`, López–Stoll (2021) Thm 1 propose an
-> upper-density exclusion; **we do not rely on that result, and the conclusions developed here follow
-> from the independent arguments stated in this repository.** Stated against what is independently
-> available, the covered region is `liminf < β` and the residual is `liminf ≥ β`.
+> upper-density exclusion. **López–Stoll's work on density and the 3x+1 conjugacy map helped guide
+> this programme toward the critical density `β`; we acknowledge that influence. The results
+> presented here are established through the independent arguments given in this repository and do not
+> require their proposed upper-density exclusion.** Stated against what is independently available,
+> the covered region is `liminf < β` and the residual is `liminf ≥ β`.
 > Rungs 1–3″ sit at density `1/2` or at complexity `n+1` and are covered. The critical-density rungs
 > sit at `= β`, where no density result applies. Each rung's *qualitative* conclusion is decided by
 > that test; its *quantitative* content (height floors) is never covered by T1/T2, which bound
@@ -162,12 +169,14 @@ Insert before "Headline result of the repository" the Phase 9/10/11/11B/12 table
 
 Replace "preprint" with:
 
-> **preprint; a proposed result this repository does not rely on.** López–Stoll propose an
-> upper-density exclusion. We do not rely on that result; the conclusions developed here follow from
-> the independent arguments stated in this repository. We have **neither established nor disproved**
-> it and take no position on it. Stated against what is independently available, the covered density
-> region is `liminf < β` (Monks–Yazinski 2004, refereed); the classes treated here sit at exactly `β`
-> and are outside that range either way, so **no conclusion changes in either case.**
+> **preprint; a proposed result this repository does not rely on, by authors whose earlier work this
+> programme is indebted to.** López–Stoll's work on density and the 3x+1 conjugacy map helped guide
+> this programme toward the critical density `β = ln2/ln3`. We acknowledge that influence. The results
+> presented here are established through the independent arguments given in this repository and do not
+> require their proposed upper-density exclusion. We have **neither established nor disproved** it and
+> take no position on it. Stated against what is independently available, the covered density region
+> is `liminf < β` (Monks–Yazinski 2004, refereed); the classes treated here sit at exactly `β` and are
+> outside that range either way, so **no conclusion changes in either case.**
 
 A technical observation about one step of that paper, raised by a third party
 (`innerlightr-wq/eoc-divergence` issue #30, open at the time of writing), is retained in the audit

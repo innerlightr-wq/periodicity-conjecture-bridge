@@ -17,12 +17,35 @@ retained as the audit record and carries a pointer here.
 | Monks & Yazinski, *The autoconjugacy of the 3x+1 function*, Discrete Math. **275** (2004) 219–236, Thm 2.7(b) | used to describe which densities are **already covered** by existing work — not used to prove anything here | refereed |
 | De Jesús, *The 3x+1 Conjugacy Map Sends Every Sturmian Word to an Irrational 2-adic Integer*, doi:10.5281/zenodo.23019799 | the conjugacy-map propositions, the counting transport, and the hitting-time mechanism proposed in its §12 problem (1) | **preprint, not refereed; by the present author — a self-citation** |
 
-## Not relied on
+## Acknowledged influence
 
-**López & Stoll, *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1.**
+**López & Stoll**, *The 3x+1 conjugacy map over a Sturmian word*, **Integers 9 (2009), A13, 141–162**
+[refereed], and *The 3x+1 periodicity conjecture in ℝ*, **arXiv:2101.12747 (2021)** [preprint].
 
-> López–Stoll propose an upper-density exclusion. We do not rely on that result; the conclusions
-> developed here follow from the independent arguments stated in this repository.
+> López–Stoll's work on density and the 3x+1 conjugacy map helped guide this programme toward the
+> critical density `β = ln2/ln3`. We acknowledge that influence. The results presented here are
+> established through the independent arguments given in this repository and do not require their
+> proposed upper-density exclusion.
+
+Concretely, and with the credit made specific rather than general:
+
+- The **critical-density Sturmian word `1c_β`** is theirs — the foundation reference names it "the
+  critical-density Sturmian word of López and Stoll, the hardest case here", and takes its notation
+  from their 2009 paper.
+- The observation that **critical density is exactly where the existing methods stop** is theirs, and
+  it is what makes `β` the right place to work. This programme's Phases 9B–13 arrived at the same
+  point from the complexity side and then had to move to density exactly `β` to find anything
+  uncovered; that the interesting boundary was at `β` was already known from their work.
+- The deduction of irrationality for slopes `γ < β` from Monks–Yazinski is, per the foundation
+  reference, "made explicitly by López and Stoll".
+
+So the debt is to their **refereed 2009 paper** as much as to the 2021 preprint, and it is a debt of
+**direction**, not of premise: no step of any theorem here invokes either paper.
+
+## Not relied on as a premise
+
+**López & Stoll, *The 3x+1 periodicity conjecture in ℝ*, arXiv:2101.12747 (2021), Theorem 1** — the
+proposed upper-density exclusion.
 
 Two clarifications, so that this is not read as more than it says:
 
