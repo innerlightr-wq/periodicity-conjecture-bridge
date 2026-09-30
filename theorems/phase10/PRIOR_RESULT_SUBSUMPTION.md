@@ -1,3 +1,8 @@
+> **SUPERSEDED BY [`PRIOR_RESULT_COVERAGE.md`](PRIOR_RESULT_COVERAGE.md).** That document
+> absorbs this ledger and adds the qualitative/quantitative split this first pass omitted:
+> T1 and T2 are contradiction arguments and bound no height, so each **(B)** row below also
+> carries uncovered **(Q)** content. Retained verbatim as the historical record.
+
 **SUBSUMPTION LEDGER — WHAT IS COVERED, WHAT IS AN INDEPENDENT PROOF, WHAT IS A REFINEMENT, WHAT IS NEW**
 
 # PRIOR_RESULT_SUBSUMPTION.md

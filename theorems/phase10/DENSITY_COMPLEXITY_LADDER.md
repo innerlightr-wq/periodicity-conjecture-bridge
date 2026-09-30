@@ -74,6 +74,17 @@ Every **(A/B)** row is a *correct proof* of a conclusion already available. Noth
 the proofs, the computational records and the (C) structural results stand, and the (C) results are
 the part of this programme that is about the mechanism rather than the class.
 
+## 3b. A third axis: qualitative versus quantitative
+
+Coverage above is about the **qualitative** conclusion `Φ(v) ∉ ℚ`. T1 and T2 supply only that: both
+proofs are contradiction arguments (T1 a limiting argument over `m → ∞`, T2 an accumulation-point
+argument) and neither bounds the height of a hypothetical rational value. The bridge additionally
+supplies an **effective height floor** `H ≥ 2^{S_n}`, explicit and unbounded. So each **(B)** row of
+`PRIOR_RESULT_COVERAGE.md` is simultaneously a **(Q)** row: covered qualitatively, not covered
+quantitatively. The caveat that keeps this honest: the foundation paper already claims "the height
+floors" and "the independent effective Liouville proof" as its own novelty, so the **(Q)** content of
+Phases 2–9 is *new instances of an already-claimed method*, not a new method.
+
 ## 4. Why the complexity axis was the wrong coordinate
 
 The programme's framing — "crossing the counting frontier at `p(n) = 2n`" — compares only against

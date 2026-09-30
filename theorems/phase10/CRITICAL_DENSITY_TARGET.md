@@ -77,11 +77,33 @@ Three things to note, all of them consequences of `β log₂3 = 1`:
 2. **Limiting density is useless; the finite deviation `e_ℓ` is what enters.** `k_ℓ = ℓβ + e_ℓ`
    exactly, and `e_ℓ` appears *linearly and un-damped* in the height. A word could have density
    exactly `β` and still be unreachable if `e_ℓ` grew linearly.
-3. **Both correction terms are already controlled here.** `theorems/phase2/ROTATION_EXAMPLE_THEOREM.md`
-   proves — for **any** fixed interval and **any** bounded-partial-quotient rotation — that the
-   interval-counting deviation is `O(log N)`; that is exactly `e_ℓ`, and `D(W)` is bounded by it plus
-   `|e_ℓ|`. Measured across 15 (`α`,`ρ`) pairs and `ℓ` up to 3927: `max |e_ℓ| = 1.136`,
-   `max D(W) = 3.51`, `max |e_ℓ|/log₂ℓ = 0.17`.
+3. **Both correction terms are controlled — proved explicitly, not cited loosely.**
+
+> **Lemma D (drift).** For `α` with partial quotients bounded by `A`, every `ρ`, and `I = [0,β)`,
+> `|k_N − Nβ| = O_A(log N)`, uniformly in `ρ`.
+>
+> *Proof.* `#{m<N : {mα+ρ} ∈ I} = #{m<N : {mα} ∈ I−ρ}`: shifting the orbit is the same as shifting
+> the interval. The **extreme** discrepancy `D_N` of `({mα})` bounds the deviation for *every*
+> interval simultaneously, and `N D_N ≤ 2 N D*_N = O(Σ_{i≤k} a_i) = O_A(log N)` (Kuipers–Niederreiter,
+> *Uniform Distribution of Sequences*, Ch. 2 Thm 3.4, via the Ostrowski expansion). ∎
+>
+> In the normalisation that literally appears in the height bound, and using `β log₂3 = 1` exactly,
+> ```
+> k_ell * log2(3) - ell  =  log2(3) * (k_ell - ell*beta)  =  O_A(log ell) .
+> ```
+>
+> **Lemma E (root discrepancy).** `D(W) = max_i |k_i − i·k_ℓ/ℓ| = O_A(log ℓ)`.
+>
+> *Proof.* `D(W) ≤ max_i |k_i − iβ| + max_i i·|β − k_ℓ/ℓ| ≤ O_A(log ℓ) + |k_ℓ − ℓβ| = O_A(log ℓ)`
+> by Lemma D. ∎
+
+These replace the earlier appeal to `theorems/phase2/ROTATION_EXAMPLE_THEOREM.md`, which proved the
+same `O(log N)` statement for the interval `[0,1/3)`; the argument uses no property of the interval,
+but it is stated here for `[0,β)` so nothing is inherited implicitly.
+
+Consistency check (`data/phase10b/quantitative_gap_output.txt`, `α = [0;\overline1]`, `ρ = 1/7`):
+`|k_N − Nβ| ≤ 0.91` for `N ≤ 10^5`, `|drift|/log₂N ≤ 0.14`; `D(W)/log₂ℓ ≤ 0.18` for `ℓ ≤ 2584`.
+Across 15 `(α,ρ)` pairs and `ℓ ≤ 3927`: `max|e_ℓ| = 1.136`, `max D(W) = 3.51`.
 
 Substituting, the requirement becomes a single clean statement.
 

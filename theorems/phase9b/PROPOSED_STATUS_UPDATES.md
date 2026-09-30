@@ -68,3 +68,23 @@ Revision 2 (`10.5281/zenodo.23045141`) needs:
 Neither is a mathematical error in the note's proofs. Both are attribution/framing errors. A third
 Zenodo version is the right vehicle. **No publication action has been taken and none should be until
 the author decides.**
+
+## 8. Phase 10 additions to the proposals above
+
+- **`LADDER.md`** — the replacement paragraph of §1 should also carry the qualitative/quantitative
+  split: "Each rung's *qualitative* conclusion is covered by T1/T2; its *quantitative* content
+  (an effective height floor `H ≥ 2^{S_n}`) is not, T1 and T2 being contradiction arguments that
+  bound nothing. That content is a new instance of the foundation paper's own already-claimed
+  effective method."
+- **`THEOREM_STATUS.md`** — the novelty-status block should read "covered qualitatively (T1/T2);
+  quantitative content (effective height floors) not covered, but a new instance of the foundation
+  paper's claimed method, not a new method."
+- **`PRIOR_ART.md`** — extend the standing gate: "compute the lower ones-density and compare with
+  `β`; if it differs, the qualitative conclusion is already available whatever the complexity. Then
+  ask separately whether the *quantitative* content is new, and check it against the foundation
+  paper's own effectivity claim before calling it a contribution."
+- **`README.md`** — the headline should distinguish the two: an independent second proof plus
+  effective height floors, for a class whose irrationality was already available.
+- **Revision 2 of the note** — the two corrections already owed are unchanged. Phase 10 adds no
+  third: §8 of the note already states the density dichotomy correctly for the Sturmian family, and
+  the note does not claim `p(n) = 2n` is a frontier in the sense corrected here. **No deposit.**

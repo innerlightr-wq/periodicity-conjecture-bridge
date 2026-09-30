@@ -66,3 +66,27 @@ finite test, and one quoted-but-unverified discrepancy bound. It is not a statem
 or morphic words. Phase 9's proposal to "sweep the whole `k`-automatic family" is withdrawn: no
 primitive substitutive word can sit at density `β` (algebraic frequencies versus transcendental `β`),
 so no such sweep can reach the one uncovered case.
+
+## C7. The coverage is by density, not by complexity (Phase 10)
+
+The framing "crossing the counting frontier at `p(n) = 2n`" compares only against the transported
+Dubickas criterion (T3). T3 is not the binding constraint: **T1 covers every complexity at every
+density `< β`, and T2 every complexity at every density `> β`.** Moving from `p(n) = n+1` to
+`p(n) = 2n` at a fixed density `1/2` therefore buys nothing. Withdraw "`p(n) = 2n` is a frontier";
+replace with: the frontier is the **density** `β = log₃2`, and complexity matters only insofar as a
+target must stay off T4's complexity-`(n+1)` line and above T3's `1.70951129…` line.
+
+## C8. The quantitative content is not covered — but the method is already claimed (Phase 10)
+
+T1 and T2 are **purely qualitative**. T1's proof (Monks–Yazinski §4.1) fixes `m`, discards a
+finitely many orbit terms whose number depends on the unknown `x`, and lets `m → ∞`; T2's proof
+concludes from the existence of accumulation points. Neither bounds the height `H = max(|u|,v)` of a
+hypothetical rational `Φ(v) = u/v`. The bridge does: `H ≥ 2^{S_n}`, explicit and unbounded (for
+Thue–Morse, `H ≥ 2^{510.7}` at `ℓ = 768`).
+
+So each reclassified result carries genuine quantitative content **in addition to** a covered
+qualitative conclusion. **However**, the foundation paper already claims "the height floors" and
+"the independent effective Liouville proof" as its own novelty, for Sturmian words. The correct
+statement is therefore: *Phases 2–9 supply new instances of an already-claimed effective method.*
+Do not upgrade this into a new irrationality result, and do not omit it either — it is the part of
+those phases that is not subsumed.

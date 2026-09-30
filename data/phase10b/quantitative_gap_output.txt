@@ -1,0 +1,68 @@
+==============================================================================
+PHASE 10 / item 2.  The quantitative gap: effective height floors
+==============================================================================
+    T1 and T2 are QUALITATIVE (see module docstring: a limiting argument and an
+    accumulation-point argument respectively).  Neither bounds H.  The bridge gives
+        H >= 2^{S_n},   S_n = L_n - log2 F(W_n),
+    for ANY hypothetical Phi(s) = u/v with H = max(|u|,v).  Explicit floors:
+
+    word                              ell     L       S_n         height floor H >= 2^S     decimal digits
+    Thue-Morse                        24      40      14.73       2^14.7                    4
+    Thue-Morse                        48      80      30.67       2^30.7                    9
+    Thue-Morse                        96      160     62.68       2^62.7                    19
+    Thue-Morse                        192     320     126.67      2^126.7                   38
+    Thue-Morse                        384     640     254.68      2^254.7                   77
+    Thue-Morse                        768     1280    510.67      2^510.7                   154
+
+    These floors are unbounded in n, explicitly computable, and certified by exact
+    integer arithmetic (2^L > F is an integer comparison).  T1/T2 give nothing of the kind.
+    BUT: the METHOD is the foundation paper's own claimed novelty ('the height floors',
+    'the independent effective Liouville proof'), stated there for Sturmian words.  So the
+    quantitative contribution of Phases 2-9 is NEW INSTANCES of an already-claimed method,
+    not a new method.  It is a real contribution and a modest one; it must not be restated
+    as a new irrationality result.
+
+==============================================================================
+PHASE 10 / item 4.  Explicit proof of the finite-scale bounds at critical density
+==============================================================================
+    Let s be the coding of the rotation by alpha (bounded partial quotients, sup a_i = A)
+    against [0, beta), any intercept rho.  Write k_N = #{m < N : {m alpha + rho} in [0,beta)}.
+
+    DRIFT.  #{m<N : {m alpha + rho} in I} = #{m<N : {m alpha} in I - rho}, so the deviation
+    for interval I at shift rho equals the deviation for the shifted interval I - rho at
+    shift 0.  The EXTREME discrepancy D_N of ({m alpha}) bounds every interval at once and
+    satisfies N D_N <= 2 N D*_N = O(sum_{i<=k} a_i) = O_A(log N)  (Kuipers-Niederreiter,
+    Uniform Distribution of Sequences, Ch. 2 Thm 3.4, via the Ostrowski expansion).  Hence
+        | k_N - N*beta |  =  O_A(log N),   UNIFORMLY in rho and in the interval.
+    In the normalisation that actually appears in the height bound,
+        k_N log2(3) - N  =  log2(3) * (k_N - N*beta)  =  O_A(log N),
+    using beta*log2(3) = 1 exactly.
+
+    ROOT DISCREPANCY.  D(W) = max_i |k_i - i*k_ell/ell| <= max_i |k_i - i*beta| +
+    max_i i*|beta - k_ell/ell| <= O_A(log ell) + |k_ell - ell*beta| = O_A(log ell).
+
+    Verification of both bounds on the target family (alpha = [0;1,1,...], rho = 1/7):
+    N         k_N       drift k_N - N*beta    |drift|/log2(N)    k_N log2(3) - N    
+    100       64        0.90702               0.13652            1.43760            
+    1000      631       0.07025               0.00705            0.11134            
+    10000     6309      -0.29754              0.02239            -0.47158           
+    50000     31547     0.51232               0.03282            0.81201            
+    100000    63093     0.02464               0.00148            0.03906            
+
+    ell (=q_k)    D(W)        D(W)/log2(ell)    drift at ell    |drift|/log2(ell)
+    21            0.4762      0.1084            -0.24952        0.0568
+    34            0.5000      0.0983            -0.45161        0.0888
+    55            1.0000      0.1730            0.29886         0.0517
+    89            0.9438      0.1457            -0.15275        0.0236
+    144           1.0694      0.1492            0.14612         0.0204
+    233           1.1717      0.1490            -0.00663        0.0008
+    377           1.1326      0.1323            0.13948         0.0163
+    610           1.2049      0.1302            0.13285         0.0144
+    987           1.1773      0.1184            0.27233         0.0274
+    1597          1.2098      0.1137            0.40518         0.0381
+    2584          1.9946      0.1760            -0.32248        0.0284
+
+    Both ratios stay bounded, as the proof requires.  The bounds are PROVED above; the
+    table is a consistency check, not the evidence.
+
+ALL PHASE-10 ITEM-2/4 CHECKS PASS.
