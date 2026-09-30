@@ -2,6 +2,9 @@
 
 # EXACT_HEIGHT_AND_SURPLUS.md
 
+> **CORRECTION (Phase 11B).** Two corrections. (i) The measured constants `|e_ℓ| ≤ 0.41`, `D(W) ≤ 2.02` are valid only on the computed range and are **not** used asymptotically; the asymptotic argument now runs on the proved bounds `|e_ℓ| ≤ C_D log₂ℓ + C_D'`, `D(W) ≤ 2C_D log₂ℓ + 2C_D'` alone. (ii) The closing appeal to "Baker's Theorem 3.1" and the form `S ≥ M − Cκ''log₂M − C₀` are **withdrawn**; the corrected continuation is `S ≥ M − (Cc₁/ln2)(log(M+2))^κ − C₀`. The five explicit height floors are **unaffected and Baker-free** — they are exact integer comparisons `2^L > F(W)`. See `theorems/phase11b/PHASE11B_VERDICT.md` and `theorems/phase11b/BAKER_SOURCE_AND_APPLICATION.md`. **Theorem 11 itself stands**; only this justification changed.
+
+
 Verification: `scripts/phase11/exact_height_surplus.py`, `data/phase11/exact_height_surplus_output.txt`.
 
 ## 1. The periodic value and the height bound, reconstructed
@@ -42,6 +45,7 @@ both proved there for `[0,β)` and any bounded-type `α`, uniformly in `ρ`):
 
 > **(H′)**  `S(W) ≥ (L − ℓ) − C·log₂ℓ − C₀`, with `C = 1 + 3·log₂3·C_D` and `C₀` explicit.
 
+**[CORRECTED — the next two sentences are a consistency check on the computed range, not an ingredient of the asymptotic proof; see the Phase 11B banner above.]**
 For this candidate the drift is tiny in the verified range: `|e_ℓ| ≤ 0.41` and `D(W) ≤ 2.02` for
 `ℓ ≤ 6765`, so (H) reads `S ≥ (L−ℓ) − 1.59 − 3·1.59 − log₂(2ℓ)`, i.e. **`S ≥ (L−ℓ) − log₂ℓ − 7.35`**
 on that range.
@@ -95,8 +99,8 @@ H >= 2^462,  2^838,  2^872,  2^2469,  2^15998
 ```
 
 — five explicit floors, the largest a **4 816-digit** lower bound on the height of any rational that
-could equal `Φ(s)`. These are certified by integer arithmetic. Because Baker's Theorem 3.1 is
-effective, the infinite family `S(ℓ(M)) ≥ M − Cκ''log₂M − C₀` is effective too, so the floors
+could equal `Φ(s)`. These are certified by integer arithmetic. Because Baker's theorem (as corrected in Phase 11B: Mathematika **14** (1967), Thm 2) is
+effective, the infinite family `S(ℓ(M)) ≥ M − (Cc₁/ln2)(log(M+2))^κ − C₀` is effective too, so the floors
 continue explicitly for every `M`.
 
 **This quantitative content is logically independent of the qualitative conclusion** and is stated

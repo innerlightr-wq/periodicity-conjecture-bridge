@@ -2,6 +2,9 @@
 
 # PHASE11_VERDICT.md
 
+> **CORRECTION (Phase 11B).** The R4 row below (`c_m ≥ C₂m^{−κ}`, "Baker, *Transcendental Number Theory*, Thm 3.1") is **WITHDRAWN and replaced** by Baker, Mathematika **14** (1967), Thm 2, whose bound is stretched-exponential in `log B`. The R5 row's `log₂ℓ(M) = O(log M)` becomes `log ℓ(M) = O((log(M+2))^κ)`. See `theorems/phase11b/PHASE11B_VERDICT.md` and `theorems/phase11b/BAKER_SOURCE_AND_APPLICATION.md`. **Theorem 11 itself stands**; only this justification changed.
+
+
 Isolated branch `phase11-explicit-word`, cut from `phase10-critical-density` at HEAD `d91e56e`
 (expected and actual agree). Nothing pushed, nothing published, no release rebuilt;
 `note_rev2.pdf` `8daf1979…`, `correction_notice.pdf` `0c93457c…` and both `~/Downloads` copies

@@ -2,6 +2,9 @@
 
 # ROTATION_REPETITION_LEMMA.md
 
+> **CORRECTION (Phase 11B).** R4's claim `c_m ≥ C₂m^{−κ}` is **WITHDRAWN**: read first-hand, the source (Baker, *Linear forms in the logarithms of algebraic numbers III*, Mathematika **14** (1967), Thm 2) gives a *stretched exponential* `C·e^{−(log B)^κ}`, not a polynomial bound. R5 is correspondingly replaced by `log ℓ(M) = O((log(M+2))^κ)`, which still suffices. A second, unstated hypothesis of the closed-form arc description (`|δ| ≤ min(β,1−β)`) is also identified there; the construction satisfies it with a factor ≈108 to spare. See `theorems/phase11b/PHASE11B_VERDICT.md` and `theorems/phase11b/BAKER_SOURCE_AND_APPLICATION.md`. **Theorem 11 itself stands**; only this justification changed.
+
+
 Throughout: `α = (√5−1)/2`, `ρ = 1/7`, `β = log₃2`, `s_n = 1 ⟺ {nα+ρ} ∈ [0,β)`,
 `χ := 1_{[0,β)}`, `L(ℓ) := lcp(s, (s[0:ℓ])^∞)`. For `ℓ ≥ 1` let `δ(ℓ) := ℓα − round(ℓα)` (signed),
 so `|δ(ℓ)| = ‖ℓα‖`. Verification: `scripts/phase11/rotation_repetition.py`,
@@ -63,6 +66,8 @@ Exact check: `min_{1≤m<60000} 147·m·‖mα+1/7‖ = 1.341 > 1`. **The ration
 here** — for irrational `ρ ∉ ℤα+ℤ` the orbit still misses `0`, but with no effective rate.
 
 ## R4. The arc at `β` — PROVED via an effective cited theorem
+
+**[CORRECTED — see the Phase 11B banner above. The polynomial conclusion stated in this section is withdrawn; the corrected bound is `c_m ≥ exp(−c₁(log(m+2))^κ)` with `κ > 2`, and it still suffices.]**
 
 Put `c_m := ‖mα + ρ − β‖`. Writing the nearest integer as `n`, `c_m = |A − β|` with
 `A := mα + 1/7 − n ∈ ℚ(√5)` algebraic of degree `≤ 2` and height `O(m²)`. Since `β = ln2/ln3`,

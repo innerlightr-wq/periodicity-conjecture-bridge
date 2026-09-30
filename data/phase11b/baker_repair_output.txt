@@ -1,0 +1,75 @@
+==============================================================================
+PHASE 11B.  Repair of the analytic dependency
+==============================================================================
+
+1.  A_m: explicit form, uniform degree and height bounds.
+    A_m = m*alpha + 1/7 - j_m,  alpha = (sqrt5-1)/2,  j_m = nearest integer to m*alpha+1/7-beta.
+    Writing over the common denominator 14:  A_m = (a_m + 7m*sqrt5)/14,  a_m = -7m + 2 - 14 j_m.
+    deg A_m = 2 for every m >= 1 (A_m irrational); deg A_0 = 1.  Minimal polynomial of
+    A_m (m>=1): 196 x^2 - 28 a_m x + (a_m^2 - 5*(7m)^2), so the classical height is
+    H(A_m) = max(196, 28|a_m|, |a_m^2 - 245 m^2|) = O(m^2).
+
+    m       a_m         b_m=7m    H(A_m)          H(A_m)/m^2    A_m != 0
+    0       2           0         196             196.00        True
+    1       -5          7         220             220.00        True
+    2       -26         14        728             182.00        True
+    5       -75         35        2100            84.00         True
+    20      -306        140       8568            21.42         True
+    100     -1552       700       43456           4.35          True
+    1000    -15650      7000      438200          0.44          True
+    10000   -156518     70000     4382504         0.04          True
+    H(A_m) <= 220 * m^2 on the sample; the closed form above gives H(A_m) = O(m^2)
+    unconditionally, so  log H(A_m) = 2 log m + O(1).
+
+2.  Nonvanishing of Lambda_m = A_m log 3 - log 2, and the m = 0 case.
+    Lambda_m = 0 would give log_3 2 = A_m, an algebraic number -- contradicting the
+    transcendence of log_3 2 (Gelfond-Schneider).  So Lambda_m != 0 for EVERY m >= 0,
+    including m = 0 where A_0 = 1/7 - j_0 is rational and nonzero.
+    Baker's Theorem 2 hypotheses, checked: alpha_1 = 3, alpha_2 = 2 are non-zero algebraic;
+    beta_1 = A_m != 0 and beta_2 = -1 != 0 are algebraic; and log 3, log 2 are linearly
+    independent over Q (a log2 + b log3 = 0 with (a,b) != 0 rational forces 2^a = 3^{-b}).
+    So Theorem 2 applies with n = 2, any kappa > 2, d = 2:
+        c_m = |Lambda_m| / log 3  >  (C/log 3) * exp( -(log H(A_m))^kappa )
+            >=  exp( -c_1 * (log(m+2))^kappa )        for effective c_1 and any fixed kappa > 2.
+    THIS IS THE STRONGEST BOUND THE SOURCE SUPPORTS.  The polynomial form is withdrawn.
+
+3.  C_M and the witness size, with bounded consecutive denominator ratios.
+    C_M := min_{0<=m<M} c_m  >=  exp( -c_1 (log(M+2))^kappa ).
+    For alpha = (sqrt5-1)/2 the convergent denominators are Fibonacci, so
+        q_{k+1} = q_k + q_{k-1} <= 2 q_k     (bounded ratio, used explicitly below),
+    and the classical two-sided estimate 1/(q_{k+1}+q_k) < ||q_k alpha|| < 1/q_{k+1} holds.
+    Let t := min(C_M, 1/(147 M)) and let ell(M) = q_k be the LEAST convergent denominator
+    with ||q_k alpha|| < t.  Minimality gives ||q_{k-1} alpha|| >= t, and ||q_{k-1} alpha||
+    < 1/q_k, hence
+        ell(M) = q_k  <  1/t  =  max( 1/C_M , 147 M ) .
+    Also ||q_k alpha|| > 1/(q_{k+1}+q_k) >= 1/(3 q_k), so t > 1/(3 ell(M)), i.e.
+        ell(M)  >  1/(3t)  >=  147 M / 3  =  49 M   ->   infinity .
+    Since kappa > 2, exp(c_1 (log(M+2))^kappa) eventually exceeds 147M, so for large M
+        log ell(M)  <=  c_1 (log(M+2))^kappa ,   i.e.   log ell(M) = O( (log(M+2))^kappa ).
+    A POLYNOMIAL bound on C_M is NOT needed for this.
+
+    Verification of the two denominator facts used:
+      q_(k+1) <= 2 q_k for all tested k : True
+      1/(q_(k+1)+q_k) < ||q_k alpha|| < 1/q_(k+1) : True
+
+4.  The height penalty is o(M), so S -> infinity.
+    (H') gives  S >= (L - ell) - C log2(ell) - C_0  with C, C_0 absolute for this alpha.
+    R5 gives L - ell >= M, and step 3 gives log2 ell(M) <= (c_1/ln2)(log(M+2))^kappa.  So
+        S  >=  M  -  (C c_1/ln 2) (log(M+2))^kappa  -  C_0 .
+    For any FIXED kappa, (log(M+2))^kappa / M -> 0, so the penalty is o(M) and S -> +infinity.
+
+    M         (log(M+2))^3    penalty/M  (C c_1/ln2 = 1)  M - penalty
+    1e2       98.93           0.9893                      1.0701
+    1e3       329.9           0.3299                      670.096
+    1e6       2637            0.002637                    997363
+    1e12      2.11e+04        2.11e-08                    1e+12
+    1e30      3.296e+05       3.296e-25                   1e+30
+    1e100     1.221e+07       1.221e-93                   1e+100
+    The ratio falls to 0; the third column is the entire content of 'o(M)'.
+
+5.  What survives WITHOUT Baker: the finite height certificates.
+    The certificates H >= 2^S at the computed witnesses are exact integer facts
+    (2^L > F(W)) and use NO analytic input at all.  Baker is needed only to know that
+    the family continues for every M, i.e. for the asymptotic conclusion.
+
+ALL PHASE-11B CHECKS PASS.
