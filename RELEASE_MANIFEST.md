@@ -84,7 +84,9 @@ phase14/explicit_constants.py    ALL PHASE-14 EXPLICIT-CONSTANT CHECKS PASS.
 
 **Branch:** `phase15-corrected-release`, cut from `phase14-release-reconciliation` at `2c298f5`
 (ancestry verified: `2c298f5`, `5d04064`, `ec035dd` and `46b0d0a` are all ancestors).
-**Commit:** `82cb949`
+**Commit:** `08c3346` — the Phase 15 package commit. This line could not name its own hash, so it was
+written in the immediately following commit, which changes only this file. `git log` on the branch is
+authoritative.
 
 ## 6. Readable local copies
 
