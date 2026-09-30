@@ -1,0 +1,64 @@
+==============================================================================
+PHASE 8 / E.  Exact-integer surplus at GENERAL intercepts
+==============================================================================
+
+family                              A   k   br     ell    ellR     r_u  gam_R    D(R)            S  2^Lv>F
+characteristic  c_k=0               1   8  odd      55     110  2.5818    1/2    2.00        31.94    True
+characteristic  c_k=0               1   9 even      89      89  2.5955  45/89    2.25       140.76    True
+characteristic  c_k=0               1  10  odd     144     288  2.6042    1/2    2.00        86.94    True
+characteristic  c_k=0               1  11  odd     233     466  2.6094    1/2    2.50       140.76    True
+characteristic  c_k=0               1  12 even     377     377  2.6127 188/377    2.25       607.94    True
+characteristic  c_k=0               1  13  odd     610    1220  2.6148    1/2    3.00       373.76    True
+characteristic  c_k=0               1  14  odd     987    1974  2.6160    1/2    3.00       607.94    True
+characteristic  c_k=0               1  15 even    1597    1597  2.6168 799/1597    3.25      2580.76    True
+omega(-alpha)  (intercept -alpha)   1   8  odd      55     110  2.6000    1/2    2.50        32.34    True
+omega(-alpha)  (intercept -alpha)   1  10  odd     144     288  2.6111    1/2    2.50        87.34    True
+omega(-alpha)  (intercept -alpha)   1  12 even     377     377  2.6154 188/377    2.44       608.34    True
+omega(-alpha)  (intercept -alpha)   1  14  odd     987    1974  2.6170    1/2    3.50       608.34    True
+d_k==1  (worst adversary)           1   8  odd      55     110  2.5818    1/2    2.00        31.94    True
+d_k==1  (worst adversary)           1   9 even      89      89  2.5955  45/89    2.25       140.76    True
+d_k==1  (worst adversary)           1  10  odd     144     288  2.6042    1/2    2.00        86.94    True
+d_k==1  (worst adversary)           1  11  odd     233     466  2.6094    1/2    2.50       140.76    True
+d_k==1  (worst adversary)           1  12 even     377     377  2.6127 188/377    2.25       607.94    True
+d_k==1  (worst adversary)           1  13  odd     610    1220  2.6148    1/2    3.00       373.76    True
+d_k==1  (worst adversary)           1  14  odd     987    1974  2.6160    1/2    3.00       607.94    True
+d_k==1  (worst adversary)           1  15 even    1597    1597  2.6168 799/1597    3.25      2580.76    True
+eventually-maximal                  1   9 even      89      89  2.6067  44/89    1.75       142.82    True
+eventually-maximal                  1  11  odd     233     466  2.6137    1/2    2.50       142.82    True
+eventually-maximal                  1  13  odd     610    1220  2.6164    1/2    2.50       375.82    True
+random admissible                   1   8  odd      55     110  2.6909    1/2    3.00        36.92    True
+random admissible                   1  11  odd     233     466  2.0172    1/2    3.00         2.92    True
+random admissible                   1  12 even     377     377  3.2467 189/377    3.07       845.92    True
+
+witness rows: 263   Ostrowski-vs-literal mismatches: 0
+exact transfer L_v = L_u + 1: 263 confirmed, 0 violated
+
+------------------------------------------------------------------------------
+Surplus growth along one general intercept (d_k==1 adversary, a_k=2, A=2)
+------------------------------------------------------------------------------
+  k    br     ell    ellR      r_u   E=r_u-2    D(R)            S   ell*E+1-ceilD*lg3-lg(ellR)
+  3   odd      10      20  2.10000   0.10000    1.00         0.64                        -3.91
+  4   odd      24      48  2.16667   0.16667    2.00         2.70                        -3.75
+  5   odd      58     116  2.18966   0.18966    2.00         9.99                         1.97
+  6   odd     140     280  2.20000   0.20000    2.00        27.00                        17.70
+  7   odd     338     676  2.20414   0.20414    2.00        68.00                        57.43
+  8   odd     816    1632  2.20588   0.20588    3.00       167.00                       153.57
+  9   odd    1970    3940  2.20660   0.20660    3.00       406.00                       391.30
+ 10   odd    4756    9512  2.20690   0.20690    3.00       983.00                       967.03
+ 11   odd   11482   22964  2.20702   0.20702    3.00      2376.00                      2358.76
+
+------------------------------------------------------------------------------
+CONTROLS: purely periodic words (rational Phi) must NOT give growing surplus
+------------------------------------------------------------------------------
+  period [0, 1]: u and v are purely periodic to the end of the window: True  -> lcp is unbounded because v IS the periodic word; the criterion's
+      hypothesis 'v aperiodic' fails, so no contradiction is derivable. OK
+  period [0, 0, 1]: u and v are purely periodic to the end of the window: True  -> lcp is unbounded because v IS the periodic word; the criterion's
+      hypothesis 'v aperiodic' fails, so no contradiction is derivable. OK
+  period [1, 1, 0, 1]: u and v are purely periodic to the end of the window: True  -> lcp is unbounded because v IS the periodic word; the criterion's
+      hypothesis 'v aperiodic' fails, so no contradiction is derivable. OK
+  period [0, 1, 1]: u and v are purely periodic to the end of the window: True  -> lcp is unbounded because v IS the periodic word; the criterion's
+      hypothesis 'v aperiodic' fails, so no contradiction is derivable. OK
+
+smallest surplus among witnesses with ell>=40: S=0.64 (random admissible, k=5, ell=99)
+
+ALL SURPLUS CHECKS PASS.

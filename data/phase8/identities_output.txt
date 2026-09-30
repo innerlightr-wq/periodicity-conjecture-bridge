@@ -1,0 +1,21 @@
+==============================================================================
+PHASE 8 / A.  Identity audit: BHZ Cor. 3.5  vs  Phase-8 reformulation
+==============================================================================
+A1 exhaustive: 27774 admissible digit sequences x 2 q-conventions,
+    467828 (k, identity) assertions (R1)-(R5): ALL PASS
+A2 random long: 480 sequences (length 60, A<=12), 27840 assertions (R1)-(R5): ALL PASS
+A3 BHZ Cor.3.5 proof observations reproduced exactly (counts of verified instances):
+      ck=0,c(k+1)<a(k+1) -> y(k)<=x(k)                 6874
+      ck=0,c(k+1)=a(k+1) -> y(k)<y(k+1)=x(k-1)         3911
+      ck=ak -> y(k)=x(k-2)                             3915
+
+A4 BHZ Sec. 4.2 closed forms, reproduced from the general formula
+      a_k=1 (alpha=[0;2,1,1,...] in Q(theta))  characteristic (c=0)             ice ~ 2.618007
+      a_k=1 (alpha=[0;2,1,1,...] in Q(theta))  omega(-alpha) = 0 a2 0 a4 ...    ice ~ 2.618012
+      a_k=2 (alpha=[0;3,2,2,...])              characteristic (c=0)             ice ~ 3.414214
+      a_k=2 (alpha=[0;3,2,2,...])              omega(-alpha) = 0 a2 0 a4 ...    ice ~ 3.414214
+      a_k=3,1,3,1,...                          characteristic (c=0)             ice ~ 4.791288
+      a_k=3,1,3,1,...                          omega(-alpha) = 0 a2 0 a4 ...    ice ~ 4.791288
+      (BHZ Thm 1.2: ice(char) = ind*(alpha)-1 = 1+limsup[a_{k+1};a_k,...,a_1])
+
+ALL IDENTITY CHECKS PASS.
