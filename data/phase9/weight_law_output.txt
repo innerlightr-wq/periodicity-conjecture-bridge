@@ -1,0 +1,22 @@
+==============================================================================
+PHASE 9 / D2.  The exact weight law for witness roots
+==============================================================================
+
+    class                                     off=-1   off=0    off=+1   exact?
+    intermediate, no attainment guarantee     32       1945     53       NO  85/2030
+    x-root, x(k) < 1  (NOT a power root)      11       0        16       NO  27/27
+    x-root, x(k) >= 1                         0        2032     0        YES  (2032/2032)
+    y-root, BHZ-attained (0<c_k<a_k)          0        952      0        YES  (952/952)
+
+    VERDICT ON THE WEIGHT LAW:
+      (W-y) y-root, 0 < c_k < a_k          : exact in 952/952 cases
+      (W-x) x-root with x(k) >= 1          : exact in 2032/2032 cases
+      x-root with x(k) < 1                 : deviates in 27/27 cases  <-- the source of the D1 x-deviations
+      intermediate                         : deviates in 85/2030 cases  <-- must read the actual weight
+
+    So the parity argument is safe exactly on the BHZ-attained y-roots, and on x-roots
+    whose exponent is at least 1.  For intermediate roots the parity must be computed
+    from the word -- which is what scripts/phase9/phase9_even_branch.py does (it asserts
+    w == sum(u[:ell]) on every root it uses).
+
+STEP D2 COMPLETE.

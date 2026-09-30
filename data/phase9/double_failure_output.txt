@@ -1,0 +1,88 @@
+==============================================================================
+PHASE 9 / F.  The even-branch-resistant families, and the double-failure construction
+==============================================================================
+
+F1  Do the even-branch-resistant families fall to the ODD branch?  (exact integers)
+    family                k   ell       w%2  r_u        ell*E       D(R)     S (exact)   2^Lv>F
+    a_k = 2^k, keep-one   4   120       1    2.033333   4           5.00     3.08        True
+
+    Both resistant families ARE covered, by the odd branch, with positive exact surplus:
+      a_k = 2^k, keep-one : odd-branch witnesses with positive exact surplus found = True
+      a_k = k!,   keep-one: odd-branch witnesses with positive exact surplus found = False
+    So resistance to the even branch is NOT by itself a counterexample to the bridge.
+
+F2  The growth condition (H).  Driver = q_(k-3); penalty estimate = sum of the
+    partial quotients of gamma/2 up to the depth reaching ell_k, times log2 3.
+    family                  k   q_(k-3)       sum b_i (exact)   driver/penalty  (H) holds?
+    a_k = 2^k               10  4.534e+08     1536              1.827e+05       True
+    a_k = 2^k               11  1.161e+11     2048              3.514e+07       True
+    a_k = k!                7   773           629               0.7549          False
+    a_k = k!                8   9.279e+04     10709             5.454           True
+    a_k = 2^(2^k)           5   81            33298             0.001534        False
+    a_k = 2^(q_(k-1))       5   7             87                0.04612         False
+    a_k = 2^(q_(k-1))       6   59            1.15292e+18       3.229e-17       False
+
+    So (H) holds comfortably for a_k = 2^k and k!, and BREAKS for towers such as
+    a_k = 2^(2^k) and a_k = 2^(q_(k-1)): there the estimated penalty outruns the driver.
+
+F3  The double-failure construction, and what it does and does not establish.
+    To defeat BOTH branches simultaneously the slope/intercept must satisfy three things:
+      (i)   a_k EVEN for all large k with both boundary numerator parities odd, so that
+            EVERY convergent numerator p_k is odd  -> the x-root always has odd weight;
+      (ii)  d_k EVEN for all large k, so that the y-root weight d_k p_(k-1) + p_(k-2)
+            == d_k + 1 == 1 (mod 2) is odd too  -> NO guaranteed even-weight root at all;
+      (iii) tower-fast growth of a_k, so that the estimated discrepancy penalty outruns
+            the driver q_(k-2)(m_(k-1)-1) and the growth condition (H) breaks.
+    Note (ii) rules out the keep-one intercept: there d_k = 1 is ODD, so on family (i)
+    the y-root weight p_(k-1) + p_(k-2) is EVEN and the even branch works.  The hostile
+    intercept must therefore be an even-d_k one, e.g. c_k = a_k - 2.
+
+    a  = [3, 1, 2*2^(2^1), 2*2^(2^2), 2*2^(2^3), ...]  (all even from k=3)
+    c  = a_k - 2  (so d_k = 2, EVEN for every k)   admissible: True
+    all convergent numerators odd: True
+    guaranteed roots at scale k: x-root weight p_k (ODD), y-root weight
+      2 p_(k-1) + p_(k-2) == 0 + 1 == 1 (ODD).  So NO guaranteed even-weight root exists
+      at ANY scale -- this is a structural statement, not a sampling artefact.
+
+    k   a_k                     q_k                       x(k)        y(k)        g(gamma)   
+    3   8                       44                        2.363636364 2.142857143 1.257869   
+    4   32                      1413                      2.073602265 2.118279570 1.257869   
+    5   512                     723500                    2.004049758 2.020905923 1.257869   
+
+    This family's OWN driver and penalty estimate (not borrowed from F2):
+    k   ell_k                   driver ell_k*E_k        sum b_i         penalty est     driver/penalty  (H)?
+    4   93                      11                      15              30.7744         0.3574          False
+    5   2870                    60                      32              62.7188         0.9567          False
+
+    LEVEL-BY-LEVEL VERDICT for this family:
+      (a) sufficient growth condition (H): FAILS from k = 5 on -- the row above shows the
+          estimated penalty overtaking the driver, and the gap widens like a tower.
+      (b) estimated surplus bound: FAILS, for the same reason -- it is the same estimate.
+      (c) EXACT surplus along selected witnesses: NOT DETERMINED.  q_k passes 10^150 by
+          k = 6, so the word cannot be built and F(R) cannot be evaluated; and no proof
+          decides it.  (b) failing does NOT imply (c) fails: the three-distance bound on
+          D(R) is a worst-case estimate over ALL intervals, and on the actual roots
+          Phases 8-9 measured D(R) two to three orders of magnitude below it (e.g. Step C:
+          D(V) = 3-5 against a combinatorial cap of 960-5600).
+      (d) every witness family: NOT DETERMINED, and strictly stronger than (c).  The
+          intermediate roots at these scales were not even enumerable here.
+
+    F4  (c) tested EXACTLY at the scales of this family that are still computable.
+    The first two hostile scales have ell_k = 93 and 2870, which ARE buildable, and (H)
+    already fails at both (ratios 0.357 and 0.957).  So this is a direct test of whether
+    (b) failing implies (c) failing.
+    certified prefix: 2930 symbols, S-adic depth K = 5
+    k   ell     w       w%2  r_u         ell*E    D(R)    S (exact)   2^Lv>F  branch
+    3   44      9       1    2.363636    16       2.00    15.33       True    odd
+    4   93      19      1    2.118280    11       2.00    10.34       True    odd
+
+    2 exact evaluations at the hostile scales where (H) already fails.
+    RESULT: the EXACT surplus is positive at every one of them.  So on this family the
+    failure of (a) and (b) does NOT propagate to (c) at the scales where (c) can be
+    decided.  That is direct evidence that the obstruction is in the ESTIMATE of D(R),
+    not in the arithmetic -- and it is exactly why (b) must not be reported as (c).
+
+    So this family defeats the CURRENT SUFFICIENT CRITERION, and nothing more.  It is
+    not a counterexample to Phi(v) not in Q, and not a counterexample to the bridge.
+
+STEP F COMPLETE.

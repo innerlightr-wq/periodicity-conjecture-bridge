@@ -1,0 +1,66 @@
+==============================================================================
+PHASE 9 / B.  Even-weight witnesses on the all-odd-numerator (hostile) family
+==============================================================================
+    even-branch threshold: r > log2 3 = 1.58496250   (no discrepancy hypothesis)
+    odd-branch threshold:  r > 2                      (needs D(R) = o(ell))
+
+B1  Is an even-weight root with r > log2 3 available?  (literal prefix powers)
+    slope                  intercept                      #(k,d)  even-wt  even-wt & r>lg3  odd-wt & r>2  best even-wt r
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 20      11       10               9             1.707070
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   20      11       9                9             1.707051
+    [3,1,2,2,2,...]        keep-one     (d_k = 1, odd)    19      10       10               0             2.263158
+    [5,3,2,2,2,...]        c = 0        (d_k = a_k, even) 18      10       10               8             1.707079
+    [5,3,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   18      10       8                8             1.706955
+    [5,3,2,2,2,...]        keep-one     (d_k = 1, odd)    17      9        9                0             2.206923
+    [3,1,2,4,2,4,...]      c = 0        (d_k = a_k, even) 24      13       8                7             1.816469
+    [3,1,2,4,2,4,...]      c = a_k - 2  (d_k = 2, even)   24      13       4                11            1.936170
+    [3,1,2,4,2,4,...]      keep-one     (d_k = 1, odd)    23      12       8                0             2.263158
+    [3,1,4,4,4,...]        c = 0        (d_k = a_k, even) 26      14       6                5             1.808967
+    [3,1,4,4,4,...]        c = a_k - 2  (d_k = 2, even)   24      13       6                11            1.842105
+    [3,1,4,4,4,...]        keep-one     (d_k = 1, odd)    23      12       6                0             2.172414
+    [3,1,2,4,6,8,10,...]   c = 0        (d_k = a_k, even) 28      15       4                3             1.890261
+    [3,1,2,4,6,8,10,...]   c = a_k - 2  (d_k = 2, even)   20      11       3                6             1.936170
+    [3,1,2,4,6,8,10,...]   keep-one     (d_k = 1, odd)    19      10       4                0             2.263158
+    [3,1,8,8,8,...]        c = 0        (d_k = a_k, even) 38      20       4                3             1.890313
+    [3,1,8,8,8,...]        c = a_k - 2  (d_k = 2, even)   32      17       4                7             1.842105
+    [3,1,8,8,8,...]        keep-one     (d_k = 1, odd)    31      16       4                0             2.111111
+
+    READING (this refutes the Phase 8 expectation): on EVERY hostile slope/intercept pair
+    tested, even-weight roots clearing log2 3 DO exist, and there are several per pair.
+    So the odd branch is NOT forced by the all-odd-numerator condition: the even branch,
+    which needs no discrepancy hypothesis and hence no growth condition, remains available.
+    Step C computes the exact integer surplus on those even-weight roots.
+
+B2  Why: the intermediate roots' prefix powers, by d, at one hostile pair.
+    slope [3,1,2,4,2,4,...], intercept c = 0 (d_k = a_k)
+    k   d   kind  ell       w         w%2  literal r   r > lg3?  r > 2?
+    9   1   int   7335      1564      0    1.816224    True      False
+    9   2   xy    13324     2841      1    5.449340    True      True
+    10  1   int   19313     4118      0    1.689794    True      False
+    10  2   int   32637     6959      1    1.408187    False     False
+    10  3   int   45961     9800      0    1.289854    False     False
+    11  1   int   72609     15482     0    1.816469    True      False
+    The BHZ-guaranteed roots (kinds x, y) reach r >= 2 but have ODD weight here.  Among the
+    genuinely intermediate roots the exponent DECREASES with d, so d = 1 is the best one,
+    and d = 1 always has EVEN weight on this family.  Its exponent sits near 1.7-1.8,
+    above log2 3 = 1.585 -- which is all the even branch needs.
+
+B3  The forced odd branch, exact integer surplus, at the hostile pairs where an
+    odd-weight witness with r > 2 exists.
+    slope                  intercept                      k   ell      r_u       ell*E       S (exact)   2^Lv>F
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 5   80       3.387500  111         108.67      True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 6   193      3.404145  271         270.06      True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 7   466      3.409871  657         654.67      True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 8   1125     3.412444  1589        1588.06     True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 9   2716     3.413476  3839        3836.67     True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 10  6557     3.413909  9271        9270.06     True
+    [3,1,2,2,2,...]        c = 0        (d_k = a_k, even) 11  15830    3.414087  2.238e+04   22382.67    True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   5   80       3.375000  110         108.53      True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   6   193      3.398964  270         269.72      True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   7   466      3.407725  656         654.53      True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   8   1125     3.411556  1588        1587.72     True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   9   2716     3.413108  3838        3836.53     True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   10  6557     3.413756  9270        9269.72     True
+    [3,1,2,2,2,...]        c = a_k - 2  (d_k = 2, even)   11  15830    3.414024  2.238e+04   22382.53    True
+
+ALL STEP-B CHECKS PASS.

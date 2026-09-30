@@ -1,0 +1,59 @@
+==============================================================================
+PHASE 9 / A.  Unified witness family: lengths, weights, identity, routing, parity
+==============================================================================
+
+A1  Driver identity  ell_k * E_k = q_(k-2) (m_(k-1) - 1)  AND the attainment routing.
+    ell_k := q_k - c_k q_(k-1).  Checked: the identity, and that ell_k equals the root
+    length of the power actually exhibited by BHZ Prop. 3.3 + Cor. 3.5's observations.
+    131888 (slope, admissible digit string, k) instances; routing usage:
+      R1 y(k)      41397
+      R2 x(k-2)    14113
+      R3 x(k)      61137
+      R4 x(k-1)    15241
+    ALL identity assertions and ALL routing length/dominance assertions pass.
+    => in routings R1, R2, R3 the identity's ell_k IS the attained root length;
+       in R4 the attained length q_(k-1) is the identity's ell_(k+1).  No case is left
+       where the identity is applied to a length that is not actually realised.
+
+A2  Literal weight verification:  w(k,d) = d p_(k-1) + p_(k-2)  for the prefix of
+    length ell(k,d) = d q_(k-1) + q_(k-2), all d in 1..a_k (x-, y- and intermediate roots).
+    294 weight checks pass, 0 FAIL.
+
+A3  Parity of the convergent numerators, in BHZ's normalisation (p_1 = 1, p_2 = a_2).
+    Claim (finite form):  p_k odd for EVERY k >= 1  <=>  a_2 odd and a_k even for all k >= 3.
+    digit string              p_k odd for all k<=20   predicted  first even p_k
+    a_2 odd, then all even    True                    True       None
+    a_2 odd, then all even    True                    True       None
+    all digits even           False                   False      2
+    a_2 even                  False                   False      2
+    one odd digit at k=7      False                   False      7
+    a_k = k                   False                   False      2
+
+    Asymptotic form, which is what the bridge needs.  With a_k even for all k > K the
+    recursion gives p_{k+1} = p_{k-1} mod 2, so the parity pair is 2-periodic from K on:
+    p_k is odd for all k >= K-1 iff BOTH p_{K-1}, p_K are odd, and otherwise p_k is EVEN
+    for infinitely many k.  Conversely an odd a_k met at a state (1,1) forces p_k even.
+    Hence:  p_k odd for all large k  =>  a_k even for all large k.
+    digit string                      a_k even eventually  p_k odd eventually  p even i.o.
+    even tail, both seeds odd (5,3,2,2,...)True                 True                False
+    even tail, one seed even (4,2,2,2,...) True                 False               True
+    even tail after odd at k=5            False                False               True
+    odd digit infinitely often            False                False               True
+
+A4  On an all-odd-numerator slope, w(k,d) = d p_(k-1) + p_(k-2) == d + 1 (mod 2),
+    so the EVEN-weight roots at scale k are exactly the ODD-d ones.  In particular:
+      d = a_k (x-witness):  a_k even  =>  w = p_k ODD   -> odd branch
+      d = d_k (y-witness):  w EVEN   <=>  d_k ODD
+      d = 1   (intermediate): w = p_(k-1) + p_(k-2) == 0 (mod 2)  -> ALWAYS EVEN
+    slope                     intercept     k   a_k   d_k  w(k,a_k)%2  w(k,d_k)%2  w(k,1)%2
+    [5,3,2,4,6,8,...]         keep-one      9   6     1    1           0           0
+    [5,3,2,4,6,8,...]         keep-one      12  4     1    1           0           0
+    [5,3,2,4,6,8,...]         c=a_k-2       9   6     2    1           1           0
+    [5,3,2,4,6,8,...]         c=a_k-2       12  4     2    1           1           0
+    [5,3,2,4,6,8,...]         c=0           9   6     6    1           1           0
+    [5,3,2,4,6,8,...]         c=0           12  4     4    1           1           0
+
+    So the d=1 intermediate root ALWAYS has even weight on this family.  Whether it is
+    usable depends on its prefix power, which Phase 9 step B measures literally.
+
+ALL STEP-A CHECKS PASS.

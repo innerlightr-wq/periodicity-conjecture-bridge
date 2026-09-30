@@ -1,0 +1,46 @@
+==============================================================================
+PHASE 9 / H.  Method scope: 'no initial squares' does NOT mean 'unreachable'
+==============================================================================
+    The even-branch threshold is g(gamma_W) = max(1,g log2 3) + g(1-g) log2 3, NOT 2:
+      g(0.0500) = 1.075286
+      g(0.1000) = 1.142647
+      g(0.2000) = 1.253594
+      g(0.3333) = 1.352214
+      g(0.5000) = 1.396241
+      g(0.6300) = 1.369455
+      g(0.9000) = 1.569113
+    sup_g g = log2 3 = 1.584963 < 2.  So an initial power of exponent as low as
+    1.0001 suffices when the root density is small enough -- squares are not needed.
+
+    Thue-Morse: largest initial prefix powers found (ell < 4000):
+    ell     weight   gamma_W   r = lcp/ell   g(gamma_W)   r > g?
+    3072    1536     0.500000  1.666667      1.396241     True
+    1536    768      0.500000  1.666667      1.396241     True
+    768     384      0.500000  1.666667      1.396241     True
+    384     192      0.500000  1.666667      1.396241     True
+    192     96       0.500000  1.666667      1.396241     True
+    96      48       0.500000  1.666667      1.396241     True
+    48      24       0.500000  1.666667      1.396241     True
+    24      12       0.500000  1.666667      1.396241     True
+
+    initial powers with r > g(gamma_W): 11 of 3999 lengths tested
+    max initial prefix power observed: 1.666667
+
+    FINDINGS.
+    (1) Thue-Morse's initial prefix powers top out near 1.6667 < 2, so it indeed has
+        no initial square in this range -- the Phase 1 observation is correct.
+    (2) But its density is exactly 1/2, giving g = 1.396241, and 11 of the
+        lengths tested clear that threshold.  So the CRITERION is not vacuous on
+        Thue-Morse for lack of squares; what fails is the GROWTH of the surplus,
+        because r stays bounded below 2 while the penalty grows with ell.
+    (3) CORRECTION to the scope statement in theorems/phase1/FULL_PERIODICITY_GAP.md Q4
+        (repeated in LADDER.md and in the deposited note): 'no square whatsoever below
+        half-length 2048, making every purely repetition-based method structurally
+        inapplicable' overstates the case twice over.  (a) The method's threshold is
+        g(gamma) < log2 3 < 2, not 2, so absence of squares is not decisive.  (b) The
+        real obstruction is quantitative -- sup_ell r(ell) must exceed g(gamma) with
+        enough room for ell*(r-g) to beat the log-height penalty -- and that is a
+        statement about a limsup, not about the existence of one square.
+    (4) What IS still true: no repetition-based method of THIS shape reaches Thue-Morse,
+        because r(ell) does not exceed g by a margin that grows with ell.  The structural
+        ceiling stands; only its justification needed correcting.

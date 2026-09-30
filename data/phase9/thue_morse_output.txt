@@ -1,0 +1,58 @@
+==============================================================================
+PHASE 9 / H2.  Thue-Morse: the structural-ceiling claim is not what it says it is
+==============================================================================
+
+F1  base case.
+    W_0 = t[0:24] = 011010011001011010010110
+    |W_0| = 24, |W_0|_1 = 12, gamma = 1/2
+    lcp(t, W_0^inf) = 40    prefix power = 5/3 = 1.666667
+
+F2  the morphism step, checked directly: W_{m+1} = mu(W_m).
+    m   |W_m|    |W_m|_1   gamma    lcp      power     = 5/3?  D(W_m)   
+    0   24       12        1/2      40       5/3       True    1/2      
+    1   48       24        1/2      80       5/3       True    1/2      
+    2   96       48        1/2      160      5/3       True    1/2      
+    3   192      96        1/2      320      5/3       True    1/2      
+    4   384      192       1/2      640      5/3       True    1/2      
+    5   768      384       1/2      1280     5/3       True    1/2      
+    6   1536     768       1/2      2560     5/3       True    1/2      
+    7   3072     1536      1/2      5120     5/3       True    1/2      
+    8   6144     3072      1/2      10240    5/3       True    1/2      
+    9   12288    6144      1/2      20480    5/3       True    1/2      
+    10  24576    12288     1/2      40960    5/3       True    1/2      
+    11  49152    24576     1/2      81920    5/3       True    -        
+    lcp(mu(x),mu(y)) = 2 lcp(x,y) because mu is 2-uniform and mu(0), mu(1) differ in
+    their first letter; and mu(t) = t.  So the exponent 5/3 and the density 1/2 are
+    preserved at every step -- an INFINITE family of initial powers of fixed exponent.
+
+F3/F4  EXACT integer surplus.  S = lcp - log2 F(W),  F(W) = |2^|W| - 3^{|W|_1}| + c_W.
+    threshold g(1/2) = 1.396241 < 5/3 = 1.666667, margin 0.270426
+    m   |W|     lcp     D      log2 F (exact)    S (exact)     2^lcp > F  theorem bound
+    0   24      40      1/2    25.2655           14.7345       True       0.32
+    1   48      80      1/2    49.3264           30.6736       True       5.81
+    2   96      160     1/2    97.3170           62.6830       True       17.79
+    3   192     320     1/2    193.3267          126.6733      True       42.75
+    4   384     640     1/2    385.3171          254.6829      True       93.67
+    5   768     1280    1/2    769.3267          510.6733      True       196.52
+    6   1536    2560    1/2    1537.3171         1022.6829     True       403.20
+    7   3072    5120    1/2    3073.3267         2046.6733     True       817.58
+    8   6144    10240   1/2    6145.3171         4094.6829     True       1647.33
+
+    The exact surplus is positive and grows linearly in |W|; the ratio S/|W| tends to
+    5/3 - 1 = 2/3, since log2|delta_W| = |W| + log2|1 - (sqrt3/2)^{|W|}| = |W| - o(1)
+    and log2 c_W <= log2|W| + ceil(D) log2 3 + |W| with D <= 1/2.
+
+------------------------------------------------------------------------------
+CONCLUSION.  limsup [ lcp(t, W^inf) - log2 F(W) ] = +infinity along W_m = mu^m(t[0:24]),
+so by theorems/phase2/ABSTRACT_IRRATIONALITY_CRITERION.md,
+
+        Phi(Thue-Morse) NOT IN Q .
+
+This CONTRADICTS the standing scope claim of theorems/phase1/FULL_PERIODICITY_GAP.md Q4
+(repeated in LADDER.md, THEOREM_STATUS.md, and Revision 2 of the deposited note) that
+Thue-Morse is structurally beyond every repetition-based method.  The error: that claim
+reads 'no initial SQUARE' as 'no usable initial power', but the criterion's threshold is
+g(gamma) < log2 3 < 2, and at density 1/2 an exponent of 5/3 clears it with margin 0.270.
+Thue-Morse is not a ceiling for this method at all.
+
+ALL THUE-MORSE CHECKS PASS.
