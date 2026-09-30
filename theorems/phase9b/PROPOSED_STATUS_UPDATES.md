@@ -1,3 +1,5 @@
+**SUPERSEDED BY [`theorems/phase12/PHASE12_PROPOSED_UPDATES.md`](../phase12/PHASE12_PROPOSED_UPDATES.md)**, which absorbs every item below verbatim and adds four more (the Baker citation, the no-wrap hypothesis, the T2 downgrade, and the effective-in-principle / explicitly-supplied split). Still **NOT APPLIED**. Retained as the historical record.
+
 **PROPOSED — NOT APPLIED. Hold until the theorem statements are settled and the author approves.**
 
 # PROPOSED_STATUS_UPDATES.md

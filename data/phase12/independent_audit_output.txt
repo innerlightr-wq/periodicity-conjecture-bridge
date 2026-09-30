@@ -1,0 +1,158 @@
+==============================================================================
+PHASE 12 / item 1.  Theorem 11 rebuilt from definitions (no Phase 11 code imported)
+==============================================================================
+
+(0) The word, regenerated independently.
+    s[0:40] = 1010110110101101101011010110110101101111
+    matches the Phase 11 record 1010110110101101101011010110110101101111: True
+
+(1) Aperiodicity.  Symbolic proof: a period p would make the proper arc [0,beta)
+    invariant under rotation by p*alpha != 0 (mod 1); impossible.  Machine check that
+    no p <= 400 is a period of s[0:12000]:
+    periods found: []  (empty as required)
+
+(2) Lower ones-density.  Weyl equidistribution for irrational alpha gives k_N/N -> beta
+    (the limit EXISTS, so liminf = limsup = beta).  Numerical corroboration:
+    N=100     k_N/N = 0.64000000   beta = 0.63092975   diff +9.07e-03
+    N=1000    k_N/N = 0.63100000   beta = 0.63092975   diff +7.02e-05
+    N=10000   k_N/N = 0.63090000   beta = 0.63092975   diff -2.98e-05
+    N=12000   k_N/N = 0.63091667   beta = 0.63092975   diff -1.31e-05
+
+(3) Factor complexity of the prefix (cited value 2n; verified, not re-proved).
+    n=6   p(n) = 12   2n = 12   equal: True
+    n=12  p(n) = 24   2n = 24   equal: True
+    n=20  p(n) = 40   2n = 40   equal: True
+    n=30  p(n) = 60   2n = 60   equal: True
+    beta not in Z*alpha+Z because beta is transcendental (Gelfond-Schneider) and alpha
+    is algebraic -- this is what Rote/Berstel-Vuillon turn into p(n)=2n.
+
+(4) The mismatch set, translation sign and endpoints.
+    {x + ell*alpha} = {x + delta},  delta := ell*alpha - round(ell*alpha).
+    Definition:      M(d) = { x : chi(x) != chi({x+d}) }.
+    Closed form      d>0 : [beta-d,beta) u [1-d,1) ;   d<0 : [0,|d|) u [beta,beta+|d|).
+    NO-WRAP HYPOTHESIS (Phase 11B):  |d| <= min(beta,1-beta) = 0.3690702464.
+    q      |delta|        no-wrap?   disagreements(def vs closed form) over 3000 points
+    1      0.3819660113  False      39
+    2      0.2360679775  True       0
+    3      0.1458980338  True       0
+    5      0.0901699437  True       0
+    8      0.0557280900  True       0
+    13     0.0344418537  True       0
+    21     0.0212862363  True       0
+    34     0.0131556175  True       0
+    55     0.0081306188  True       0
+    89     0.0050249987  True       0
+    144    0.0031056200  True       0
+    233    0.0019193787  True       0
+    377    0.0011862413  True       0
+    610    0.0007331374  True       0
+    total disagreements where the hypothesis HOLDS: 0
+    total disagreements where it FAILS          : 39
+
+(5) Relaxation.  Phase 11 R2 uses the two-sided balls B(0,|d|), B(beta,|d|).
+    Phase 12 also verifies the SHARPER ONE-SIDED form, which is what the rho=0 case of
+    the generalization will need:  for d>0, M(d) subset [beta-d,beta) u [1-d,1), and
+    0 is NOT in M(d).  For d<0, 0 IS in M(d).
+    two-sided-ball containment violations (UNCONDITIONAL, all 14 shifts): 0
+    q      delta           no-wrap?   0 in M(delta)?   rule '0 in M iff delta<0' holds?
+    1      -0.3819660113   False      False            False
+    2      +0.2360679775   True       False            True
+    3      -0.1458980338   True       True             True
+    5      +0.0901699437   True       False            True
+    8      -0.0557280900   True       True             True
+    13     +0.0344418537   True       False            True
+    21     -0.0212862363   True       True             True
+    34     +0.0131556175   True       False            True
+    55     -0.0081306188   True       True             True
+    89     +0.0050249987   True       False            True
+    144    -0.0031056200   True       True             True
+    233    +0.0019193787   True       False            True
+    377    -0.0011862413   True       True             True
+    610    +0.0007331374   True       False            True
+    sign-rule violations where the no-wrap hypothesis HOLDS: 0
+    (the single exception is q=1, |delta|=0.38197 > 0.36907: there beta+|delta| > 1, the
+     arc at beta wraps past 0 and swallows the arc at 0, so 0 in M fails although delta<0.
+     The construction has |delta| < 1/294, so the rule is available with ~108x margin.)
+
+(6) The identity  L(ell) - ell = m*(ell),  by literal prefix scan vs hitting time.
+    ell      L-ell      m*       agree
+    3        0          0        True
+    5        3          3        True
+    8        16         16       True
+    13       3          3        True
+    21       17         17       True
+    34       3          3        True
+    55       92         92       True
+    89       3          3        True
+    144      92         92       True
+    233      236        236      True
+    377      469        469      True
+    610      846        846      True
+    987      1456       1456     True
+
+(7) Arc at 0.  ||x|| >= ||7x||/7 and 7(m*alpha+1/7) = 7m*alpha + 1, so
+    ||m*alpha+1/7|| >= ||7m*alpha||/7 > 1/(7*3*7m) = 1/(147m)  using ||q*alpha|| > 1/(3q).
+    min over 1<=m<60000 of 147*m*||m*alpha+1/7||  =  1.341033  at m=3   (>1 required)
+    inf_q q*||q*alpha|| = ||alpha|| = 0.3819660113 > 1/3  (golden; classical)
+    m=0 separately: ||1/7|| = 1/7 = 0.1428571429 > 0.
+
+(8) Arc at beta.  c_m := ||m*alpha + 1/7 - beta||;  A_m := m*alpha + 1/7 - j_m.
+    m      a_m           deg  H(A_m)        H/m^2     c_m
+    0      2             1    7             nan       0.4880726107
+    1      -5            2    55            55.000    0.1299613780
+    2      -26           2    182           45.500    0.2520046332
+    3      -33           2    279           31.000    0.3660293555
+    10     -152          2    1064          10.640    0.3077327232
+    100    -1552         2    10864         1.086     0.3153262643
+    1000   -15650        2    109550        0.110     0.4540838608
+    5000   -78258        2    547806        0.022     0.3181288612
+    10000  -156518       2    1095626       0.011     0.1481851118
+    max H(A_m)/m^2 over a sweep m<=10^4: 55.000   (so H(A_m)=O(m^2), log H = 2 log m + O(1))
+    A_m != 0 for every m>=0: True
+    deg A_m = 2 for every m>=1 (so a SINGLE Baker constant C(2,3,2,kappa,2) serves all m>=1);
+    m=0 gives deg 1 and needs no Baker input at all, c_0 = 0.4880726107 being explicit.
+
+(9) Witnesses.  ell(M) := least convergent denominator q with ||q*alpha|| < t(M),
+    t(M) = min(C_M, 1/(147M)),  C_M = min_{0<=m<M} c_m.
+    M      C_M            t(M)           ell(M)   L-ell    >=M    log ell / (log(M+2))^3
+    2      0.1299613780   3.401e-03      144      92       True   1.8654
+    4      0.1299613780   1.701e-03      377      469      True   1.0313
+    8      0.0159366557   8.503e-04      610      846      True   0.5253
+    16     0.0159366557   4.252e-04      1597     881      True   0.3055
+    32     0.0159366557   2.126e-04      2584     2478     True   0.1792
+    64     0.0027810382   1.063e-04      6765     5235     True   0.1199
+    128    0.0022439605   5.315e-05      10946    1054     True   0.0806
+    256    0.0022439605   2.657e-05      17711    None     True   0.0571
+    512    0.0008616595   1.329e-05      46368    None     True   0.0442
+
+(10) The arithmetic side, re-derived.  Phi(v) = -sum_{i: v_i=1} 3^{-k_{i+1}(v)} 2^i.
+     For W of length ell and weight k, summing the geometric series 2-adically:
+       Phi(W^inf) = c_W/(2^ell - 3^k),  c_W = sum_{i<ell, W_i=1} 3^{k-k_{i+1}(W)} 2^i.
+     check: series value mod 2^N  ==  c_W * inverse(2^ell - 3^k) mod 2^N
+       ell=6   k=4   agree mod 2^60: True
+       ell=8   k=5   agree mod 2^60: True
+       ell=16  k=10  agree mod 2^60: True
+
+(11) Exact height certificates.  If Phi(s)=u/v in lowest terms and H=max(|u|,v), then
+     2^L <= H*F(W) with F(W) = |2^ell - 3^k| + c_W.  So H >= 2^L / F(W).
+     ell      k      L        floor(log2 F)   H >= 2^S   (integer comparison)
+     377      238    846      384             2^462      verified: True
+     610      385    1456     618             2^838      verified: True
+     1597     1008   2478     1606            2^872      verified: True
+     2584     1630   5062     2593            2^2469     verified: True
+     6765     4268   22773    6775            2^15998    verified: True
+
+(12) Drift and discrepancy from PROVED bounds.
+     alpha has all partial quotients 1, so sum_{i<=k+1} a_i = k+1 <= log_phi N + 2 and
+     Kuipers-Niederreiter Ch.2 Thm 3.4 gives N*D_N = O(log N), uniformly in rho.
+     ell       e_ell = k - ell*beta     |e_ell|/log2(ell)
+     233       -0.006633                0.000843
+     377       +0.139483                0.016298
+     610       +0.132850                0.014358
+     987       +0.272333                0.027379
+     1597      +0.405184                0.038077
+     2584      -0.322483                0.028449
+     4181      +0.082700                0.006875
+     6765      -0.239783                0.018845
+
+ALL PHASE-12 INDEPENDENT-AUDIT CHECKS PASS.

@@ -4,6 +4,8 @@
 
 > **CORRECTION (Phase 11B).** The R4 row below (`c_m ≥ C₂m^{−κ}`, "Baker, *Transcendental Number Theory*, Thm 3.1") is **WITHDRAWN and replaced** by Baker, Mathematika **14** (1967), Thm 2, whose bound is stretched-exponential in `log B`. The R5 row's `log₂ℓ(M) = O(log M)` becomes `log ℓ(M) = O((log(M+2))^κ)`. See `theorems/phase11b/PHASE11B_VERDICT.md` and `theorems/phase11b/BAKER_SOURCE_AND_APPLICATION.md`. **Theorem 11 itself stands**; only this justification changed.
 
+> **PHASE 12 ADDENDUM.** Theorem 11 was rebuilt from the definitions in independent code and **confirmed**, including all five height certificates; the Baker citation was checked against Mathematical Reviews MR0220680 and a second independent source and is **correct**. Three further corrections: the nonvanishing of `A_m` has a one-line uniform proof (`A_m > β − 1/2`), the `m = 0` term falls outside the *second* branch of Baker's disjunction, and "effective" must be split into *effective in principle* and *explicitly supplied* — the latter holds only for the finite height floors. Theorem 11 is now the `α = (√5−1)/2, ρ = 1/7` case of Theorem 12 ([`theorems/phase12/QUADRATIC_RATIONAL_INTERCEPT_THEOREM.md`](../phase12/QUADRATIC_RATIONAL_INTERCEPT_THEOREM.md)). See [`theorems/phase12/PHASE12_VERDICT.md`](../phase12/PHASE12_VERDICT.md).
+
 
 Isolated branch `phase11-explicit-word`, cut from `phase10-critical-density` at HEAD `d91e56e`
 (expected and actual agree). Nothing pushed, nothing published, no release rebuilt;

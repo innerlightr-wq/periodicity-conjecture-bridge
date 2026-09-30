@@ -2,6 +2,9 @@
 
 # PRIOR_RESULT_COVERAGE.md
 
+> **CORRECTION (Phase 12).** T2 below is recorded as "preprint". That caveat is too weak: an open, uncontested third-party issue (`innerlightr-wq/eoc-divergence` #30) identifies the step carrying López–Stoll Theorem 1 — from "`Φ_ℝ(v)` irrational" to "`Φ(v)` aperiodic", via an alleged 2-adic expansion of a real irrational — and argues it does not follow. **The securely covered density region is therefore `liminf < β` (Monks–Yazinski 2004, refereed), not `liminf ≠ β`**, and "only density exactly `β` is uncovered" should read "only density at or above `β` is securely uncovered". No verdict about the Phase 11/12 words changes. See [`theorems/phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md`](../phase12/CRITICAL_ROTATION_PRIOR_RESULTS.md) §3.
+
+
 Supersedes and absorbs `PRIOR_RESULT_SUBSUMPTION.md` (retained unchanged as the historical record of
 the first pass). New in this document: the **qualitative / quantitative split** of item 2, which the
 first pass did not perform.
