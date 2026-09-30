@@ -1,0 +1,87 @@
+==============================================================================
+PHASE 9B / 3.  Subsumption check against Monks-Yazinski 2004, Theorem 2.7(b)
+==============================================================================
+    beta = ln2/ln3 = 0.6309297535714575   (irrational: it is log_3 2)
+    The prior theorem excludes EVERY aperiodic v with liminf k_n(v)/n < beta.
+
+3.1  Ones-density of each class this repository proves irrational.
+    class                                       ones-density              != beta? prior result that already covers it
+    CS Rote, golden (bounded type, Phase 4/6), rho=00.500003333333            True     MY 2.7(b), refereed 2004
+    CS Rote, golden (bounded type, Phase 4/6), rho=0.30.499993333333            True     MY 2.7(b), refereed 2004
+    CS Rote, silver (bounded type), rho=0       0.499990000000            True     MY 2.7(b), refereed 2004
+    CS Rote, silver (bounded type), rho=0.3     0.500000000000            True     MY 2.7(b), refereed 2004
+    CS Rote, unbounded type a_k = k (Phase 9), rho=00.499976666667            True     MY 2.7(b), refereed 2004
+    CS Rote, unbounded type a_k = k (Phase 9), rho=0.30.500003333333            True     MY 2.7(b), refereed 2004
+    CS Rote, critical slope beta itself, rho=0  0.500003333333            True     MY 2.7(b), refereed 2004
+    CS Rote, critical slope beta itself, rho=0.30.499996666667            True     MY 2.7(b), refereed 2004
+    Thue-Morse (Phase 9 Cor 4.1)                0.500000000000            True     MY 2.7(b), refereed 2004
+    subst fixed point 01/00 (period-doubling)   0.333350268421            True     MY 2.7(b), refereed 2004
+    subst fixed point 001/000 (3-uniform 001/000)0.249995766228            True     MY 2.7(b), refereed 2004
+    subst fixed point 010/001 (3-uniform 010/001)0.333333333333            True     MY 2.7(b), refereed 2004
+    subst fixed point 011/110 (3-uniform 011/110)0.666666666667            True     Lopez-Stoll 2021 Thm 1, PREPRINT
+    subst fixed point 011/101 (3-uniform 011/101)0.666666666667            True     Lopez-Stoll 2021 Thm 1, PREPRINT
+
+    Every class is at density well below beta.  For CS Rote the density is EXACTLY 1/2:
+      v_n = v_0 XOR (k_n(u) mod 2) and k_n(u) = floor(n*gamma + rho) - floor(rho), so
+      v_n = 1 iff frac((n*gamma + rho)/2) lies in a fixed half-length interval; gamma/2 is
+      irrational, so Weyl equidistribution gives density exactly 1/2 for EVERY irrational
+      slope and EVERY intercept -- no bounded-type, no parity, no intercept hypothesis.
+    For a k-uniform substitution the letter frequencies are the normalised left Perron
+    eigenvector for the integer eigenvalue k, hence RATIONAL, hence != beta.
+
+3.1b The Phase 9 substitution sweep, classified by which half of the dichotomy applies.
+    k  sig(0)  sig(1)  density       vs beta   prior result
+    3  001     000     0.2499957662  <         MY 2.7(b) [refereed]
+    3  001     010     0.3333333333  <         MY 2.7(b) [refereed]
+    3  001     011     0.4999915325  <         MY 2.7(b) [refereed]
+    3  001     100     0.3333333333  <         MY 2.7(b) [refereed]
+    3  001     101     0.4999915325  <         MY 2.7(b) [refereed]
+    3  001     110     0.4999915325  <         MY 2.7(b) [refereed]
+    3  001     111     0.9826584701  >         Lopez-Stoll Thm 1 [preprint]
+    3  010     000     0.2499957662  <         MY 2.7(b) [refereed]
+    3  010     001     0.3333333333  <         MY 2.7(b) [refereed]
+    3  010     011     0.4999915325  <         MY 2.7(b) [refereed]
+    3  010     100     0.3333333333  <         MY 2.7(b) [refereed]
+    3  010     110     0.4999915325  <         MY 2.7(b) [refereed]
+    3  010     111     0.9826584701  >         Lopez-Stoll Thm 1 [preprint]
+    3  011     000     0.3930633880  <         MY 2.7(b) [refereed]
+    3  011     001     0.4999915325  <         MY 2.7(b) [refereed]
+    3  011     010     0.4999915325  <         MY 2.7(b) [refereed]
+    3  011     100     0.4999915325  <         MY 2.7(b) [refereed]
+    3  011     101     0.6666666667  >         Lopez-Stoll Thm 1 [preprint]
+    3  011     110     0.6666666667  >         Lopez-Stoll Thm 1 [preprint]
+    -> 15 of the sweep are below beta (refereed prior result),
+       4 are above beta (preprint prior result).  NONE is at beta.
+
+3.2  What this subsumes, class by class.
+    result                                        class                                     density   subsumed?
+    theorems/phase2/ROTE_IRRATIONALITY_THEOREM.md CS Rote, 5 quadratic slopes               1/2       YES
+    theorems/phase4/QUADRATIC_CS_ROTE_THEOREM.md  CS Rote, quadratic slopes                 1/2       YES
+    theorems/phase6/BOUNDED_TYPE_THEOREM.md       CS Rote, bounded type, intercept 0        1/2       YES
+    theorems/phase8/... Theorem 2                 CS Rote, bounded type, every intercept    1/2       YES
+    theorems/phase9/... Theorem 3                 CS Rote, unbounded type, parity form      1/2       YES
+    theorems/phase9/... Corollary 4.1             Thue-Morse                                1/2       YES
+    theorems/phase9/... Corollary 4.2             21 substitution fixed points              rational  YES
+    (CS Rote and Thue-Morse at density 1/2 < beta: by the REFEREED Monks-Yazinski result.
+     The part of the substitution sweep above beta: by the Lopez-Stoll PREPRINT only.)
+
+3.3  What is NOT subsumed.
+    MY 2.7(b) says nothing at density EXACTLY beta.  The foundation paper's own main
+    theorem sits precisely there: its word 1c_beta has ones-density exactly beta, the one
+    density excluded by both halves of the known dichotomy (MY 2.7(b) below beta, Lopez-
+    Stoll Theorem 1 above it).  That result is NOT subsumed, and the foundation paper
+    says so explicitly.  Nothing in this repository's Phases 2-9 sits at density beta:
+      1c_beta ones-density                     = beta = 0.630929753571   <- NOT subsumed
+      every CS Rote sequence                   = 0.500000000000   <- subsumed
+    Also not subsumed: the abstract criterion itself (a mechanism, not a class theorem),
+    and any future class placed at density beta.
+
+3.4  Why the repository's own prior-art passes missed this.
+    PRIOR_ART.md records three searches, all for the MECHANISM (2-adic depth-vs-height
+    bridge; weight-parity + transfer + three-distance; the final chain).  None asked
+    whether the CONCLUSION was already available by a different route.  The density route
+    was known to the programme -- theorems/phase1/FALSIFICATION_REPORT.md cites Monks-
+    Yazinski explicitly, and docs/EOC_HANDOFF_CLOSED.md records that CS Rote has one-
+    density exactly 1/2 while beta = 0.63093 -- but the two facts were never combined.
+
+ALL PHASE-9B STEP-3 CHECKS PASS.
