@@ -1,3 +1,8 @@
+> **CORRECTED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md).**
+> Items **C2** (the exceptional-orbit reduction in this file is **refuted**), **C3** (the
+> convergent denominators are mis-indexed: BHZ sets `q_1 = a_1 + 1`) and **C5** (`y(k)` is an
+> attained power only when `0 < c_k < a_k`). Retained verbatim as the historical record.
+
 # BHZ_GENERAL_INTERCEPT_MAP.md
 
 Read directly from Berthé–Holton–Zamboni (2006), primary source, general (not `\omega(-\alpha)`-specialized) sections.

@@ -1,3 +1,9 @@
+> **SUPERSEDED BY PHASE 8 — see [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md)
+> and [`theorems/phase8/PHASE8_VERDICT.md`](../phase8/PHASE8_VERDICT.md).** The "exact remaining
+> lemma" below is BHZ 2006 Prop. 5.1/5.2 (item **C1**); the exceptional-orbit reduction it relies
+> on is refuted (**C2**); the disclosed root-length mismatch is a `q_1` indexing error, not a
+> defect in BHZ Prop. 3.3 (**C3**). Retained verbatim as the historical record.
+
 **OBSTRUCTION CLASSIFIED — ONE LEMMA REMAINS**
 
 # PHASE7_VERDICT.md

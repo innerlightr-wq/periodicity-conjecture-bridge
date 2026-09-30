@@ -1,0 +1,121 @@
+==============================================================================
+PHASE 8 / G.  Independent end-to-end audit of Theorem 2's chain
+==============================================================================
+No BHZ formula, no Ostrowski digits: literal mechanical words only.
+
+==============================================================================
+constant slope A=1:  gamma = [0; 1,1,1,1,1,1,1,1,...]   A = 1,  A_b = 1,  delta(A_b) = 1/8 = 0.125000
+  certified bracket width for gamma: 5.902e-17  (need << 1/N = 3.33e-05)
+  intercept               conv  seed #witnesses ell range       min r_u  branches    min S    transfer
+  rho = 0                 lower 0    8          13..10946       2.53846  even,odd    19.6     True
+  rho = 0                 lower 1    8          13..10946       2.53846  even,odd    19.6     True
+  rho = 0                 upper 0    8          8..6765         2.50000  even,odd    3.3      True
+  rho = 0                 upper 1    8          8..6765         2.50000  even,odd    4.1      True
+  rho = 1/2 (rational)    lower 0    5          8..2584         3.00000  odd         7.0      True
+  rho = 1/2 (rational)    lower 1    5          8..2584         3.00000  odd         8.5      True
+  rho = 1/2 (rational)    upper 0    5          8..2584         3.00000  odd         7.0      True
+  rho = 1/2 (rational)    upper 1    5          8..2584         3.00000  odd         8.5      True
+  rho = {gamma} (return)  lower 0    16         8..10946        2.37500  even,odd    2.5      True
+  rho = {gamma} (return)  lower 1    16         8..10946        2.37500  even,odd    2.9      True
+  rho = {gamma} (return)  upper 0    16         8..10946        2.37500  even,odd    2.5      True
+  rho = {gamma} (return)  upper 1    16         8..10946        2.37500  even,odd    2.9      True
+  rho = keep-one (worst)  lower 0    16         8..10946        2.37500  even,odd    2.5      True
+  rho = keep-one (worst)  lower 1    16         8..10946        2.37500  even,odd    2.9      True
+  rho = keep-one (worst)  upper 0    16         8..10946        2.37500  even,odd    2.5      True
+  rho = keep-one (worst)  upper 1    16         8..10946        2.37500  even,odd    2.9      True
+
+==============================================================================
+constant slope A=2:  gamma = [0; 2,2,2,2,2,2,2,2,...]   A = 2,  A_b = 2,  delta(A_b) = 1/18 = 0.055556
+  certified bracket width for gamma: 7.912e-31  (need << 1/N = 3.33e-05)
+  intercept               conv  seed #witnesses ell range       min r_u  branches    min S    transfer
+  rho = 0                 lower 0    4          29..5741        3.37931  even        67.6     True
+  rho = 0                 lower 1    4          29..5741        3.37931  even        69.4     True
+  rho = 0                 upper 0    4          12..2378        3.33333  odd         16.3     True
+  rho = 0                 upper 1    4          12..2378        3.33333  odd         14.9     True
+  rho = 1/2 (rational)    lower 0    12         12..8119        2.17241  even,odd    9.3      True
+  rho = 1/2 (rational)    lower 1    12         12..8119        2.17241  even,odd    9.9      True
+  rho = 1/2 (rational)    upper 0    12         12..8119        2.17241  even,odd    9.3      True
+  rho = 1/2 (rational)    upper 1    12         12..8119        2.17241  even,odd    9.9      True
+  rho = {gamma} (return)  lower 0    8          12..5741        3.25000  even,odd    13.3     True
+  rho = {gamma} (return)  lower 1    8          12..5741        3.25000  even,odd    15.7     True
+  rho = {gamma} (return)  upper 0    8          12..5741        3.25000  even,odd    13.3     True
+  rho = {gamma} (return)  upper 1    8          12..5741        3.25000  even,odd    15.7     True
+  rho = keep-one (worst)  lower 0    8          17..8119        2.17647  odd         1.3      True
+  rho = keep-one (worst)  lower 1    8          17..8119        2.17647  odd         3.6      True
+  rho = keep-one (worst)  upper 0    8          17..8119        2.17647  odd         1.3      True
+  rho = keep-one (worst)  upper 1    8          17..8119        2.17647  odd         3.6      True
+
+==============================================================================
+constant slope A=3:  gamma = [0; 3,3,3,3,3,3,3,3,...]   A = 3,  A_b = 3,  delta(A_b) = 1/32 = 0.031250
+  certified bracket width for gamma: 1.215e-41  (need << 1/N = 3.33e-05)
+  intercept               conv  seed #witnesses ell range       min r_u  branches    min S    transfer
+  rho = 0                 lower 0    6          10..2378        2.10000  even,odd    20.5     True
+  rho = 0                 lower 1    6          10..2378        2.10000  even,odd    22.6     True
+  rho = 0                 upper 0    6          33..7854        2.13636  even,odd    75.3     True
+  rho = 0                 upper 1    6          33..7854        2.13636  even,odd    73.7     True
+  rho = 1/2 (rational)    lower 0    10         10..9043        2.12121  even,odd    16.0     True
+  rho = 1/2 (rational)    lower 1    10         10..9043        2.12121  even,odd    17.1     True
+  rho = 1/2 (rational)    upper 0    10         10..9043        2.12121  even,odd    16.0     True
+  rho = 1/2 (rational)    upper 1    10         10..9043        2.12121  even,odd    17.1     True
+  rho = {gamma} (return)  lower 0    12         10..7854        2.05000  even,odd    20.3     True
+  rho = {gamma} (return)  lower 1    12         10..7854        2.05000  even,odd    21.0     True
+  rho = {gamma} (return)  upper 0    12         10..7854        2.05000  even,odd    20.3     True
+  rho = {gamma} (return)  upper 1    12         10..7854        2.05000  even,odd    21.0     True
+  rho = keep-one (worst)  lower 0    6          13..5116        2.07692  even,odd    3.6      True
+  rho = keep-one (worst)  lower 1    6          13..5116        2.07692  even,odd    3.6      True
+  rho = keep-one (worst)  upper 0    6          13..5116        2.07692  even,odd    3.6      True
+  rho = keep-one (worst)  upper 1    6          13..5116        2.07692  even,odd    3.6      True
+
+==============================================================================
+non-eventually-periodic slope, digits in {1,2}:  gamma = [0; 1,2,1,1,2,1,2,1,...]   A = 2,  A_b = 2,  delta(A_b) = 1/18 = 0.055556
+  certified bracket width for gamma: 9.612e-22  (need << 1/N = 3.33e-05)
+  intercept               conv  seed #witnesses ell range       min r_u  branches    min S    transfer
+  rho = 0                 lower 0    5          25..3549        2.38554  even,odd    66.2     True
+  rho = 0                 lower 1    5          25..3549        2.38554  even,odd    67.1     True
+  rho = 0                 upper 0    6          18..9656        2.33333  even,odd    6.0      True
+  rho = 0                 upper 1    6          18..9656        2.33333  even,odd    5.3      True
+  rho = keep-one (worst)  lower 0    11         11..6107        2.32000  even,odd    13.9     True
+  rho = keep-one (worst)  lower 1    11         11..6107        2.32000  even,odd    14.7     True
+  rho = keep-one (worst)  upper 0    11         11..6107        2.32000  even,odd    13.9     True
+  rho = keep-one (worst)  upper 1    11         11..6107        2.32000  even,odd    14.7     True
+  rho = {gamma^2}         lower 0    6          25..3549        2.29340  even,odd    75.2     True
+  rho = {gamma^2}         lower 1    6          25..3549        2.29340  even,odd    75.9     True
+  rho = {gamma^2}         upper 0    6          25..3549        2.29340  even,odd    75.2     True
+  rho = {gamma^2}         upper 1    6          25..3549        2.29340  even,odd    75.9     True
+
+------------------------------------------------------------------------------
+Surplus growth and discrepancy sublinearity, pooled over every case above
+------------------------------------------------------------------------------
+  ell ~ 2^b   n    min S      min S/ell   max D(R)  max D/ell  max D/log2(ell)
+  2^3         52   2.5        0.3178      2.00      0.20000    0.602
+  2^4         42   1.3        0.0749      2.28      0.11765    0.489
+  2^5         54   3.6        0.0829      2.00      0.05882    0.393
+  2^6         48   18.7       0.1890      3.00      0.04286    0.489
+  2^7         70   13.5       0.0953      3.29      0.01947    0.445
+  2^8         36   159.2      0.3836      4.00      0.00980    0.461
+  2^9         64   117.7      0.2040      4.29      0.00521    0.432
+  2^10        44   155.5      0.1004      3.50      0.00223    0.330
+  2^11        56   694.7      0.2066      5.00      0.00210    0.446
+  2^12        52   515.5      0.1008      5.29      0.00092    0.424
+  2^13        16   3547.2     0.3674      4.00      0.00041    0.302
+
+  witnesses total: 534   transfer L_v = L_u + 1: 534/534   2^L_v > F(R): 534/534
+  odd-branch witnesses: 338, every one with gamma_R = 1/2 exactly: True
+
+------------------------------------------------------------------------------
+The discrepancy step reduces to the rotation by gamma/2, NOT gamma.
+Claim: gamma badly approximable => gamma/2 badly approximable.
+  ||q gamma|| = ||2 q (gamma/2)|| <= 2 ||q (gamma/2)||, so
+  inf_q q||q gamma/2|| >= (1/2) inf_q q||q gamma|| > 0.   Hence sup p.q. of
+  gamma/2 is bounded by a function of A alone.  Checked numerically:
+  gamma = [0;...]             A = sup p.q.(gamma)  sup p.q.(gamma/2)
+  [1, 1, 1, 1, 1, 1]...       1                    4
+  [2, 2, 2, 2, 2, 2]...       2                    4
+  [3, 3, 3, 3, 3, 3]...       3                    6
+  [4, 4, 4, 4, 4, 4]...       4                    8
+  [5, 5, 5, 5, 5, 5]...       5                    10
+  [1, 2, 1, 2, 1, 2]...       2                    2
+  [2, 1, 3, 2, 1, 3]...       3                    5
+  [1, 1, 2, 3, 1, 1]...       3                    3
+
+ALL CHAIN-AUDIT CHECKS PASS.

@@ -1,3 +1,8 @@
+> **SUPERSEDED BY PHASE 8 (reading confirmed) — see
+> [`theorems/phase7/PHASE7_CORRECTIONS.md`](PHASE7_CORRECTIONS.md).** This file's analysis is
+> correct: bare squares give zero margin on the odd-weight branch. Phase 8 Theorem 1 supplies
+> `r_u > 2` strictly at every intercept, so the bypass is unnecessary rather than repaired.
+
 # INTRINSIC_SQUARE_ROUTE.md
 
 ## The candidate strategy

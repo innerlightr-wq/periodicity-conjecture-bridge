@@ -142,7 +142,7 @@ and the surplus criterion are defined for arbitrary finite `W`, and
 only case (C) — `d_k ≡ 1`, i.e. BHZ's "keep one" intercept `c_k = a_k − 1` — costs the extra
 factor `2`. That is not an artefact: §3.1 shows case (C) is exactly extremal.
 
-### 3.1 The bound is order-optimal, and no `A`-free margin exists
+### 3.1 A matching upper bound, and why no `A`-free margin exists
 
 For constant `a_k = A` and `d_k ≡ 1`, Lemma 1 solves in closed form. With `β = β_A := (A + √(A²+4))/2`
 and `lam = 1/β`, the fixed point of `m ↦ lam·m + 1` is `m* = β/(β−1)`, and since
@@ -153,13 +153,23 @@ x'(k) = m*      = beta/(beta-1)   < 2   for A >= 2 ,
 y(k)  = 1 + m*/(lam+1) = 2 + 1/(A beta_A) .
 ```
 
-So `ice = 2 + 1/(A β_A) = 2 + Θ(A^{-2})`, and **`δ*(A) = Θ(A^{-2})` is the true optimal margin**:
-`delta(A) = 1/(2(A+1)^2)` is off by a bounded factor `delta*(A)/delta(A) = 2(A+1)^2/(A beta_A)`
-(`4.90` at `A=1`, `3.73` at `A=2`, `3.23` at `A=3`, `2.40` at `A=10`, decreasing to `2` as
-`A → ∞`). Because `1/(Aβ_A) → 0`, **no margin uniform in `A` can exist** — the
-`A`-dependence in Conjecture 12.1's statement is necessary. This also recovers BHZ Prop. 4.1
-from the other side: their bound `ice("keep one") ≤ 1 + θ` and the Phase-8 lower bound pin the
-keep-one value between `2 + 1/(Aβ_A)` and `1 + θ`.
+So `ice(keep-one) = 2 + 1/(Aβ_A) = 2 + Θ(A^{-2})` exactly. Two consequences, and one
+non-consequence:
+
+- **Proved upper bound.** `δ*(γ) ≤ 1/(Aβ_A)` for every slope whose BHZ digits are eventually
+  `≡ A`, so `delta(A) = 1/(2(A+1)^2)` is off by at most a bounded factor
+  `2(A+1)^2/(A beta_A)` — `4.90` at `A=1`, `3.73` at `A=2`, `3.23` at `A=3`, `2.40` at `A=10`,
+  decreasing to `2` as `A → ∞`.
+- **No `A`-free margin.** Since `1/(Aβ_A) → 0`, no margin uniform in `A` can exist; the
+  `A`-dependence in Conjecture 12.1's statement is necessary, not a convenience. This also
+  recovers BHZ Prop. 4.1 from the other side: their `ice("keep one") ≤ 1 + θ` and the Phase-8
+  lower bound pin the keep-one value between `2 + 1/(Aβ_A)` and `1 + θ`.
+- **Not claimed here:** that `1/(Aβ_A)` *is* the infimum over all intercepts. That is proved
+  only for slopes with eventually-constant BHZ digits and `A ≥ 2` (plus the Fibonacci slope,
+  via BHZ Prop. 4.3); on every other bounded-type slope it is numerical evidence. The four
+  tiers are separated in **`PHASE8_MARGIN_STATUS.md`**, which is the authority for this
+  paragraph. **Theorem 2 uses none of it** — it needs only the `delta(A) > 0` of Theorem 1, or
+  even BHZ Prop. 5.1/5.2 alone.
 
 **Adversarial verification** (`data/phase8/margin_search_output.txt`, exact `Fraction`
 throughout, three independent adversaries):

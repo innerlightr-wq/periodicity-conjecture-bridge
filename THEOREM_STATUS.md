@@ -74,9 +74,48 @@ One line per load-bearing result, phase of origin, and status. Full statements a
 | Small-`k` boundary correction: `\text{term2}(k)>2+1/(A+1)` can be equality (never violation) at a rare small-`k` artifact | CORRECTED (found via adversarial non-periodic test; does not weaken the theorem) | `theorems/phase6/ARROW_BY_ARROW_RECONSTRUCTION.md` |
 | **`Φ(v)∉ℚ` for every CS Rote sequence associated with every bounded-partial-quotient (not merely quadratic) irrational slope** (intercept-0, both seeds, every shift) | **PROVED — precise subclass** | `theorems/phase6/BOUNDED_TYPE_THEOREM.md` |
 
+
+## Phase 7 — general-intercept obstruction mapped (**corrected by Phase 8**)
+
+See [`theorems/phase7/PHASE7_CORRECTIONS.md`](theorems/phase7/PHASE7_CORRECTIONS.md). The Phase 7
+files are preserved verbatim with correction banners; nothing was rewritten.
+
+| Result | Status | File |
+|---|---|---|
+| Structured-intercept scans: 36/36 configurations clear the threshold; near-maximal digits identified as the empirical worst case, decay `~1/A²` | **CORRECT, and confirmed by Phase 8** (that family is exactly extremal, rate exactly `1/(Aβ_A)`) | `theorems/phase7/STRUCTURED_INTERCEPTS.md` |
+| Flexible-margin boundary `ε_k = ω(log ℓ_k/ℓ_k)` | **CORRECT** (and not needed — Phase 8 lands in the constant-`ε` row) | `theorems/phase7/FLEXIBLE_MARGIN_BOUNDARY.md` |
+| Intrinsic squares bypass the even branch but give **exactly zero** margin on the odd branch | **CORRECT**; superseded, not repaired | `theorems/phase7/INTRINSIC_SQUARE_ROUTE.md` |
+| "The one remaining lemma" (general-intercept margin) classified `CONJECTURAL` | **SUPERSEDED — it is BHZ 2006 Prop. 5.1/5.2** | `theorems/phase7/PHASE7_CORRECTIONS.md` C1 |
+| `ice(ω_ρ) = ind*(α)` off a countable "return" set; open cases countable; intercept `0` harder than generic | **REFUTED** (the exceptional set is uncountable; intercept `0` is among the easiest) | `theorems/phase7/PHASE7_CORRECTIONS.md` C2 |
+| Convergent denominators with `q_1 = a_1` | **INDEXING ERROR** (BHZ Prop. 2.7: `q_1 = a_1+1`); limsups unaffected, root lengths wrong | `theorems/phase7/PHASE7_CORRECTIONS.md` C3 |
+| Surplus decomposition `S_k ≥ A·E_k − …` | **DIMENSIONALLY INCOMPLETE** (leading term is `ℓ_k·E_k`) | `theorems/phase7/PHASE7_CORRECTIONS.md` C4 |
+| `y(k)` attained for all admissible `(c_k)` | **OVERSTATED** (attained only when `0 < c_k < a_k`) | `theorems/phase7/PHASE7_CORRECTIONS.md` C5 |
+
+## Phase 8 — closes the general-intercept case (theorem change)
+
+The symbolic margin is **not new**: it is Berthé–Holton–Zamboni (2006), §5. Phase 8's own
+contribution is the **arithmetic application and the attained-witness bridge** — identifying the
+priority, supplying attained witnesses with explicit growing root lengths, correcting the
+indexing and the surplus inequality, and closing the chain.
+
+| Result | Status | File |
+|---|---|---|
+| `ice(ω) > 2` at every intercept of every bounded-type slope | **KNOWN** (BHZ 2006, Thm 1.1, corollary) | `theorems/phase8/PHASE8_TARGET_AUDIT.md` §3 |
+| Uniform margin `ice(ω) ≥ 2 + 1/(2(A_b+1)²+1)`, every `ω ∈ X_γ` — i.e. the note's Conjecture 12.1 | **KNOWN** (BHZ 2006, **Prop. 5.1 + 5.2**) | `theorems/phase8/PHASE8_MARGIN_STATUS.md` T1 |
+| Same bound at `1/(2(A_b+1)²)` **with an attained witness of exponent `≥ 2+δ` and root length `≥ q_{k-4}` for every `k ≥ 7`** | **PROVED** (Phase 8 Theorem 1; independent re-derivation) | `theorems/phase8/PHASE8_PROOF_OR_OBSTRUCTION.md` §3 |
+| Keep-one closed form `ice = 2 + 1/(Aβ_A)`, `β_A = (A+√(A²+4))/2` | **PROVED** for eventually-constant BHZ digits; gives `δ*(γ) ≤ 1/(Aβ_A)` and rules out any `A`-free margin | `theorems/phase8/PHASE8_MARGIN_STATUS.md` T3 |
+| Keep-one is **optimal** | **PROVED at restricted scope only** (eventually-constant BHZ digits, `A ≥ 2`; Fibonacci via BHZ Prop. 4.3). Otherwise **numerical evidence**, deliberately not promoted. Not used by Theorem 2. | `theorems/phase8/PHASE8_MARGIN_STATUS.md` T3b/T4 |
+| Corrected surplus inequality, every length factor explicit: odd branch `S_k ≥ ℓ_k(r_u−2) + 1 − ⌈D(R_k)⌉log₂3 − log₂(2ℓ_k)` | **PROVED** | `theorems/phase8/PHASE8_PROOF_OR_OBSTRUCTION.md` §4 |
+| Discrepancy step's missing hypothesis: `γ` bounded type ⟹ `γ/2` bounded type (the reduction is to the rotation by `γ/2`) | **GAP FOUND AND CLOSED** | `theorems/phase8/PHASE8_CHAIN_AUDIT.md` §3 |
+| Supremum of prefix-power exponents vs. attained witness, kept apart | **RESOLVED** (BHZ's limsup form alone already suffices, at `δ/2`) | `theorems/phase8/PHASE8_CHAIN_AUDIT.md` §2 |
+| **`Φ(v)∉ℚ` for both CS Rote lifts of *every* Sturmian word of *every* bounded-type slope — every intercept, both mechanical conventions, both seeds, every shift** | **PROVED** (Theorem 2) | `theorems/phase8/PHASE8_PROOF_OR_OBSTRUCTION.md` §5 |
+| Independent end-to-end audit on literal mechanical words (no BHZ formula, certified brackets): 534 witnesses, transfer 534/534, `2^{L_v}>F(R)` 534/534, odd-branch density `1/2` 338/338 | **PASS** | `theorems/phase8/PHASE8_CHAIN_AUDIT.md` |
+
 ## Headline result of the repository
 
-> For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is the intercept-`0` mechanical word of **any irrational slope with bounded partial quotients**, `Φ(v)∉ℚ` — **proved** (Phase 6, `theorems/phase6/BOUNDED_TYPE_THEOREM.md`). This supersedes Phase 4's quadratic-irrational-only result (a countable special case) without weakening any quantifier, and was reached only after Phase 5's independent hostile audit confirmed the underlying chain and Phase 6's adversarial non-periodic reconstruction confirmed no hidden periodicity dependence.
+> For **every** complementary symmetric Rote sequence `v` whose associated Sturmian sequence is **any** Sturmian word — **any intercept, either mechanical convention** — of **any irrational slope with bounded partial quotients**, `Φ(v)∉ℚ`: **proved** (Phase 8, `theorems/phase8/PHASE8_PROOF_OR_OBSTRUCTION.md` Theorem 2), for both seeds and every shift. This supersedes Phase 6's intercept-`0`-only result without weakening any other quantifier, which in turn superseded Phase 4's quadratic-irrational-only result.
+>
+> **Attribution.** The load-bearing symbolic input — a positive initial-critical-exponent margin uniform over all intercepts of a bounded-type slope — is **Berthé–Holton–Zamboni (2006), Propositions 5.1 and 5.2**, not a result of this repository. What this repository contributes is the **arithmetic application**: the periodic-approximation/height bridge, the exact XOR transfer, the density-`1/2` structural fact, and the attained-witness bookkeeping (explicit growing root lengths) that turns a `limsup` bound on `ice` into an unbounded surplus. Phase 7 recorded this symbolic input as an open conjecture; that was an error of literature search, corrected in `theorems/phase7/PHASE7_CORRECTIONS.md`.
 
 ## Cross-program scope limit — EOC divergence sector (audit, 2026-09-29)
 
@@ -96,7 +135,7 @@ obstruction and certified verification, not the original qualitative observation
 
 ## Open, precisely stated
 
-1. CS Rote sequences at **other intercepts** of the same slope (not a shift of the intercept-0 representative) — unchanged since Phase 4, re-confirmed still open in Phase 6.
-2. Unbounded-partial-quotient slopes — genuinely out of reach of the discrepancy mechanism used.
+1. ~~CS Rote sequences at **other intercepts** of the same slope~~ — **CLOSED, Phase 8** (`theorems/phase8/PHASE8_PROOF_OR_OBSTRUCTION.md` Theorem 2).
+2. Unbounded-partial-quotient slopes — open, and now known to be genuinely hard rather than merely untried: BHZ Thm 1.1 exhibits slopes carrying an intercept with `ice(ω) = 2` **exactly**, at which the odd-weight branch has zero margin. See `theorems/phase8/PHASE8_NEXT_TARGET.md`.
 3. The rotation-coding repetition-existence gap (`theorems/phase2/ROTATION_EXAMPLE_THEOREM.md`) — no analogue of Theorem 10.2 for mismatched two-interval codings is proved or cited anywhere.
 4. The "next frontier" beyond `p(n)=2n` (`LADDER.md`) — deliberately not started.
