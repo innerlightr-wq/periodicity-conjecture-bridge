@@ -1,0 +1,76 @@
+==============================================================================
+PHASE 11.  Rotation-geometry repetition lemma for the named word
+==============================================================================
+    s built to 300000 symbols with exact Q(sqrt5) arithmetic; every beta-comparison certified.
+
+R1  First-mismatch characterisation  L(ell) - ell = m*(ell).
+    ell      delta(ell)    literal L   L - ell   m*(ell)   agree
+    5        0.090169944   8           3         3         True
+    8        -0.055728090  24          16        16        True
+    13       0.034441854   16          3         3         True
+    21       -0.021286236  38          17        17        True
+    34       0.013155617   37          3         3         True
+    55       -0.008130619  147         92        92        True
+    89       0.005024999   92          3         3         True
+    144      -0.003105620  236         92        92        True
+    233      0.001919379   469         236       236       True
+    377      -0.001186241  846         469       469       True
+    610      0.000733137   1456        846       846       True
+    987      -0.000453104  2443        1456      1456      True
+    1597     0.000280034   2478        881       881       True
+    2584     -0.000173070  5062        2478      2478      True
+    R1 holds at every tested ell: the overshoot IS the first hitting time of M(delta).
+
+R2  Two-ball relaxation  M(delta) subset B(0,|delta|) u B(beta,|delta|).
+    checked 16 shifts x 4000 orbit points: containment violations = 0
+
+R3  The arc at 0:  ||m alpha + 1/7|| > 1/(147 m)  for m >= 1  (exact check).
+    min over 1 <= m < 60000 of 147*m*||m alpha + 1/7||  =  1.341033  at m = 3
+    (the bound needs this to stay > 1; the proof gives 147*m*||.|| > 1 for every m)
+
+R4  The arc at beta:  c_m = ||m alpha + rho - beta||,  Baker gives c_m >= C2 m^{-kappa}.
+    m      c_m (certified bracket)           c_m * m^2       c_m * m^4
+    0      [4.880726107143e-01, 4.880726107143e-01]  0.4881          0.4881
+    1      [1.299613780356e-01, 1.299613780356e-01]  0.13            0.13
+    2      [2.520046332145e-01, 2.520046332145e-01]  1.008           4.032
+    3      [3.660293555354e-01, 3.660293555354e-01]  3.294           29.65
+    4      [1.593665571473e-02, 1.593665571473e-02]  0.255           4.08
+    5      [3.979026669648e-01, 3.979026669648e-01]  9.948           248.7
+    6      [2.201313217851e-01, 2.201313217851e-01]  7.925           285.3
+    7      [1.618346894651e-01, 1.618346894651e-01]  7.93            388.6
+    8      [4.561992992848e-01, 4.561992992848e-01]  29.2            1869
+    9      [7.423328803474e-02, 7.423328803474e-02]  6.013           487
+    10     [3.077327232154e-01, 3.077327232154e-01]  30.77           3077
+    11     [3.103012655345e-01, 3.103012655345e-01]  37.55           4543
+    20     [1.273928357164e-01, 1.273928357164e-01]  50.96           2.038e+04
+    50     [4.136268267804e-01, 4.136268267804e-01]  1034            2.585e+06
+    120    [3.239939607269e-01, 3.239939607269e-01]  4666            6.718e+07
+    300    [7.787598574583e-02, 7.787598574583e-02]  7009            6.308e+08
+    800    [6.088161079845e-02, 6.088161079845e-02]  3.896e+04       2.494e+10
+    2000   [4.200951109246e-01, 4.200951109246e-01]  1.68e+06        6.722e+12
+    5000   [3.181288612395e-01, 3.181288612395e-01]  7.953e+06       1.988e+14
+    No super-exponential decay is visible, consistent with the polynomial Baker bound.
+    (The table is a consistency check; the LOWER bound used in the proof is Baker's,
+     not this table.)
+
+R5  The construction:  given M, take ell(M) = least convergent denominator with
+    ||q alpha|| < min( C_M , 1/(147 M) ),  C_M := min_{m<M} c_m.  Then m*(ell) >= M.
+    BOTH thresholds are needed -- the first controls the arc at beta (R4), the second
+    the arc at 0 (R3).  Imposing only the first FAILS: at M = 4 it gives ell = 5,
+    |delta| = 0.090, 1/(147|delta|) = 0.075 < 1, and m* = 3 < 4.  That was a real bug
+    in the first draft of this construction; it is recorded, not quietly fixed.
+
+    M      min(C_M, 1/147M)  ell(M)    |delta|         m*(ell)   m* >= M  log2 ell  M - 3*log2 ell
+    4      1.7006802721e-03  377       1.1862412896e-03469       True     8.56      -21.68
+    8      8.5034013605e-04  610       7.3313743587e-04846       True     9.25      -19.76
+    16     4.2517006803e-04  1597      2.8003358216e-04881       True     10.64     -15.92
+    32     2.1258503401e-04  2584      1.7307027156e-042478      True     11.34     -2.01
+    64     1.0629251701e-04  6765      6.6106960730e-0516008     True     12.72     25.83
+    128    5.3146258503e-05  10946     4.0856350097e-055062      True     13.42     87.75
+    256    2.6573129252e-05  17711     2.5250610634e-0516008     True     14.11     213.66
+
+    m*(ell(M)) >= M at every M tested, exactly as R3+R4 predict.  The final column shows
+    the surplus driver M - 3 log2 ell growing, with 3 a placeholder for the height constant
+    C fixed in EXACT_HEIGHT_AND_SURPLUS.md.
+
+ALL PHASE-11 ROTATION CHECKS PASS.
