@@ -161,6 +161,18 @@ against the transcendental `β` use a certified 300-digit bracket that either de
 - Specialist review has **not** taken place. See
   [`docs/INVITATION_TO_DOMAIN_EXPERTS.md`](docs/INVITATION_TO_DOMAIN_EXPERTS.md).
 
+## Related work
+
+Several results here sit alongside independent work by others, and we gratefully acknowledge it:
+
+- **B. Pham** (2026, unrefereed) proved a discrepancy–complexity inequality for rational points of the 3x+1 conjugacy map, including irrationality for all Sturmian parity words; the drift-sensitive bound of our technical note is closely related and implied by his Theorem 3.
+  [link](https://github.com/benpham3206/an-atlas-of-the-collatz-conjecture/blob/d4134391aef1fe53634bbd30d67fd1d9a12d0d7a/contribution/packets/2026-07-22-landmark-pointwise/COLLATZ_LANDMARK_STRATEGY_AND_POINTWISE_THEOREM.md)
+- **E. Cassidy** (2026, unrefereed) independently gave a 2-adic Liouville-type proof covering all Sturmian parity vectors for a wider family of affine 2-adic maps.
+  [link](https://github.com/eliottcassidy2000/math/blob/6b805eed1613edaedd87965e2b1986390fa84f0e/05-knowledge/results/collatz_procgen_20260922_transversality_foundry.md)
+- The step from real to 2-adic values in López–Stoll (2021, arXiv:2101.12747), Theorem 1, has been questioned independently (fumiki-t; see also eoc-divergence issue #30); results here do not rely on it.
+
+The contributions specific to this repository are the effective and quantitative ones: exact depth laws, explicit height bounds, and the sharpness of the counting method at arc length 3β/2.
+
 ## License
 
 Apache License 2.0 for this repository's code and written analysis. The foundation paper under `reference/` retains its own separate copyright — see `NOTICE`.
